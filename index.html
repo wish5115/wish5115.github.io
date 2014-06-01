@@ -1,128 +1,325 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="X-UA-Compatible" content="IE=7">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>海纳个人博客系统 HituxBlog V1.5 - 让建站变得更加简单</title>
-<meta name="keywords" content="海纳个人博客系统，HituxBlog，海纳博客" />
-<meta name="description" content="海纳网络工作室(Hitux.com)再度出击，海纳个人博客系统推出最新1.5版本，新系统将更加智能，易用和丰富。官网：www.hitux.com。" />
-<link rel="shortcut icon" href="favicon.ico" >
-<link href="/css/limitless/style.css" rel="stylesheet" type="text/css" media="screen" />
-<script  language="javascript" src="/js/slidealbum.js"></script>
-</head>
-<body>
-	<div id="menu-wrapper">
-		<div id="menu">
-<ul><li class='current_page_item'><a href='/' >首 页</a></li> <li><a href='/blog/' >博 客</a></li> <li><a href='/album/' >相 册</a></li> <li><a href='/Category/About' >关 于</a></li> <li><a href='/FeedBack/' >留 言</a></li> <li><a href='/Category/Contact' >联 系</a></li> </ul>	
-                </div>
-		<!-- end #menu -->
-	</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<title>ASPCMS 开源网站管理系统（后台系统设置修改此标题）-上谷网络 专注网站建设- Powered by ASPCMS V2</title>
+<meta name="Keywords" content="AspCms,cms,免费cms,开源cms,免费asp cms" >
+<meta name="Description" content="AspCms国内主流CMS" >
+<meta name="generator" content="ASPCMS! V2" />
+<meta name="author" content="ASPCMS! Team and Chancoo UI Team" />
+<meta name="copyright" content="2006-2013 Chancoo Inc." />
+<META http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.3790.4807" name=GENERATOR>
+<LINK href="/favicon.ico" rel="shortcut icon">
+<LINK media=screen href="/Templates/cn/css/style.css" type=text/css rel=stylesheet>
+<LINK media=all href="/Templates/cn/css/styles.css" type=text/css rel=stylesheet>
+<LINK media=all href="/Templates/cn/css/pagenavi-css.css" type=text/css rel=stylesheet>
+<SCRIPT src="images/l10n.js" type=text/javascript></SCRIPT>
+<SCRIPT src="/Templates/cn/images/jquery.js" type=text/javascript></SCRIPT>
+<SCRIPT src="/Templates/cn/images/jquery.form.js" type=text/javascript></SCRIPT>
+<SCRIPT src="/Templates/cn/images/scripts.js" type=text/javascript></SCRIPT>
+<SCRIPT type=text/javascript>
+	// Navigation Menu
+	$(function() {
+		$(".menu ul").css({display: "none"}); // Opera Fix
+		$(".menu li:first").addClass("homepage");
+		$(".menu li").hover(function(){
+			$(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown("normal");
+		},function(){
+			$(this).find('ul:first').css({visibility: "hidden"});
+		});
+	});
 
-<div id="wrapper">
-	<div id="header-wrapper">
-		<div id="header">
-			<div id="logo">
-		<h1><a href="/" title="海纳个人博客系统 HituxBlog V1.5">海纳个人博客系统 HituxBlog V1.5</a></h1>		
-		<p class="slogan">让建站变得更加简单，你可以的</p>	
-			</div>
-		</div>
-	</div>
-	<!-- end #header -->
-	<div id="page">
-		<div id="page-bgtop">
-			<div id="page-bgbtm">
-				<div id="content">
-<div class="Web_Date"><script  language="javascript" src="/js/date.js"></script></div>
-		<div class="clearfix"></div>		
-<div class='post'><h2 class='title'><a href='/html/0657182451.html' target='_blank'>海纳个人博客系统 v1.5 正式免费开放</a></h2><p class='meta'>2013-1-4 下午 05:24:51&nbsp;&nbsp;Posted by admin</p><div class='ArticleTags'>Tags：<a href='/Tag/index.asp?q=海纳个人博客系统 ,v1.5' target='_blank' title='海纳个人博客系统 ,v1.5'>海纳个人博客系统 ,v1.5</a> </div><div class='entry'><p>
-	海纳个人博客系统最新1.5版本正式免费开放使用。
+	// Bookmark
+	function bookmark(title, url) {
+	  if (document.all)
+		window.external.AddFavorite(url, title);
+	  else if (window.sidebar)
+		window.sidebar.addPanel(title, url, "")
+}
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<DIV class=wrapper> <DIV class=header>
+    <H1 class=logo><A title="ASPCMS 开源网站管理系统（后台系统设置修改此标题）" href="/"><img src="/upLoad/slide/month_1208/201208232324114160.png" height="70" /></A> </H1>
+    <DIV class=headerR>
+        <DIV class=mini_func>
+            <script src="/js/comm.js" type="text/javascript"></script>
+            <A href="#" class=homepage  onclick="setHomepage();"><FONT color=#0057c2>设为主页</FONT></A> 
+            <a href="javascript:AddToFavorite();" class=favicon ><FONT color=#0057c2>加入收藏</FONT></a>
+            <a id="GB_BIG"  class=favicon><FONT color=#0057c2>繁體中文</FONT></a>
+            <script type="text/javascript">
+            var defaultEncoding = "2";
+            var translateDelay = "50";
+            var cookieDomain = "";
+            var msgToTraditionalChinese = "繁體中文";
+            var msgToSimplifiedChinese = "简体中文";
+            var translateButtonId = "GB_BIG";
+            </Script>
+            <script src="/js/GB_BIG.js" type="text/javascript"></script>
+            <script type="text/javascript">translateInitilization();</Script>
+
+        </DIV>
+        <DIV class=clear></DIV>
+        <DIV class=search>
+            <FORM action="/search.asp" method="post"><INPUT class="searchInput" value="输入关键字" name="keys" onblur="if(value=='')value='输入关键字';" onfocus="if(value == '输入关键字')value = ''" > <INPUT class="searchBtn" type="submit" value=""> </FORM>
+        </DIV>
+    </DIV>
+	<DIV class=clear></DIV>
+    <DIV class=navigation>
+        <UL class=menu id=menu-mainmenu>
+            <LI class="menu-item" id=menu-item-393><a href="/">首页</A> </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/aspcms/newslist/list-1-1.html">新闻中心</A> 
+               
+                <UL class=sub-menu>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/newslist/list-2-1.html">公司新闻 <br />Company News </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/newslist/list-3-1.html">公司公告 <br />Announcement </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/newslist/list-4-1.html">行业新闻 <br />Industry news </A></LI>
+                
+                </UL>
+                
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/aspcms/productlist/list-5-1.html">产品展示</A> 
+               
+                <UL class=sub-menu>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/productlist/list-6-1.html">实体产品 <br />Solid Products </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/productlist/list-7-1.html">创意概念 <br />Creative </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/productlist/list-20-1.html">促销产品 <br />Promotion </A></LI>
+                
+                </UL>
+                
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/aspcms/downlist/list-8-1.html">资料下载</A> 
+               
+                <UL class=sub-menu>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/downlist/list-10-1.html">合同下载 <br />Contract Down </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/downlist/list-9-1.html">工具软件 <br />Tools Download </A></LI>
+                
+                </UL>
+                
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/aspcms/jobtlist/list-11-1.html">招聘信息</A> 
+               
+                <UL class=sub-menu>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/jobtlist/list-12-1.html">全职岗位 <br />Full Time </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/jobtlist/list-13-1.html">兼职岗位 <br />Part-time job </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/jobtlist/list-14-1.html">实习岗位 <br />Internship </A></LI>
+                
+                </UL>
+                
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/aspcms/albumtlist/list-15-1.html">公司相册</A> 
+               
+                <UL class=sub-menu>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/albumtlist/list-16-1.html">公司场景 <br />Company scene </A></LI>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/albumtlist/list-17-1.html">公司活动 <br />Company events </A></LI>
+                
+                </UL>
+                
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/gbook/">在线留言</A> 
+               
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/aspcms/about/about-19.html">关于我们</A> 
+               
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/aspcms/videolist/list-101-1.html">在线视频</A> 
+               
+                <UL class=sub-menu>
+                
+                <LI class="menu-item " id=menu-item-376><A href="/aspcms/videolist/list-105-1.html">上谷学堂 <br />Chancoo School </A></LI>
+                
+                </UL>
+                
+            </LI>
+        
+            <LI class="menu-item" id=menu-item-382><A href="/custom/">自定义表单</A> 
+               
+            </LI>
+        
+        </UL>
+    </DIV>
+</DIV>
+  <DIV class=slideshow id=slideshow> <SCRIPT language=JavaScript type=text/javascript>
+var swf_width='960';
+var swf_height='263';
+var configtg='0xffffff:文字颜色|2:文字位置|0x000000:文字背景颜色|30:文字背景透明度|0xffffff:按键文字颜色|0x4f6898:按键默认颜色|0x000033:按键当前颜色|8:自动播放时间|3:图片过渡效果|1:是否显示按钮|_blank:打开新窗口';
+var files='/upLoad/slide/month_1109/201109301841433233.jpg|/upLoad/slide/month_1109/201109301841503128.jpg|/upLoad/slide/month_1109/201109301842008590.jpg';
+var links='||';
+var texts ;
+document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
+document.write('<param name="movie" value="/flash/slideflash.swf"><param name="quality" value="high">');
+document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'">');
+document.write('<embed src="/flash/slideflash.swf" wmode="opaque" FlashVars="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'& menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />'); document.write('</object>'); 
+</SCRIPT> </DIV>
+  <DIV class=clear></DIV>
+  <DIV class=featured>
+    <DIV class=containerTop></DIV>
+    <DIV class="containerContent homeContent">
+      <DIV class=news> 
+        <H2><SPAN><A title="新闻中心" href="/aspcms/newslist/list-1-1.html">更多&gt;&gt;</A></SPAN><A title="新闻中心" href="/aspcms/newslist/list-1-1.html">新闻中心</A> | News Center</H2>
+        
+        <UL>
+          
+          <LI><A title="企业建站的好处与电子商务发展的趋势" href="/aspcms/news/2011-5-6/33.html" ><font color="#39b778">[行业新闻]企业建站的好处与电子商务发展的趋势</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="本公司将低价派空调给偏远山区" href="/aspcms/news/2012-7-25/69.html" ><font color="#000000">[公司新闻]本公司将低价派空调给偏远山区</font></A><SPAN>2012-07-25</SPAN></LI>
+          
+          <LI><A title="天气热，选空调，要选就选格力空调" href="/aspcms/news/2012-7-25/68.html" ><font color="#000000">[公司新闻]天气热，选空调，要选就选格力空调</font></A><SPAN>2012-07-25</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/14.html" ><font color="#000000">[行业新闻]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/173.html" ><font color="#000000">[公司公告]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/26.html" ><font color="#000000">[公司新闻]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/176.html" ><font color="#000000">[公司公告]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/23.html" ><font color="#000000">[公司新闻]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/32.html" ><font color="#000000">[行业新闻]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/20.html" ><font color="#000000">[行业新闻]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+          <LI><A title="工信部提醒网站主办者通过正规渠道进行网站备案" href="/aspcms/news/2011-5-6/29.html" ><font color="#000000">[公司新闻]工信部提醒网站主办者通过正规渠道进行网站...</font></A><SPAN>2011-05-06</SPAN></LI>
+          
+        </UL>
+      </DIV>
+      <DIV class=products> 
+        <H2><SPAN><A title="产品展示" href="/aspcms/productlist/list-5-1.html">更多&gt;&gt;</A></SPAN><img src="/upLoad/other/month_1309/201309171720524963.jpg"><A title="产品展示" href="/aspcms/productlist/list-5-1.html">产品展示</A> | Product Show</H2>
+        
+        <UL>
+          
+          <LI><A title="亲亲款X恋人草头情侣小白人 桌上盆景" href="/aspcms/product/2011-9-30/144.html"><IMG class="attachment-small" title="亲亲款X恋人草头情侣小白人 桌上盆景" alt="亲亲款X恋人草头情侣小白人 桌上盆景" src="/upLoad/product/month_1208/201208201457258890.jpg" /></A> <A class="product_name" title="亲亲款X恋人草头情侣小白人 桌上盆景" href="/aspcms/product/2011-9-30/144.html">亲亲款X恋人草头情侣小白人 桌上盆景</A></LI>
+          
+          <LI><A title="草头情侣小白人桌上盆景 迷你小植物" href="/aspcms/product/2011-9-30/161.html"><IMG class="attachment-small" title="草头情侣小白人桌上盆景 迷你小植物" alt="草头情侣小白人桌上盆景 迷你小植物" src="/upLoad/product/month_1208/201208201457595009.jpg" /></A> <A class="product_name" title="草头情侣小白人桌上盆景 迷你小植物" href="/aspcms/product/2011-9-30/161.html">草头情侣小白人桌上盆景 迷你小植物</A></LI>
+          
+          <LI><A title="草头情侣小白人桌上盆景 迷你小植物" href="/aspcms/product/2011-9-30/160.html"><IMG class="attachment-small" title="草头情侣小白人桌上盆景 迷你小植物" alt="草头情侣小白人桌上盆景 迷你小植物" src="/upLoad/product/month_1208/201208201457595009.jpg" /></A> <A class="product_name" title="草头情侣小白人桌上盆景 迷你小植物" href="/aspcms/product/2011-9-30/160.html">草头情侣小白人桌上盆景 迷你小植物</A></LI>
+          
+          <LI><A title="草头情侣小白人桌上盆景 迷你小植物" href="/aspcms/product/2011-9-30/154.html"><IMG class="attachment-small" title="草头情侣小白人桌上盆景 迷你小植物" alt="草头情侣小白人桌上盆景 迷你小植物" src="/upLoad/product/month_1208/201208201457595009.jpg" /></A> <A class="product_name" title="草头情侣小白人桌上盆景 迷你小植物" href="/aspcms/product/2011-9-30/154.html">草头情侣小白人桌上盆景 迷你小植物</A></LI>
+          
+        </UL>
+      </DIV>
+      <DIV class=profile> 
+        <H2><SPAN><A title="关于我们" href="/aspcms/about/about-19.html">更多&gt;&gt;</A></SPAN><A title="关于我们" href="/aspcms/about/about-19.html">关于我们</A> | About us</H2>
+        
+        <DIV class=about-us>
+          <DIV> 
+            <embed type="application/x-mplayer2" width="273" height="173" src="http://player.youku.com/player.php/Type/Folder/Fid/16589506/Ob/1/Pt/8/sid/XMzE5MzIyNDE2/v.swf"></embed>
+            
+            <a href="/aspcms/about/about-19.html">5234523452345</a>
+            <DIV class=clear></DIV>
+          </DIV>
+          <DIV class=clear></DIV>
+        </DIV>
+        <DIV class=clear></DIV>
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+<DIV class=clear></DIV>
+<script type="text/javascript" src="/inc/AspCms_Statistics.asp"></script><DIV class=friendlink >
+    <H3>友情链接</H3>
+    <UL>
+          
+        <LI><a href="http://www.aspcms" target="_blank"><img style="border: 1px solid #D6EAF1;" src="/upLoad/links/month_1208/201208231156211310.png" border="0" height="33" width="100" /></a></LI>
+    
+    </UL>
+    <br/>
+    <br/>
+    <UL style="margin-top:5px;">
+    
+        <LI><a href="http://www.aspcms.com" target="_blank">ASPCMS</a></LI>
+    
+        <LI><a href="http://idc.aspcms.com" target="_blank">数据业务</a></LI>
+    
+        <LI><a href="http://www.4i.com.cn" target="_blank">武汉网站建设</a></LI>
+    
+        <LI><a href="http://www.4i.com.cn/" target="_blank">上谷网络</a></LI>
+    
+    </UL>
+</DIV>
+<DIV class=footer>
+    <UL class=footpage>
+        <LI class=nb><a href="/">首页</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/aspcms/newslist/list-1-1.html">新闻中心</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/aspcms/productlist/list-5-1.html">产品展示</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/aspcms/downlist/list-8-1.html">资料下载</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/aspcms/jobtlist/list-11-1.html">招聘信息</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/aspcms/albumtlist/list-15-1.html">公司相册</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/gbook/">在线留言</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/aspcms/about/about-19.html">关于我们</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/aspcms/videolist/list-101-1.html">在线视频</A></LI>
+        
+        <LI class="page_item page-item-755"><A href="/custom/">自定义表单</A></LI>
+        
+    </UL>
+    <P>电话：027-87654321 传 真：027-87654321 邮 箱：aspcms@aspcms.com   </P>
+    <P>本程序由<a href="http://www.4i.com.cn" target="_blank">上谷网络</a>开源实验室开发制作 欢迎到<a href="http://www.aspcms.com" target="_blank">开源论坛</a>交流讨论（本内容请到后台版权信息处修改） <A href="http://www.miibeian.gov.cn/">备ICP800051890</A> </P>
+    <p>
+今日：<script type="text/javascript" src="/inc/AspCms_aStatistics.asp?act=t"></script> 
+昨日：<script type="text/javascript" src="/inc/AspCms_aStatistics.asp?act=y"></script> 
+本月：<script type="text/javascript" src="/inc/AspCms_aStatistics.asp?act=m"></script> 
+全部：<script type="text/javascript" src="/inc/AspCms_aStatistics.asp?act=a"></script>  </p>
+</DIV>
+<LINK rev=stylesheet href="/Images/qq/qqkf1/default.css" type=text/css rel=stylesheet>
+<DIV id=kefu_pannel style="Z-INDEX: 30000; FILTER: alpha(opacity=85); left: 0px; POSITION: absolute; TOP: 120px">
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+<THEAD id=kefu_pannel_top>
+<TR>
+<TH class=kefu_Title><SPAN class=kefu_shut id=kefu_ctrl onclick=HideKefu()></SPAN>
+<H2 class=txtCut>在线客服</H2></TH></TR></THEAD>
+<TBODY id=kefu_pannel_mid>
+<TR>
+<TD height=3></TD></TR>
+<TR>
+<TD>
+<div class=kefu_box ><span  style="padding-left:10px;">技术支持</span></div><DIV class=kefu_box onmouseover="this.className='kefu_boxOver'" onmouseout="this.className='kefu_box'"><SPAN class=kefu_image><IMG src="/Images/qq/qqkf1/icon_person_stat_online.gif"></SPAN><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=506232687&amp;site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:506232687:47" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></DIV>
+<div class=kefu_box ><span  style="padding-left:10px;">产品咨询</span></div><DIV class=kefu_box onmouseover="this.className='kefu_boxOver'" onmouseout="this.className='kefu_box'"><SPAN class=kefu_image><IMG src="/Images/qq/qqkf1/icon_person_stat_online.gif"></SPAN><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=8887443&amp;site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:8887443:47" alt="点击这里给我发消息" title="点击这里给我发消息"/></a></DIV>
+<div class=kefu_box><span  style="padding-left:10px;">销售一号</span></div><DIV class=kefu_box onmouseover="this.className='kefu_boxOver'" onmouseout="this.className='kefu_box'"><SPAN class=kefu_image><IMG src="/Images/qq/qqkf1/icon_person_stat_online.gif"></SPAN><A target="_blank" class=kefu_Type_msn href="http://amos1.taobao.com/msg.ww?v=2&uid=123456&s=1"><img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid=123456&s=1" alt="点击这里给我发消息" /></A></DIV>
+<div class=kefu_box><span  style="padding-left:10px;">销售2号</span></div><DIV class=kefu_box onmouseover="this.className='kefu_boxOver'" onmouseout="this.className='kefu_box'"><SPAN class=kefu_image><IMG src="/Images/qq/qqkf1/icon_person_stat_online.gif"></SPAN><A target="_blank" class=kefu_Type_msn href="http://amos1.taobao.com/msg.ww?v=2&uid=8887443&s=1"><img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid=8887443&s=1" alt="点击这里给我发消息" /></A></DIV>
+</TD></TR>
+<TR>
+<TD height=3></TD></TR></TBODY>
+<TFOOT id=kefu_pannel_btm>
+<TR style="CURSOR: hand" onclick="parent.location='/about/?19.html';">
+<TD class=kefu_other></TD></TR></TFOOT></TABLE></DIV>
+<SCRIPT language=JavaScript src="/Images/qq/qqkf1/qqkf.js"></SCRIPT>
 
 
-	附：海纳个人博客系统简介
-
-
-	海纳个人博客系统(HituxBlog)是海纳网络工作室(Hitux.com)专业为个人建站而开发的一款网站程序。该系统采用最流行的ASP+ACCESS进行搭建，页面使用DIV+CSS进行编写，全面兼容时下IE、FireFox、Chrome等主流浏览器。系统内置多达30款主题及精美相册，后台一键切换。前台所有内容均可以在后台进行修改删除等操作。
-
-
-	通过该系统建立您的博客或者是个人网站将变得轻而易举。不需要具备多么专业的网页设计知识，不需要对程序有多熟悉，仅仅下载海纳个人博客的源码上...</p><p class='links'><a href='/Category/Internet/'>[互联网]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/0657182451.html' target='_blank'>查看全文(0)</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/0657182451.html#comment' target='_blank'>发表评论(0)</a></p></div></div><div class='post'><h2 class='title'><a href='/html/0651825813.html' target='_blank'>日本将开发超级迷你车 只供一到两人乘坐</a></h2><p class='meta'>2012-5-29 上午 11:58:13&nbsp;&nbsp;Posted by admin</p><div class='ArticleTags'>Tags：<a href='/Tag/index.asp?q=日本' target='_blank' title='日本'>日本</a> </div><div class='entry'><p>据《联合早报》5月28日报道，随着日本社会的老龄化趋势和人们消费习惯的变化，日本车商跟随该趋势，配合着老年人家庭的条件和需要，决定设计和制造 “超级迷你”轿车。据报道，日产等汽车厂商开发的迷你轿车只供一到两人乘坐，它们不单体积小，还十分讲究环保。日本车商认为，它可继脚踏车之后，成为日本社会另一个热门代步工具。
- 
-
-日产的超级迷你型汽车
-日本交通当局已经决定，修改汽车款式准证，拟在普通汽车(1000cc以上)以及轻量级(500cc到1000cc)之外，增加排气量在125cc的迷你轿车。日本现行汽车条例在1963年制定，这是将近50年来的首次变动。
-日本当局最大的考量是为了迎合老龄化社...</p><p class='links'><a href='/Category/Favorite/'>[个人收藏]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/0651825813.html' target='_blank'>查看全文(12)</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/0651825813.html#comment' target='_blank'>发表评论(2)</a></p></div></div><div class='post'><h2 class='title'><a href='/html/2875165721.html' target='_blank'>传统快递呼吁行业禁止电商涉足快递业</a></h2><p class='meta'>2012-5-29 上午 11:57:21&nbsp;&nbsp;Posted by admin</p><div class='ArticleTags'>Tags：<a href='/Tag/index.asp?q=快递' target='_blank' title='快递'>快递</a> </div><div class='entry'><p>5月29日消息，电商与快递的业务融合正在加剧，但随着也将带来市场的混乱，产业的边界问题急需得到解决。5月28日，圆通速递总裁喻渭蛟对媒体呼吁，国家邮政局和快递行业协会应制止或协调电商、快递双方的跨界行为，以避免中国快递和电子商务市场的混乱。目前，京东商城、凡客、1号店、亚马逊中国等国内电商，均有自己的物流配送团队。
-其中，京东商城在物流配送的投入较大。京东商城CEO刘强东曾表示，京东商城将在未来三年内投资100亿元自建物流。目前，京东商城的自建物流团队已覆盖全国27个城市。自建物流系统已成为京东商城在国内电商行业最大的竞争壁垒之一。
-京东商城方面表示，国内电子商务公司自建物流团队，主要是国...</p><p class='links'><a href='/Category/Diary/'>[个人日记]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/2875165721.html' target='_blank'>查看全文(4)</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/2875165721.html#comment' target='_blank'>发表评论(0)</a></p></div></div><div class='post'><h2 class='title'><a href='/html/7043195512.html' target='_blank'>松下宣布将对总公司7000名员工进行裁员减半</a></h2><p class='meta'>2012-5-29 上午 11:55:12&nbsp;&nbsp;Posted by admin</p><div class='ArticleTags'>Tags：<a href='/Tag/index.asp?q=松下' target='_blank' title='松下'>松下</a> </div><div class='entry'><p>5月29日消息，据日本媒体报道，松下集团今日对外宣布公司计划将于2012财年将总公司7000名员工裁员减半，预计将裁员3000至4000人。
-对与此次对总公司进行裁员，松下下一任社长的津贺一宏表示，松下希望对总公司体制进行改革后，以达到2012财年盈利500亿日元的目标。另外，今后松下集团可能进一步削减管理层人员，也不排除对部门改编的可能。
-松下集团表示，电视、半导体业务与三洋电机的结构重组调整仍在继续，公司此次做出裁员决定，希望通过一连串的业务结构改革，公司业绩实现V字形复苏。
-因为全球电视机业务的萎缩以及受到税务相关费用的拖累，松下2011财年亏损达到7720亿日元，创造了松下自19...</p><p class='links'><a href='/Category/Internet/'>[互联网]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/7043195512.html' target='_blank'>查看全文(0)</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/7043195512.html#comment' target='_blank'>发表评论(0)</a></p></div></div><div class='post'><h2 class='title'><a href='/html/943726544.html' target='_blank'>谷歌苹果微软雅虎争夺移动浏览器市场主导权</a></h2><p class='meta'>2012-5-29 上午 11:54:04&nbsp;&nbsp;Posted by admin</p><div class='ArticleTags'>Tags：<a href='/Tag/index.asp?q=谷歌' target='_blank' title='谷歌'>谷歌</a> <a href='/Tag/index.asp?q=苹果' target='_blank' title='苹果'>苹果</a> <a href='/Tag/index.asp?q=微软' target='_blank' title='微软'>微软</a> <a href='/Tag/index.asp?q=雅虎' target='_blank' title='雅虎'>雅虎</a> </div><div class='entry'><p>国外媒体今日刊载文章称，一场围绕着移动互联网浏览器市场主导权而展开的“战争”正在升级，谷歌(微博)、苹果、微软和雅虎都卷入了这场战争。文章同时指出，为掌控这一市场而打响的战斗还引发了有关Facebook的问题，这家公司现正探索一项移动战略，可能将收购挪威浏览器开发商Opera Software。
-以下是这篇文章的全文：
-浏览器“战争”正在再次升温，但这一次的战斗是围绕着移动互联网浏览器市场的主导权而展开的。
-谷歌、苹果、微软和雅虎都卷入了这场“战争”，挪威人开发的Opera浏览器和Mozilla的开源火狐浏览器也同样涉足其中。
-这场战争背后的动机不仅仅是为了争夺夸口的资格。掌控着移动互...</p><p class='links'><a href='/Category/Internet/'>[互联网]</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/943726544.html' target='_blank'>查看全文(2)</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/html/943726544.html#comment' target='_blank'>发表评论(0)</a></p></div></div>	
-<div class="morearticle"><a href="/blog/">查看更多文章>>></a></div>	
-			<div style="clear: both;">&nbsp;</div>
-		</div>
-				<!-- end #content -->
-				<div id="sidebar">
-			<ul>
-	<li>		<div id="search">
-			<form method="get" action="/Tag/index.asp">
-				<fieldset>
-				<input type="text" name="q" id="search-text" size="15" onBlur="if(this.value=='') this.value='Keywords ...';" 
-onfocus="if(this.value=='Keywords ...') this.value='';" value="Keywords ..." /><input type="submit" id="search-submit" value="搜 寻" />
-				</fieldset>
-			</form>
-		</div>
-		<div class="clearfix"></div>
-	</li>		
-				<li>
-					<h2>个人档案</h2>
-					<p class="myphoto"><img src="/images/up_images/myphoto.jpg" width="80" height="89"></p>
-					<p class="myintro">HituxBlog V1.5<br>2013年01月04日<br>中国 上海<br>admin@hitux.com</p>
-					<p class="clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;属于我自己的一片天地，我可以随意打造。。。</a></p>
-					</li>
-				<li>
-					<h2>精彩相册</h2>
-<!--slide album start-->
-<div id="slidebox">
-	<div id="slider">
-<div class='slide'><A href='/Gallery/64/' target='_blank' title='明星图片'><img class='diapo' src='/photos/20120529123831900.jpg' alt='明星图片' width='210' ></a><div class='text'><span class='title'>明星图片</span></div></div><div class='slide'><A href='/Gallery/64/' target='_blank' title='明星图片'><img class='diapo' src='/photos/20120529123831633.jpg' alt='明星图片' width='210' ></a><div class='text'><span class='title'>明星图片</span></div></div><div class='slide'><A href='/Gallery/64/' target='_blank' title='明星图片'><img class='diapo' src='/photos/20120529123831810.jpg' alt='明星图片' width='210' ></a><div class='text'><span class='title'>明星图片</span></div></div><div class='slide'><A href='/Gallery/64/' target='_blank' title='明星图片'><img class='diapo' src='/photos/20120529123831996.jpg' alt='明星图片' width='210' ></a><div class='text'><span class='title'>明星图片</span></div></div><div class='slide'><A href='/Gallery/64/' target='_blank' title='明星图片'><img class='diapo' src='/photos/20120529123831600.jpg' alt='明星图片' width='210' ></a><div class='text'><span class='title'>明星图片</span></div></div><div class='slide'><A href='/Gallery/64/' target='_blank' title='明星图片'><img class='diapo' src='/photos/20120529123831821.jpg' alt='明星图片' width='210' ></a><div class='text'><span class='title'>明星图片</span></div></div>
-	</div>
-<script type="text/javascript">
-/* ==== start script ==== */
-slider.init();
-</script>
-</div>
-<!--slide album end-->
-				</li>
-				<li>
-					<h2>博客分类</h2>
-<ul><li><a href='/Category/Enterntainment/'>娱乐资讯</a> (3) <a href='/rss/Feed.asp?CatID=133' target='_blank'><img src='/images/rss_icon.gif'></a></li><li><a href='/Category/Love/'>情感天地</a> (2) <a href='/rss/Feed.asp?CatID=135' target='_blank'><img src='/images/rss_icon.gif'></a></li><li><a href='/Category/Internet/'>互联网</a> (7) <a href='/rss/Feed.asp?CatID=136' target='_blank'><img src='/images/rss_icon.gif'></a></li><li><a href='/Category/Favorite/'>个人收藏</a> (1) <a href='/rss/Feed.asp?CatID=138' target='_blank'><img src='/images/rss_icon.gif'></a></li><li><a href='/Category/Diary/'>个人日记</a> (1) <a href='/rss/Feed.asp?CatID=137' target='_blank'><img src='/images/rss_icon.gif'></a></li></ul>
-				</li>
-				<li>
-					<h2>热门文章</h2>
-<ul><li><a href='/html/0651825813.html' target='_blank'>日本将开发超级迷你车 只供一到两人</a> (12)</li><li><a href='/html/2875165721.html' target='_blank'>传统快递呼吁行业禁止电商涉足快递业</a> (4)</li><li><a href='/html/943726544.html' target='_blank'>谷歌苹果微软雅虎争夺移动浏览器市场</a> (2)</li><li><a href='/html/624185537.html' target='_blank'>诺基亚计划在未来手机中加入防水功能</a> (1)</li><li><a href='/html/7026945042.html' target='_blank'>阿里巴巴和支付宝在沪购楼 陆家嘴将</a> (1)</li><li><a href='/html/4670284933.html' target='_blank'>前男友不断骚扰 亲手搅局毁了我的幸</a> (1)</li><li><a href='/html/1387244638.html' target='_blank'>松岛菜菜子代言费要价过高 疑遭广告</a> (1)</li><li><a href='/html/6854304456.html' target='_blank'>少女时代郑秀妍快餐店惹围观 致附近</a> (1)</li><li><a href='/html/1820354344.html' target='_blank'>新垣里沙发行写真集 称解除恋爱禁止</a> (1)</li><li><a href='/html/7043195512.html' target='_blank'>松下宣布将对总公司7000名员工进</a> (0)</li></ul>
-				</li>
-				<li>
-					<h2>友情链接</h2>
-<div class="FriendLink"><a href='http://www.chinaz.com/' target='_blank' >中国站长站</a> <a href='http://weibo.com' target='_blank' >新浪微博</a> <a href='http://www.hitux.com/' target='_blank' >企业网站建设</a> <a href='http://www.sohu.com/' target='_blank' rel='NoFollow'>搜狐</a> <a href='http://www.163.com/' target='_blank' >网易</a> <a href='http://www.zhibo8.com/' target='_blank' >直播吧</a> <a href='http://www.google.com.hk/' target='_blank' >谷歌</a> <a href='http://www.hitux.com/' target='_blank' >企业网站源码</a> <a href='http://www.sina.com.cn/' target='_blank' >新浪</a> <a href='http://www.baidu.com/' target='_blank' >百度</a> <a href='http://www.hitux.com' target='_blank' >网页设计</a> <a href='http://www.hitux.com/' target='_blank' >海纳网络</a> </div>
-<div class="clearfix"></div>
-				</li>
-			</ul>
-		</div>
-				<!-- end #sidebar -->
-				<div style="clear: both;">&nbsp;</div>
-			</div>
-		</div>
-	</div>
-	<!-- end #page -->
-</div>
-<div id="footer">
-	<p>Copyright &copy; 2012 海纳个人博客系统(<A href="http://www.hitux.com/" target=_blank>Hitux.com</A>) Britar Yao All rights reserved<BR>&nbsp;Powered by <A href="http://www.hitux.com/" target=_blank>HituxBlog V1.5</A> <img src="/images/hituxblog-logo.png" width="80" alt='HituxBlog V1.4'> <a href="/rss" target="_blank"><img src="/images/rss_icon.gif"></a> <a href="/rss/feed.xml" target="_blank"><img src="/images/xml_icon.gif"></a> Themes By <A href="http://www.FreeCssTemplates.org/" target=_blank>FreeCssTemplates</a>
-<p>海纳网络工作室 荣誉出品</p></p>
-</div>
-<!-- end #footer -->
-</body>
-</html>
-
-
+<script src="/js/piaofu.js" language="JavaScript"></script><script src="/inc/AspCms_AdvJs.asp?type=pf" language="JavaScript"></script>
+<script src="/inc/AspCms_AdvJs.asp?type=dl" language="JavaScript"></script>
+<script src="/inc/AspCms_AdvJs.asp?type=tc" language="JavaScript"></script>
+</BODY>
+</HTML>
