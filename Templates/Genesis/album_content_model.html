@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>$album_name$_相册_$web_name$</title>
+<meta name="keywords" content="$album_name$相册，图片，$web_keywords$" />
+<meta name="description" content="$album_name$，$web_name$的相册，$web_name$的图片。" />
+        <link rel="stylesheet" href="/css/albumcommon/album.css" type="text/css" media="screen"/>
+<link href="/css/albumcommon/sexylightbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/SLB-compressed.js"></script>
+  <script type="text/javascript" src="/js/SLB.v2.3.mootools.min.js"></script>
+  <script type="text/javascript">
+    window.addEvent('domready', function(){
+      SexyLightbox = new SexyLightBox({color:'black', dir: '/images/sexyimages'});
+    });
+  </script>
+</head>
+    <body>
+        <div class="infobar">
+            <span id="description"></span>
+            <span id="loading">Loading Image</span>
+            <span class="reference"><a href="/">Back</a> >>> $album_name$</span>
+        </div>
+        <div id="thumbsWrapper">
+            <div id="content" >
+<!--image start-->
+<div class='ImageList'>
+$web_slidealbum$
+<div class="clearfix"></div>
+</div>
+<!--image end -->
+            </div>
+        </div>
+        <div id="panel">
+
+         <!-- The JavaScript -->
+<!--footer start-->
+<div id="footer">$web_copyright$</div>
+<!--footer end-->	                
+                
+    </div>
+<embed src="$BackMusic$" align="center" border="0" width="1" height="1"  autostart="true" loop="true" ></embed>
+    </body>
+</html>
+
+
+
+
+
+
+

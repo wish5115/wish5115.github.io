@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>$web_title$</title>
+<meta name="keywords" content="$web_keywords$" />
+<meta name="description" content="$web_description$" />
+<link rel="shortcut icon" href="favicon.ico" >
+<link href="/css/$web_theme$/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script  language="javascript" src="/js/slidealbum.js"></script>
+</head>
+<body>
+    <div id="main">
+        <div id="corner1">&nbsp;</div>
+        <div id="corner2">&nbsp;</div>
+        <div id="header"><div id="header2">
+	<div class="top">
+	<h1><a href="/" title="$web_name$">$web_name$</a></h1>
+	<p>$web_slogan$</p>
+	</div>
+	                <div id="menu">
+$web_menu$
+                </div>
+                <div id="search">
+                   <form method="get" action="/$Search_FolderName$/index.asp">
+				<fieldset>
+				<input type="text" name="q" id="search-text" size="15" onBlur="if(this.value=='') this.value='$web_indexsearch$';" 
+onfocus="if(this.value=='$web_indexsearch$') this.value='';" value="$web_indexsearch$" /><input type="submit" id="search-submit" value="搜 索" />
+				</fieldset>
+			</form>
+                </div>
+        </div></div>        
+        <div id="middle"><div id="middle2">
+                <div id="content">
+				<!---Web_Date-->
+		<div class="clearfix"></div>		
+$web_articlelist$	
+<div class="morearticle"><a href="/$Blog_FolderName$/">查看更多文章>>></a></div>	
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+                <div id="sidebar">
+			<ul>			
+				<li>
+					<h2>博客分类</h2>
+$web_category$
+				</li>
+				<li>
+					<h2>热门文章</h2>
+$web_hotart$
+				</li>
+				<li>
+					<h2>友情链接</h2>
+<div class="FriendLink">$web_link$</div>
+				</li>
+			</ul>
+		</div>                       
+        </div></div>
+        <div id="footer">
+			<div class="footer_txt">$web_copyright$</div>
+		</div>
+    </div>
+</body>
+</html>

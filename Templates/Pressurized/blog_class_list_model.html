@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>$class_title$_博客_$web_name$</title>
+<meta name="keywords" content="$class_keywords$" />
+<meta name="description" content="$class_description$" />
+<link rel="shortcut icon" href="favicon.ico" >
+<link href="/css/$web_theme$/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script  language="javascript" src="/js/slidealbum.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+	<h1><a href="/" title="$web_name$">$web_name$</a></h1>
+	<p>$web_slogan$</p>
+		</div>
+	</div>
+	<!-- end #header -->
+	<div id="menu">
+$web_menu$
+	</div>
+	<!-- end #menu -->
+	<div id="page">
+		<div id="content">
+			<div class="Web_Position">您现在的位置：<a href="/">首页</a> > <a href="/$Blog_FolderName$/">博客</a> > $class_position$</div>
+		<div class="clearfix"></div>		
+				$list_block$
+<div class="adcontent2">
+
+</div>		
+		<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+	<li>		<div id="search">
+			<form method="get" action="/$Search_FolderName$/index.asp">
+				<fieldset>
+				<input type="text" name="q" id="search-text" size="15" onBlur="if(this.value=='') this.value='$web_indexsearch$';" 
+onfocus="if(this.value=='$web_indexsearch$') this.value='';" value="$web_indexsearch$" /><input type="submit" id="search-submit" value="" />
+				</fieldset>
+			</form>
+		</div>
+		<div class="clearfix"></div>
+	</li>		
+				<li>
+					<h2>个人档案</h2>
+					<p class="myphoto"><img src="/images/up_images/$web_image$" width="80" height="89"></p>
+					<p class="myintro">$web_person$<br>$web_birthdate$<br>$web_birthplace$<br>$web_email$</p>
+					<p class="clearfix">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$web_shortintro$</a></p>
+					</li>
+				<li>
+					<h2>精彩相册</h2>
+<!--slide album start-->
+<div id="slidebox">
+	<div id="slider">
+$web_slidealbum$
+	</div>
+<script type="text/javascript">
+/* ==== start script ==== */
+slider.init();
+</script>
+</div>
+<!--slide album end-->
+				</li>
+				<li>
+					<h2>博客分类</h2>
+$web_category$
+				</li>
+				<li>
+					<h2>热门文章</h2>
+$web_hotart$
+				</li>
+				<li>
+					<h2>友情链接</h2>
+<div class="FriendLink">$web_link$</div>
+				</li>
+			</ul>
+		</div>
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	<!-- end #page -->
+<div id="footer">
+<div class="bottom_logo"><a href="http://www.hitux.com/" target="_blank"><img src="/images/up_images/top_logo.jpg" width="100" height="40"></a></div>
+<div class="bottom_txt">$web_copyright$</div>
+<div class="clearfix"></div>
+	</div>
+	<!-- end #footer -->
+</div>
+</body>
+<!--
+{系统支持} 
+名称：海纳个人博客系统v1.3
+官方网站：http://www.hitux.com/
+开发者：Britar Yao
+EMAIL：411159226@qq.com
+QQ:411159226
+尊重别人劳动成果，请保留系统信息！
+-->
+</html>
+
