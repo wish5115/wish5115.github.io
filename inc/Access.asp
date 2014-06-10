@@ -1,9 +1,0 @@
-<%
-'chk session
-If Session("log_name")="" Then 
-	Session.abandon
-	response.redirect "login.asp"
-%>
-<%
-End If 
-%>
