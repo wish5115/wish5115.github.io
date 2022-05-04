@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>VIP视频解析</title>
+        <style>
+            body{background-color: rgb(19, 19, 19);}
+            .wrapper{margin:0 auto;width:800px;}
+            .iframe{width:100%;height:450px;}
+            .input{width:64%}
+            .ifrwrapper{background:#000;}
+            @media (max-width:750px) {
+              .wrapper{width:100%;}
+              .input{width:100%}
+              .iframe{width:100%;height:219.38px;}
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <div>
+                <input id="input" type="text" value="" class="input" placeholder="请输入视频URL，支持爱奇艺、腾讯、优酷、B站、芒果等">
+                <select id="line">
+                    <option value="https://jx.blbo.cc:4433/analysis.php?v=">线路1（全民）</option>
+                    <option value="https://jx.parwix.com:4433/player/analysis.php?v=">线路2（B站1）</option>
+                    <option value="https://z1.m1907.cn/?jx=">线路3（纯净1）</option>
+                    <option value="https://okjx.cc/?url=">线路4（B站2）</option>
+                    <option value="https://vip.bljiex.com/?v=">线路5（全站）</option>
+                    <option value="https://www.h8jx.com/jiexi.php?url=">线路6（B站3）</option>
+                    <option value="https://api.jiexi.la/?url=">线路7（解析la）</option>
+                    <option value="https://www.ckplayer.vip/jiexi/?url=">线路8（爱奇艺2）</option>
+                    <option value="https://vip.2ktvb.com/player/?url=">爱跟</option>
+                    <option value="https://jx.aidouer.net/?url=">爱豆</option>
+                    <option value="https://vip.bljiex.com/?v=">BL</option>
+                    <option value="https://api.qianqi.net/vip/?url=">冰豆</option>
+                    <option value="https://jx.618g.com/?url=">百域</option>
+                    <option value="https://www.ckplayer.vip/jiexi/?url=">CK</option>
+                    <option value="https://www.gai4.com/?url=">CHok</option>
+                    <option value="https://www.ckmov.vip/api.php?url=">ckmov</option>
+                    <option value="https://jx.52damu.com/dmjx/jiexi.php?url=">大幕</option>
+                    <option value="https://123.1dior.cn/?url=">迪奥</option>
+                    <option value="https://www.h8jx.com/jiexi.php?url=">H8</option>
+                    <option value="https://api.jhdyw.vip/?url=">江湖</option>
+                    <option value="https://ckmov.ccyjjd.com/ckmov/?url=">解析</option>
+                    <option value="https://jx.youyitv.com/?url=">九八</option>
+                    <option value="https://lecurl.cn/?url=">LE</option>
+                    <option value="https://vip.laobandq.com/jiexi.php?url=">老板</option>
+                    <option value="https://api.leduotv.com/wp-api/ifr.php?isDp=1&amp;vid=">乐多</option>
+                    <option value="https://www.mtosz.com/m3u8.php?url=">MAO</option>
+                    <option value="https://jx.m3u8.tv/jiexi/?url=">M3U8</option>
+                    <option value="https://jiexi.janan.net/jiexi/?url=">MUTV</option>
+                    <option value="https://www.ckmov.com/?url=">诺诺</option>
+                    <option value="https://www.nxflv.com/?url=">诺讯</option>
+                    <option value="https://okjx.cc/?url=">OK</option>
+                    <option value="https://www.playm3u8.cn/jiexi.php?url=">PM</option>
+                    <option value="https://www.pangujiexi.cc/jiexi.php?url=">盘古</option>
+                    <option value="https://qimihe.com/?url=">奇米</option>
+                    <option value="https://jx.quanmingjiexi.com/?url=">全民</option>
+                    <option value="https://jx.rdhk.net/?v=">RDHK</option>
+                    <option value="https://jx.ap2p.cn/?url=">思云</option>
+                    <option value="https://jsap.attakids.com/?url=">思古3</option>
+                    <option value="https://jx.vodjx.top/vip/?url=">淘电影</option>
+                    <option value="https://jx.dj6u.com/?url=">听乐</option>
+                    <option value="https://jx.ivito.cn/?url=">维多</option>
+                    <option value="https://jx.xmflv.com/?url=">虾米</option>
+                    <option value="https://www.kpezp.cn/jlexi.php?url=">小蒋</option>
+                    <option value="https://sb.5gseo.net/?url=">云端</option>
+                    <option value="https://jx.yparse.com/index.php?url=">云析</option>
+                    <option value="https://go.yh0523.cn/y.cy?url=">0523</option>
+                    <option value="https://www.1717yun.com/jx/ty.php?url=">17云</option>
+                    <option value="https://jx.4kdv.com/?url=">4K</option>
+                    <option value="https://www.8090g.cn/?url=">8090</option>
+                </select>
+                <input id="analysis" type="button" value=" 解 析 " onclick="analysis()">
+                <input id="copybtn" type="button" value="复制URL" onclick="copyToClip()">
+            </div>
+            <div class="ifrwrapper">
+                <iframe id="iframe" src="about:blank" class="iframe" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+        </div>
+        <script>
+            async function getShortUrl(oriurl) {
+              let url = 'https://tny.im/yourls-api.php?format=json&action=shorturl&url='+encodeURIComponent(oriurl);
+              //console.log(url);
+              try {
+                let response = await fetch(url);
+                if (response.status >= 200 && response.status < 300) {
+                  return await response.json();
+                } else {
+                  throw new Error(response.statusText);
+                }
+              } catch (error) {
+                  throw new Error('Request unkown Failed');
+                //console.log('Request Failed', error);
+              }
+            }
+            function analysis() {
+                var input=document.getElementById("input");
+                var line=document.getElementById("line");
+                var iframe=document.getElementById("iframe");
+                if(input.value == ""){
+                    alert("请输入视频URL");
+                    return;
+                }
+                iframe.src=line.value + encodeURIComponent(input.value);
+            }
+            /*
+            function doCopyDataToClip(text) {
+                var clipboard = new ClipboardJS('#copybtn', {
+                    text: function(trigger) {
+                        return text;
+                    }
+                });
+                
+                clipboard.on('success', function(e) {
+                    const copybtn = document.getElementById('copybtn');
+                     copybtn.value='复制成功';
+                     setTimeout(function(){
+                         copybtn.value='复制URL';
+                     }, 2000);
+                    //console.info('Action:', e.action);
+                    //console.info('Text:', e.text);
+                    //console.info('Trigger:', e.trigger);
+                
+                    //e.clearSelection();
+                });
+                
+                clipboard.on('error', function(e) {
+                    const copybtn = document.getElementById('copybtn');
+                     copybtn.value='复制失败';
+                     setTimeout(function(){
+                         copybtn.value='复制URL';
+                     }, 2000);
+                    //console.error('Action:', e.action);
+                    //console.error('Trigger:', e.trigger);
+                });
+            }*/
+            function copyToClip() {
+                let text = document.getElementById("iframe").src;
+                if(text=="" || text=="about:blank"){
+                    return;
+                }
+                copyToClipboard(text);
+                //doCopyDataToClip(text);
+                getShortUrl(text).then(function (data) {
+                    copyToClipboard(data.shorturl, 1, 1);
+                    //console.log('success', data);
+                    //doCopyDataToClip(data.shorturl);
+                    //doCopyDataToClip(data.shorturl + " " + data.title, clipboard);
+                }).catch(function (err) {
+                    //copyToClipboard(text);
+                    //console.log('err', err);
+                    //doCopyDataToClip(text);
+                    //console.log(err);
+                });
+            }
+            
+            var copyToClipboard = (value, sucessTips, failTips) => {
+                const input = document.createElement('input')
+                document.body.appendChild(input)
+                value = value.toString()
+                input.setAttribute('value', value)
+                input.select()
+                input.setSelectionRange(0, input.value.length)
+                console.log(sucessTips, failTips);
+                if (document.execCommand('copy')) {
+                    document.execCommand('copy')
+                    if(sucessTips) {
+                        const copybtn = document.getElementById('copybtn');
+                        copybtn.value='复制成功';
+                        setTimeout(function(){
+                          copybtn.value='复制URL';
+                        }, 2000);
+                    }
+                } else {
+                    if(failTips) {
+                        const copybtn = document.getElementById('copybtn');
+                        copybtn.value='复制失败';
+                        setTimeout(function(){
+                            copybtn.value='复制URL';
+                        }, 2000);
+                    }
+                }
+                document.body.removeChild(input)
+            }
+            
+            function getQueryVar(variable) {
+                   var query = window.location.search.substring(1);
+                   var vars = query.split("&");
+                   for (var i=0;i<vars.length;i++) {
+                           var pair = vars[i].split("=");
+                           if(pair[0] == variable){return pair[1];}
+                   }
+                   return "";
+            }
+            window.onload=function() {
+                var url = getQueryVar("url");
+                //var line = getQueryVar("line");
+                if(url) {
+                    document.getElementById('input').value = decodeURIComponent(url);
+                    document.getElementById('analysis').click();
+                }
+                // if(line) {
+                    
+                // }
+            }
+        </script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>-->
+        <!--<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+        <!--<script src="https://greasyfork.org/scripts/412875-waituntil/code/WaitUntil.js?version=856255"></script>-->
+    </body>
+</html>
