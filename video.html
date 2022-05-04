@@ -21,7 +21,7 @@
     <body>
         <div class="wrapper">
             <div>
-                <input id="input" type="text" value="" class="input" placeholder="请输入视频URL，支持爱奇艺、腾讯、优酷、B站、芒果等">
+                <input id="input" type="text" value="" class="input" placeholder="请输入视频链接，支持爱奇艺、腾讯、优酷、B站、芒果等">
                 <select id="line">
                     <option value="https://jx.blbo.cc:4433/analysis.php?v=">线路1（全民）</option>
                     <option value="https://jx.parwix.com:4433/player/analysis.php?v=">线路2（B站1）</option>
@@ -74,7 +74,7 @@
                     <option value="https://www.8090g.cn/?url=">8090</option>
                 </select>
                 <input id="analysis" type="button" value=" 解 析 " onclick="analysis()">
-                <input id="copybtn" type="button" value="复制URL" onclick="copyToClip()">
+                <input id="copybtn" type="button" value="复制分享" onclick="copyToClip()">
             </div>
             <div class="ifrwrapper">
                 <iframe id="iframe" src="about:blank" class="iframe" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -97,14 +97,15 @@
               }
             }
             function analysis() {
-                var input=document.getElementById("input");
+                var input=document.getElementById("input")
                 var line=document.getElementById("line");
                 var iframe=document.getElementById("iframe");
-                if(input.value == ""){
-                    alert("请输入视频URL");
+                var inputvalue = input.value.replace(/^\s+|\s+$/, '');
+                if(inputvalue == ""){
+                    alert("请输入视频链接！");
                     return;
                 }
-                iframe.src=line.value + encodeURIComponent(input.value);
+                iframe.src=line.value + encodeURIComponent(inputvalue);
             }
             /*
             function doCopyDataToClip(text) {
@@ -118,7 +119,7 @@
                     const copybtn = document.getElementById('copybtn');
                      copybtn.value='复制成功';
                      setTimeout(function(){
-                         copybtn.value='复制URL';
+                         copybtn.value='复制分享';
                      }, 2000);
                     //console.info('Action:', e.action);
                     //console.info('Text:', e.text);
@@ -131,13 +132,24 @@
                     const copybtn = document.getElementById('copybtn');
                      copybtn.value='复制失败';
                      setTimeout(function(){
-                         copybtn.value='复制URL';
+                         copybtn.value='复制分享';
                      }, 2000);
                     //console.error('Action:', e.action);
                     //console.error('Trigger:', e.trigger);
                 });
             }*/
             function copyToClip() {
+                let text = document.getElementById("input").value.replace(/^\s+|\s+$/, '');
+                if(text==""){
+                    alert("请输入视频链接！");
+                    return;
+                }
+                let line = document.getElementById("line").selectedIndex;
+                //console.log(location.protocol, location.host, location.pathname, text)
+                let url = location.protocol.replace(/:$/, '') + '://' + location.host + location.pathname + '?url=' + encodeURIComponent(text) + '&line=' + line;
+                copyToClipboard(url, 1, 1);
+            }
+            /*function copyToClip_bak() {
                 let text = document.getElementById("iframe").src;
                 if(text=="" || text=="about:blank"){
                     return;
@@ -155,7 +167,7 @@
                     //doCopyDataToClip(text);
                     //console.log(err);
                 });
-            }
+            }*/
             
             var copyToClipboard = (value, sucessTips, failTips) => {
                 const input = document.createElement('input')
@@ -164,14 +176,14 @@
                 input.setAttribute('value', value)
                 input.select()
                 input.setSelectionRange(0, input.value.length)
-                console.log(sucessTips, failTips);
+                //console.log(sucessTips, failTips);
                 if (document.execCommand('copy')) {
                     document.execCommand('copy')
                     if(sucessTips) {
                         const copybtn = document.getElementById('copybtn');
                         copybtn.value='复制成功';
                         setTimeout(function(){
-                          copybtn.value='复制URL';
+                          copybtn.value='复制分享';
                         }, 2000);
                     }
                 } else {
@@ -179,7 +191,7 @@
                         const copybtn = document.getElementById('copybtn');
                         copybtn.value='复制失败';
                         setTimeout(function(){
-                            copybtn.value='复制URL';
+                            copybtn.value='复制分享';
                         }, 2000);
                     }
                 }
@@ -193,18 +205,19 @@
                            var pair = vars[i].split("=");
                            if(pair[0] == variable){return pair[1];}
                    }
-                   return "";
+                   return null;
             }
             window.onload=function() {
                 var url = getQueryVar("url");
-                //var line = getQueryVar("line");
                 if(url) {
+                    var line = getQueryVar("line");
+                    if(line !== null && line !== "") {
+                        document.getElementById('line')[line].selected = true;
+                    }
+                    
                     document.getElementById('input').value = decodeURIComponent(url);
                     document.getElementById('analysis').click();
                 }
-                // if(line) {
-                    
-                // }
             }
         </script>
         <!--<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>-->
