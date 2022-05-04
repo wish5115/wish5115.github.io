@@ -211,11 +211,13 @@
             window.onload=function() {
                 var url = getQueryVar("url");
                 if(url) {
+                    //获取线路
                     var line = getQueryVar("line");
                     if(line !== null && line !== "") {
                         document.getElementById('line')[line].selected = true;
                     }
                     
+                    //设置视频地址
                     document.getElementById('input').value = decodeURIComponent(url);
                     document.getElementById('analysis').click();
                 }
