@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>接口请求</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcdn.net/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcdn.net/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .container{margin-top:10px;}
+        #resultGroup{display:none;}
+        .returnTypeLabel{font-weight:normal;}
+        #sharebtn{float:right;}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="url">请求地址</label>
+            <input type="text" class="form-control" id="url" placeholder="请输入请求URL">
+          </div>
+          <div class="form-group">
+            <label for="body">参数</label>
+            <textarea class="form-control" id="body" rows="3" placeholder="支持json格式或冒号格式，如：&#13;user:zhangsan&#10;password:123456"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="body">Headers</label>
+            <textarea class="form-control" id="headers" rows="3" placeholder="支持json格式或冒号格式，如：&#13;Authorization:Bearer {{token}}"></textarea>
+          </div>
+          <div class="form-group">
+            <select class="form-control" id="method">
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+              <option value="PUT">PUT</option>
+              <option value="DELETE">DELETE</option>
+              <option value="PATCH">PATCH</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-default" id="submit" onclick="postRequest()">发送请求</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label class="returnTypeLabel"><input id="returnType" type="checkbox" checked="checked" value="json"> 返回JSON</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" id="sharebtn" class="btn btn-default" onclick="share()">分享</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="form-group" id="resultGroup">
+            <label for="body">执行结果</label>
+            <textarea class="form-control" id="result" rows="15"></textarea>
+        </div>
+    </div>
+    <script>
+        function parseData(val) {
+            if(!val){
+                return {}
+            }
+            if(val.indexOf("{")!==-1 && val.indexOf("}")!==-1) {
+                //json格式
+                return JSON.parse($("#headers").val());
+            } else {
+                //把冒号格式解析成json
+                let json = {};
+                let arr = val.split(/\r*\n/);
+                arr.forEach(function(item){
+                    if(!item || item.indexOf(":")===-1){
+                        return false;
+                    }
+                    let arrItem = item.split(":");
+                    //兼容多个冒号的格式，比如：2022-01-01 12:00:00
+                    if(arrItem.length > 2) {
+                        for(let i=2; i<=arrItem.length-1; i++) {
+                            if(arrItem[i]){
+                                arrItem[1] += ":" + arrItem[i];
+                            }
+                        }
+                    }
+                    let itemVal = arrItem[1].replace(/^\s|\s$/,'');
+                    if(itemVal.indexOf(".") !== -1 && /^-?[.\d]+$/.test(itemVal)) {
+                        itemVal = parseFloat(itemVal);
+                    } else if(/^-?[\d]+$/.test(itemVal)) {
+                        itemVal = parseInt(itemVal);
+                    }
+                    json[arrItem[0].replace(/^\s|\s$/,'')] = itemVal;
+                });
+                return json;
+            }
+        }
+        function postRequest() {
+            const url = $("#url").val();
+            const dataType = $("#returnType:checked").val() || 'text';
+            if(!url){
+                alert("请先输入url");
+                return;
+            }
+            $.ajax({
+               type: $("#method").val(),
+               url: url,
+               data: parseData($("#body").val()),
+               headers: parseData($("#headers").val()),
+               dataType: dataType,
+               complete: function(data){
+                   console.log(data);
+                   data = data.responseJSON || data.responseText || data;
+                   if (dataType == 'json') {
+                       $("#result").val(JSON.stringify(data, null, "\t"));
+                   } else {
+                       $("#result").val(data);
+                   }
+                   $("#resultGroup").show();
+               }
+            });
+        }
+        function share() {
+            let url = location.origin + location.pathname;
+            url += '?url='+encodeURIComponent($("#url").val());
+            url += '&body='+encodeURIComponent($("#body").val());
+            url += '&headers='+encodeURIComponent($("#headers").val());
+            url += '&method='+encodeURIComponent($("#method").val());
+            url += '&returnType='+encodeURIComponent($("#returnType:checked").val() || 'text');
+            copyToClipboard(url, '复制成功');
+        }
+        var copyToClipboard = (value, sucessTips, failTips) => {
+            if(!value) {
+                return;
+            }
+            const input = document.createElement('input')
+            document.body.appendChild(input)
+            value = value.toString()
+            input.setAttribute('value', value)
+            input.select()
+            input.setSelectionRange(0, input.value.length)
+            //console.log(sucessTips, failTips);
+            if (document.execCommand('copy')) {
+                document.execCommand('copy')
+                if(sucessTips) {
+                    const copybtn = document.getElementById('sharebtn');
+                    copybtn.innerHTML = sucessTips || '复制成功';
+                    setTimeout(function(){
+                      copybtn.innerHTML='分享';
+                    }, 2000);
+                }
+            } else {
+                if(failTips) {
+                    const copybtn = document.getElementById('sharebtn');
+                    copybtn.innerHTML = failTips || '复制失败';
+                    setTimeout(function(){
+                        copybtn.innerHTML='分享';
+                    }, 2000);
+                }
+            }
+            document.body.removeChild(input)
+        }
+            
+        function getQueryVar(variable) {
+               var query = window.location.search.substring(1);
+               var vars = query.split("&");
+               for (var i=0;i<vars.length;i++) {
+                       var pair = vars[i].split("=");
+                       if(pair[0] == variable){return pair[1];}
+               }
+               return null;
+        }
+    </script>
+    
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script>
+        //加载数据
+        $(function(){
+            const url = getQueryVar("url");
+            if(url) $("#url").val(decodeURIComponent(url));
+            
+            const body = getQueryVar("body");
+            if(body) $("#body").val(decodeURIComponent(body));
+            
+            const headers = getQueryVar("headers");
+            if(headers) $("#headers").val(decodeURIComponent(headers));
+            
+            const method = getQueryVar("method");
+            if(method) $("#method").val(decodeURIComponent(method));
+            
+            const returnType = decodeURIComponent(getQueryVar("returnType"));
+            if(returnType && returnType == 'text') $("#returnType").attr("checked", false);
+            
+            const run = decodeURIComponent(getQueryVar("run"));
+            if(run && (run==1||run=='yes')) $("#submit").click();
+        });
+    </script>
+  </body>
+</html>
