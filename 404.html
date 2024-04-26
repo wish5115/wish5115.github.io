@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>404 Not Found</title>
+        <style>
+            .container {
+                text-align: center;
+            }
+            .space50 {
+                height:50px;
+            }
+            .btnBack {
+                width: 100px;
+                height: 35px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                background-color: aliceblue;
+            }
+            .btnBack:hover {
+                background-color: rgb(228, 239, 249);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="space50"></div>
+            <div><h2>404 Not Found.</h2></div>
+            <div class="space50"></div>
+            <div><button class="btnBack" onclick="goBack()">&lt;&lt; Go Back</button></div>
+        </div>
+        <script>
+            function goBack() {
+                if (window.history.length > 0) {
+                    window.history.back();
+                } else {
+                    window.location.href = "/mynote/";
+                }
+            }
+        </script>
+    </body>
+</html>
