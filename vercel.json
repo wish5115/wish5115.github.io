@@ -9,6 +9,16 @@
             "source": "/mynote/rss.xml",
             "destination": "/mynote/lib/rss.xml",
             "statusCode": 301
+        },
+        {
+            "source": "/yun",
+            "destination": "https://wilson.lovestoblog.com/yun",
+            "statusCode": 301
+        },
+        {
+            "source": "/mynote/demo",
+            "destination": "https://wilson.lovestoblog.com/demo/ob_demo",
+            "statusCode": 301
         }
     ]
 }
