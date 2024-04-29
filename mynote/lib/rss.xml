@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 29 Apr 2024 02:15:28 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 29 Apr 2024 02:13:07 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[Linux]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 29 Apr 2024 14:36:04 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 29 Apr 2024 14:34:41 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[Linux]]></title><description><![CDATA[ 
  <br><br>网络带宽命令：<br>nethogs eth0<br>
 交互命令：<br>
 以下是 NetHogs 的一些交互命令(键盘快捷键)<br>
@@ -1118,7 +1118,7 @@ aliases: [AI, Artificial Intelligence]
 复制<br><a data-tooltip-position="top" aria-label="obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/obsidian://open?path=D:%2Fpath%2Fto%2Ffile" target="_blank">打开某篇笔记</a><br>除了通过笔记的地址来链接笔记外，你也可以通过笔记所在的库名称以及笔记名称来链接该笔记：<br>[打开某篇笔记](obsidian://open?vault=MainVault&amp;file=MyNote.md)
 复制<br><a data-tooltip-position="top" aria-label="obsidian://open?vault=MainVault&amp;file=MyNote.md" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/obsidian://open?vault=MainVault&amp;file=MyNote" target="_blank">打开某篇笔记</a><br>详细内容请参考官方教程：<br>
 <a rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/%E4%BD%BF%E7%94%A8+obsidian+URI" target="_blank">https://publish.obsidian.md/help-zh/%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/%E4%BD%BF%E7%94%A8+obsidian+URI</a><br><br>（选中查看源码）<br><a data-tooltip-position="top" aria-label="http://www.baidu.com" rel="noopener" class="external-link" href="http://www.baidu.com" target="_blank">百度一下，你就知道</a><br>
-<a data-tooltip-position="top" aria-label="https://www.zhihu.com" rel="noopener" class="external-link" href="https://www.zhihu.com" target="_blank">知乎-有问题，就会有答案</a><br><br><br><br> 脚注：（预览视图下查看效果，选中查看源码）<br>鲁迅原名是什么<a href="https://wxkj.asia/mynote/#fn-1-9da94224a0a5866d" class="footnote-link" target="_self" rel="noopener">[1]</a> ，浙江哪里人<a href="https://wxkj.asia/mynote/#fn-2-9da94224a0a5866d" class="footnote-link" target="_self" rel="noopener">[2]</a><br><br><br><br><br><br>
+<a data-tooltip-position="top" aria-label="https://www.zhihu.com" rel="noopener" class="external-link" href="https://www.zhihu.com" target="_blank">知乎-有问题，就会有答案</a><br><br><br><br> 脚注：（预览视图下查看效果，选中查看源码）<br>鲁迅原名是什么<a href="https://wxkj.asia/mynote/#fn-1-e516bfc06ef5faed" class="footnote-link" target="_self" rel="noopener">[1]</a> ，浙江哪里人<a href="https://wxkj.asia/mynote/#fn-2-e516bfc06ef5faed" class="footnote-link" target="_self" rel="noopener">[2]</a><br><br><br><br><br><br>
 <br>
 这是第一个有序列表 
 
@@ -1340,8 +1340,8 @@ Quote, cite<br>这是一个 bug 类别
 <a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Mermaid+%E6%B5%81%E5%9B%BE" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Mermaid+%E6%B5%81%E5%9B%BE" target="_blank">Mermaid 流图</a><br>
 <a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Obsidian+%E4%B8%AD%E7%9A%84+Mermaid" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Obsidian+%E4%B8%AD%E7%9A%84+Mermaid" target="_blank">Obsidian 中的 Mermaid</a><br>本文整理自：<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Markdown/Markdown%E8%B6%85%E7%BA%A7%E6%95%99%E7%A8%8B+Obsidian%E7%89%88#%E4%BB%80%E4%B9%88%E6%98%AF%20Markdown?" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Markdown/Markdown%E8%B6%85%E7%BA%A7%E6%95%99%E7%A8%8B+Obsidian%E7%89%88#%E4%BB%80%E4%B9%88%E6%98%AF%20Markdown?" target="_blank">Markdown超级教程 Obsidian版</a><br>
 <br>
-<br>周树人<a href="https://wxkj.asia/mynote/#fnref-1-9da94224a0a5866d" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
-<br>绍兴人<a href="https://wxkj.asia/mynote/#fnref-2-9da94224a0a5866d" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
+<br>周树人<a href="https://wxkj.asia/mynote/#fnref-1-e516bfc06ef5faed" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
+<br>绍兴人<a href="https://wxkj.asia/mynote/#fnref-2-e516bfc06ef5faed" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
 ]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/markdown示例教程.html</link><guid isPermaLink="false">工具软件/obsidian/markdown示例教程.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 08 Apr 2024 09:50:13 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/markdown示例教程-20240222054705709.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/markdown示例教程-20240222054705709.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Obsidain插件之QuickAdd-强大的快速记录与宏工具]]></title><description><![CDATA[ 
  <br>&nbsp; &nbsp;QuickAdd是一款可快速添加信息，捕捉想法，采用模板新建笔记和添加宏命令，快速执行多项操作的好用又强大的插件。<br>&nbsp; &nbsp; 可以配合着 Kanban、Button插件一同使用，增强功能。<br>&nbsp; &nbsp; 本篇将主要介绍下这款插件的使用方法和一些参数设置。<br><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" referrerpolicy="no-referrer"><br><br>在QuickAdd的插件设置中，可以添加四种模式的命令，命令名称支持emoji标签。<br><br>很抱歉，您未提供具体的文章或段落内容，我无法进行总结归纳和关键论点提取。请提供详细文本后，我会帮您整理出相应的Markdown格式输出。<br>可添加的四种命令模式分别为：<br>
 <br>- Template- 创建一个模板
@@ -2991,7 +2991,80 @@ window.addEventListener('message', function(event) {
 });
 复制
 
-<br>选择哪种方式取决于具体的业务需求和技术背景。其中，Broadcast Channel API 和 window.postMessage 方法尤其适用于浏览器标签页间的直接通信。<br><a data-tooltip-position="top" aria-label="https://juejin.cn/post/6844903811232825357" rel="noopener" class="external-link" href="https://juejin.cn/post/6844903811232825357" target="_blank">面试官：前端跨页面通信，你知道哪些方法？ - 掘金</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/页面之间的通信.html</link><guid isPermaLink="false">开发笔记/前端/页面之间的通信.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 17 Apr 2024 15:11:41 GMT</pubDate></item><item><title><![CDATA[Chrome DevTools 远程调试安卓网页的原理]]></title><description><![CDATA[ 
+<br>选择哪种方式取决于具体的业务需求和技术背景。其中，Broadcast Channel API 和 window.postMessage 方法尤其适用于浏览器标签页间的直接通信。<br><a data-tooltip-position="top" aria-label="https://juejin.cn/post/6844903811232825357" rel="noopener" class="external-link" href="https://juejin.cn/post/6844903811232825357" target="_blank">面试官：前端跨页面通信，你知道哪些方法？ - 掘金</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/页面之间的通信.html</link><guid isPermaLink="false">开发笔记/前端/页面之间的通信.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 17 Apr 2024 15:11:41 GMT</pubDate></item><item><title><![CDATA[一个高级 CSS 面试题：在 CSS 中实现 if-else]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:aa540e，用" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#aa540e，用</a> 
+ <br>
+本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/529550105" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/529550105" target="_blank">zhuanlan.zhihu.com</a>
+<br>我的一个朋友在最近的一次面试中遇到了一个有趣的 CSS 面试问题。当我第一次看到这个问题时，我认为这是一个常见的 CSS 问题。然而，经过仔细研究，我发现了这个问题的有趣部分。<br>面试题：请用 CSS 实现如下效果：<br><img src="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg" referrerpolicy="no-referrer"><br>页面上有一些数字显示文章阅读的数量。如果数字小于 100，则数字的颜色为灰色。如果数字大于或等于 100，则数字为棕色，而且这种颜色可以动态调整，而不是提前预设。<br><img src="https://pic4.zhimg.com/v2-d7ce81a7f9b3ee0cdedfe1640687618f_r.jpg" referrerpolicy="no-referrer"><br>最后面试官要求用纯 CSS 来解决这个问题，你知道如何达到这个效果吗？<br><br>这个问题的本质是什么？<br>这个问题的本质很简单，也就是说，这实际上是一个 if-else 问题。<br>如果我们用伪代码描述这个问题，它应该是这样的：<br>let color;
+if (reads &lt; 100){
+  color = 'gray'
+} else {
+  color = 'brown'
+}
+
+复制<br>所以现在问题变成了：我们如何在 CSS 中实现这个 if-else 逻辑？请记住，CSS 中没有 if-else 关键字之类的东西。<br><br>在 CSS 中实现 if-else 的逻辑是本题考查的核心技能。让我们在下面完成这个逻辑。如果你学会了这个技巧，你可以用它来实现许多强大的 CSS 效果。<br>首先，让我们了解一个叫做 clamp 的函数。<br>clamp() CSS 函数将一个值限制在上限和下限之间。clamp() 允许在定义的最小值和最大值之间的值范围内选择中间值。<br>基本语法格式：<br>clamp(min, var, max)
+
+复制<br>我们可以将 clamp 函数理解为这样的伪代码：<br>funciton clamp(min, var, max){
+  if(var &lt;= min){
+    return min
+  }
+
+  if(var &gt;= max){
+    return max
+  }
+
+  if(var &gt; min &amp;&amp; var &lt; max){
+    return var
+  }
+}
+
+复制<br>所以：<br>clamp(10, 13, 20) → 13<br>clamp(10, 2, 20) → 10<br>clamp(10, 30, 20) → 20<br>用法示例：<br><img src="https://pic1.zhimg.com/v2-c7d73f8045c23cc672a21d77bd7e37c8_r.jpg" referrerpolicy="no-referrer"><br>font-size 的值不会超过 20px，也不会低于 10px。<br>这是 clamp 的基本用法。<br>如果您对 clamp 仍有疑问，可以参考 MDN 文档。<br>接下来，我们在 CSS 中实现这个功能。<br>result 的值根据 var 的值而变化：<br>当 var 的值小于 100 时，结果的值为 10；<br>当 var 的值大于等于 100 时，结果变为 20。<br>如果我们用伪代码描述这个问题，它应该是这样的：<br>let result;
+if(var &lt; 100){
+  result = 10
+} else {
+  result = 20
+}
+
+复制<br>这个要求和 clamp 函数类似，但又不一样。clamp 可以将 var 的值限制在一个范围内，但我们现在希望结果的值是 10 或 20。<br><br>有一个特殊的技巧：我们可以放大 var 的变化，使其值要么达到区间的上限，要么达到区间的下限。<br>于是：<br>let result = clamp(10, (var-99) * 20, 20)
+
+复制<br>这会产生一个效果：<br>
+<br>如果 var 的值为 99，则表达式变为：clamp(10, 0, 20), takes 10.
+<br>如果 var 的值为 100，则变为：clamp(10, 20, 20), takes 20.
+<br>用一张图解释：<br><img src="https://pic3.zhimg.com/v2-c88d61a1fa0da160d532f835f5ca14fa_r.jpg" referrerpolicy="no-referrer"><br>同样，如果我们希望：<br>当 var 的值小于 50 时，result 的值为 5。<br>当 var 的值大于等于 50 时，result 的值为 15。<br>我们只需要这样写：<br>let result = clamp(5, (var-49) * 15, 15)
+
+复制<br>你有没有注意到：这实际上是 if-else 的效果，我们做到了。<br><img src="https://pic4.zhimg.com/v2-f98dab230e6a25b6dfafcdd2777dadb7_r.jpg" referrerpolicy="no-referrer"><br>在 CSS 中切换颜色<br>回到最初的面试问题。<br>为了让我们后面可以使用 CSS 进行变量计算，我们需要将值放在一个 CSS 变量中，所以 HTML 可以这样写：<br>&lt;num&gt;1&lt;span&gt;reads&lt;/span&gt;&lt;/num&gt;
+&lt;num&gt;99&lt;span&gt;reads&lt;/span&gt;&lt;/num&gt;
+&lt;num&gt;102&lt;span&gt;reads&lt;/span&gt;&lt;/num&gt;
+
+复制<br>如果我们不需要考虑 HTML 语义或 SEO 因素，这里的 “数字” 和“读取”都可以由伪元素生成：<br>&lt;head&gt;
+  &lt;style&gt;
+    num::before {
+      counter-reset: num var(--num);
+      content: counter(num);
+    }
+
+    num::after {
+      content: 'reads';
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;num&gt;&lt;/num&gt;
+    &lt;num&gt;&lt;/num&gt;
+    &lt;num&gt;&lt;/num&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+复制<br>如果对 content 和 counter-reset 不熟悉，可以查看 MDN 文档。<br>
+<br>content ：<a rel="noopener" class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/content" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/content</a>
+<br>counter-reset：<a rel="noopener" class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset</a>
+<br>具体的演示效果，可以通过以下地址查看：<a rel="noopener" class="external-link" href="https://codepen.io/bytefishmedium/pen/VwQrGEb" target="_blank">https://codepen.io/bytefishmedium/pen/VwQrGEb</a><br>棕色为 <a href="https://wxkj.asia/mynote?query=tag:aa540e，用" class="tag" target="_blank" rel="noopener">#aa540e，用</a> HSL 颜色表示为 hsl(27, 50%, 36%)，如下：<br><img src="https://pic1.zhimg.com/v2-5ec9d97363fd09fdd6b5cb1b13c58858_r.jpg" referrerpolicy="no-referrer"><br>它的饱和度控制颜色的鲜艳程度。饱和度越高，颜色越鲜艳，饱和度越低，颜色越暗。当饱和度降低到 0 时，就变成了完全的灰色，如下：<br><img src="https://pic2.zhimg.com/v2-169d6ddb0e03569ea8ee152dea979949_r.jpg" referrerpolicy="no-referrer"><br>在灰色和棕色之间切换颜色，即在 hsl(27, 85%, 36%) 和 hsl(27, 85%, 36%) 之间切换。<br>于是就有如下代码：<br>num{
+  --s: clamp(0%,(var(--num) - 99) * 99%,85%);/* &gt;100 */
+  color: hsl(27 var(--s) 36%);
+}
+
+复制<br>最终的演示：<a rel="noopener" class="external-link" href="https://codepen.io/bytefishmedium/pen/WNMXabm" target="_blank">https://codepen.io/bytefishmedium/pen/WNMXabm</a><br><br>我们通过 clamp 函数在 CSS 中实现 if-else 效果，最后让颜色根据变量的值进行切换。<br>其实原面试题还有另外一部分，简单来说就是：让颜色在多个值之间切换。仅使用 if-else 不足以满足此要求，有兴趣的话，可以留言交流学习。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/一个高级-css-面试题：在-css-中实现-if-else.html</link><guid isPermaLink="false">开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate><enclosure url="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Chrome DevTools 远程调试安卓网页的原理]]></title><description><![CDATA[ 
  <br>
 本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://cloud.tencent.com/developer/article/2159926" rel="noopener" class="external-link" href="https://cloud.tencent.com/developer/article/2159926" target="_blank">cloud.tencent.com</a>
 <br>
@@ -3146,7 +3219,10 @@ td {
         page-break-after: always; /* 强制每个.page-break元素后面插入分页符 */
     }
 }
-复制<br>这里，@media print 媒体查询的作用是当用户尝试打印页面时，应用其中的 CSS 样式。你可以在这里自定义打印样式，比如隐藏某些不适合打印的内容，改变字体大小和颜色，或者添加分页符等。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/css屏幕尺寸与设备.html</link><guid isPermaLink="false">开发笔记/前端/css屏幕尺寸与设备.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 26 Apr 2024 23:32:41 GMT</pubDate></item><item><title><![CDATA[Javascript拷贝到剪切板]]></title><description><![CDATA[ 
+复制<br>这里，@media print 媒体查询的作用是当用户尝试打印页面时，应用其中的 CSS 样式。你可以在这里自定义打印样式，比如隐藏某些不适合打印的内容，改变字体大小和颜色，或者添加分页符等。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/css屏幕尺寸与设备.html</link><guid isPermaLink="false">开发笔记/前端/css屏幕尺寸与设备.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 26 Apr 2024 23:32:41 GMT</pubDate></item><item><title><![CDATA[HTML 标签简写及全称]]></title><description><![CDATA[ 
+ <br>
+本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://www.runoob.com/html/html-tag-name.html" rel="noopener" class="external-link" href="https://www.runoob.com/html/html-tag-name.html" target="_blank">www.runoob.com</a> <a data-tooltip-position="top" aria-label="https://www.runoob.com/html/html-quicklist.html" rel="noopener" class="external-link" title="HTML 速查列表" href="https://www.runoob.com/html/html-quicklist.html" target="_blank">HTML 速查列表</a> <a data-tooltip-position="top" aria-label="https://www.runoob.com/html/html-summary.html" rel="noopener" class="external-link" title="HTML 总结" href="https://www.runoob.com/html/html-summary.html" target="_blank">HTML 总结</a>
+<br>下表列出了 HTML 标签简写及全称：<br>]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/html-标签简写及全称.html</link><guid isPermaLink="false">开发笔记/前端/HTML 标签简写及全称.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[Javascript拷贝到剪切板]]></title><description><![CDATA[ 
  <br><br>最近帮同事实现了一个小功能——复制文本到剪贴板，主要参考了前端大神<a data-tooltip-position="top" aria-label="http://www.ruanyifeng.com/blog/2021/01/clipboard-api.html" rel="noopener" class="external-link" href="http://www.ruanyifeng.com/blog/2021/01/clipboard-api.html" target="_blank">阮一峰的博客</a>，根据 navigator.clipboard 返回的 Clipboard 对象的方法 writeText() 写文本到剪贴板。在本地测试时一切正常，到了测试环境却提示：<br>Uncaught (in promise) TypeError: Cannot read property 'writeText' of undefined at HTMLInputElement.&lt;anonymous&gt;
 复制<br>在 Chrome 的 DevTools 控制台下执行 navigator.clipboard 返回 undefined，经查找资料发现是浏览器禁用了非安全域的 navigator.clipboard 对象，哪些地址是安全的呢？<br>安全域包括本地访问与开启TLS安全认证的地址，如 https 协议的地址、127.0.0.1 或 localhost 。<br>所以本文就是作一个兼容写法，在安全域下使用 navigator.clipboard 提升效率，非安全域退回到 document.execCommand('copy'); 保证功能可用。<br><br>function copyToClipboard(textToCopy) {
 	// navigator clipboard 需要https等安全上下文
@@ -3556,7 +3632,29 @@ do
   # 调用处理函数
   process_event "$event_type" "$file_path"
 done
-复制<br>这段脚本将会启动 fswatch 来监控指定目录及其子目录下的所有文件和目录事件，并在事件发生时调用 process_event 函数来处理这些事件。在实际使用时，请将 /path/to/watch 替换为你要监控的实际目录路径。<br>请注意，fswatch 的命令语法和选项可能随版本变化而有所不同，建议查阅最新的官方文档以获得正确的用法。此外，对于大型目录树或高频率的文件系统事件，可能需要优化处理逻辑以避免性能瓶颈或资源耗尽。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js-通过fs.watch实现文件的双向同步.html</link><guid isPermaLink="false">开发笔记/前端/js 通过fs.watch实现文件的双向同步.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[js动态执行代码片段]]></title><description><![CDATA[ 
+复制<br>这段脚本将会启动 fswatch 来监控指定目录及其子目录下的所有文件和目录事件，并在事件发生时调用 process_event 函数来处理这些事件。在实际使用时，请将 /path/to/watch 替换为你要监控的实际目录路径。<br>请注意，fswatch 的命令语法和选项可能随版本变化而有所不同，建议查阅最新的官方文档以获得正确的用法。此外，对于大型目录树或高频率的文件系统事件，可能需要优化处理逻辑以避免性能瓶颈或资源耗尽。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js-通过fs.watch实现文件的双向同步.html</link><guid isPermaLink="false">开发笔记/前端/js 通过fs.watch实现文件的双向同步.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[js 怎么获取滚动条自身的宽度]]></title><description><![CDATA[ 
+ <br>获取滚动条自身宽度的一个常见方法是通过创建一个具有滚动条的隐藏元素，并测量其尺寸差异。以下是一个简单的示例代码，演示了如何在 JavaScript 中实现这一操作：<br>function getScrollbarWidth() {
+    // 创建一个具有滚动条的隐藏div
+    var div = document.createElement('div');
+    div.style.overflow = 'scroll'; // 强制出现滚动条
+    div.style.width = '100px';
+    div.style.height = '100px';
+    div.style.position = 'absolute';
+    div.style.top = '-9999px'; // 确保不影响页面布局
+    document.body.appendChild(div); // 添加到DOM中
+
+    // 计算滚动条的宽度：div的总宽度减去其内部宽度（可视宽度）
+    var scrollbarWidth = div.offsetWidth - div.clientWidth;
+
+    // 清理：从DOM中移除这个临时div
+    document.body.removeChild(div);
+
+    return scrollbarWidth;
+}
+
+// 调用函数并打印滚动条宽度
+console.log(getScrollbarWidth());
+复制<br>这段代码首先创建了一个隐藏的 &lt;div&gt;，设置了使其出现滚动条的样式，并将其添加到页面中一个不可见的位置。然后，通过比较该 &lt;div&gt; 的 offsetWidth（包括滚动条的总宽度）和 clientWidth（不包括滚动条的内部宽度），我们可以计算出滚动条的宽度。最后，这个临时的 &lt;div&gt; 会被从 DOM 中移除。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js-怎么获取滚动条自身的宽度.html</link><guid isPermaLink="false">开发笔记/前端/js 怎么获取滚动条自身的宽度.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 29 Apr 2024 12:08:22 GMT</pubDate></item><item><title><![CDATA[js动态执行代码片段]]></title><description><![CDATA[ 
  <br>参考：<a data-tooltip-position="top" aria-label="https://github.com/eoureo/obsidian-runjs/blob/c4d64a9f7b8305a813bf81beadaac4395e8367df/src/main.ts#L594" rel="noopener" class="external-link" href="https://github.com/eoureo/obsidian-runjs/blob/c4d64a9f7b8305a813bf81beadaac4395e8367df/src/main.ts#L594" target="_blank">runCode</a><br><br>以下是一个使用 new AsyncFunction() 创建并执行异步函数的具体例子：<br>// 假设我们有一个异步操作的源代码字符串
 const asyncCode = `
   return new Promise((resolve, reject) =&gt; {
@@ -3766,83 +3864,7 @@ Url：要保存的路径（图片的名字），也就是 img 标签属性里的
     }
 }
 //然后这个 saveImgpath 就是上面方法saveImg（Url）的 Url的参~
-复制<br>注：这是vue的项目中用到的，其他也适用，稍做修改就好了~~~]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js图片另存为.html</link><guid isPermaLink="false">开发笔记/前端/JS图片另存为.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sun, 28 Apr 2024 22:12:43 GMT</pubDate></item><item><title><![CDATA[simpread-一个高级 CSS 面试题：在 CSS 中实现 if-else]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:aa540e，用" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#aa540e，用</a> 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/529550105" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/529550105" target="_blank">zhuanlan.zhihu.com</a>
-<br>我的一个朋友在最近的一次面试中遇到了一个有趣的 CSS 面试问题。当我第一次看到这个问题时，我认为这是一个常见的 CSS 问题。然而，经过仔细研究，我发现了这个问题的有趣部分。<br>面试题：请用 CSS 实现如下效果：<br><img src="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg" referrerpolicy="no-referrer"><br>页面上有一些数字显示文章阅读的数量。如果数字小于 100，则数字的颜色为灰色。如果数字大于或等于 100，则数字为棕色，而且这种颜色可以动态调整，而不是提前预设。<br><img src="https://pic4.zhimg.com/v2-d7ce81a7f9b3ee0cdedfe1640687618f_r.jpg" referrerpolicy="no-referrer"><br>最后面试官要求用纯 CSS 来解决这个问题，你知道如何达到这个效果吗？<br><br>这个问题的本质是什么？<br>这个问题的本质很简单，也就是说，这实际上是一个 if-else 问题。<br>如果我们用伪代码描述这个问题，它应该是这样的：<br>let color;
-if (reads &lt; 100){
-  color = 'gray'
-} else {
-  color = 'brown'
-}
-
-复制<br>所以现在问题变成了：我们如何在 CSS 中实现这个 if-else 逻辑？请记住，CSS 中没有 if-else 关键字之类的东西。<br><br>在 CSS 中实现 if-else 的逻辑是本题考查的核心技能。让我们在下面完成这个逻辑。如果你学会了这个技巧，你可以用它来实现许多强大的 CSS 效果。<br>首先，让我们了解一个叫做 clamp 的函数。<br>clamp() CSS 函数将一个值限制在上限和下限之间。clamp() 允许在定义的最小值和最大值之间的值范围内选择中间值。<br>基本语法格式：<br>clamp(min, var, max)
-
-复制<br>我们可以将 clamp 函数理解为这样的伪代码：<br>funciton clamp(min, var, max){
-  if(var &lt;= min){
-    return min
-  }
-
-  if(var &gt;= max){
-    return max
-  }
-
-  if(var &gt; min &amp;&amp; var &lt; max){
-    return var
-  }
-}
-
-复制<br>所以：<br>clamp(10, 13, 20) → 13<br>clamp(10, 2, 20) → 10<br>clamp(10, 30, 20) → 20<br>用法示例：<br><img src="https://pic1.zhimg.com/v2-c7d73f8045c23cc672a21d77bd7e37c8_r.jpg" referrerpolicy="no-referrer"><br>font-size 的值不会超过 20px，也不会低于 10px。<br>这是 clamp 的基本用法。<br>如果您对 clamp 仍有疑问，可以参考 MDN 文档。<br>接下来，我们在 CSS 中实现这个功能。<br>result 的值根据 var 的值而变化：<br>当 var 的值小于 100 时，结果的值为 10；<br>当 var 的值大于等于 100 时，结果变为 20。<br>如果我们用伪代码描述这个问题，它应该是这样的：<br>let result;
-if(var &lt; 100){
-  result = 10
-} else {
-  result = 20
-}
-
-复制<br>这个要求和 clamp 函数类似，但又不一样。clamp 可以将 var 的值限制在一个范围内，但我们现在希望结果的值是 10 或 20。<br><br>有一个特殊的技巧：我们可以放大 var 的变化，使其值要么达到区间的上限，要么达到区间的下限。<br>于是：<br>let result = clamp(10, (var-99) * 20, 20)
-
-复制<br>这会产生一个效果：<br>
-<br>如果 var 的值为 99，则表达式变为：clamp(10, 0, 20), takes 10.
-<br>如果 var 的值为 100，则变为：clamp(10, 20, 20), takes 20.
-<br>用一张图解释：<br><img src="https://pic3.zhimg.com/v2-c88d61a1fa0da160d532f835f5ca14fa_r.jpg" referrerpolicy="no-referrer"><br>同样，如果我们希望：<br>当 var 的值小于 50 时，result 的值为 5。<br>当 var 的值大于等于 50 时，result 的值为 15。<br>我们只需要这样写：<br>let result = clamp(5, (var-49) * 15, 15)
-
-复制<br>你有没有注意到：这实际上是 if-else 的效果，我们做到了。<br><img src="https://pic4.zhimg.com/v2-f98dab230e6a25b6dfafcdd2777dadb7_r.jpg" referrerpolicy="no-referrer"><br>在 CSS 中切换颜色<br>回到最初的面试问题。<br>为了让我们后面可以使用 CSS 进行变量计算，我们需要将值放在一个 CSS 变量中，所以 HTML 可以这样写：<br>&lt;num&gt;1&lt;span&gt;reads&lt;/span&gt;&lt;/num&gt;
-&lt;num&gt;99&lt;span&gt;reads&lt;/span&gt;&lt;/num&gt;
-&lt;num&gt;102&lt;span&gt;reads&lt;/span&gt;&lt;/num&gt;
-
-复制<br>如果我们不需要考虑 HTML 语义或 SEO 因素，这里的 “数字” 和“读取”都可以由伪元素生成：<br>&lt;head&gt;
-  &lt;style&gt;
-    num::before {
-      counter-reset: num var(--num);
-      content: counter(num);
-    }
-
-    num::after {
-      content: 'reads';
-    }
-&lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;num&gt;&lt;/num&gt;
-    &lt;num&gt;&lt;/num&gt;
-    &lt;num&gt;&lt;/num&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-
-复制<br>如果对 content 和 counter-reset 不熟悉，可以查看 MDN 文档。<br>
-<br>content ：<a rel="noopener" class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/content" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/content</a>
-<br>counter-reset：<a rel="noopener" class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset</a>
-<br>具体的演示效果，可以通过以下地址查看：<a rel="noopener" class="external-link" href="https://codepen.io/bytefishmedium/pen/VwQrGEb" target="_blank">https://codepen.io/bytefishmedium/pen/VwQrGEb</a><br>棕色为 <a href="https://wxkj.asia/mynote?query=tag:aa540e，用" class="tag" target="_blank" rel="noopener">#aa540e，用</a> HSL 颜色表示为 hsl(27, 50%, 36%)，如下：<br><img src="https://pic1.zhimg.com/v2-5ec9d97363fd09fdd6b5cb1b13c58858_r.jpg" referrerpolicy="no-referrer"><br>它的饱和度控制颜色的鲜艳程度。饱和度越高，颜色越鲜艳，饱和度越低，颜色越暗。当饱和度降低到 0 时，就变成了完全的灰色，如下：<br><img src="https://pic2.zhimg.com/v2-169d6ddb0e03569ea8ee152dea979949_r.jpg" referrerpolicy="no-referrer"><br>在灰色和棕色之间切换颜色，即在 hsl(27, 85%, 36%) 和 hsl(27, 85%, 36%) 之间切换。<br>于是就有如下代码：<br>num{
-  --s: clamp(0%,(var(--num) - 99) * 99%,85%);/* &gt;100 */
-  color: hsl(27 var(--s) 36%);
-}
-
-复制<br>最终的演示：<a rel="noopener" class="external-link" href="https://codepen.io/bytefishmedium/pen/WNMXabm" target="_blank">https://codepen.io/bytefishmedium/pen/WNMXabm</a><br><br>我们通过 clamp 函数在 CSS 中实现 if-else 效果，最后让颜色根据变量的值进行切换。<br>其实原面试题还有另外一部分，简单来说就是：让颜色在多个值之间切换。仅使用 if-else 不足以满足此要求，有兴趣的话，可以留言交流学习。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/simpread-一个高级-css-面试题：在-css-中实现-if-else.html</link><guid isPermaLink="false">开发笔记/前端/simpread-一个高级 CSS 面试题：在 CSS 中实现 if-else.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate><enclosure url="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[simpread-HTML 标签简写及全称]]></title><description><![CDATA[ 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://www.runoob.com/html/html-tag-name.html" rel="noopener" class="external-link" href="https://www.runoob.com/html/html-tag-name.html" target="_blank">www.runoob.com</a> <a data-tooltip-position="top" aria-label="https://www.runoob.com/html/html-quicklist.html" rel="noopener" class="external-link" title="HTML 速查列表" href="https://www.runoob.com/html/html-quicklist.html" target="_blank">HTML 速查列表</a> <a data-tooltip-position="top" aria-label="https://www.runoob.com/html/html-summary.html" rel="noopener" class="external-link" title="HTML 总结" href="https://www.runoob.com/html/html-summary.html" target="_blank">HTML 总结</a>
-<br>下表列出了 HTML 标签简写及全称：<br>]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/simpread-html-标签简写及全称.html</link><guid isPermaLink="false">开发笔记/前端/simpread-HTML 标签简写及全称.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[table表格设置border-radius不生效]]></title><description><![CDATA[ 
+复制<br>注：这是vue的项目中用到的，其他也适用，稍做修改就好了~~~]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js图片另存为.html</link><guid isPermaLink="false">开发笔记/前端/JS图片另存为.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sun, 28 Apr 2024 22:12:43 GMT</pubDate></item><item><title><![CDATA[table表格设置border-radius不生效]]></title><description><![CDATA[ 
  <br>经过研究发现是 border-collapse: collapse 和 border-radius 时不兼容导致的。<br>解决办法是：给表格加上边框，然后给 th、td 设置右边框，最后去掉 th、td 最右侧和最下面的边框，这样就模拟出想要的效果。<br>效果：<br><img src="https://wxkj.asia/mynote/lib/media/table表格设置border-radius不生效-20240429053555032.webp"><br>代码如下：<br>&lt;style&gt;
     table {
         width: 500px;
