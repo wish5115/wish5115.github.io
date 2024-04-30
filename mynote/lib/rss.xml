@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 29 Apr 2024 14:36:04 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 29 Apr 2024 14:34:41 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[Linux]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 30 Apr 2024 00:29:49 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 30 Apr 2024 00:28:52 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[Linux]]></title><description><![CDATA[ 
  <br><br>网络带宽命令：<br>nethogs eth0<br>
 交互命令：<br>
 以下是 NetHogs 的一些交互命令(键盘快捷键)<br>
@@ -1118,7 +1118,7 @@ aliases: [AI, Artificial Intelligence]
 复制<br><a data-tooltip-position="top" aria-label="obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/obsidian://open?path=D:%2Fpath%2Fto%2Ffile" target="_blank">打开某篇笔记</a><br>除了通过笔记的地址来链接笔记外，你也可以通过笔记所在的库名称以及笔记名称来链接该笔记：<br>[打开某篇笔记](obsidian://open?vault=MainVault&amp;file=MyNote.md)
 复制<br><a data-tooltip-position="top" aria-label="obsidian://open?vault=MainVault&amp;file=MyNote.md" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/obsidian://open?vault=MainVault&amp;file=MyNote" target="_blank">打开某篇笔记</a><br>详细内容请参考官方教程：<br>
 <a rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/%E4%BD%BF%E7%94%A8+obsidian+URI" target="_blank">https://publish.obsidian.md/help-zh/%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/%E4%BD%BF%E7%94%A8+obsidian+URI</a><br><br>（选中查看源码）<br><a data-tooltip-position="top" aria-label="http://www.baidu.com" rel="noopener" class="external-link" href="http://www.baidu.com" target="_blank">百度一下，你就知道</a><br>
-<a data-tooltip-position="top" aria-label="https://www.zhihu.com" rel="noopener" class="external-link" href="https://www.zhihu.com" target="_blank">知乎-有问题，就会有答案</a><br><br><br><br> 脚注：（预览视图下查看效果，选中查看源码）<br>鲁迅原名是什么<a href="https://wxkj.asia/mynote/#fn-1-e516bfc06ef5faed" class="footnote-link" target="_self" rel="noopener">[1]</a> ，浙江哪里人<a href="https://wxkj.asia/mynote/#fn-2-e516bfc06ef5faed" class="footnote-link" target="_self" rel="noopener">[2]</a><br><br><br><br><br><br>
+<a data-tooltip-position="top" aria-label="https://www.zhihu.com" rel="noopener" class="external-link" href="https://www.zhihu.com" target="_blank">知乎-有问题，就会有答案</a><br><br><br><br> 脚注：（预览视图下查看效果，选中查看源码）<br>鲁迅原名是什么<a href="https://wxkj.asia/mynote/#fn-1-93b32151c97bdb39" class="footnote-link" target="_self" rel="noopener">[1]</a> ，浙江哪里人<a href="https://wxkj.asia/mynote/#fn-2-93b32151c97bdb39" class="footnote-link" target="_self" rel="noopener">[2]</a><br><br><br><br><br><br>
 <br>
 这是第一个有序列表 
 
@@ -1340,8 +1340,8 @@ Quote, cite<br>这是一个 bug 类别
 <a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Mermaid+%E6%B5%81%E5%9B%BE" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Mermaid+%E6%B5%81%E5%9B%BE" target="_blank">Mermaid 流图</a><br>
 <a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Obsidian+%E4%B8%AD%E7%9A%84+Mermaid" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Obsidian+%E4%B8%AD%E7%9A%84+Mermaid" target="_blank">Obsidian 中的 Mermaid</a><br>本文整理自：<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Markdown/Markdown%E8%B6%85%E7%BA%A7%E6%95%99%E7%A8%8B+Obsidian%E7%89%88#%E4%BB%80%E4%B9%88%E6%98%AF%20Markdown?" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Markdown/Markdown%E8%B6%85%E7%BA%A7%E6%95%99%E7%A8%8B+Obsidian%E7%89%88#%E4%BB%80%E4%B9%88%E6%98%AF%20Markdown?" target="_blank">Markdown超级教程 Obsidian版</a><br>
 <br>
-<br>周树人<a href="https://wxkj.asia/mynote/#fnref-1-e516bfc06ef5faed" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
-<br>绍兴人<a href="https://wxkj.asia/mynote/#fnref-2-e516bfc06ef5faed" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
+<br>周树人<a href="https://wxkj.asia/mynote/#fnref-1-93b32151c97bdb39" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
+<br>绍兴人<a href="https://wxkj.asia/mynote/#fnref-2-93b32151c97bdb39" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
 ]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/markdown示例教程.html</link><guid isPermaLink="false">工具软件/obsidian/markdown示例教程.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 08 Apr 2024 09:50:13 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/markdown示例教程-20240222054705709.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/markdown示例教程-20240222054705709.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Obsidain插件之QuickAdd-强大的快速记录与宏工具]]></title><description><![CDATA[ 
  <br>&nbsp; &nbsp;QuickAdd是一款可快速添加信息，捕捉想法，采用模板新建笔记和添加宏命令，快速执行多项操作的好用又强大的插件。<br>&nbsp; &nbsp; 可以配合着 Kanban、Button插件一同使用，增强功能。<br>&nbsp; &nbsp; 本篇将主要介绍下这款插件的使用方法和一些参数设置。<br><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" referrerpolicy="no-referrer"><br><br>在QuickAdd的插件设置中，可以添加四种模式的命令，命令名称支持emoji标签。<br><br>很抱歉，您未提供具体的文章或段落内容，我无法进行总结归纳和关键论点提取。请提供详细文本后，我会帮您整理出相应的Markdown格式输出。<br>可添加的四种命令模式分别为：<br>
 <br>- Template- 创建一个模板
@@ -3064,7 +3064,12 @@ if(var &lt; 100){
   color: hsl(27 var(--s) 36%);
 }
 
-复制<br>最终的演示：<a rel="noopener" class="external-link" href="https://codepen.io/bytefishmedium/pen/WNMXabm" target="_blank">https://codepen.io/bytefishmedium/pen/WNMXabm</a><br><br>我们通过 clamp 函数在 CSS 中实现 if-else 效果，最后让颜色根据变量的值进行切换。<br>其实原面试题还有另外一部分，简单来说就是：让颜色在多个值之间切换。仅使用 if-else 不足以满足此要求，有兴趣的话，可以留言交流学习。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/一个高级-css-面试题：在-css-中实现-if-else.html</link><guid isPermaLink="false">开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate><enclosure url="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Chrome DevTools 远程调试安卓网页的原理]]></title><description><![CDATA[ 
+复制<br>最终的演示：<a rel="noopener" class="external-link" href="https://codepen.io/bytefishmedium/pen/WNMXabm" target="_blank">https://codepen.io/bytefishmedium/pen/WNMXabm</a><br><br>我们通过 clamp 函数在 CSS 中实现 if-else 效果，最后让颜色根据变量的值进行切换。<br>其实原面试题还有另外一部分，简单来说就是：让颜色在多个值之间切换。仅使用 if-else 不足以满足此要求，有兴趣的话，可以留言交流学习。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/一个高级-css-面试题：在-css-中实现-if-else.html</link><guid isPermaLink="false">开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate><enclosure url="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="https://pic3.zhimg.com/v2-5795ae9d60cf4a0d05dede58d279e362_r.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[用setTimeout代替eval执行js字符串]]></title><description><![CDATA[ 
+ <br>const jsString = `console.log(1)`;
+setTimeout(jsString);
+
+setTimeout('debugger', 5000);
+复制<br>但与 eval 不同的是，setTimeout 是异步执行。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/用settimeout代替eval执行js字符串.html</link><guid isPermaLink="false">开发笔记/前端/用setTimeout代替eval执行js字符串.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 29 Apr 2024 22:36:32 GMT</pubDate></item><item><title><![CDATA[Chrome DevTools 远程调试安卓网页的原理]]></title><description><![CDATA[ 
  <br>
 本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://cloud.tencent.com/developer/article/2159926" rel="noopener" class="external-link" href="https://cloud.tencent.com/developer/article/2159926" target="_blank">cloud.tencent.com</a>
 <br>
@@ -3729,7 +3734,13 @@ try {
 <br>
 直接调用 processObsidian(obsidianValue) 并处理其执行结果。如果 obsidianValue 符合条件（以 'valid' 开头），控制台会输出成功的消息；否则，会捕获并打印出错误信息。
 
-<br>同样地，使用 new Function() 构造函数时，需确保源代码来自可信来源，避免潜在的安全风险。在实际项目中，这种动态创建函数的方式可能较少见，更多情况下会直接定义和使用预编译的函数。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js动态执行代码片段.html</link><guid isPermaLink="false">开发笔记/前端/js动态执行代码片段.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 19 Apr 2024 04:12:57 GMT</pubDate></item><item><title><![CDATA[js判断是否是手机]]></title><description><![CDATA[ 
+<br>同样地，使用 new Function() 构造函数时，需确保源代码来自可信来源，避免潜在的安全风险。在实际项目中，这种动态创建函数的方式可能较少见，更多情况下会直接定义和使用预编译的函数。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js动态执行代码片段.html</link><guid isPermaLink="false">开发笔记/前端/js动态执行代码片段.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 19 Apr 2024 04:12:57 GMT</pubDate></item><item><title><![CDATA[js给元素同时赋值多个样式属性]]></title><description><![CDATA[ 
+ <br>const demo = document.querySelector("#demo");
+Object.assign(demo.style, {
+	opacity: '1',
+	pointerEvents: 'auto'
+});
+复制]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js给元素同时赋值多个样式属性.html</link><guid isPermaLink="false">开发笔记/前端/js给元素同时赋值多个样式属性.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 29 Apr 2024 23:46:37 GMT</pubDate></item><item><title><![CDATA[js判断是否是手机]]></title><description><![CDATA[ 
  <br>在 JavaScript 中，判断用户是否正在使用手机访问网页，可以采用以下几种常见的方法：<br><br>通过解析 navigator.userAgent 属性返回的字符串，可以识别出浏览器的用户代理信息，其中包括设备类型、操作系统和浏览器版本等。虽然这种方法不够精确，因为用户代理字符串可以被伪造，但它仍然是一个广泛应用的快速判断手段。以下是一个简单的示例：<br>function isMobileDevice() {
     return /Mobi|Android|iPhone|iPad|iPod|Windows Phone|BlackBerry|Opera Mini|IEMobile/i.test(navigator.userAgent);
 }
@@ -3773,7 +3784,49 @@ if (result.device.type === 'mobile') {
 } else {
     console.log("访问设备不是手机");
 }
-复制<br>请注意，随着设备多样性和浏览器特性的不断发展，上述方法可能会随着时间推移需要更新以适应新的设备和用户代理字符串变化。在实际应用中，建议结合项目需求选择合适的方法，或者使用成熟的跨平台框架（如 React、Vue、Angular）提供的内置响应式布局功能，它们通常已经封装了设备检测逻辑。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js判断是否是手机.html</link><guid isPermaLink="false">开发笔记/前端/js判断是否是手机.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 24 Apr 2024 06:54:05 GMT</pubDate></item><item><title><![CDATA[JS图片另存为]]></title><description><![CDATA[ 
+复制<br>请注意，随着设备多样性和浏览器特性的不断发展，上述方法可能会随着时间推移需要更新以适应新的设备和用户代理字符串变化。在实际应用中，建议结合项目需求选择合适的方法，或者使用成熟的跨平台框架（如 React、Vue、Angular）提供的内置响应式布局功能，它们通常已经封装了设备检测逻辑。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js判断是否是手机.html</link><guid isPermaLink="false">开发笔记/前端/js判断是否是手机.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 24 Apr 2024 06:54:05 GMT</pubDate></item><item><title><![CDATA[js判断一个元素是否已监听某个事件]]></title><description><![CDATA[ 
+ <br>实现方式：<br>由于 JavaScript 本身并不直接暴露已添加的事件监听器列表，你可以维护自己的记录。例如，创建一个函数来添加事件监听器，并在这个过程中保存相关信息。<br>var eventListeners = {}; // 用于存储事件监听器
+
+function addListener(element, eventName, listener) {
+    if (!(element in eventListeners)) {
+        eventListeners[element] = {};
+    }
+    if (!(eventName in eventListeners[element])) {
+        eventListeners[element][eventName] = [];
+    }
+    eventListeners[element][eventName].push(listener);
+
+    element.addEventListener(eventName, listener);
+}
+
+// 判断是否已添加特定事件监听器的函数
+function hasListener(element, eventName, listener) {
+    if (eventListeners[element] &amp;&amp; eventListeners[element][eventName]) {
+        return eventListeners[element][eventName].includes(listener);
+    }
+    return false;
+}
+
+// 使用示例
+addListener(document.getElementById('someElement'), 'click', function() { /*...*/ });
+console.log(hasListener(document.getElementById('someElement'), 'click', yourListenerFunction)); // 根据实际监听函数检查
+复制<br>如果你使用了 jQuery，可以通过其提供的方法来检查事件：<br>if ($._data($('#someElement')[0], 'events') &amp;&amp; $._data($('#someElement')[0], 'events').click) {
+    console.log("Click event is bound to the element.");
+}
+复制<br>请注意，$._data 是对内部数据的访问，虽然可以用来检查事件，但它是非公开 API，可能在未来的 jQuery 版本中改变或移除。<br>如果事件是第三方注册的事件，可以尝试以下方法：<br>从实际应用的角度出发，虽然不能直接通过 JavaScript 代码检测一个元素是否绑定了特定的事件监听器（特别是第三方注册的），但确实可以通过观察元素的行为和响应来间接判断。这种做法更多依赖于对页面交互逻辑的理解和测试。<br>以下是一些思路：<br>
+<br>
+行为观察: 观察元素在特定用户交互（如点击、鼠标悬停等）下的反应。如果元素在预期的交互下产生了你认为由事件监听器驱动的变化（如样式变化、内容更新、弹窗提示等），则可以推测该事件监听器存在。
+
+<br>
+模拟事件触发: 使用 JavaScript 手动触发该类型的事件（如使用 dispatchEvent），然后观察元素或页面状态是否有所变化。这可以在一定程度上帮助确认某些事件监听器的存在，但并不能保证全面，因为事件处理逻辑可能包含条件判断，导致某些条件下无明显反馈。
+
+<br>
+审查元素状态: 在某些情况下，事件监听器可能会修改元素的某些属性或添加/移除类名。通过 JavaScript 检查这些状态的变化也可以作为是否存在特定事件监听器的一个线索。
+
+<br>
+性能分析工具: 使用浏览器的开发者工具中的 Performance 或 Timeline 工具，在执行特定交互后记录和分析，有时可以从调用堆栈中发现与事件监听器相关的函数调用。
+
+<br>需要注意的是，这些方法都属于间接判断，且可能受到页面复杂度、事件处理逻辑等多种因素的影响，不一定总是准确或有效。它们更多是辅助手段，用于帮助理解和调试页面的行为。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js判断一个元素是否已监听某个事件.html</link><guid isPermaLink="false">开发笔记/前端/js判断一个元素是否已监听某个事件.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 29 Apr 2024 23:56:58 GMT</pubDate></item><item><title><![CDATA[JS图片另存为]]></title><description><![CDATA[ 
  <br><br>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
 &lt;html&gt;
  &lt;head&gt;
@@ -3864,7 +3917,92 @@ Url：要保存的路径（图片的名字），也就是 img 标签属性里的
     }
 }
 //然后这个 saveImgpath 就是上面方法saveImg（Url）的 Url的参~
-复制<br>注：这是vue的项目中用到的，其他也适用，稍做修改就好了~~~]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js图片另存为.html</link><guid isPermaLink="false">开发笔记/前端/JS图片另存为.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sun, 28 Apr 2024 22:12:43 GMT</pubDate></item><item><title><![CDATA[table表格设置border-radius不生效]]></title><description><![CDATA[ 
+复制<br>注：这是vue的项目中用到的，其他也适用，稍做修改就好了~~~]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js图片另存为.html</link><guid isPermaLink="false">开发笔记/前端/JS图片另存为.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sun, 28 Apr 2024 22:12:43 GMT</pubDate></item><item><title><![CDATA[js显示和隐藏动画及鼠标穿透实现]]></title><description><![CDATA[ 
+ <br>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;style&gt;
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    #demo{
+        width: 200px;
+        height: 300px;
+        background: #ccc;
+        transition: opacity 0.5s ease;
+        opacity: 1;
+        position: absolute;
+        top: 50px;
+        left: 8px;
+        /*pointer-events: none;*/
+    }
+  &lt;/style&gt;
+  &lt;title&gt;CSS Transition Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;a href="javascript:toggle()" class="button"&gt;toggle&lt;/a&gt;
+  &lt;div id="demo"&gt;
+       &lt;div&gt;aaaaaa&lt;/div&gt;
+       &lt;div&gt;aaaaaa&lt;/div&gt;
+       &lt;div&gt;aaaaaa&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+       &lt;div&gt;bbbbbb&lt;/div&gt;
+       &lt;div&gt;bbbbbb&lt;/div&gt;
+       &lt;div&gt;bbbbbb&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+      // 推荐
+      //使用 pointer-events: none; 允许鼠标穿透
+      function toggle2() {
+           const demo = document.querySelector("#demo");
+           const style = getComputedStyle(demo, null);
+           const opacity = +style.opacity === 1 ? 0 : 1;
+           demo.style.opacity = opacity;
+           if(opacity === 1) {
+               // 阻止鼠标穿透
+               demo.style.pointerEvents = 'auto';
+           } else {
+               // 允许鼠标穿透
+               demo.style.pointerEvents = 'none';
+           }
+      }
+      
+      // 老旧浏览器模拟效果
+      let hasListend = false
+      function toggle() {
+          const demo = document.querySelector("#demo");
+          const style = getComputedStyle(demo, null);
+          if(style.display === 'none') demo.style.display = 'block';
+          const opacity = +style.opacity === 1 ? 0 : 1;
+          demo.style.opacity = opacity;
+          
+          // 这里也可以使用setTimeout()简单实现
+          if(!hasListend) {
+              hasListend = true;
+              document.querySelector("#demo").addEventListener('transitionend', function(event) {
+                  const opacity = +getComputedStyle(event.target, null).opacity;
+                  if(opacity === 1) {
+                      event.target.style.display = 'block';
+                  } else {
+                      event.target.style.display = 'none';
+                  }
+              });
+          }
+      }
+      
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+复制]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.html</link><guid isPermaLink="false">开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Tue, 30 Apr 2024 00:05:12 GMT</pubDate></item><item><title><![CDATA[table表格设置border-radius不生效]]></title><description><![CDATA[ 
  <br>经过研究发现是 border-collapse: collapse 和 border-radius 时不兼容导致的。<br>解决办法是：给表格加上边框，然后给 th、td 设置右边框，最后去掉 th、td 最右侧和最下面的边框，这样就模拟出想要的效果。<br>效果：<br><img src="https://wxkj.asia/mynote/lib/media/table表格设置border-radius不生效-20240429053555032.webp"><br>代码如下：<br>&lt;style&gt;
     table {
         width: 500px;
@@ -3911,7 +4049,21 @@ Url：要保存的路径（图片的名字），也就是 img 标签属性里的
         &lt;td&gt;123&lt;/td&gt;
     &lt;/tr&gt;
 &lt;/table&gt;
-复制]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/table表格设置border-radius不生效.html</link><guid isPermaLink="false">开发笔记/前端/table表格设置border-radius不生效.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 29 Apr 2024 01:04:05 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/table表格设置border-radius不生效-20240429053555032.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/table表格设置border-radius不生效-20240429053555032.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mysql 数据库并发控制的内部实现机制和原理是什么]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:mysql" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#mysql</a> 
+复制]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/table表格设置border-radius不生效.html</link><guid isPermaLink="false">开发笔记/前端/table表格设置border-radius不生效.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 29 Apr 2024 01:04:05 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/table表格设置border-radius不生效-20240429053555032.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/table表格设置border-radius不生效-20240429053555032.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[transitionend事件判断是opacity是1还是0]]></title><description><![CDATA[ 
+ <br>在使用 transitionend 事件时，你可以通过比较元素的当前 opacity 值来判断它是变为完全透明（0）还是完全不透明（1）。下面是一个示例代码段，展示了如何监听 transitionend 事件并判断 opacity 的最终状态：<br>element.addEventListener('transitionend', function(event) {
+    // 确保事件目标是我们关心的元素并且是 opacity 过渡结束
+    if (event.target === element &amp;&amp; event.propertyName === 'opacity') {
+        // 判断 opacity 的最终值
+        if (parseFloat(element.style.opacity) === 1) {
+            console.log('Opacity transition ended at 1 (fully opaque)');
+            // 在这里执行 opacity 达到 1 时的逻辑
+        } else if (parseFloat(element.style.opacity) === 0) {
+            console.log('Opacity transition ended at 0 (fully transparent)');
+            // 在这里执行 opacity 达到 0 时的逻辑
+        }
+    }
+});
+复制<br>这段代码中，event.propertyName 用来检查哪个 CSS 属性的过渡刚刚结束，确保我们只在 opacity 过渡结束后执行逻辑。然后，通过 parseFloat(element.style.opacity) 获取元素的当前不透明度，并与 1 或 0 比较，从而判断过渡的最终状态。<br>请注意，如果你是通过 CSS 类来控制 opacity 的变化，而非直接修改 element.style.opacity，你可能需要在 CSS 中定义这些类，并且在 JavaScript 中检查元素的计算样式（getComputedStyle）来获取实际的 opacity 值。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/transitionend事件判断是opacity是1还是0.html</link><guid isPermaLink="false">开发笔记/前端/transitionend事件判断是opacity是1还是0.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 29 Apr 2024 23:58:32 GMT</pubDate></item><item><title><![CDATA[mysql 数据库并发控制的内部实现机制和原理是什么]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:mysql" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#mysql</a> 
  <br><a href="https://wxkj.asia/mynote?query=tag:mysql" class="tag" target="_blank" rel="noopener">#mysql</a><br>MySQL 数据库并发控制主要依赖于锁机制和多版本并发控制（MVCC）来实现。以下是 MySQL 数据库并发控制的内部实现机制和原理的详细说明：<br>
 <br>
 锁机制：<br>
