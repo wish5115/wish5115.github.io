@@ -1,6 +1,6 @@
 {
   "vaultName": "我的笔记",
-  "lastExport": 1714626980179,
+  "lastExport": 1714913159160,
   "pluginVersion": "1.8.03",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title",
   "useCustomHeadContent": false,
@@ -35,12 +35,17 @@
     "工具软件/obsidian/RemotelySave+InfiniCloud最简单的多端同步方案实践.md",
     "工具软件/obsidian/Obsidian最适合程序员的笔记软件.md",
     "工具软件/obsidian/gitee+github+jsdelivr+picgo+image upload tool打造个人免费图床.md",
+    "工具软件/obsidian/simpread-如何用 github 搭建图床（亲测有效）_github 图床 - CSDN 博客.md",
     "工具软件/obsidian/Unison实现文件双向同步的利器.md",
     "工具软件/obsidian/Solarized深色主题+代码片段模仿Logseq主题风格.md",
     "工具软件/obsidian/Mermaid 语法 - 流程图.md",
+    "工具软件/obsidian/simpread-Mermaid 语法 - 流程图.md",
     "工具软件/obsidian/Obsidian 社区插件.md",
+    "工具软件/obsidian/simpread-Obsidian 社区插件.md",
     "工具软件/obsidian/Obsidian 插件：Dataview.md",
+    "工具软件/obsidian/simpread-Obsidian 插件：Dataview.md",
     "工具软件/obsidian/checkCallback判断逻辑优化.md",
+    "工具软件/obsidian/我开发了一个快速输入Markdown代码+禅模式的插件（ii-plugin）.md",
     "工具软件/obsidian/实用插件汇总说明.md",
     "工具软件/obsidian/我开发了一个快速输入Markdown代码和禅模式的插件(ii-plugin).md",
     "工具软件/obsidian/我把文心一言嵌入到 obsidian 里了.md",
@@ -49,13 +54,14 @@
     "工具软件/linux.md",
     "工具软件/logseq.md",
     "工具软件/mac 安装Beyond Compare，并永久使用_comparebeyond mac-CSDN博客.md",
-    "工具软件/lftp使用.md",
-    "工具软件/fswatch的使用.md",
     "工具软件/JavaScript.md",
+    "工具软件/simpread-关于图床的一些使用心得总结.md",
+    "工具软件/lftp使用.md",
+    "工具软件/fswatch和rsync的使用.md",
     "工具软件/windows.md",
     "工具软件/Unison双向同步文件的使用.md",
-    "工具软件/关于图床的一些使用心得总结.md",
     "工具软件/Unison帮助文档翻译.md",
+    "工具软件/关于图床的一些使用心得总结.md",
     "工具软件/typora.md",
     "工具软件/在 Mac 上安排关机定时器的.md",
     "工具软件/我开发了一个可以置顶笔记的app.md",
@@ -63,7 +69,6 @@
     "开发笔记/脚本插件/bat避免重复运行.md",
     "开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md",
     "开发笔记/前端/js 通过fs.watch实现文件的双向同步 1.md",
-    "开发笔记/前端/平滑滚动到顶部或底部 1.md",
     "开发笔记/前端/js 通过fs.watch实现文件的双向同步.md",
     "开发笔记/前端/HTML 标签简写及全称.md",
     "开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md",
@@ -95,10 +100,17 @@
     "开发笔记/前端/通过脚本修改input值，手动触发input事件.md",
     "开发笔记/数据库/mysql 数据库并发控制的内部实现机制和原理是什么.md",
     "开发笔记/算法/多端文件同步原理和算法概述.md",
+    "开发笔记/git/simpread-快速解决 Resource not accessible by integration-CSDN博客.md",
     "开发笔记/git/快速解决 Resource not accessible by integration-CSDN博客.md",
     "开发笔记/git/解决git status不能显示中文.md",
     "开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md",
     "开发笔记/git/git 导出变动文件，包括目录结构.md",
+    "开发笔记/git/fork的项目如何更新.md",
+    "开发笔记/git/检测git变化并提交.md",
+    "开发笔记/git/检测git中是否有文件发生了冲突.md",
+    "开发笔记/javascript/js 通过fs.watch实现文件的双向同步.md",
+    "开发笔记/javascript/平滑滚动到顶部或底部.md",
+    "开发笔记/linux/simpread-rsync + inotify 实现文件实时双向自动同步.md",
     "开发笔记/linux/Linux find 模拟 tree 命令.md",
     "开发笔记/linux/Linux 文件搜索神器 find 实战详解.md",
     "开发笔记/linux/Linux中如何锁定文件？flock命令一定要了解！.md",
@@ -111,6 +123,7 @@
     "开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md",
     "开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md",
     "开发笔记/linux/内网穿透.md",
+    "开发笔记/mac/simpread-Mac 下 brew 切换为国内源.md",
     "开发笔记/mac/AppleScript 隐藏执行shell脚本文件.md",
     "开发笔记/mac/fswatch的使用.md",
     "开发笔记/mac/mac上shell扫描目录并放到弹框列表中.md",
@@ -127,6 +140,8 @@
     "开发笔记/python/ftp获取远程文件时间.md",
     "开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md",
     "开发笔记/SEO优化/seo优化工具.md",
+    "开发笔记/UI设计/simpread-优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md",
+    "开发笔记/UI设计/simpread-色轮_色环_色彩搭配 - Canva 可画.md",
     "开发笔记/UI设计/优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md",
     "开发笔记/UI设计/色轮_色环_色彩搭配 - Canva 可画.md",
     "随笔/与人工智能的有趣问答.md",
@@ -137,9 +152,10 @@
     "学习笔记/设计模式/常用设计模式.md",
     "学习笔记/设计模式/laravel的设计模式.md",
     "学习笔记/学习资料.md",
-    "学习笔记/抽象类和接口使用场景.md",
     "学习笔记/JavaScript this.md",
+    "学习笔记/抽象类和接口使用场景.md",
     "学习笔记/css重复选择符增加权重吗？.md",
+    "学习笔记/好书推荐.md",
     "学习笔记/typescript之绑定和解绑事件.md",
     "index.md",
     "lib/media/phpstorm-20240315013315038.webp",
@@ -170,6 +186,7 @@
     "lib/media/remotelysave+infinicloud最简单的多端同步方案实践-20240305134414914.webp",
     "lib/media/obsidian最适合程序员的笔记软件-20240312170508938.webp",
     "lib/media/obsidian最适合程序员的笔记软件-20240312170838998.webp",
+    "lib/media/demo.zip",
     "lib/media/solarized深色主题+代码片段模仿logseq主题风格-20240314190457160.webp",
     "lib/media/solarized深色主题+代码片段模仿logseq主题风格-20240314190514789.webp",
     "lib/media/我开发了一个快速输入markdown代码的插件-20240318195702413.webp",
@@ -311,37 +328,37 @@
   ],
   "fileInfo": {
     "常用命令/常用命令.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4766,
       "exportedPath": "常用命令/常用命令.html",
       "dependencies": []
     },
     "常用命令/figma-pixso-mastergo.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 163,
       "exportedPath": "常用命令/figma-pixso-mastergo.html",
       "dependencies": []
     },
     "常用命令/git.md": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 5776,
+      "modifiedTime": 1714913159160,
+      "sourceSize": 6873,
       "exportedPath": "常用命令/git.html",
       "dependencies": []
     },
     "常用命令/laravel.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1404,
       "exportedPath": "常用命令/laravel.html",
       "dependencies": []
     },
     "常用命令/linux.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3620,
       "exportedPath": "常用命令/linux.html",
       "dependencies": []
     },
     "常用命令/obsidian.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1254,
       "exportedPath": "常用命令/obsidian.html",
       "dependencies": [
@@ -350,7 +367,7 @@
       ]
     },
     "常用命令/phpstorm.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3422,
       "exportedPath": "常用命令/phpstorm.html",
       "dependencies": [
@@ -363,79 +380,79 @@
       ]
     },
     "常用命令/vim.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 6237,
       "exportedPath": "常用命令/vim.html",
       "dependencies": []
     },
     "常用命令/vscode.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3880,
       "exportedPath": "常用命令/vscode.html",
       "dependencies": []
     },
     "工具软件/obsidian/插件/插件开发笔记.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2121,
       "exportedPath": "工具软件/obsidian/插件/插件开发笔记.html",
       "dependencies": []
     },
     "工具软件/obsidian/插件/关闭重复标签.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2050,
       "exportedPath": "工具软件/obsidian/插件/关闭重复标签.html",
       "dependencies": []
     },
     "工具软件/obsidian/插件/HK Code Block插件的使用.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 9287,
       "exportedPath": "工具软件/obsidian/插件/hk-code-block插件的使用.html",
       "dependencies": []
     },
     "工具软件/obsidian/markdown语法官方教程/格式化笔记-Markdown基础.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 11293,
       "exportedPath": "工具软件/obsidian/markdown语法官方教程/格式化笔记-markdown基础.html",
       "dependencies": []
     },
     "工具软件/obsidian/markdown语法官方教程/块链接与块引用.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3037,
       "exportedPath": "工具软件/obsidian/markdown语法官方教程/块链接与块引用.html",
       "dependencies": []
     },
     "工具软件/obsidian/markdown语法官方教程/内部链接.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2425,
       "exportedPath": "工具软件/obsidian/markdown语法官方教程/内部链接.html",
       "dependencies": []
     },
     "工具软件/obsidian/markdown语法官方教程/嵌入文件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3744,
       "exportedPath": "工具软件/obsidian/markdown语法官方教程/嵌入文件.html",
       "dependencies": []
     },
     "工具软件/obsidian/markdown语法官方教程/使用 obsidian URI.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 7063,
       "exportedPath": "工具软件/obsidian/markdown语法官方教程/使用-obsidian-uri.html",
       "dependencies": []
     },
     "工具软件/obsidian/markdown语法官方教程/为笔记添加别名.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2297,
       "exportedPath": "工具软件/obsidian/markdown语法官方教程/为笔记添加别名.html",
       "dependencies": []
     },
     "工具软件/obsidian/实用插件汇总说明.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 466,
       "exportedPath": "工具软件/obsidian/实用插件汇总说明.html",
       "dependencies": []
     },
     "工具软件/obsidian/我把文心一言嵌入到 obsidian 里了.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1100,
       "exportedPath": "工具软件/obsidian/我把文心一言嵌入到-obsidian-里了.html",
       "dependencies": [
@@ -444,33 +461,33 @@
       ]
     },
     "工具软件/obsidian/学习网站.md": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 4166,
+      "modifiedTime": 1714913159160,
+      "sourceSize": 4195,
       "exportedPath": "工具软件/obsidian/学习网站.html",
       "dependencies": [
         "lib/media/学习网站-20240221201554698.webp"
       ]
     },
     "工具软件/obsidian/用 MaoXian 网摘保存网络文章到 Obsidian.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 19311,
       "exportedPath": "工具软件/obsidian/用-maoxian-网摘保存网络文章到-obsidian.html",
       "dependencies": []
     },
     "工具软件/obsidian/checkCallback判断逻辑优化.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3472,
       "exportedPath": "工具软件/obsidian/checkcallback判断逻辑优化.html",
       "dependencies": []
     },
     "工具软件/obsidian/gitee+github+jsdelivr+picgo+image upload tool打造个人免费图床.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 61,
       "exportedPath": "工具软件/obsidian/gitee+github+jsdelivr+picgo+image-upload-tool打造个人免费图床.html",
       "dependencies": []
     },
     "工具软件/obsidian/Mac下fswatch+shell实现简悦导出markdown到obsidian.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 8313,
       "exportedPath": "工具软件/obsidian/mac下fswatch+shell实现简悦导出markdown到obsidian.html",
       "dependencies": [
@@ -479,7 +496,7 @@
       ]
     },
     "工具软件/obsidian/markdown示例教程.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 23219,
       "exportedPath": "工具软件/obsidian/markdown示例教程.html",
       "dependencies": [
@@ -496,13 +513,13 @@
       ]
     },
     "工具软件/obsidian/Obsidain插件之QuickAdd-强大的快速记录与宏工具.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 6663,
       "exportedPath": "工具软件/obsidian/obsidain插件之quickadd-强大的快速记录与宏工具.html",
       "dependencies": []
     },
     "工具软件/obsidian/obsidian分享文章到Quail博客.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4644,
       "exportedPath": "工具软件/obsidian/obsidian分享文章到quail博客.html",
       "dependencies": [
@@ -512,7 +529,7 @@
       ]
     },
     "工具软件/obsidian/Obsidian最适合程序员的笔记软件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 17478,
       "exportedPath": "工具软件/obsidian/obsidian最适合程序员的笔记软件.html",
       "dependencies": [
@@ -521,7 +538,7 @@
       ]
     },
     "工具软件/obsidian/RemotelySave+InfiniCloud最简单的多端同步方案实践.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 7095,
       "exportedPath": "工具软件/obsidian/remotelysave+infinicloud最简单的多端同步方案实践.html",
       "dependencies": [
@@ -530,7 +547,7 @@
       ]
     },
     "工具软件/obsidian/Solarized深色主题+代码片段模仿Logseq主题风格.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 15736,
       "exportedPath": "工具软件/obsidian/solarized深色主题+代码片段模仿logseq主题风格.html",
       "dependencies": [
@@ -539,31 +556,33 @@
       ]
     },
     "工具软件/obsidian/Unison实现文件双向同步的利器.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 10365,
       "exportedPath": "工具软件/obsidian/unison实现文件双向同步的利器.html",
-      "dependencies": []
+      "dependencies": [
+        "lib/media/demo.zip"
+      ]
     },
     "工具软件/obsidian/uTools和obsidian联动，高效记录您的灵感闪现.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5368,
       "exportedPath": "工具软件/obsidian/utools和obsidian联动，高效记录您的灵感闪现.html",
       "dependencies": []
     },
     "工具软件/obsidian/WebDAV在各端的软件有哪些.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1929,
       "exportedPath": "工具软件/obsidian/webdav在各端的软件有哪些.html",
       "dependencies": []
     },
     "工具软件/[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？_chrome 更新 - CSDN 博客.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1990,
       "exportedPath": "工具软件/[经验教程]-国内如何下载更新-google-谷歌浏览器及更新谷歌-chrome-浏览器无法访问此网站怎么办？_chrome-更新-csdn-博客.html",
       "dependencies": []
     },
     "工具软件/我开发了一个可以置顶笔记的app.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 885,
       "exportedPath": "工具软件/我开发了一个可以置顶笔记的app.html",
       "dependencies": [
@@ -576,19 +595,13 @@
       ]
     },
     "工具软件/在 Mac 上安排关机定时器的.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 7908,
       "exportedPath": "工具软件/在-mac-上安排关机定时器的.html",
       "dependencies": []
     },
-    "工具软件/fswatch的使用.md": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 0,
-      "exportedPath": "工具软件/fswatch的使用.html",
-      "dependencies": []
-    },
     "工具软件/github加速方案.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 243,
       "exportedPath": "工具软件/github加速方案.html",
       "dependencies": [
@@ -596,169 +609,169 @@
       ]
     },
     "工具软件/JavaScript.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 163,
       "exportedPath": "工具软件/javascript.html",
       "dependencies": []
     },
     "工具软件/lftp使用.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3231,
       "exportedPath": "工具软件/lftp使用.html",
       "dependencies": []
     },
     "工具软件/linux.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 382,
       "exportedPath": "工具软件/linux.html",
       "dependencies": []
     },
     "工具软件/logseq.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 88,
       "exportedPath": "工具软件/logseq.html",
       "dependencies": []
     },
     "工具软件/mac 安装Beyond Compare，并永久使用_comparebeyond mac-CSDN博客.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2426,
       "exportedPath": "工具软件/mac-安装beyond-compare，并永久使用_comparebeyond-mac-csdn博客.html",
       "dependencies": []
     },
     "工具软件/typora.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1107,
       "exportedPath": "工具软件/typora.html",
       "dependencies": []
     },
     "工具软件/Unison帮助文档翻译.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 14410,
       "exportedPath": "工具软件/unison帮助文档翻译.html",
       "dependencies": []
     },
     "工具软件/Unison双向同步文件的使用.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 19928,
       "exportedPath": "工具软件/unison双向同步文件的使用.html",
       "dependencies": []
     },
     "工具软件/windows.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 119,
       "exportedPath": "工具软件/windows.html",
       "dependencies": []
     },
     "开发笔记/脚本插件/bat避免重复运行.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1470,
       "exportedPath": "开发笔记/脚本插件/bat避免重复运行.html",
       "dependencies": []
     },
     "开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 27689,
       "exportedPath": "开发笔记/脚本插件/powershell监控文件夹创建md文件并移动位置.html",
       "dependencies": []
     },
     "开发笔记/前端/打印浏览器及内核版本.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2536,
       "exportedPath": "开发笔记/前端/打印浏览器及内核版本.html",
       "dependencies": []
     },
     "开发笔记/前端/开发小技巧之调试移开消失的元素.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5866,
       "exportedPath": "开发笔记/前端/开发小技巧之调试移开消失的元素.html",
       "dependencies": []
     },
     "开发笔记/前端/平滑滚动到顶部或底部.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 567,
       "exportedPath": "开发笔记/前端/平滑滚动到顶部或底部.html",
       "dependencies": []
     },
     "开发笔记/前端/页面之间的通信.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4666,
       "exportedPath": "开发笔记/前端/页面之间的通信.html",
       "dependencies": []
     },
     "开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 6092,
       "exportedPath": "开发笔记/前端/一个高级-css-面试题：在-css-中实现-if-else.html",
       "dependencies": []
     },
     "开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5409,
       "exportedPath": "开发笔记/前端/chrome-devtools-远程调试安卓网页的原理.html",
       "dependencies": []
     },
     "开发笔记/前端/CodeMirror api.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1427,
       "exportedPath": "开发笔记/前端/codemirror-api.html",
       "dependencies": []
     },
     "开发笔记/前端/CSS 垂直居中SVG标签.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3355,
       "exportedPath": "开发笔记/前端/css-垂直居中svg标签.html",
       "dependencies": []
     },
     "开发笔记/前端/css屏幕尺寸与设备.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4002,
       "exportedPath": "开发笔记/前端/css屏幕尺寸与设备.html",
       "dependencies": []
     },
     "开发笔记/前端/HTML 标签简写及全称.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3965,
       "exportedPath": "开发笔记/前端/html-标签简写及全称.html",
       "dependencies": []
     },
     "开发笔记/前端/Javascript拷贝到剪切板.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1998,
       "exportedPath": "开发笔记/前端/javascript拷贝到剪切板.html",
       "dependencies": []
     },
     "开发笔记/前端/js 时间戳转字符串.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 716,
       "exportedPath": "开发笔记/前端/js-时间戳转字符串.html",
       "dependencies": []
     },
     "开发笔记/前端/js 通过fs.watch实现文件的双向同步.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 17778,
       "exportedPath": "开发笔记/前端/js-通过fs.watch实现文件的双向同步.html",
       "dependencies": []
     },
     "开发笔记/前端/js动态执行代码片段.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4192,
       "exportedPath": "开发笔记/前端/js动态执行代码片段.html",
       "dependencies": []
     },
     "开发笔记/前端/js判断是否是手机.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3332,
       "exportedPath": "开发笔记/前端/js判断是否是手机.html",
       "dependencies": []
     },
     "开发笔记/前端/JS图片另存为.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3620,
       "exportedPath": "开发笔记/前端/js图片另存为.html",
       "dependencies": []
     },
     "开发笔记/前端/table表格设置border-radius不生效.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1285,
       "exportedPath": "开发笔记/前端/table表格设置border-radius不生效.html",
       "dependencies": [
@@ -767,19 +780,19 @@
       ]
     },
     "开发笔记/数据库/mysql 数据库并发控制的内部实现机制和原理是什么.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3483,
       "exportedPath": "开发笔记/数据库/mysql-数据库并发控制的内部实现机制和原理是什么.html",
       "dependencies": []
     },
     "开发笔记/算法/多端文件同步原理和算法概述.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3335,
       "exportedPath": "开发笔记/算法/多端文件同步原理和算法概述.html",
       "dependencies": []
     },
     "开发笔记/git/解决git status不能显示中文.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 609,
       "exportedPath": "开发笔记/git/解决git-status不能显示中文.html",
       "dependencies": [
@@ -787,43 +800,43 @@
       ]
     },
     "开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2649,
       "exportedPath": "开发笔记/git/git-创建一个裸仓库，作为简易的-git-服务器.html",
       "dependencies": []
     },
     "开发笔记/git/git 导出变动文件，包括目录结构.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1362,
       "exportedPath": "开发笔记/git/git-导出变动文件，包括目录结构.html",
       "dependencies": []
     },
     "开发笔记/linux/内网穿透.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 0,
       "exportedPath": "开发笔记/linux/内网穿透.html",
       "dependencies": []
     },
     "开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5378,
       "exportedPath": "开发笔记/linux/使用shell脚本实现ftp自动上传和下载文件.html",
       "dependencies": []
     },
     "开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1405,
       "exportedPath": "开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.html",
       "dependencies": []
     },
     "开发笔记/linux/Linux 文件搜索神器 find 实战详解.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 10726,
       "exportedPath": "开发笔记/linux/linux-文件搜索神器-find-实战详解.html",
       "dependencies": []
     },
     "开发笔记/linux/Linux find 模拟 tree 命令.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 955,
       "exportedPath": "开发笔记/linux/linux-find-模拟-tree-命令.html",
       "dependencies": [
@@ -831,73 +844,73 @@
       ]
     },
     "开发笔记/linux/Linux中如何锁定文件？flock命令一定要了解！.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5103,
       "exportedPath": "开发笔记/linux/linux中如何锁定文件？flock命令一定要了解！.html",
       "dependencies": []
     },
     "开发笔记/linux/rsync 用法教程.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 13335,
       "exportedPath": "开发笔记/linux/rsync-用法教程.html",
       "dependencies": []
     },
     "开发笔记/linux/shell 下 urlencode和urldecode 编码解码的方法.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 604,
       "exportedPath": "开发笔记/linux/shell-下-urlencode和urldecode-编码解码的方法.html",
       "dependencies": []
     },
     "开发笔记/linux/shell if语句中的并列 - 诗意的栖居 - ITeye博客.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2034,
       "exportedPath": "开发笔记/linux/shell-if语句中的并列-诗意的栖居-iteye博客.html",
       "dependencies": []
     },
     "开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2755,
       "exportedPath": "开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.html",
       "dependencies": []
     },
     "开发笔记/linux/Shell之判断程序是否运行.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 706,
       "exportedPath": "开发笔记/linux/shell之判断程序是否运行.html",
       "dependencies": []
     },
     "开发笔记/mac/【mac】shell小技巧将`终.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1464,
       "exportedPath": "开发笔记/mac/【mac】shell小技巧将`终.html",
       "dependencies": []
     },
     "开发笔记/mac/AppleScript 隐藏执行shell脚本文件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 448,
       "exportedPath": "开发笔记/mac/applescript-隐藏执行shell脚本文件.html",
       "dependencies": []
     },
     "开发笔记/mac/fswatch的使用.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1695,
       "exportedPath": "开发笔记/mac/fswatch的使用.html",
       "dependencies": []
     },
     "开发笔记/mac/Mac开机启动配置详解.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 12563,
       "exportedPath": "开发笔记/mac/mac开机启动配置详解.html",
       "dependencies": []
     },
     "开发笔记/mac/mac上shell扫描目录并放到弹框列表中.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1663,
       "exportedPath": "开发笔记/mac/mac上shell扫描目录并放到弹框列表中.html",
       "dependencies": []
     },
     "开发笔记/mac/mac下shell弹出下拉选择框.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 445,
       "exportedPath": "开发笔记/mac/mac下shell弹出下拉选择框.html",
       "dependencies": [
@@ -905,25 +918,25 @@
       ]
     },
     "开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3102,
       "exportedPath": "开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.html",
       "dependencies": []
     },
     "开发笔记/php/IP Lookup in PHP.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5367,
       "exportedPath": "开发笔记/php/ip-lookup-in-php.html",
       "dependencies": []
     },
     "开发笔记/php/JWT用户登录方案-前后端交互说明.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2161,
       "exportedPath": "开发笔记/php/jwt用户登录方案-前后端交互说明.html",
       "dependencies": []
     },
     "开发笔记/php/Mac调试ios的safari浏览器打开的页面.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1446,
       "exportedPath": "开发笔记/php/mac调试ios的safari浏览器打开的页面.html",
       "dependencies": [
@@ -944,85 +957,85 @@
       ]
     },
     "开发笔记/php/web开发冷知识汇总.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1122,
       "exportedPath": "开发笔记/php/web开发冷知识汇总.html",
       "dependencies": []
     },
     "开发笔记/python/ftp获取文件的md5.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 737,
       "exportedPath": "开发笔记/python/ftp获取文件的md5.html",
       "dependencies": []
     },
     "开发笔记/python/ftp获取远程文件时间.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 941,
       "exportedPath": "开发笔记/python/ftp获取远程文件时间.html",
       "dependencies": []
     },
     "开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 15009,
       "exportedPath": "开发笔记/python/python3实现将本地文件夹全部内容上传到ftp.html",
       "dependencies": []
     },
     "随笔/人工智能的体验.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1258,
       "exportedPath": "随笔/人工智能的体验.html",
       "dependencies": []
     },
     "随笔/通义千问对话2.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 6352,
       "exportedPath": "随笔/通义千问对话2.html",
       "dependencies": []
     },
     "随笔/我记笔记的本质，为什么记笔记.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1426,
       "exportedPath": "随笔/我记笔记的本质，为什么记笔记.html",
       "dependencies": []
     },
     "随笔/与人工智能的有趣问答.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4039,
       "exportedPath": "随笔/与人工智能的有趣问答.html",
       "dependencies": []
     },
     "学习笔记/参考资料/TinyWebServer——从0到服务器开发！.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 49044,
       "exportedPath": "学习笔记/参考资料/tinywebserver——从0到服务器开发！.html",
       "dependencies": []
     },
     "学习笔记/设计模式/常用设计模式.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4025,
       "exportedPath": "学习笔记/设计模式/常用设计模式.html",
       "dependencies": []
     },
     "学习笔记/设计模式/laravel的设计模式.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2623,
       "exportedPath": "学习笔记/设计模式/laravel的设计模式.html",
       "dependencies": []
     },
     "学习笔记/抽象类和接口使用场景.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2459,
       "exportedPath": "学习笔记/抽象类和接口使用场景.html",
       "dependencies": []
     },
     "学习笔记/学习资料.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 575,
       "exportedPath": "学习笔记/学习资料.html",
       "dependencies": []
     },
     "学习笔记/css重复选择符增加权重吗？.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3884,
       "exportedPath": "学习笔记/css重复选择符增加权重吗？.html",
       "dependencies": [
@@ -1031,727 +1044,721 @@
       ]
     },
     "学习笔记/JavaScript this.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 11707,
       "exportedPath": "学习笔记/javascript-this.html",
       "dependencies": []
     },
     "学习笔记/typescript之绑定和解绑事件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 6364,
       "exportedPath": "学习笔记/typescript之绑定和解绑事件.html",
       "dependencies": []
     },
     "index.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 516,
       "exportedPath": "index.html",
       "dependencies": []
     },
     "lib/media/obsidian-20240315173715688.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1836,
       "exportedPath": "lib/media/obsidian-20240315173715688.webp",
       "dependencies": []
     },
     "lib/media/obsidian-20240315174024844.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 630,
       "exportedPath": "lib/media/obsidian-20240315174024844.webp",
       "dependencies": []
     },
     "lib/media/phpstorm-20240315013315038.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 11980,
       "exportedPath": "lib/media/phpstorm-20240315013315038.webp",
       "dependencies": []
     },
     "lib/media/phpstorm-20240315013326977.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 7756,
       "exportedPath": "lib/media/phpstorm-20240315013326977.webp",
       "dependencies": []
     },
     "lib/media/phpstorm-20240315013343566.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 34766,
       "exportedPath": "lib/media/phpstorm-20240315013343566.webp",
       "dependencies": []
     },
     "lib/media/phpstorm-20240315013355135.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 19696,
       "exportedPath": "lib/media/phpstorm-20240315013355135.webp",
       "dependencies": []
     },
     "lib/media/phpstorm-20240315013429668.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 11834,
       "exportedPath": "lib/media/phpstorm-20240315013429668.webp",
       "dependencies": []
     },
     "lib/media/phpstorm-20240315013438667.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 14284,
       "exportedPath": "lib/media/phpstorm-20240315013438667.webp",
       "dependencies": []
     },
     "lib/media/我把文心一言嵌入到-obsidian-里了-20240229051637881.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 96278,
       "exportedPath": "lib/media/我把文心一言嵌入到-obsidian-里了-20240229051637881.webp",
       "dependencies": []
     },
     "lib/media/我把文心一言嵌入到-obsidian-里了-20240229051925748.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 39140,
       "exportedPath": "lib/media/我把文心一言嵌入到-obsidian-里了-20240229051925748.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个快速输入markdown代码的插件-20240318195702413.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 21488,
       "exportedPath": "lib/media/我开发了一个快速输入markdown代码的插件-20240318195702413.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个快速输入markdown代码的插件-20240318195748256.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 27704,
       "exportedPath": "lib/media/我开发了一个快速输入markdown代码的插件-20240318195748256.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个快速输入markdown代码的插件-20240318200631362.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 17148,
       "exportedPath": "lib/media/我开发了一个快速输入markdown代码的插件-20240318200631362.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320003419751.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 118740,
       "exportedPath": "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320003419751.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320003447941.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 96084,
       "exportedPath": "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320003447941.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320022804702.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 64828,
       "exportedPath": "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320022804702.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320004046355.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 67658,
       "exportedPath": "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320004046355.webp",
       "dependencies": []
     },
     "lib/media/学习网站-20240221201554698.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 18782,
       "exportedPath": "lib/media/学习网站-20240221201554698.webp",
       "dependencies": []
     },
     "lib/media/mac+fswatch+shell实现简悦markdown导出到obsidian-20240303122736440.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 79190,
       "exportedPath": "lib/media/mac+fswatch+shell实现简悦markdown导出到obsidian-20240303122736440.webp",
       "dependencies": []
     },
     "lib/media/mac+fswatch+shell实现简悦markdown导出到obsidian-20240303123020503.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 12484,
       "exportedPath": "lib/media/mac+fswatch+shell实现简悦markdown导出到obsidian-20240303123020503.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222054705709.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 25314,
       "exportedPath": "lib/media/markdown示例教程-20240222054705709.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222055100273.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 14892,
       "exportedPath": "lib/media/markdown示例教程-20240222055100273.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222055224041.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 26386,
       "exportedPath": "lib/media/markdown示例教程-20240222055224041.webp",
       "dependencies": []
     },
     "lib/media/image.png-1.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 48280,
       "exportedPath": "lib/media/image.png-1.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240224012340635.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 11088,
       "exportedPath": "lib/media/markdown示例教程-20240224012340635.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222061203197.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 28268,
       "exportedPath": "lib/media/markdown示例教程-20240222061203197.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222060129635.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 51554,
       "exportedPath": "lib/media/markdown示例教程-20240222060129635.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222071044291.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4448,
       "exportedPath": "lib/media/markdown示例教程-20240222071044291.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222071103144.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 20336,
       "exportedPath": "lib/media/markdown示例教程-20240222071103144.webp",
       "dependencies": []
     },
     "lib/media/markdown示例教程-20240222071137558.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3492,
       "exportedPath": "lib/media/markdown示例教程-20240222071137558.webp",
       "dependencies": []
     },
     "lib/media/obsidian分享文章到quail博客-20240229031541590.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 22720,
       "exportedPath": "lib/media/obsidian分享文章到quail博客-20240229031541590.webp",
       "dependencies": []
     },
     "lib/media/obsidian分享文章到quail博客-20240229032508162.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 12296,
       "exportedPath": "lib/media/obsidian分享文章到quail博客-20240229032508162.webp",
       "dependencies": []
     },
     "lib/media/obsidian分享文章到quail博客-20240229034537343.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 8810,
       "exportedPath": "lib/media/obsidian分享文章到quail博客-20240229034537343.webp",
       "dependencies": []
     },
     "lib/media/obsidian最适合程序员的笔记软件-20240312170508938.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 51554,
       "exportedPath": "lib/media/obsidian最适合程序员的笔记软件-20240312170508938.webp",
       "dependencies": []
     },
     "lib/media/obsidian最适合程序员的笔记软件-20240312170838998.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 18538,
       "exportedPath": "lib/media/obsidian最适合程序员的笔记软件-20240312170838998.webp",
       "dependencies": []
     },
     "lib/media/remotelysave+infinicloud最简单的多端同步方案实践-20240310200817581.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 61250,
       "exportedPath": "lib/media/remotelysave+infinicloud最简单的多端同步方案实践-20240310200817581.webp",
       "dependencies": []
     },
     "lib/media/remotelysave+infinicloud最简单的多端同步方案实践-20240305134414914.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 7184,
       "exportedPath": "lib/media/remotelysave+infinicloud最简单的多端同步方案实践-20240305134414914.webp",
       "dependencies": []
     },
     "lib/media/solarized深色主题+代码片段模仿logseq主题风格-20240314190457160.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 49242,
       "exportedPath": "lib/media/solarized深色主题+代码片段模仿logseq主题风格-20240314190457160.webp",
       "dependencies": []
     },
     "lib/media/solarized深色主题+代码片段模仿logseq主题风格-20240314190514789.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 69530,
       "exportedPath": "lib/media/solarized深色主题+代码片段模仿logseq主题风格-20240314190514789.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个可以置顶笔记的app-20240402200049126.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5456,
       "exportedPath": "lib/media/我开发了一个可以置顶笔记的app-20240402200049126.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个可以置顶笔记的app-20240402195913205.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 52938,
       "exportedPath": "lib/media/我开发了一个可以置顶笔记的app-20240402195913205.webp",
       "dependencies": []
     },
     "lib/media/我开发了一个可以置顶笔记的app-20240405153218437.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 29222,
       "exportedPath": "lib/media/我开发了一个可以置顶笔记的app-20240405153218437.webp",
       "dependencies": []
     },
     "lib/media/github加速方案-20240221181405493.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 8752,
       "exportedPath": "lib/media/github加速方案-20240221181405493.webp",
       "dependencies": []
     },
     "lib/media/table表格设置border-radius不生效-20240429053555032.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 8900,
       "exportedPath": "lib/media/table表格设置border-radius不生效-20240429053555032.webp",
       "dependencies": []
     },
     "lib/media/解决git-status不能显示中文-20240307002636285.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 33030,
       "exportedPath": "lib/media/解决git-status不能显示中文-20240307002636285.webp",
       "dependencies": []
     },
     "lib/media/defer和async的区别（面试被问到了）-掘金-20240423105011271.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 12586,
       "exportedPath": "lib/media/defer和async的区别（面试被问到了）-掘金-20240423105011271.webp",
       "dependencies": []
     },
     "lib/media/pastedimage20240221051749.png": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 47600,
       "exportedPath": "lib/media/pastedimage20240221051749.png",
       "dependencies": []
     },
     "lib/media/mac下shell弹出下拉选择框-20240302035305773.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 7076,
       "exportedPath": "lib/media/mac下shell弹出下拉选择框-20240302035305773.webp",
       "dependencies": []
     },
     "lib/media/image.png-2.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 46964,
       "exportedPath": "lib/media/image.png-2.webp",
       "dependencies": []
     },
     "lib/media/image.png-5.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 56902,
       "exportedPath": "lib/media/image.png-5.webp",
       "dependencies": []
     },
     "lib/media/image.png-3.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 43324,
       "exportedPath": "lib/media/image.png-3.webp",
       "dependencies": []
     },
     "lib/media/image.png-4.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 92032,
       "exportedPath": "lib/media/image.png-4.webp",
       "dependencies": []
     },
     "lib/media/image.png.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 168102,
       "exportedPath": "lib/media/image.png.webp",
       "dependencies": []
     },
     "lib/media/css重复选择符增加权重吗？-20240326131216165.webp": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 6834,
       "exportedPath": "lib/media/css重复选择符增加权重吗？-20240326131216165.webp",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/fonts/mathjax_zero.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1368,
       "exportedPath": "lib/fonts/mathjax_zero.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 34160,
       "exportedPath": "lib/fonts/mathjax_main-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-bold.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 34464,
       "exportedPath": "lib/fonts/mathjax_main-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-italic.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 19360,
       "exportedPath": "lib/fonts/mathjax_math-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-italic.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 20832,
       "exportedPath": "lib/fonts/mathjax_main-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-bolditalic.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 19776,
       "exportedPath": "lib/fonts/mathjax_math-bolditalic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size1-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5792,
       "exportedPath": "lib/fonts/mathjax_size1-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size2-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5464,
       "exportedPath": "lib/fonts/mathjax_size2-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size3-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3244,
       "exportedPath": "lib/fonts/mathjax_size3-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size4-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5148,
       "exportedPath": "lib/fonts/mathjax_size4-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_ams-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 40808,
       "exportedPath": "lib/fonts/mathjax_ams-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 9600,
       "exportedPath": "lib/fonts/mathjax_calligraphic-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-bold.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 9908,
       "exportedPath": "lib/fonts/mathjax_calligraphic-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 21480,
       "exportedPath": "lib/fonts/mathjax_fraktur-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-bold.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 22340,
       "exportedPath": "lib/fonts/mathjax_fraktur-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 12660,
       "exportedPath": "lib/fonts/mathjax_sansserif-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-bold.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 15944,
       "exportedPath": "lib/fonts/mathjax_sansserif-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-italic.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 14628,
       "exportedPath": "lib/fonts/mathjax_sansserif-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_script-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 11852,
       "exportedPath": "lib/fonts/mathjax_script-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_typewriter-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 17604,
       "exportedPath": "lib/fonts/mathjax_typewriter-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-regular.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1136,
       "exportedPath": "lib/fonts/mathjax_vector-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-bold.woff": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1116,
       "exportedPath": "lib/fonts/mathjax_vector-bold.woff",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 59797,
+      "modifiedTime": 1714913159160,
+      "sourceSize": 66200,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 50113,
+      "modifiedTime": 1714913159160,
+      "sourceSize": 50096,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 8215,
+      "modifiedTime": 1714913159160,
+      "sourceSize": 9515,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/scripts/img-zoom.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4157,
       "exportedPath": "lib/scripts/img-zoom.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 40926,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5787,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 412,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3821,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 23492,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/styles/snippets.css": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 12924,
       "exportedPath": "lib/styles/snippets.css",
       "dependencies": []
     },
     "开发笔记/前端/js 怎么获取滚动条自身的宽度.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1374,
       "exportedPath": "开发笔记/前端/js-怎么获取滚动条自身的宽度.html",
       "dependencies": []
     },
     "开发笔记/前端/用setTimeout代替eval执行js字符串.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 155,
       "exportedPath": "开发笔记/前端/用settimeout代替eval执行js字符串.html",
       "dependencies": []
     },
     "开发笔记/前端/js给元素同时赋值多个样式属性.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 126,
       "exportedPath": "开发笔记/前端/js给元素同时赋值多个样式属性.html",
       "dependencies": []
     },
     "开发笔记/前端/js判断一个元素是否已监听某个事件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3333,
       "exportedPath": "开发笔记/前端/js判断一个元素是否已监听某个事件.html",
       "dependencies": []
     },
     "开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2457,
       "exportedPath": "开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.html",
       "dependencies": []
     },
     "开发笔记/前端/transitionend事件判断是opacity是1还是0.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 1527,
       "exportedPath": "开发笔记/前端/transitionend事件判断是opacity是1还是0.html",
       "dependencies": []
     },
     "开发笔记/前端/防止window.onload被覆盖的技巧.md": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 1477,
+      "modifiedTime": 1714913159160,
+      "sourceSize": 3872,
       "exportedPath": "开发笔记/前端/防止window.onload被覆盖的技巧.html",
       "dependencies": []
     },
-    "开发笔记/前端/平滑滚动到顶部或底部 1.md": {
-      "modifiedTime": 1714626980179,
-      "sourceSize": 569,
-      "exportedPath": "开发笔记/前端/平滑滚动到顶部或底部-1.html",
-      "dependencies": []
-    },
     "开发笔记/前端/最全的 rgba 与 16 进制颜色空间互相转换方法.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3951,
       "exportedPath": "开发笔记/前端/最全的-rgba-与-16-进制颜色空间互相转换方法.html",
       "dependencies": []
     },
     "开发笔记/前端/defer和async的区别（面试被问到了） - 掘金.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2394,
       "exportedPath": "开发笔记/前端/defer和async的区别（面试被问到了）-掘金.html",
       "dependencies": [
@@ -1760,43 +1767,43 @@
       ]
     },
     "开发笔记/前端/js 通过fs.watch实现文件的双向同步 1.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 17778,
       "exportedPath": "开发笔记/前端/js-通过fs.watch实现文件的双向同步-1.html",
       "dependencies": []
     },
     "lib/scripts/easy-notice.js": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2716,
       "exportedPath": "lib/scripts/easy-notice.js",
       "dependencies": []
     },
     "工具软件/obsidian/如何用 github 搭建图床（亲测有效）_github 图床 - CSDN 博客.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 9764,
       "exportedPath": "工具软件/obsidian/如何用-github-搭建图床（亲测有效）_github-图床-csdn-博客.html",
       "dependencies": []
     },
     "工具软件/obsidian/Mermaid 语法 - 流程图.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 11934,
       "exportedPath": "工具软件/obsidian/mermaid-语法-流程图.html",
       "dependencies": []
     },
     "工具软件/obsidian/Obsidian 社区插件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 76026,
       "exportedPath": "工具软件/obsidian/obsidian-社区插件.html",
       "dependencies": []
     },
     "工具软件/obsidian/Obsidian 插件：Dataview.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 19002,
       "exportedPath": "工具软件/obsidian/obsidian-插件：dataview.html",
       "dependencies": []
     },
     "工具软件/obsidian/我开发了一个快速输入Markdown代码和禅模式的插件(ii-plugin).md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5958,
       "exportedPath": "工具软件/obsidian/我开发了一个快速输入markdown代码和禅模式的插件(ii-plugin).html",
       "dependencies": [
@@ -1810,63 +1817,185 @@
       ]
     },
     "工具软件/关于图床的一些使用心得总结.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 8423,
       "exportedPath": "工具软件/关于图床的一些使用心得总结.html",
       "dependencies": []
     },
     "开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4448,
       "exportedPath": "开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.html",
       "dependencies": []
     },
     "开发笔记/前端/@font-face规则和Font Loading API.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2085,
       "exportedPath": "开发笔记/前端/@font-face规则和font-loading-api.html",
       "dependencies": []
     },
     "开发笔记/前端/通过脚本修改input值，手动触发input事件.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 2375,
       "exportedPath": "开发笔记/前端/通过脚本修改input值，手动触发input事件.html",
       "dependencies": []
     },
     "开发笔记/git/快速解决 Resource not accessible by integration-CSDN博客.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4944,
       "exportedPath": "开发笔记/git/快速解决-resource-not-accessible-by-integration-csdn博客.html",
       "dependencies": []
     },
     "开发笔记/linux/rsync + inotify 实现文件实时双向自动同步.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 9744,
       "exportedPath": "开发笔记/linux/rsync-+-inotify-实现文件实时双向自动同步.html",
       "dependencies": []
     },
     "开发笔记/mac/Mac 下 brew 切换为国内源.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 5719,
       "exportedPath": "开发笔记/mac/mac-下-brew-切换为国内源.html",
       "dependencies": []
     },
     "开发笔记/SEO优化/seo优化工具.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 721,
       "exportedPath": "开发笔记/seo优化/seo优化工具.html",
       "dependencies": []
     },
     "开发笔记/UI设计/优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 4723,
       "exportedPath": "开发笔记/ui设计/优化浏览器设置以提升性能和使用体验-mastergo-帮助中心.html",
       "dependencies": []
     },
     "开发笔记/UI设计/色轮_色环_色彩搭配 - Canva 可画.md": {
-      "modifiedTime": 1714626980179,
+      "modifiedTime": 1714913159160,
       "sourceSize": 3135,
       "exportedPath": "开发笔记/ui设计/色轮_色环_色彩搭配-canva-可画.html",
+      "dependencies": []
+    },
+    "工具软件/obsidian/simpread-如何用 github 搭建图床（亲测有效）_github 图床 - CSDN 博客.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 9764,
+      "exportedPath": "工具软件/obsidian/simpread-如何用-github-搭建图床（亲测有效）_github-图床-csdn-博客.html",
+      "dependencies": []
+    },
+    "工具软件/obsidian/simpread-Mermaid 语法 - 流程图.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 11934,
+      "exportedPath": "工具软件/obsidian/simpread-mermaid-语法-流程图.html",
+      "dependencies": []
+    },
+    "工具软件/obsidian/simpread-Obsidian 社区插件.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 76026,
+      "exportedPath": "工具软件/obsidian/simpread-obsidian-社区插件.html",
+      "dependencies": []
+    },
+    "工具软件/obsidian/simpread-Obsidian 插件：Dataview.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 19002,
+      "exportedPath": "工具软件/obsidian/simpread-obsidian-插件：dataview.html",
+      "dependencies": []
+    },
+    "工具软件/obsidian/我开发了一个快速输入Markdown代码+禅模式的插件（ii-plugin）.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 5950,
+      "exportedPath": "工具软件/obsidian/我开发了一个快速输入markdown代码+禅模式的插件（ii-plugin）.html",
+      "dependencies": [
+        "lib/media/我开发了一个快速输入markdown代码的插件-20240318195702413.webp",
+        "lib/media/我开发了一个快速输入markdown代码的插件-20240318195748256.webp",
+        "lib/media/我开发了一个快速输入markdown代码的插件-20240318200631362.webp",
+        "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320003419751.webp",
+        "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320003447941.webp",
+        "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320022804702.webp",
+        "lib/media/我开发了一个快速输入markdown代码的插件（ii-plugin）-20240320004046355.webp"
+      ]
+    },
+    "工具软件/simpread-关于图床的一些使用心得总结.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 8423,
+      "exportedPath": "工具软件/simpread-关于图床的一些使用心得总结.html",
+      "dependencies": []
+    },
+    "工具软件/fswatch和rsync的使用.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 5165,
+      "exportedPath": "工具软件/fswatch和rsync的使用.html",
+      "dependencies": []
+    },
+    "开发笔记/git/simpread-快速解决 Resource not accessible by integration-CSDN博客.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 4944,
+      "exportedPath": "开发笔记/git/simpread-快速解决-resource-not-accessible-by-integration-csdn博客.html",
+      "dependencies": []
+    },
+    "开发笔记/git/fork的项目如何更新.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 1506,
+      "exportedPath": "开发笔记/git/fork的项目如何更新.html",
+      "dependencies": []
+    },
+    "开发笔记/git/检测git变化并提交.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 2408,
+      "exportedPath": "开发笔记/git/检测git变化并提交.html",
+      "dependencies": []
+    },
+    "开发笔记/git/检测git中是否有文件发生了冲突.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 1827,
+      "exportedPath": "开发笔记/git/检测git中是否有文件发生了冲突.html",
+      "dependencies": []
+    },
+    "开发笔记/javascript/js 通过fs.watch实现文件的双向同步.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 17778,
+      "exportedPath": "开发笔记/javascript/js-通过fs.watch实现文件的双向同步.html",
+      "dependencies": []
+    },
+    "开发笔记/javascript/平滑滚动到顶部或底部.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 569,
+      "exportedPath": "开发笔记/javascript/平滑滚动到顶部或底部.html",
+      "dependencies": []
+    },
+    "开发笔记/linux/simpread-rsync + inotify 实现文件实时双向自动同步.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 9744,
+      "exportedPath": "开发笔记/linux/simpread-rsync-+-inotify-实现文件实时双向自动同步.html",
+      "dependencies": []
+    },
+    "开发笔记/mac/simpread-Mac 下 brew 切换为国内源.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 5719,
+      "exportedPath": "开发笔记/mac/simpread-mac-下-brew-切换为国内源.html",
+      "dependencies": []
+    },
+    "开发笔记/UI设计/simpread-优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 4723,
+      "exportedPath": "开发笔记/ui设计/simpread-优化浏览器设置以提升性能和使用体验-mastergo-帮助中心.html",
+      "dependencies": []
+    },
+    "开发笔记/UI设计/simpread-色轮_色环_色彩搭配 - Canva 可画.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 3135,
+      "exportedPath": "开发笔记/ui设计/simpread-色轮_色环_色彩搭配-canva-可画.html",
+      "dependencies": []
+    },
+    "学习笔记/好书推荐.md": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 87,
+      "exportedPath": "学习笔记/好书推荐.html",
+      "dependencies": []
+    },
+    "lib/media/demo.zip": {
+      "modifiedTime": 1714913159160,
+      "sourceSize": 1978,
+      "exportedPath": "lib/media/demo.zip",
       "dependencies": []
     }
   }
