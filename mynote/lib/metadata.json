@@ -1,6 +1,6 @@
 {
   "vaultName": "我的笔记",
-  "lastExport": 1715059190093,
+  "lastExport": 1715312116436,
   "pluginVersion": "1.8.03",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title",
   "useCustomHeadContent": false,
@@ -24,6 +24,7 @@
     "工具软件/obsidian/markdown语法官方教程/嵌入文件.md",
     "工具软件/obsidian/markdown语法官方教程/为笔记添加别名.md",
     "工具软件/obsidian/markdown语法官方教程/使用 obsidian URI.md",
+    "工具软件/obsidian/markdown语法官方教程/搜索.md",
     "工具软件/obsidian/学习网站.md",
     "工具软件/obsidian/markdown示例教程.md",
     "工具软件/obsidian/Obsidain插件之QuickAdd-强大的快速记录与宏工具.md",
@@ -45,25 +46,24 @@
     "工具软件/obsidian/我开发了一个快速输入Markdown代码和禅模式的插件(ii-plugin).md",
     "工具软件/obsidian/我把文心一言嵌入到 obsidian 里了.md",
     "工具软件/obsidian/用 MaoXian 网摘保存网络文章到 Obsidian.md",
+    "工具软件/obsidian/DataView 入门教程.md",
     "工具软件/github加速方案.md",
     "工具软件/linux.md",
     "工具软件/logseq.md",
     "工具软件/mac 安装Beyond Compare，并永久使用_comparebeyond mac.md",
-    "工具软件/JavaScript.md",
-    "工具软件/simpread-关于图床的一些使用心得总结.md",
     "工具软件/lftp使用.md",
     "工具软件/fswatch和rsync的使用.md",
+    "工具软件/JavaScript.md",
     "工具软件/windows.md",
     "工具软件/Unison双向同步文件的使用.md",
-    "工具软件/Unison帮助文档翻译.md",
     "工具软件/关于图床的一些使用心得总结.md",
+    "工具软件/Unison帮助文档翻译.md",
     "工具软件/typora.md",
     "工具软件/在 Mac 上安排关机定时器的.md",
     "工具软件/我开发了一个可以置顶笔记的app.md",
     "工具软件/[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？.md",
     "开发笔记/脚本插件/bat避免重复运行.md",
     "开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md",
-    "开发笔记/前端/js 通过fs.watch实现文件的双向同步 1.md",
     "开发笔记/前端/js 通过fs.watch实现文件的双向同步.md",
     "开发笔记/前端/HTML 标签简写及全称.md",
     "开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md",
@@ -95,7 +95,6 @@
     "开发笔记/前端/通过脚本修改input值，手动触发input事件.md",
     "开发笔记/数据库/mysql 数据库并发控制的内部实现机制和原理是什么.md",
     "开发笔记/算法/多端文件同步原理和算法概述.md",
-    "开发笔记/git/simpread-快速解决 Resource not accessible by integration.md",
     "开发笔记/git/快速解决 Resource not accessible by integration.md",
     "开发笔记/git/解决git status不能显示中文.md",
     "开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md",
@@ -103,7 +102,6 @@
     "开发笔记/git/fork的项目如何更新.md",
     "开发笔记/git/检测git变化并提交.md",
     "开发笔记/git/检测git中是否有文件发生了冲突.md",
-    "开发笔记/linux/simpread-rsync + inotify 实现文件实时双向自动同步.md",
     "开发笔记/linux/Linux find 模拟 tree 命令.md",
     "开发笔记/linux/Linux 文件搜索神器 find 实战详解.md",
     "开发笔记/linux/Linux中如何锁定文件？flock命令一定要了解！.md",
@@ -116,7 +114,6 @@
     "开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md",
     "开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md",
     "开发笔记/linux/内网穿透.md",
-    "开发笔记/mac/simpread-Mac 下 brew 切换为国内源.md",
     "开发笔记/mac/AppleScript 隐藏执行shell脚本文件.md",
     "开发笔记/mac/fswatch的使用.md",
     "开发笔记/mac/mac上shell扫描目录并放到弹框列表中.md",
@@ -133,8 +130,6 @@
     "开发笔记/python/ftp获取远程文件时间.md",
     "开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md",
     "开发笔记/SEO优化/seo优化工具.md",
-    "开发笔记/UI设计/simpread-优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md",
-    "开发笔记/UI设计/simpread-色轮_色环_色彩搭配 - Canva 可画.md",
     "开发笔记/UI设计/优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md",
     "开发笔记/UI设计/色轮_色环_色彩搭配 - Canva 可画.md",
     "随笔/与人工智能的有趣问答.md",
@@ -1367,325 +1362,325 @@
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/fonts/mathjax_zero.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 1368,
       "exportedPath": "lib/fonts/mathjax_zero.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 34160,
       "exportedPath": "lib/fonts/mathjax_main-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-bold.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 34464,
       "exportedPath": "lib/fonts/mathjax_main-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-italic.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 19360,
       "exportedPath": "lib/fonts/mathjax_math-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-italic.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 20832,
       "exportedPath": "lib/fonts/mathjax_main-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-bolditalic.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 19776,
       "exportedPath": "lib/fonts/mathjax_math-bolditalic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size1-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 5792,
       "exportedPath": "lib/fonts/mathjax_size1-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size2-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 5464,
       "exportedPath": "lib/fonts/mathjax_size2-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size3-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 3244,
       "exportedPath": "lib/fonts/mathjax_size3-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size4-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 5148,
       "exportedPath": "lib/fonts/mathjax_size4-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_ams-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 40808,
       "exportedPath": "lib/fonts/mathjax_ams-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 9600,
       "exportedPath": "lib/fonts/mathjax_calligraphic-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-bold.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 9908,
       "exportedPath": "lib/fonts/mathjax_calligraphic-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 21480,
       "exportedPath": "lib/fonts/mathjax_fraktur-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-bold.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 22340,
       "exportedPath": "lib/fonts/mathjax_fraktur-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 12660,
       "exportedPath": "lib/fonts/mathjax_sansserif-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-bold.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 15944,
       "exportedPath": "lib/fonts/mathjax_sansserif-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-italic.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 14628,
       "exportedPath": "lib/fonts/mathjax_sansserif-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_script-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 11852,
       "exportedPath": "lib/fonts/mathjax_script-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_typewriter-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 17604,
       "exportedPath": "lib/fonts/mathjax_typewriter-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-regular.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 1136,
       "exportedPath": "lib/fonts/mathjax_vector-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-bold.woff": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 1116,
       "exportedPath": "lib/fonts/mathjax_vector-bold.woff",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1715059190093,
-      "sourceSize": 62908,
+      "modifiedTime": 1715312116436,
+      "sourceSize": 60988,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 50096,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1715059190093,
-      "sourceSize": 8813,
+      "modifiedTime": 1715312116436,
+      "sourceSize": 8297,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/scripts/img-zoom.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 4157,
       "exportedPath": "lib/scripts/img-zoom.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 40926,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 5787,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 412,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 3821,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 23492,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/styles/snippets.css": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 12924,
       "exportedPath": "lib/styles/snippets.css",
       "dependencies": []
@@ -1747,14 +1742,8 @@
         "lib/media/defer和async的区别（面试被问到了）-掘金-20240423105011271.webp"
       ]
     },
-    "开发笔记/前端/js 通过fs.watch实现文件的双向同步 1.md": {
-      "modifiedTime": 1714986299232,
-      "sourceSize": 17778,
-      "exportedPath": "开发笔记/前端/js-通过fs.watch实现文件的双向同步-1.html",
-      "dependencies": []
-    },
     "lib/scripts/easy-notice.js": {
-      "modifiedTime": 1715059190093,
+      "modifiedTime": 1715312116436,
       "sourceSize": 2716,
       "exportedPath": "lib/scripts/easy-notice.js",
       "dependencies": []
@@ -1845,12 +1834,6 @@
       "exportedPath": "开发笔记/ui设计/色轮_色环_色彩搭配-canva-可画.html",
       "dependencies": []
     },
-    "工具软件/simpread-关于图床的一些使用心得总结.md": {
-      "modifiedTime": 1714986299232,
-      "sourceSize": 8423,
-      "exportedPath": "工具软件/simpread-关于图床的一些使用心得总结.html",
-      "dependencies": []
-    },
     "工具软件/fswatch和rsync的使用.md": {
       "modifiedTime": 1714986299232,
       "sourceSize": 5165,
@@ -1873,30 +1856,6 @@
       "modifiedTime": 1715049191728,
       "sourceSize": 1827,
       "exportedPath": "开发笔记/git/检测git中是否有文件发生了冲突.html",
-      "dependencies": []
-    },
-    "开发笔记/linux/simpread-rsync + inotify 实现文件实时双向自动同步.md": {
-      "modifiedTime": 1714986299232,
-      "sourceSize": 9744,
-      "exportedPath": "开发笔记/linux/simpread-rsync-+-inotify-实现文件实时双向自动同步.html",
-      "dependencies": []
-    },
-    "开发笔记/mac/simpread-Mac 下 brew 切换为国内源.md": {
-      "modifiedTime": 1714986299232,
-      "sourceSize": 5719,
-      "exportedPath": "开发笔记/mac/simpread-mac-下-brew-切换为国内源.html",
-      "dependencies": []
-    },
-    "开发笔记/UI设计/simpread-优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md": {
-      "modifiedTime": 1714986299232,
-      "sourceSize": 4723,
-      "exportedPath": "开发笔记/ui设计/simpread-优化浏览器设置以提升性能和使用体验-mastergo-帮助中心.html",
-      "dependencies": []
-    },
-    "开发笔记/UI设计/simpread-色轮_色环_色彩搭配 - Canva 可画.md": {
-      "modifiedTime": 1714986299232,
-      "sourceSize": 3135,
-      "exportedPath": "开发笔记/ui设计/simpread-色轮_色环_色彩搭配-canva-可画.html",
       "dependencies": []
     },
     "学习笔记/好书推荐.md": {
@@ -1929,16 +1888,22 @@
       "exportedPath": "工具软件/[经验教程]-国内如何下载更新-google-谷歌浏览器及更新谷歌-chrome-浏览器无法访问此网站怎么办？.html",
       "dependencies": []
     },
-    "开发笔记/git/simpread-快速解决 Resource not accessible by integration.md": {
-      "modifiedTime": 1714986299232,
-      "sourceSize": 4944,
-      "exportedPath": "开发笔记/git/simpread-快速解决-resource-not-accessible-by-integration.html",
-      "dependencies": []
-    },
     "开发笔记/git/快速解决 Resource not accessible by integration.md": {
       "modifiedTime": 1714986299232,
       "sourceSize": 4944,
       "exportedPath": "开发笔记/git/快速解决-resource-not-accessible-by-integration.html",
+      "dependencies": []
+    },
+    "工具软件/obsidian/markdown语法官方教程/搜索.md": {
+      "modifiedTime": 1715312116436,
+      "sourceSize": 7295,
+      "exportedPath": "工具软件/obsidian/markdown语法官方教程/搜索.html",
+      "dependencies": []
+    },
+    "工具软件/obsidian/DataView 入门教程.md": {
+      "modifiedTime": 1715312116436,
+      "sourceSize": 13606,
+      "exportedPath": "工具软件/obsidian/dataview-入门教程.html",
       "dependencies": []
     }
   }

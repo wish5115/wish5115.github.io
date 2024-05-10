@@ -1,4 +1,402 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 07 May 2024 05:19:52 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 07 May 2024 05:19:50 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[首页]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 10 May 2024 03:35:20 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 10 May 2024 03:35:16 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[搜索]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:work" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#work</a> 
+ <br><img alt="Search.png" src="https://publish-01.obsidian.md/access/cf01a21839823cd6cbe18031acf708c0/%E9%99%84%E4%BB%B6/Search.png" referrerpolicy="no-referrer"><br>搜索是一个十分强大的功能，但同时它也可以使你产生困惑。在大多数情况下，你只需要简单地输入想查找的东西即可完成搜索。但为了提升搜索的精度与效率，你还需要了解更多技巧。<br><br><br>你可以通过快捷键 Ctrl/Cmd-Shift-F 来唤起搜索（这个快捷键可以修改）。当搜索功能被唤起时，焦点会被放置在搜索栏中，因此你可以立刻输入关键词进行搜索。<br><br>当你选中某段文本后再唤起搜索功能时，Obsidian 会自动为你在库中搜索这段文本。<br><br>Obsidian 会记录你最近的搜索历史。当你搜索栏为空时，搜索历史会自动浮现。你可以点击任何一条历史记录以重新运行该搜索。如果想清空历史记录，点击“X”按钮即可。<br><br>在搜索时，你可以决定是否开启这些选项：<br>
+<br>区分大小写 可以将搜索更改为大小写敏感模式，但其会被 match-case: 和 ignore-case: 语法覆盖。
+<br>说明搜索含义 将会说明当前检索式的搜索范围。
+<br>折叠搜索结果 将会隐藏所有搜索结果的具体内容，只显示笔记名称。如果你只想隐藏或展开某条结果的内容，点击该结果左边的三角符号即可。
+<br>显示上下文 将在展开搜索结果的前提下，显示搜索结果中的更多内容。
+<br>排序 则允许你更改搜索结果的排列顺序，这和<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/help-zh/%E6%8F%92%E4%BB%B6/%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8" rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E6%8F%92%E4%BB%B6/%E6%96%87%E4%BB%B6%E5%88%97%E8%A1%A8" target="_blank">文件列表</a>中的排序一样。
+<br><br>如果想快速地将搜索结果导出成列表，则可以使用 复制搜索结果 这一功能。<br>这个功能允许你对导出的列表进行个性化设置，比如是否添加文件路径，使用 Wiki 风格链接还是 Markdown 风格链接，使用哪种列表符号等等。<br><br>你可以将搜索结果嵌入到笔记中。比如：<br>```query
+embed OR search
+```
+复制<br>然后，你就可以在预览模式下看到 embed OR search 的搜索结果被嵌入到当前笔记中。<br>需要注意的是，截止2021/1/18，这并不能在 <a data-tooltip-position="top" aria-label="https://publish.obsidian.md/help-zh/%E8%AE%B8%E5%8F%AF%E8%AF%81%E4%B8%8E%E9%99%84%E5%8A%A0%E6%9C%8D%E5%8A%A1/Obsidian+%E5%8F%91%E5%B8%83%E6%9C%8D%E5%8A%A1" rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E8%AE%B8%E5%8F%AF%E8%AF%81%E4%B8%8E%E9%99%84%E5%8A%A0%E6%9C%8D%E5%8A%A1/Obsidian+%E5%8F%91%E5%B8%83%E6%9C%8D%E5%8A%A1" target="_blank">发布的网站</a>中使用。<br><br><br>在设计检索式时，不要忘了 说明搜索含义 能够显示搜索的具体含义，这能在你测试检索式时帮上大忙。<br>
+<br>使用空格分隔关键词。每个关键词都是被独立查找的。比如，检索式 foo bar 将搜索同时包含 foo 和 bar 的笔记。
+<br>使用双引号来搜索短语。短语中的空格将不再有分隔关键词的作用，因此你可以搜索那些带有空格的语句。比如，"foo bar" 将搜索包含 foo bar 这一短语的笔记。
+<br>可以使用逻辑运算符。OR 表示或者关系，即文档应该包含以下关键词之一；- 表示非关系，即文档不要包含以下关键词；空格表示与关系，即文档应该同时包含以下关键词。比如，foo OR bar 会返回包含 foo 或包含 bar 的笔记。foo -bar 将会返回包含 foo 但不包含 bar 的笔记。
+<br>可以使用括号来设置逻辑运算顺序。比如 (a OR b) (c OR d)。这对于那些复杂的检索式非常有用，可以确保检索式的计算顺序是符合设计的。
+<br>可以使用正则表达式。正则表达式需要使用 / 包括起来，比如 /[a-z]{3}/。Obsidian 接受 JavaScript 风格的正则表达式，你可以在<a data-tooltip-position="top" aria-label="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" rel="noopener" class="external-link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">这里</a>对其进行学习。
+<br><br>Obsidian 还提供了一些特殊的搜索符。一些搜索符允许你进行嵌套查询，比如 file:("to be" OR -"2B")。你可以使用 - 来对搜索结果进行限制，比如 foo -tag:#bar。<br>
+<br>file: 将使搜索对象变为文件名。比如，file:"202007" 则会搜索名称包含 202007 的文件。如果你使用 Zettelkasten 方法并使用时间戳来命名的话，这个搜索符能让你通过搜索文件名来找到某个时间段内记录的笔记。
+<br>path: 将使搜索对象变为文件的绝对路径（基于库的根目录）。你也可以将它理解为搜索特定文件夹中的文件。比如 path:"日记/2020-07" 将返回路径中包含 日记/2020-07 的文件（日记 文件夹下子文件夹 2020-07 中的文件）。
+<br>content: 将使搜索对象变为文件中的内容。比如 content:"happy cat"。
+<br>match-case: 和 ignore-case: 将改变检索式的大小写敏感状态，即 match-case: 将使检索式大小写敏感，ignore-case: 将使检索式大小写不敏感。
+<br>tag: 将检索对象变为标签，返回包含特定标签的文件。比如，tag:#work 将返回包含 <a class="internal-link" data-href="#work" href="https://wxkj.asia/mynote/#work" target="_self" rel="noopener"></a><a href="https://wxkj.asia/mynote?query=tag:work" class="tag" target="_blank" rel="noopener">#work</a> 标签的笔记。使用标签搜索符搜索标签比直接在内容中检索 #标签 字符串要精确得多，因为标签搜索符会忽略代码块以及小标题中出现的、形似标签但不是标签的字符串。
+<br>line:(...) 将使搜索对象从整个文档的内容变为行的内容。比如，当我们使用最普通的搜索搜索 foo bar 时，会返回那些第一行中有 foo，最后一行有 bar 的笔记。但是，如果使用 line:(foo bar)，则会返回只在同一行中同时包含 foo 和 bar 的笔记。
+<br>block:(...) 将使搜索对象从整个文档的内容变为块的内容。正如<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%9D%97%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%9D%97%E5%BC%95%E7%94%A8" rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E5%9D%97%E9%93%BE%E6%8E%A5%E4%B8%8E%E5%9D%97%E5%BC%95%E7%94%A8" target="_blank">块链接与块引用</a>中所说的，块是被两个空行包围的元素。由于涉及块的操作需要进一步解析每个文件，因此这种搜索可能会比其他搜索慢。
+<br>section:(...) 将使搜索对象从整个文档的内容变为章节的内容。所谓章节指的是两个小标题间的文本（包括开头的小标题）。
+<br>task:(...) 将使搜索对象变为<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AC%94%E8%AE%B0#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8" rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AC%94%E8%AE%B0#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8" target="_blank">任务列表</a>。你可以使用task:"" 来在所有任务中检索相应任务。
+<br>task-todo:(...) 将使搜索对象变为<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AC%94%E8%AE%B0#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8" rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AC%94%E8%AE%B0#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8" target="_blank">任务列表</a>中的待办任务。使用 task-todo:"" 来在未完成的任务中检索相应任务。
+<br>task-done:(...) 将使搜索对象变为<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AC%94%E8%AE%B0#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8" rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%AC%94%E8%AE%B0#%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8" target="_blank">任务列表</a>中的已完成任务。 使用 task-done:"" 来在已完成的任务中检索相应任务。
+<br><br>文章来源: <a rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E6%8F%92%E4%BB%B6/%E6%90%9C%E7%B4%A2" target="_blank">https://publish.obsidian.md/help-zh/%E6%8F%92%E4%BB%B6/%E6%90%9C%E7%B4%A2</a>]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/markdown语法官方教程/搜索.html</link><guid isPermaLink="false">工具软件/obsidian/markdown语法官方教程/搜索.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 08 May 2024 13:05:48 GMT</pubDate><enclosure url="https://publish-01.obsidian.md/access/cf01a21839823cd6cbe18031acf708c0/%E9%99%84%E4%BB%B6/Search.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://publish-01.obsidian.md/access/cf01a21839823cd6cbe18031acf708c0/%E9%99%84%E4%BB%B6/Search.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[DataView 入门教程]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:标签" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#标签</a> <a class="tag" href="https://wxkj.asia/mynote/?query=tag:标签" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#标签</a> 
+ <br><br>```dataview
+&lt;QUERY-TYPE&gt; &lt;WITHOUT ID&gt; &lt;字段&gt;
+FROM &lt;来源&gt;
+&lt;WHERE&gt; &lt;条件表达式&gt;
+&lt;SORT&gt; &lt;排序依据 排序方式&gt;
+&lt;GROUP BY&gt; &lt;分组依据&gt;
+&lt;LIMIT&gt; &lt;限定显示记录数&gt;
+&lt;FLATTEN&gt; &lt;拆分表达式&gt;
+```
+复制<br><br><br>以表格的形式显示符合查询条件的文件清单和相关属性。<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  aliases as "别名",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+SORT file.cday DESC
+```
+复制<br><br>以无序列表的形式显示符合查询条件的文件清单。<br>```dataview
+LIST
+FROM "200-学习箱/210-知识库搭建"
+```
+复制<br><br>仅以任务列表的形式显示符合查询条件的任务列表。<br>```dataview
+TASK
+FROM "200-学习箱/210-知识库搭建"
+```
+复制<br><br>以日历视图的形式显示查询结果，日历现在还有个 Bug，经常会显示两个重复月份的日历。<br>```dataview
+CALENDAR file.cday
+WHERE contains(file.name, "PicGo")
+```
+//必须加日期型的字段作为日历中的定位
+CALENDAR file.cday
+WHERE contains(file.name, "PicGo")
+复制<br><br><br><br><br>:&nbsp;之前的为属性名，直接使用，不需要&nbsp;file.属性<br><br><br>查询实例<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  aliases as "别名",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+SORT file.cday DESC
+```
+复制<br><br><br>```dataview
+LIST
+FROM #DataView 
+```
+复制<br><br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  aliases as "别名",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+SORT file.cday DESC
+```
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  aliases as "别名",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+SORT file.cday DESC
+```
+复制<br><br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名",
+  file.tasks.text as "任务名",
+  choice(file.tasks.completed, "是", "否") as "已完成"
+FROM "200-学习箱/210-知识库搭建/Markdown for macOS"
+```
+复制<br><br>```dataview
+LIST
+FROM [[内部文件链接]]   
+```
+//查询 [[内部文件链接]] 被哪些文件链接，即入链
+
+```dataview
+LIST
+FROM outgoing([[Markdown for macOS]]) 
+```
+复制<br><br>即将 1、2、4 来源联合起来使用<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  aliases as "别名",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建" and outgoing([[Markdown for macOS]])
+SORT file.cday DESC
+```
+复制<br><br><br>
+<br>1. 包含指定文本
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE icontains(file.name,"obsidian")
+```
+
+// contains(file.name,"obsidian") 大小写敏感
+// icontains(file.name,"obsidian") 大小写不敏感
+复制<br>
+<br>2. 不包含指定文本
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE !icontains(file.name,"obsidian")
+```
+复制<br>
+<br>3. 以特定文本开头
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE startswith(file.name,"Obsidian")
+```
+复制<br>
+<br>4. 以特定文本结尾
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE endswith(file.name,"COS")
+```
+复制<br>
+<br>5. 英文大小写转换
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE endswith(lower(file.name),"cos")
+```
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE startswith(upper(file.name),"OBSIDIAN")
+```
+复制<br><br>
+<br>1. 等于与不等于
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE number1 = 9
+```
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE !(number1 = 9)
+```
+复制<br>
+<br>2. 大于或大于等于
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE number1 &gt;= 8
+```
+复制<br><br>
+<br>3. 小于或小于等于
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE number1 &lt;= 9
+```
+
+// 当文件 YAML 没有定义该属性时，该属性值默认为 0
+复制<br>
+<br>4. 数字的四则运算
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE number1 - number1 &lt;= 0
+```
+复制<br><br>
+<br>1. 日期的格式化
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  dateformat(file.ctime,"HH:mm: ss") as "创建时间",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE file.cday &lt;= date("2023-02-20")
+```
+
+//日期格式化通常只作为输出显示格式定义，不作为条件
+复制<br>
+<br>2. 等于指定日期
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE file.cday = date("2023-02-19")
+```
+复制<br>
+<br>3. 大于等于指定日期
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE file.cday &gt;= date("2023-02-19")
+```
+复制<br>
+<br>4. 小于等于指定日期
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE file.cday &lt;= date("2023-02-20")
+```
+复制<br>
+<br>5. 常用的日期属性
+<br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE file.cday.month = date(today).month
+```
+
+// year
+// month
+// day
+// date (today)
+// date (now)
+// date (tomorrow)
+// date (yesterday)
+// date (sow)
+// date (eow)
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE file.cday &gt;= date(sow) and file.cday &lt;= date(eow)
+```
+复制<br><br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE file.starred
+```
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE !file.starred
+```
+
+```dataview
+TASK
+WHERE !fullyCompleted
+```
+// 如果本级任务未完成，下级任务已完成，会将下级已完成的一起显示
+
+```dataview
+TASK
+WHERE fullyCompleted
+```
+复制<br>Boolean 类字段的格式化，就是将 true、false 转换为更偏于用户阅读的是 / 否，或者是 yes / no<br><br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE contains(tags,"DataView")
+```
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE !contains(tags,"DataView")
+```
+// 如果 YAML 中没有定议 tags，则默认为空
+复制<br><br>```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE contains(file.outlinks, [[内部文件链接]])
+```
+
+```dataview
+TABLE WITHOUT ID
+  file.link as "文件名称",
+  dateformat(file.cday,"yyyy-MM-dd") as "创建日期",
+  choice(file.starred, "是", "否") as "加星"
+FROM "200-学习箱/210-知识库搭建"
+WHERE contains(file.inlinks, [[Markdown for macOS]])
+```
+复制<br><br>&lt;条件1&gt; and &lt;条件2&gt;
+
+1. 只满足&lt;条件1&gt;，不会被显示到查询结果中
+2. 只满足&lt;条件2&gt;，不会被显示到查询结果中
+3. 同时满足&lt;条件1&gt;和&lt;条件2&gt;，会显示到查询结果中
+复制<br><br>&lt;条件1&gt; or &lt;条件2&gt;
+
+1. 只满足&lt;条件1&gt;，会被显示到查询结果中
+2. 只满足&lt;条件2&gt;，会被显示到查询结果中
+3. 同时满足&lt;条件1&gt;和&lt;条件2&gt;，会显示到查询结果中
+复制<br><br>仅发生在需要同时运用 and 和 or 两个边接符时，才需要使用括号定义优先级
+
+（&lt;条件1&gt; or &lt;条件2&gt;) and &lt;条件3&gt;
+
+1. 只满足&lt;条件1&gt;，不会被显示到查询结果中
+2. 只满足&lt;条件2&gt;，不会被显示到查询结果中
+3. 只满足&lt;条件3&gt;，不会被显示到查询结果中
+4. 同时满足&lt;条件1&gt;和&lt;条件2&gt;，不会显示到查询结果中
+5. 同时满足&lt;条件1&gt;和&lt;条件3&gt;，会显示到查询结果中
+6. 同时满足&lt;条件2&gt;和&lt;条件3&gt;，会显示到查询结果中
+7. 同时满足&lt;条件1&gt;、&lt;条件2&gt;和&lt;条件3&gt;，会显示到查询结果中
+仅发生在需要同时运用 and 和 or 两个边接符时，才需要使用括号定义优先级
+
+（&lt;条件1&gt; and &lt;条件2&gt;) or &lt;条件3&gt;
+
+1. 只满足&lt;条件1&gt;，不会被显示到查询结果中
+2. 只满足&lt;条件2&gt;，不会被显示到查询结果中
+3. 只满足&lt;条件3&gt;，会被显示到查询结果中
+4. 同时满足&lt;条件1&gt;和&lt;条件2&gt;，会显示到查询结果中
+5. 同时满足&lt;条件1&gt;和&lt;条件3&gt;，会显示到查询结果中
+6. 同时满足&lt;条件2&gt;和&lt;条件3&gt;，会显示到查询结果中
+7. 同时满足&lt;条件1&gt;、&lt;条件2&gt;和&lt;条件3&gt;，会显示到查询结果中
+复制<br>官方文档：<br><a data-tooltip-position="top" aria-label="https://blacksmithgu.github.io/obsidian-dataview/" rel="noopener" class="external-link" href="https://blacksmithgu.github.io/obsidian-dataview/" target="_blank">Dataview</a>]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/dataview-入门教程.html</link><guid isPermaLink="false">工具软件/obsidian/DataView 入门教程.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Tue, 07 May 2024 06:10:48 GMT</pubDate></item><item><title><![CDATA[首页]]></title><description><![CDATA[ 
  <br><br>笔记是人类的第二大脑，也是作者灵感的迸发和思想的总结，更是与他人交流的平台。
 
 浩渺宇宙，茫茫人海，你我相遇不是巧合是机缘，那么朋友，认识我就从笔记开始吧~！
@@ -2220,123 +2618,7 @@ ncftpput -R -u 用户 -p 密码 主机 远程目录 D:\本地目录<br>Mac 不�
 <br>4.保存BCompare文件<br>5.修改文件的权限：<br>chmod a+x /Applications/Beyond\ Compare.app/Contents/MacOS/BCompare
 复制<br>“2019120215292975.png” could not be found.<br>
 这样Beyond Compare就可以永久使用了]]></description><link>https://wxkj.asia/mynote/工具软件/mac-安装beyond-compare，并永久使用_comparebeyond-mac.html</link><guid isPermaLink="false">工具软件/mac 安装Beyond Compare，并永久使用_comparebeyond mac.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 14 Mar 2024 16:43:38 GMT</pubDate></item><item><title><![CDATA[JavaScript]]></title><description><![CDATA[ 
- <br>EasyMDE<br>基于 SimpleMDE 的改进，提供用户友好界面，实时预览 Markdown 的 js 开源库<br>marked 和 Markdown-it<br>Markdown 转 HTML 的 js 开源库]]></description><link>https://wxkj.asia/mynote/工具软件/javascript.html</link><guid isPermaLink="false">工具软件/JavaScript.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sun, 31 Mar 2024 22:42:41 GMT</pubDate></item><item><title><![CDATA[simpread-关于图床的一些使用心得总结]]></title><description><![CDATA[ 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://juejin.cn/post/7084137919845236743" rel="noopener" class="external-link" href="https://juejin.cn/post/7084137919845236743" target="_blank">juejin.cn</a>
-<br><br><br>
-<br>非隐私图片：使用 Github、七牛云 (http)、SM.MS 图床、路过图床。
-<br>隐私图片：使用阿里云 OSS、七牛云 (https)（绑定的域名不能丢）。
-<br>测试环境（和日常使用）可以凭自己喜好； 生产环境还是选择阿里云 oss 这种付费的比较靠谱。<br><br>
-<br>优点：免费，不用考虑存储费用和流量费用。
-<br>缺点：
-
-<br>隐私差（仓库公开）。 根据仓库名和 readme 中的关键词就能搜到。（虽然可以把仓库名和 readme 中关于 picture bed 的描述去掉了。但这也只是减少了被检索到的概率。只要仓库被人访问，里面的所有图片都会被看到。）<br>
-总结：github 可以用作 picture bed，但只适合存放普通图片，隐私图片还是存在别的付费地方（因为要外链访问，所以也是公开的，但是被访问的概率比 github 要小得多）。
-<br>网页端需要点开具体图片文件才能预览。
-
-
-<br>获取 url 的一个方法：在浏览器打开 github 的图片，把此时的 url 中的 blob 改为 raw。然后这个 url 就可以在 markdown 中直接使用了。<br>
-（不过这样并不稳定，通常应该使用下面一段里提到的 jsdelivr 的 cnd 加速）<br><br>
-jsdelivr 的介绍：<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fwww.cnblogs.com%2Flfri%2Fp%2F12212878.html" rel="noopener" class="external-link" title="https://www.cnblogs.com/lfri/p/12212878.html" href="https://link.juejin.cn?target=https%3A%2F%2Fwww.cnblogs.com%2Flfri%2Fp%2F12212878.html" target="_blank">快速免费的公用 CDN —— jsDelivr</a> 。 参考：<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fblog.csdn.net%2Fqq_36759224%2Farticle%2Fdetails%2F98058240" rel="noopener" class="external-link" title="https://blog.csdn.net/qq_36759224/article/details/98058240" href="https://link.juejin.cn?target=https%3A%2F%2Fblog.csdn.net%2Fqq_36759224%2Farticle%2Fdetails%2F98058240" target="_blank">Github+jsDelivr+PicGo 打造稳定快速、高效免费图床</a> 。
-<br>PicGo 中 github 的设置里，自定义域名设置为：https://cdn.jsdelivr.net/gh/用户名/图床仓库名，就可以使用免费的 cdn 加速了。<br><br>
-<br>优点：稳定安全。
-<br>缺点：存储和流量都收费（但其实很便宜）。
-<br>计算了一下阿里云 oss 的存储计费价格：存储文件小于 5.6G 时，按量计费划算；存储文件大于 5.6G 时，开通资源包（一年 8.1 元 40G 存储空间）比较划算。<br>
-至于 cdn 流量费用，不必计算，因为没得选 必须用。<br><br>
-网站：<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fportal.qiniu.com%2Fkodo%2Foverview" rel="noopener" class="external-link" title="https://portal.qiniu.com/kodo/overview" href="https://link.juejin.cn?target=https%3A%2F%2Fportal.qiniu.com%2Fkodo%2Foverview" target="_blank">七牛云 - 对象存储</a>
-<br>七牛云需要自己设置域名，稍微有点麻烦（有个备案域名就行，简单设置一下 cname 解析，并不难）。折腾一下就可以白嫖 10G 存储空间和 10G http 流量也挺好的。<br>
-<br>优点：每月有 10G 的免费存储空间和 10G HTTP 流量。
-<br>缺点：
-
-<br>https 流量收费。 免费的 http 流量有时候网站会不显示图片（因为网站开了 https），而且 http 的安全性比较差。但是七牛云存储空间设置成 https 又会产生流量费用。
-<br>绑定的域名不能丢。 需要使用自己的备案域名，如果域名过期了，以往的链接会失效。批量替换新的 url 工作量会很大。（相当于自己的这个域名被绑死了，不能扔.）
-
-
-<br>图片外链测试成功：<br>
-<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ce9583396484b1e9dd8341eda358b8c~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" referrerpolicy="no-referrer"><br><br>（又拍云联盟申请被拒了，pass）<br>~- 优点：加入又拍云联盟后，每月有免费的 10G 存储和 15G HTPP/HTTPS 流量（代金券形式发放，一次性发一年）。~ ~- 缺点：每年申请又拍云联盟一次（可以忽略）；自己的网站底部按要求添加又拍云的标识（可以忽略）。~<br><br>
-<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fsm.ms%2F" rel="noopener" class="external-link" title="https://sm.ms/" href="https://link.juejin.cn?target=https%3A%2F%2Fsm.ms%2F" target="_blank">sm.ms 图床</a>
-<br>
-<br>优点：
-
-<br>免费（5G 的存储空间）；不用考虑流量问题。
-<br>网页端有预览功能。
-<br>上传后不可修改（不可重命名）。 对于外链 url 这算优点，保证了以往引用的的外链 url 不会失效。（它用的不是直链，实测重命名不会影响之前外链的 url）
-
-
-<br>缺点：
-
-<br>使用 PicGo 上传有时会出现上传失败的情况，可能是网络原因？（后来使用体验好了很多。）。
-<br>可能会跑路？不过它在免费图床里算是最可靠的了。它跑路的概率肯定比下面的路过图床的概率低。
-<br>网有点慢。
-<br>有预览功能，但只是一列排开，（相较于下面的路过图床来说）没有相册那种形式方便。但也不错了。
-<br>上传时不可以重命名、不可以剪裁。（严格来说，这不算是缺点）。
-
-
-<br>sm.ms 图床 url test：<br>
-<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fsm.ms%2Fimage%2Fcs7MkqmKAloD4Lf" rel="noopener" class="external-link" title="https://sm.ms/image/cs7MkqmKAloD4Lf" href="https://link.juejin.cn?target=https%3A%2F%2Fsm.ms%2Fimage%2Fcs7MkqmKAloD4Lf" target="_blank"></a><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f5513a927845428eb7d0bd125fcf8674~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" referrerpolicy="no-referrer"><br><br>
-<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fimgtu.com%2F" rel="noopener" class="external-link" title="https://imgtu.com/" href="https://link.juejin.cn?target=https%3A%2F%2Fimgtu.com%2F" target="_blank">路过图床 (imgtu.com)</a>
-<br>个人认为是仅次于 sm.ms 的选择，毕竟已经自 2011 年运营至了。跑路的可能性不大。 但是不建议作为主力，虽然跑路的可能性不大，但还是有的。<br>
-<br>优点：
-
-<br>不限空间、不限流量。
-<br>比 sm.ms 的图片管理更人性化，更接近相册的形式。
-<br>上传时可以剪裁。上传后可以重命名。
-
-
-<br>缺点:  
-
-<br>删除太容易了。 相比于 sm.ms，路过图床的删除图片的方式更方便，个人认为这是个缺点，万一不小心删除了相册，那相册里所有图片的 url 就全失效了。  
-<br>上传后可以重命名（对于外链 url 这算是缺点，因为修改了图片名称，以往的 url 就算失效了）。（它用的不是直链，实测重命名不会影响之前外链的 url）  
-<br>换过域名。从 imgchr.com 换成了 imgtu.com 。
-
-
-<br><br>
-<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fwww.imgurl.org%2Fvip%2Fmanage%2Fupload" rel="noopener" class="external-link" title="https://www.imgurl.org/vip/manage/upload" href="https://link.juejin.cn?target=https%3A%2F%2Fwww.imgurl.org%2Fvip%2Fmanage%2Fupload" target="_blank">ImgURL 免费图床</a>
-<br>这个名字有点……，和国外的 imgur.com 太像了。<br>
-<br>优点：
-
-<br>免费。不用考虑存储费用和流量费用。
-
-
-<br>缺点：
-
-<br>难保不会跑路 (可能性不大)。
-<br>上传数量受限制。每日 20 涨，每月 400 张。
-
-
-<br><br>（自己搭建图床） 昨天看到了相关视频，突然萌生了自己搭建图床的想法（vps 部署别人的开源程序）。<br>
-了解之后，可选项有：<br>
-<br>Chevereto （国外的） <a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Frodber%2Fchevereto-free" rel="noopener" class="external-link" title="https://github.com/rodber/chevereto-free" href="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Frodber%2Fchevereto-free" target="_blank">rodber/chevereto-free (github.com)</a><br>
-搭建环境要求：
-
-<br>Apache/Nginx
-<br>PHP 5.5+
-<br>MySQL 5.0+
-
-
-<br>Imgurl （国内的）<br>
-<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Fhelloxz%2Fimgurl" rel="noopener" class="external-link" title="https://github.com/helloxz/imgurl" href="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Fhelloxz%2Fimgurl" target="_blank">helloxz/imgurl (github.com)</a><br>
-搭建环境要求：
-
-<br>PHP &gt;= 5.6
-<br>PDO_SQLite
-<br>GD2
-<br>ImageMagick
-<br>fileinfo
-<br>pathinfo
-
-
-<br>这个有点麻烦了，然后对 vps 性能也有一点要求。 不过安全性无疑是最高的。<br><br>
-<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2FMolunerfinn%2FPicGo" rel="noopener" class="external-link" title="https://github.com/Molunerfinn/PicGo" href="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2FMolunerfinn%2FPicGo" target="_blank">Molunerfinn/PicGo: A simple &amp; beautiful tool for pictures uploading built by vue-cli-electron-builder (github.com)</a>
-<br>PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具<br>
-<br>优点：很好用，可以支持多个图床工具： <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca1be8992a6d46a6900264796ebbf6c7~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" referrerpolicy="no-referrer">
-<br>缺点：上传后直接把 url 复制到剪切板的功能并不完善：
-
-<br>图片名称有中文、空格时，url 不对
-<br>上传后的路径 / 目录中有空格时，url 不对。
-
-
-<br>解决方法：登陆相应图床的网页端，手动复制 url。]]></description><link>https://wxkj.asia/mynote/工具软件/simpread-关于图床的一些使用心得总结.html</link><guid isPermaLink="false">工具软件/simpread-关于图床的一些使用心得总结.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 14 Mar 2024 16:40:41 GMT</pubDate><enclosure url="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ce9583396484b1e9dd8341eda358b8c~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" length="0" type="false"/><content:encoded>&lt;figure&gt;&lt;img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ce9583396484b1e9dd8341eda358b8c~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[从本地同步到远程]]></title><description><![CDATA[ 
+ <br>EasyMDE<br>基于 SimpleMDE 的改进，提供用户友好界面，实时预览 Markdown 的 js 开源库<br>marked 和 Markdown-it<br>Markdown 转 HTML 的 js 开源库]]></description><link>https://wxkj.asia/mynote/工具软件/javascript.html</link><guid isPermaLink="false">工具软件/JavaScript.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sun, 31 Mar 2024 22:42:41 GMT</pubDate></item><item><title><![CDATA[从本地同步到远程]]></title><description><![CDATA[ 
  <br><br>remote_path="/htdocs/mynote"
 local_path="/Users/wish/_data/webpage"
 ftp_host="ftp.epizy.com"
@@ -3046,378 +3328,7 @@ if exist "%MARK_FILE%" (
 )
 goto loop
 复制<br>这段代码仅供参考，因为 cleanup.bat 还要判断主进程是否结束，只有主进程结束后才能清理 MARK_FILE，可以和方法二结合，达到更健壮的目的。]]></description><link>https://wxkj.asia/mynote/开发笔记/脚本插件/bat避免重复运行.html</link><guid isPermaLink="false">开发笔记/脚本插件/bat避免重复运行.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[1 . windows 上遍历目录，包含子目录，但不包含文件，不包含隐藏文件，把结果通过 gui 下来列表框输出，怎么实现？]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:或其他" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#或其他</a> <a class="tag" href="https://wxkj.asia/mynote/?query=tag:或其他" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#或其他</a> <a class="tag" href="https://wxkj.asia/mynote/?query=tag:或VB" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#或VB</a> 
- Windows上遍历目录，排除隐藏文件，通过GUI展示在列表框中，点击后响应事件，移动文件到选择的目录，关闭窗口的操作，其他程序调用的方法。]]></description><link>https://wxkj.asia/mynote/开发笔记/脚本插件/powershell监控文件夹创建md文件并移动位置.html</link><guid isPermaLink="false">开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[js 通过fs.watch实现文件的双向同步 1]]></title><description><![CDATA[ 
- <br>您提出的基于资源变化监控的文件同步策略是一种更高效且实时的方式。在 Node.js 中，可以使用 fs.watch（或更强大的第三方库如 chokidar）来监听文件系统事件，实现实时监测文件和目录的创建、修改和删除动作。<br>以下是一个基于 fs.watch 的基本文件同步示例框架：<br>const fs = require('fs');
-const path = require('path');
-
-// 监控源目录
-const sourceDir = '/path/to/source';
-// 目标目录
-const targetDir = '/path/to/target';
-
-// 初始化文件系统监视器
-let watcher = null;
-
-try {
-  // 启动监视
-  watcher = fs.watch(sourceDir, { recursive: true }, (eventType, filename) =&gt; {
-    if (filename) {
-      const sourceFilePath = path.join(sourceDir, filename);
-      const targetFilePath = path.join(targetDir, filename);
-
-      switch (eventType) {
-        case 'rename':
-          // 处理重命名事件（创建、删除或移动）
-          // 这里可能需要先检查文件是否存在，以区分创建新文件还是删除旧文件
-          break;
-        case 'change':
-          // 文件内容被修改，同步文件
-          syncFile(sourceFilePath, targetFilePath);
-          break;
-        case 'add':
-          // 新文件或目录被创建，同步新资源
-          if (fs.lstatSync(sourceFilePath).isDirectory()) {
-            // 如果是目录，可能需要递归创建目标目录并继续监视
-            mkdirp.sync(path.dirname(targetFilePath));
-            // 创建目录后，可能还需为新目录启动监视
-          } else {
-            syncFile(sourceFilePath, targetFilePath);
-          }
-          break;
-        case 'unlink':
-          // 文件被删除，相应地在目标目录删除文件或目录
-          fs.rmSync(targetFilePath, { force: true, recursive: true });
-          break;
-        // 其他事件类型...
-      }
-    }
-  });
-
-  watcher.on('error', (error) =&gt; {
-    console.error('Watcher error:', error);
-  });
-
-  console.log('Watching directory:', sourceDir);
-} catch (error) {
-  console.error('Failed to start watching:', error);
-}
-
-// 同步单个文件的辅助函数
-function syncFile(source, target) {
-  // 实现文件同步逻辑，例如使用fs.copyFileSync或流式复制
-  fs.copyFileSync(source, target);
-}
-复制<br>请注意，fs.watch 在不同操作系统上的表现可能有所差异，部分事件可能无法准确捕获，或者存在一定的延迟。在实际项目中，可能需要引入更强大和稳定的文件系统监控库如 chokidar，以获得更可靠和全面的文件系统事件通知。同时，文件同步时要考虑并发控制、错误处理等问题，确保数据的一致性和完整性。<br><br>要实现双向同步，即源目录和目标目录互相同步，当任一端有改动时都会反映到另一端，您需要同时在两个目录上设置文件系统监视器，并确保同步操作不会引发死循环（例如，源目录修改同步到目标目录后，目标目录的改动又被同步回源目录）。<br>下面是一个简化的双向同步示例，为了简化说明，这里假设源和目标目录是独立的，互不影响，即源目录的更改仅同步到目标目录，反之亦然：<br>const fs = require('fs');
-const path = require('path');
-const chokidar = require('chokidar'); // 引入chokidar库，提供更稳定和丰富的文件系统监视功能
-
-const sourceDir = '/path/to/source';
-const targetDir = '/path/to/target';
-
-// 初始化双向监视器
-const watchers = {
-  source: null,
-  target: null,
-};
-
-// 同步文件的辅助函数
-function syncFile(source, target) {
-  fs.copyFileSync(source, target);
-}
-
-// 监听源目录变化并同步到目标目录
-watchers.source = chokidar.watch(sourceDir, { ignoreInitial: true, ignored: /\.DS_Store/, persistent: true, recursive: true });
-watchers.source.on('all', (event, filename) =&gt; {
-  if (filename) {
-    const sourceFilePath = path.join(sourceDir, filename);
-    const targetFilePath = path.join(targetDir, filename);
-
-    // 根据事件类型执行同步操作，注意在此处仅同步到目标目录
-    switch (event) {
-      // 处理创建、修改、删除事件
-      // ...
-    }
-  }
-});
-
-// 监听目标目录变化并同步到源目录
-watchers.target = chokidar.watch(targetDir, { ignoreInitial: true, ignored: /\.DS_Store/, persistent: true, recursive: true });
-watchers.target.on('all', (event, filename) =&gt; {
-  if (filename) {
-    const targetFilePath = path.join(targetDir, filename);
-    const sourceFilePath = path.join(sourceDir, filename);
-
-    // 根据事件类型执行同步操作，注意在此处仅同步到源目录
-    switch (event) {
-      // 处理创建、修改、删除事件
-      // ...
-    }
-  }
-});
-
-// 错误处理
-['source', 'target'].forEach(watchType =&gt; {
-  watchers[watchType].on('error', (error) =&gt; {
-    console.error(`Watcher ${watchType} error:`, error);
-  });
-});
-
-console.log('Watching directories:', sourceDir, 'and', targetDir);
-
-// 若要避免死循环，可能需要在同步函数中加入某种标识，判断是否刚刚由同步操作引起的文件变更，从而避免再次同步回去。
-复制<br>在实际应用中，双向同步需要仔细设计逻辑，避免无限循环同步。一种可能的做法是对同步操作加上标记或队列处理，确保每次同步都是有意义的且不会导致反复同步相同的变化。另外，还需要处理好并发控制和冲突解决等问题，以确保数据一致性。<br><br>使用 chokidar 库实现双向同步时，需要分别对源目录和目标目录进行监视，并确保同步操作不会造成循环同步。以下是一个简化的示例：<br>const chokidar = require('chokidar');
-const fs = require('fs-extra');
-const path = require('path');
-
-// 源目录和目标目录
-const sourceDir = '/path/to/source';
-const targetDir = '/path/to/target';
-
-// 用于记录已同步文件路径，防止循环同步
-const syncedPaths = new Set();
-
-// 同步单个文件的辅助函数
-function syncFile(srcPath, dstPath) {
-  // 防止循环同步，只有当srcPath不在已同步路径中才进行同步
-  if (!syncedPaths.has(srcPath)) {
-    syncedPaths.add(srcPath);
-
-    // 同步文件，此处使用fs-extra的copy方法，具有更好的错误处理和覆盖策略
-    fs.copy(srcPath, dstPath)
-      .then(() =&gt; console.log(`File ${srcPath} synced to ${dstPath}`))
-      .catch(err =&gt; console.error(`Error syncing file: ${err}`));
-
-    // 同步后一段时间（可根据实际情况设定）将路径从已同步集合中移除
-    setTimeout(() =&gt; syncedPaths.delete(srcPath), 5000); // 示例延时5秒，实际项目中可能需要调整
-  }
-}
-
-// 初始化双向监视器
-const watchers = {
-  source: chokidar.watch(sourceDir, { ignored: /\.DS_Store/, persistent: true, ignoreInitial: true, alwaysStat: true, depth: 0 }),
-  target: chokidar.watch(targetDir, { ignored: /\.DS_Store/, persistent: true, ignoreInitial: true, alwaysStat: true, depth: 0 }),
-};
-
-// 监听源目录变化并同步到目标目录
-watchers.source
-  .on('add', srcPath =&gt; syncFile(srcPath, path.join(targetDir, path.relative(sourceDir, srcPath))))
-  .on('change', srcPath =&gt; syncFile(srcPath, path.join(targetDir, path.relative(sourceDir, srcPath))))
-  .on('unlink', srcPath =&gt; {
-    const dstPath = path.join(targetDir, path.relative(sourceDir, srcPath));
-    fs.remove(dstPath)
-      .then(() =&gt; console.log(`File ${srcPath} removed from target directory.`))
-      .catch(err =&gt; console.error(`Error removing file: ${err}`));
-  })
-  .on('unlinkDir', srcPath =&gt; {
-    const dstPath = path.join(targetDir, path.relative(sourceDir, srcPath));
-    fs.remove(dstPath)
-      .then(() =&gt; console.log(`Directory ${srcPath} removed from target directory.`))
-      .catch(err =&gt; console.error(`Error removing directory: ${err}`));
-  });
-
-// 监听目标目录变化并同步到源目录
-watchers.target
-  .on('add', dstPath =&gt; syncFile(path.join(sourceDir, path.relative(targetDir, dstPath)), dstPath))
-  .on('change', dstPath =&gt; syncFile(path.join(sourceDir, path.relative(targetDir, dstPath)), dstPath))
-  .on('unlink', dstPath =&gt; {
-    const srcPath = path.join(sourceDir, path.relative(targetDir, dstPath));
-    fs.remove(srcPath)
-      .then(() =&gt; console.log(`File ${dstPath} removed from source directory.`))
-      .catch(err =&gt; console.error(`Error removing file: ${err}`));
-  })
-  .on('unlinkDir', dstPath =&gt; {
-    const srcPath = path.join(sourceDir, path.relative(targetDir, dstPath));
-    fs.remove(srcPath)
-      .then(() =&gt; console.log(`Directory ${dstPath} removed from source directory.`))
-      .catch(err =&gt; console.error(`Error removing directory: ${err}`));
-  });
-
-// 错误处理
-['source', 'target'].forEach(dir =&gt; {
-  watchers[dir].on('error', (error) =&gt; {
-    console.error(`Watcher ${dir} error:`, error);
-  });
-});
-
-console.log('Watching directories:', sourceDir, 'and', targetDir);
-复制<br>此示例中，使用了 fs-extra 库来进行文件和目录的增删改操作，它封装了一些方便的方法，并提供了更好的错误处理机制。同时，使用了 Set 来跟踪已同步的文件路径，避免因连续触发事件导致的循环同步。<br>请注意，真正的双向同步可能需要更为复杂的逻辑来处理各种边界情况和并发问题，以及可能发生的同步冲突。在实际应用中，还需要根据具体业务需求进行更细致的设计和实现。<br><br>明白了，您是想了解如何在使用 fs.watch 或 chokidar 进行双向同步时避免死循环。当一个文件在源目录被修改并同步到目标目录后，如果目标目录的文件更改再次触发同步回源目录，可能会形成死循环。以下是一个避免这种死循环的策略：<br>
-<br>设置一个同步过程中的临时标志，当一个文件正在进行同步时，该标志置为真，同步结束后置为假。
-<br>let isSyncing = false;
-
-function syncFile(srcPath, dstPath) {
-  if (isSyncing) return; // 如果正在同步中，则跳过此次同步
-
-  isSyncing = true;
-  
-  // 同步文件的逻辑...
-  
-  // 同步完成后
-  isSyncing = false;
-}
-复制<br>
-<br>使用全局同步队列，将待同步的文件放入队列中，而不是立即同步。这样可以确保一次只同步一个文件，避免多个文件更改同时触发同步造成死循环。
-<br>const queue = [];
-
-function enqueueSync(srcPath, dstPath) {
-  queue.push({ srcPath, dstPath });
-  processQueue();
-}
-
-function processQueue() {
-  if (queue.length === 0 || isSyncing) return;
-
-  const { srcPath, dstPath } = queue.shift();
-  isSyncing = true;
-
-  // 同步文件的逻辑...
-
-  // 同步完成后
-  isSyncing = false;
-  processQueue();
-}
-复制<br>在使用 fs.watch 或 chokidar 的事件处理函数中，调用 enqueueSync 函数而非直接调用 syncFile，这样可以避免同时处理多个事件导致的循环同步。<br>请注意，以上只是简单示例，实际应用中可能还需要考虑并发控制、文件锁、错误处理、文件内容的差异化对比等因素，以确保同步操作的有效性和数据一致性。同时，这种方法并不能完全避免所有情况下的循环同步，复杂场景下可能需要更精细的设计和实现。<br><br>处理并发控制和解决同步冲突时，特别是在进行双向文件同步时，有几个关键步骤：<br>
-<br>
-文件锁：
-
-<br>在进行文件读取、写入或移动操作时，可以使用文件锁来确保在同一时间内只有一个进程或线程访问特定文件。在 Node.js 中，可以使用第三方库如 proper-lockfile 或 lockfile 来实现文件锁。
-
-const lockfile = require('lockfile');
-
-function syncFileWithLock(srcPath, dstPath) {
-  const lockPath = `${dstPath}.lock`;
-  lockfile.lock(lockPath, { retries: 0 }, (err) =&gt; {
-    if (err) {
-      console.error('Unable to acquire lock:', err);
-      return;
-    }
-
-    try {
-      // 在这里执行同步逻辑，确保同步期间其他进程无法访问该文件
-      syncFile(srcPath, dstPath);
-    } finally {
-      lockfile.unlock(lockPath, (unlockErr) =&gt; {
-        if (unlockErr) {
-          console.error('Error unlocking file:', unlockErr);
-        }
-      });
-    }
-  });
-}
-复制
-
-<br>
-版本控制和冲突检测：
-
-<br>在同步文件之前，比较源文件和目标文件的最后修改时间或文件内容的哈希值，以确定是否真的有必要同步。如果有冲突（即目标文件已被修改），可以采取以下策略：
-
-<br>提供用户选择合并策略，如自动合并、保留一方的最新版本或提示用户手动解决。
-<br>在目标目录创建备份文件，然后再同步新的文件版本。
-<br>记录冲突，并稍后处理。
-
-
-
-
-<br>
-原子操作：
-
-<br>尽可能将文件操作设计成原子操作，例如，在目标目录创建临时文件，完成写入后再重命名替换原文件，确保文件内容完整且一致。
-
-
-<br>
-事务性同步：
-
-<br>对于复杂的同步任务，可以模拟事务的概念，确保在同步过程中即使出现错误也能恢复到初始状态。
-
-
-<br>
-队列和序列化操作：
-
-<br>使用队列（如前述示例）将同步操作序列化，这样可以避免多个并发的同步请求导致的混乱。
-
-
-<br>在面对两个文件内容不一致的情况时，具体策略取决于你的应用需求。例如，你可能希望保留最近修改的版本，或者对冲突进行合并。无论哪种策略，都应该在同步逻辑中加入适当的冲突检测和处理机制。<br><br>在决定文件优先性时，可以比较两个文件的修改时间（mtime），并选择 mtime 较新的那个文件作为优先同步的对象。以下是一个简单的示例：<br>const fs = require('fs');
-
-function compareFileTimes(filePath1, filePath2) {
-  return new Promise((resolve, reject) =&gt; {
-    fs.stat(filePath1, (err1, stats1) =&gt; {
-      if (err1) {
-        reject(err1);
-        return;
-      }
-
-      fs.stat(filePath2, (err2, stats2) =&gt; {
-        if (err2) {
-          reject(err2);
-          return;
-        }
-
-        // 比较两个文件的修改时间
-        if (stats1.mtimeMs &gt; stats2.mtimeMs) {
-          resolve(filePath1);
-        } else if (stats1.mtimeMs &lt; stats2.mtimeMs) {
-          resolve(filePath2);
-        } else {
-          // 若mtime相同，则可根据具体情况决定处理方式，如抛出错误、提示用户或选择其他依据
-          reject(new Error('Both files have the same modification time.'));
-        }
-      });
-    });
-  });
-}
-
-async function syncBasedOnModTime(srcPath, dstPath) {
-  try {
-    const newerFilePath = await compareFileTimes(srcPath, dstPath);
-
-    // 根据newerFilePath的值决定同步方向
-    if (newerFilePath === srcPath) {
-      // 同步srcPath到dstPath
-      console.log('Syncing from source to destination because source is newer.');
-      // 在这里实现具体的同步逻辑
-    } else {
-      // 同步dstPath到srcPath
-      console.log('Syncing from destination to source because destination is newer.');
-      // 在这里实现具体的同步逻辑
-    }
-  } catch (error) {
-    console.error('Error comparing file times:', error);
-  }
-}
-
-// 使用示例
-syncBasedOnModTime('/path/to/source/file', '/path/to/destination/file');
-复制<br>在实际使用时，记得结合文件锁和队列处理等机制，确保在并发环境下安全地执行同步操作。同时，应对 mtime 相同的情况作出合适处理，比如在无法确定优先级时，可能需要用户介入或采用其他判断依据。<br><br>使用 fswatch 监控文件和目录以及子目录的所有更改（包括创建、修改、删除和重命名），可以采用以下 bash shell 脚本示例。请注意，这里的脚本仅适用于 Unix-like 系统（如 macOS 或 Linux），因为在这些系统上 fswatch 能够有效运行。<br>#!/bin/bash
-
-# 监控的根目录
-MONITORED_DIR="/path/to/watch"
-
-# fswatch命令行参数，监控所有类型的事件
-EVENTS='--event Created --event Updated --event Removed --event Renamed'
-
-# 处理文件系统事件的函数
-process_event() {
-  event="$1"
-  file="$2"
-  
-  echo "Detected event: $event on file: $file"
-  # 在这里添加处理文件变动的具体逻辑，例如复制、移动、记录日志等
-  # ...
-}
-
-# 使用fswatch监控目录及其子目录
-fswatch "$EVENTS" "$MONITORED_DIR/**/*" | while read -r line
-do
-  IFS=' ' read -ra EVENT &lt;&lt;&lt; "$line"
-  event_type="${EVENT[0]}"
-  file_path="${EVENT[@]:1}"
-  
-  # 去除fswatch打印的额外信息，只保留文件路径
-  file_path=$(echo "$file_path" | sed 's/.*-&gt;\(.*\)/\1/')
-  
-  # 调用处理函数
-  process_event "$event_type" "$file_path"
-done
-复制<br>这段脚本将会启动 fswatch 来监控指定目录及其子目录下的所有文件和目录事件，并在事件发生时调用 process_event 函数来处理这些事件。在实际使用时，请将 /path/to/watch 替换为你要监控的实际目录路径。<br>请注意，fswatch 的命令语法和选项可能随版本变化而有所不同，建议查阅最新的官方文档以获得正确的用法。此外，对于大型目录树或高频率的文件系统事件，可能需要优化处理逻辑以避免性能瓶颈或资源耗尽。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js-通过fs.watch实现文件的双向同步-1.html</link><guid isPermaLink="false">开发笔记/前端/js 通过fs.watch实现文件的双向同步 1.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[js 通过fs.watch实现文件的双向同步]]></title><description><![CDATA[ 
+ Windows上遍历目录，排除隐藏文件，通过GUI展示在列表框中，点击后响应事件，移动文件到选择的目录，关闭窗口的操作，其他程序调用的方法。]]></description><link>https://wxkj.asia/mynote/开发笔记/脚本插件/powershell监控文件夹创建md文件并移动位置.html</link><guid isPermaLink="false">开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[js 通过fs.watch实现文件的双向同步]]></title><description><![CDATA[ 
  <br>您提出的基于资源变化监控的文件同步策略是一种更高效且实时的方式。在 Node.js 中，可以使用 fs.watch（或更强大的第三方库如 chokidar）来监听文件系统事件，实现实时监测文件和目录的创建、修改和删除动作。<br>以下是一个基于 fs.watch 的基本文件同步示例框架：<br>const fs = require('fs');
 const path = require('path');
 
@@ -5020,27 +4931,7 @@ MySQL 支持四种事务隔离级别：READ UNCOMMITTED、READ COMMITTED、REPEA
 <br>客户端也可以定期向服务器请求是否有新的更改，或者通过长连接、WebSocket 等技术实现即时通信，以实现实时的文件变动通知。
 
 
-<br>综上所述，您的方案基本合理，但在实际应用中还需考虑时钟同步问题、文件冲突解决、网络条件下的优化及实时性要求等因素。同时，还可以结合现有的成熟同步协议（比如 rsync 的部分特性、Git 的提交模型等）来进行设计和优化。]]></description><link>https://wxkj.asia/mynote/开发笔记/算法/多端文件同步原理和算法概述.html</link><guid isPermaLink="false">开发笔记/算法/多端文件同步原理和算法概述.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[simpread-快速解决 Resource not accessible by integration]]></title><description><![CDATA[ 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://blog.csdn.net/linZinan_/article/details/133916547" rel="noopener" class="external-link" href="https://blog.csdn.net/linZinan_/article/details/133916547" target="_blank">blog.csdn.net</a>
-<br><br>最近好久没有写博客了，今天在写开源项目 <a data-tooltip-position="top" aria-label="https://github.com/Undertone0809/python-package-template" rel="noopener" class="external-link" href="https://github.com/Undertone0809/python-package-template" target="_blank">python-package-template</a> 的时候，正好遇到一个问题，记录一下吧。本文将介绍 Resource not accessible by integration 的几种解决方案。<br>
-也欢迎大家体验一下 <a data-tooltip-position="top" aria-label="https://github.com/Undertone0809/python-package-template" rel="noopener" class="external-link" href="https://github.com/Undertone0809/python-package-template" target="_blank">python-package-template</a> 这个项目，一个十分标准化的 python project 模板，内置 black 代码格式化、单元测试、github actions 等方便和强大的工具，个人认为认真学完 <a data-tooltip-position="top" aria-label="https://github.com/Undertone0809/python-package-template" rel="noopener" class="external-link" href="https://github.com/Undertone0809/python-package-template" target="_blank">python-package-template</a> 里面的东西，在工程规范上已经可以媲美一个从业几年的专业的 python 软开工程师了。
-<br><br>问题是我在 github actions 执行 <a data-tooltip-position="top" aria-label="https://github.com/Undertone0809/python-package-template/actions/runs/6545151606/job/17773034301" rel="noopener" class="external-link" href="https://github.com/Undertone0809/python-package-template/actions/runs/6545151606/job/17773034301" target="_blank">Greetings</a> 的这个 workflow 的时候发生了 Resource not accessible by integration 的问题，这个 Greetings 里面用到了 <a data-tooltip-position="top" aria-label="https://github.com/actions/first-interaction" rel="noopener" class="external-link" href="https://github.com/actions/first-interaction" target="_blank">actions/first-interaction</a> , 其是一个筛选初次贡献者的拉取请求和问题的操作。<br>我遇到的这个问题，简单来说，就是 github actions 没有对应的权限，无法访问相关的资源，在我的项目中，Greetings 的<a data-tooltip-position="top" aria-label="https://github.com/Undertone0809/python-package-template/blob/v0.1.3/.github/workflows/greetings.yml" rel="noopener" class="external-link" href="https://github.com/Undertone0809/python-package-template/blob/v0.1.3/.github/workflows/greetings.yml" target="_blank">代码</a>需要 bot 在 pr 和 issue 中有写的权限，而这个权限 github repo 默认并不提供，需要手动修改。<br><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/a21a32cea5594e1a9d6efa5413e81a76.png" referrerpolicy="no-referrer"><br>在 <a data-tooltip-position="top" aria-label="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions" rel="noopener" class="external-link" href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions" target="_blank">github docs</a> 中对 workflows 的 permissions 有详细的描述，大家可以先了解一下相关的概念。<br>
-您可以使用权限来修改授予GITHUB_TOKEN的默认权限，根据需要添加或删除访问权限，以便只允许最低所需的访问权限。有关更多信息，请参阅“自动令牌身份验证”。
-<br>
-您可以将权限作为顶级键使用，应用于工作流中的所有作业，或者在特定作业中使用。当您在特定作业中添加权限键时，使用GITHUB_TOKEN的所有操作和运行命令将获得您指定的访问权限。有关更多信息，请参阅<a data-tooltip-position="top" aria-label="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idpermissions" rel="noopener" class="external-link" href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idpermissions" target="_blank">jobs.&lt;job_id&gt;.permissions</a>。
-<br>
-对于下表中显示的每个可用范围，您可以分配其中一种权限：读取、写入或无。如果您为其中任何范围指定了访问权限，则所有未指定的范围将被设置为无。<br>
-<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/1a801785bb244277bbcf376188b94334.png" referrerpolicy="no-referrer"><br>
-<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/1096c6c7dbf74bad863f60dad7554249.png" referrerpolicy="no-referrer">
-<br>上面说了那么多，简单来说就是 workflow 中使用的 GITHUB_TOKEN 是有一些默认权限的，其并不是一个 root，因此如果你的 workflow 中有一些更加复杂的操作，就需要额外进行授权。<br>在 <a data-tooltip-position="top" aria-label="https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token" rel="noopener" class="external-link" href="https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token" target="_blank">Permissions for the GITHUB_TOKEN</a> 中，我们可以看到 GITHUB_TOKEN 的默认权限。<br><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/94ae94ba35ae472a87afce9f0cb243fa.png" referrerpolicy="no-referrer"><br><br>逛了一下 <a data-tooltip-position="top" aria-label="https://github.com/actions/first-interaction" rel="noopener" class="external-link" href="https://github.com/actions/first-interaction" target="_blank">actions/first-interaction</a> 中的 issue，还是有人有遇到相同的问题，<a rel="noopener" class="external-link" href="https://github.com/actions/first-interaction/issues/10" target="_blank">https://github.com/actions/first-interaction/issues/10</a> 这个 issue 激烈讨论了这个事情，所以最后我也没看出什么东西来，最后在 <a rel="noopener" class="external-link" href="https://github.com/orgs/community/discussions/60820" target="_blank">https://github.com/orgs/community/discussions/60820</a> 中找到了解决方案。<br>
-<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/cb9fcce5e49b4b168aa2481f339021ea.png" referrerpolicy="no-referrer"><br>上面这个用户虽然和我用的不是一个 action，但是问题如出一辙，解决方案如下：<br>
-<img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/dbb87ff82b3c496b87cefa0d176f35c4.png" referrerpolicy="no-referrer"><br><img alt="在这里插入图片描述" src="https://img-blog.csdnimg.cn/4db5d569217c42f08911d7e50476f174.png" referrerpolicy="no-referrer"><br>
-给权限之后就没问题了。<br><br>
-<br><a data-tooltip-position="top" aria-label="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions" rel="noopener" class="external-link" href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions" target="_blank">github docs</a>
-<br><a data-tooltip-position="top" aria-label="https://github.com/Undertone0809/python-package-template" rel="noopener" class="external-link" href="https://github.com/Undertone0809/python-package-template" target="_blank">python-package-template</a>
-<br><a rel="noopener" class="external-link" href="https://github.com/orgs/community/discussions/60820" target="_blank">https://github.com/orgs/community/discussions/60820</a>
-]]></description><link>https://wxkj.asia/mynote/开发笔记/git/simpread-快速解决-resource-not-accessible-by-integration.html</link><guid isPermaLink="false">开发笔记/git/simpread-快速解决 Resource not accessible by integration.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Tue, 19 Mar 2024 21:31:55 GMT</pubDate><enclosure url="https://img-blog.csdnimg.cn/a21a32cea5594e1a9d6efa5413e81a76.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://img-blog.csdnimg.cn/a21a32cea5594e1a9d6efa5413e81a76.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[快速解决 Resource not accessible by integration]]></title><description><![CDATA[ 
+<br>综上所述，您的方案基本合理，但在实际应用中还需考虑时钟同步问题、文件冲突解决、网络条件下的优化及实时性要求等因素。同时，还可以结合现有的成熟同步协议（比如 rsync 的部分特性、Git 的提交模型等）来进行设计和优化。]]></description><link>https://wxkj.asia/mynote/开发笔记/算法/多端文件同步原理和算法概述.html</link><guid isPermaLink="false">开发笔记/算法/多端文件同步原理和算法概述.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[快速解决 Resource not accessible by integration]]></title><description><![CDATA[ 
  <br>
 本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://blog.csdn.net/linZinan_/article/details/133916547" rel="noopener" class="external-link" href="https://blog.csdn.net/linZinan_/article/details/133916547" target="_blank">blog.csdn.net</a>
 <br><br>最近好久没有写博客了，今天在写开源项目 <a data-tooltip-position="top" aria-label="https://github.com/Undertone0809/python-package-template" rel="noopener" class="external-link" href="https://github.com/Undertone0809/python-package-template" target="_blank">python-package-template</a> 的时候，正好遇到一个问题，记录一下吧。本文将介绍 Resource not accessible by integration 的几种解决方案。<br>
@@ -5180,185 +5071,7 @@ if [ -n "$CHANGES" ]; then
 
     #$git push origin main
 fi
-复制<br>为什么这里 git 路径要赋值给变量 git="/usr/bin/git"，参考 <a class="internal-link" data-href="../linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md" href="https://wxkj.asia/mynote/开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.html" target="_self" rel="noopener">为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？</a>。]]></description><link>https://wxkj.asia/mynote/开发笔记/git/检测git变化并提交.html</link><guid isPermaLink="false">开发笔记/git/检测git变化并提交.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 03 May 2024 01:25:58 GMT</pubDate></item><item><title><![CDATA[simpread-rsync + inotify 实现文件实时双向自动同步]]></title><description><![CDATA[ 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/103916857" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/103916857" target="_blank">zhuanlan.zhihu.com</a>
-<br>技术博客： <a rel="noopener" class="external-link" href="https://github.com/yongxinz/tech-blog" target="_blank">https://github.com/yongxinz/tech-blog</a><br>同时，也欢迎关注我的微信公众号 AlwaysBeta，更多精彩内容等你来。  <br><a rel="noopener" class="external-link" href="http://weixin.qq.com/r/jDgRCcrEDZdyrY5q922e" target="_blank">http://weixin.qq.com/r/jDgRCcrEDZdyrY5q922e</a> (二维码自动识别)<br><br>随着应用系统规模的不断扩大，对数据的安全性和可靠性也提出更好的要求，rsync 在高端业务系统中也逐渐暴露出了很多不足。<br>首先，rsync 在同步数据时，需要扫描所有文件后进行比对，进行差量传输。如果文件数量达到了百万甚至千万量级，扫描所有文件将是非常耗时的，并且正在发生变化的往往是其中很少的一部分，这是非常低效的方式。<br>其次，rsync 不能实时的去监测、同步数据，虽然它可以通过 linux 守护进程的方式进行触发同步，但是两次触发动作一定会有时间差，这样就导致了服务端和客户端数据可能出现不一致，无法在应用故障时完全的恢复数据。<br>基于以上两种情况，可以使用 rsync+inotify 的组合来解决，可以实现数据的实时同步。<br>inotify 是一种强大的、细粒度的、异步的文件系统事件控制机制。linux 内核从 2.6.13 起，加入了 inotify 支持。通过 inotify 可以监控文件系统中添加、删除、修改、移动等各种事件，利用这个内核接口，第三方软件就可以监控文件系统下文件的各种变化情况，而 inotify-tools 正是实施监控的软件。在使用 rsync 首次全量同步后，结合 inotify 对源目录进行实时监控，只要有文件变动或新文件产生，就会立刻同步到目标目录下，非常高效实用。<br><br><br>yum -y install rsync
-
-
-复制<br>源码方式安装这里不介绍了。<br><br>-v :展示详细的同步信息
--a :归档模式，相当于 -rlptgoD
--r :递归目录
--l :同步软连接文件
--p :保留权限
--t :将源文件的"modify time"同步到目标机器
--g :保持文件属组
--o :保持文件属主
--D :和--devices --specials一样，保持设备文件和特殊文件
--z :发送数据前，先压缩再传输
--H :保持硬链接
--n :进行试运行，不作任何更改
--P same as --partial --progress
-    --partial :支持断点续传
-    --progress :展示传输的进度
---delete :如果源文件消失，目标文件也会被删除
---delete-excluded :指定要在目的端删除的文件
---delete-after :默认情况下，rsync是先清理目的端的文件再开始数据同步；如果使用此选项，则rsync会先进行数据同步，都完成后再删除那些需要清理的文件。
---exclude=PATTERN :排除匹配PATTERN的文件
---exclude-from=FILE :如果要排除的文件很多，可以统一写在某一文件中
--e ssh :使用SSH加密隧道传输
-
-
-复制<br><br>
-<br>服务器 A： 192.168.0.1
-<br>服务器 B： 192.168.0.2
-<br>这里有两台 linux 服务器，我们可以先假定 A 作为服务端，B 作为客户端。<br>1、服务端配置：<br>修改服务端的配置文件：/etc/rsyncd.conf，内容如下：<br># rsync 守护进程的用户
-uid = www
-# 运行 rsync 守护进程的组
-gid = www
-# 允许 chroot，提升安全性，客户端连接模块，首先 chroot 到模块 path 参数指定的目录下，chroot 为 yes 时必须使用 root 权限，且不能备份 path 路径外的链接文件
-use chroot = yes
-# 只读
-read only = no
-# 只写
-write only = no
-# 设定白名单，可以指定IP段（172.18.50.1/255.255.255.0）,各个Ip段用空格分开
-hosts allow = 192.168.0.2
-hosts deny = *
-# 允许的客户端最大连接数
-max connections = 4
-# 欢迎文件的路径，非必须
-motd file = /etc/rsyncd.motd
-# pid文件路径
-pid file = /var/run/rsyncd.pid
-# 记录传输文件日志
-transfer logging = yes
-# 日志文件格式
-log format = %t %a %m %f %b
-# 指定日志文件
-log file = /var/log/rsync.log
-# 剔除某些文件或目录，不同步
-exclude = lost+found/
-# 设置超时时间
-timeout = 900
-ignore nonreadable = yes
-# 设置不需要压缩的文件
-dont compress   = *.gz *.tgz *.zip *.z *.Z *.rpm *.deb *.bz2
-
-# 模块，可以配置多个
-[sync_file]
-# 模块的根目录，同步目录，要注意权限
-path = /home/test
-# 是否允许列出模块内容
-list = no
-# 忽略错误
-ignore errors
-# 添加注释
-comment = ftp export area
-# 模块验证的用户名称，可使用空格或者逗号隔开多个用户名
-auth users = sync
-# 模块验证密码文件 可放在全局配置里
-secrets file = /etc/rsyncd.secrets
-
-
-复制<br>编辑 /etc/rsyncd.secrets 文件，内容如下：<br>### rsyncd.secrets 文件的配置
-# 用户名:密码
-sync:123456
-
-
-复制<br>编辑 /etc/rsyncd.motd 文件，内容如下：<br>### rsyncd.motd  文件配置
-++++++++++++++++++
-sync zhang : rsync start
-++++++++++++++++++
-
-
-复制<br>设置文件权限，这一步不能少：<br>chmod 600 /etc/rsyncd.secrets
-
-
-复制<br>启动：<br>rsync --daemon --config=/etc/rsyncd.conf
-
-
-复制<br>加入开机自启：<br>echo 'rsync --daemon --config=/etc/rsyncd.conf' &gt;&gt; /etc/rc.d/rc.local
-
-
-复制<br>2、客户端配置：<br>创建密码文件 /etc/rsyncd.pass，直接写密码即可，内容如下：<br>### rsyncd.pass 文件的配置
-123456
-
-
-复制<br>设置文件权限，这一步不能少：<br>chmod 600 /etc/rsyncd.pass
-
-
-复制<br>现在就可以在客户端执行命令来同步文件了。<br>从 服务端 =&gt; 客户端 同步数据：<br>rsync -avzP --delete sync@192.168.0.1::sync_file /home/test --password-file=/etc/rsyncd.pass
-
-
-复制<br>从 客户端 =&gt; 服务端 同步数据：<br>rsync -avzP --delete /home/test sync@192.168.0.1::sync_file --password-file=/etc/rsyncd.pass
-
-
-复制<br>到目前为止，rsync 就配置完成了，如果想实现双向同步，只要将 B 配置成服务端，A 配置成客户端，分别启对应的服务即可。<br>接下来介绍 inotify 监控文件变动，来实现实时同步。<br><br><br>yum install -y inotify-tools
-
-
-复制<br><br>1、inotifywait 参数说明：<br>-m,–monitor：始终保持事件监听状态   # 重要参数
--r,–recursive：递归查询目录     # 重要参数
--q,–quiet：只打印监控事件的信息     # 重要参数
-–excludei：排除文件或目录时，不区分大小写
--t,–timeout：超时时间
-–timefmt：指定时间输出格式  # 重要参数
-–format：指定时间输出格式       # 重要参数
--e,–event：后面指定删、增、改等事件 # 重要参数
-
-
-复制<br>2、inotifywait events 事件说明：<br>access：读取文件或目录内容
-modify：修改文件或目录内容
-attrib：文件或目录的属性改变
-close_write：修改真实文件内容   # 重要参数
-close_nowrite：文件或目录关闭，在只读模式打开之后关闭的
-close：文件或目录关闭，不管读或是写模式
-open：文件或目录被打开
-moved_to：文件或目录移动到
-moved_from：文件或目录从移动
-move：移动文件或目录移动到监视目录  # 重要参数
-create：在监视目录下创建文件或目录  # 重要参数
-delete：删除监视目录下的文件或目录  # 重要参数
-delete_self：文件或目录被删除，目录本身被删除
-unmount：卸载文件系统
-
-
-复制<br><br>1、创建事件<br>inotifywait -mrq  /data --timefmt "%d-%m-%y %H:%M" --format "%T %w%f 事件信息: %e" -e create
-
-
-复制<br>2、删除事件<br>inotifywait -mrq  /data --timefmt "%d-%m-%y %H:%M" --format "%T %w%f 事件信息: %e" -e delete
-
-
-复制<br>3、修改事件<br>inotifywait -mrq  /data --timefmt "%d-%m-%y %H:%M" --format "%T %w%f 事件信息: %e" -e close_write
-
-
-复制<br><br>#!/bin/bash
-
-Path=/home/test
-Server=192.168.0.2
-User=sync
-module=sync_file
-
-monitor() {
-  /usr/bin/inotifywait -mrq --format '%w%f' -e create,close_write,delete $1 | while read line; do
-    if [ -f $line ]; then
-      rsync -avz $line --delete ${User}@${Server}::${module} --password-file=/etc/rsyncd.pass
-    else
-      cd $1 &amp;&amp;
-        rsync -avz ./ --delete ${User}@${Server}::${module} --password-file=/etc/rsyncd.pass
-    fi
-  done
-}
-
-monitor $Path;
-
-
-复制<br>直接将脚本在后台启动，就可以监控文件的变化了，从而实现服务器之间的文件同步。<br>那么，如果想同步多个目录该怎么办呢？我能想到的办法就是写多个 shell 脚本，每个脚本负责一个目录，但总感觉这种方法不是很好，大家有何高见？<br>参考文章：<br><a rel="noopener" class="external-link" href="https://www.jianshu.com/p/bd3ae9d8069c" target="_blank">https://www.jianshu.com/p/bd3ae9d8069c</a><br>
-<a rel="noopener" class="external-link" href="http://www.mengzhaoxu.xyz/2018/12/24/rsync%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" target="_blank">http://www.mengzhaoxu.xyz/2018/12/24/rsync%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</a><br>
-<a rel="noopener" class="external-link" href="https://www.cnblogs.com/bigberg/p/7886486.html" target="_blank">https://www.cnblogs.com/bigberg/p/7886486.html</a><br>
-<a rel="noopener" class="external-link" href="https://cloud.tencent.com/developer/article/1008061" target="_blank">https://cloud.tencent.com/developer/article/1008061</a><br>
-<a rel="noopener" class="external-link" href="https://blog.csdn.net/chenghuikai/article/details/50668805" target="_blank">https://blog.csdn.net/chenghuikai/article/details/50668805</a><br>
-<a rel="noopener" class="external-link" href="https://www.devopssec.cn/2018/08/23/%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7-RSYNC%E7%BB%93%E5%90%88INOTIFY-TOOLS%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5/" target="_blank">https://www.devopssec.cn/2018/08/23/%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7-RSYNC%E7%BB%93%E5%90%88INOTIFY-TOOLS%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%9E%E6%97%B6%E5%90%8C%E6%AD%A5/</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/simpread-rsync-+-inotify-实现文件实时双向自动同步.html</link><guid isPermaLink="false">开发笔记/linux/simpread-rsync + inotify 实现文件实时双向自动同步.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 08 Mar 2024 07:44:31 GMT</pubDate></item><item><title><![CDATA[Linux find 模拟 tree 命令]]></title><description><![CDATA[ 
+复制<br>为什么这里 git 路径要赋值给变量 git="/usr/bin/git"，参考 <a class="internal-link" data-href="../linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md" href="https://wxkj.asia/mynote/开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.html" target="_self" rel="noopener">为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？</a>。]]></description><link>https://wxkj.asia/mynote/开发笔记/git/检测git变化并提交.html</link><guid isPermaLink="false">开发笔记/git/检测git变化并提交.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 03 May 2024 01:25:58 GMT</pubDate></item><item><title><![CDATA[Linux find 模拟 tree 命令]]></title><description><![CDATA[ 
  在没有tree命令的服务器上，可以使用find命令模拟tree命令的效果，并通过设置别名来快速执行该命令。]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/linux-find-模拟-tree-命令.html</link><guid isPermaLink="false">开发笔记/linux/Linux find 模拟 tree 命令.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/pastedimage20240221051749.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/pastedimage20240221051749.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Linux 文件搜索神器 find 实战详解]]></title><description><![CDATA[ 
  <br>在 Linux 系统使用中，作为一个管理员，我希望能查找系统中所有的大小超过 200M 文件，查看近 7 天系统中哪些文件被修改过，找出所有子目录中的可执行文件，这些任务需求 find 命令都可以轻松胜任。<br><img src="https://pic4.zhimg.com/v2-194e2b9b93162de1c6511dd2f746c5fb_r.jpg" referrerpolicy="no-referrer"><br>在 Linux 系统文件中常用的属性可以分为以下内容：名称、大小、权限、属主、修改时间、访问时间等，find 命令可以按照指定的属性为条件进行查找。<br>废话不多，直接开干，下边进入案例实战。<br><br>（一）按文件名称查找<br>按照文件名称查找是 find 最常见的用法，需要注意的是，搜索的文件名必须完全匹配，才能找到对应的文件。<br>1. 查找当前目录下所有 go 文件<br>2. 在 etc 目录下，查找大写字母开头的 txt 文件<br>$ find /etc -name "[A-Z]*.txt" -print
 复制<br>3. 在当前目录下查找不是 out 开头的 txt 文件<br>$ find . -name "out*" -prune -o -name "*.txt" -print
@@ -5970,101 +5683,7 @@ mget *.*
 #execute shell
 EOF
 复制<br>EOF只是一个分界符标志，完全可以用abc, ! 等替换，也一样的功能，只是大家都习惯用EOF来表示。<br>
-&lt;&lt;用法：当shell看到&lt;&lt;的时候，它就会知道下一个词是一个分界符。在该分界符以后的内容都被当作输入，直到shell又看到该分界符(位于单独的一行)。因此分界符可以是定义的任何字符串。<br><br>文章来源: <a rel="noopener" class="external-link" href="https://blog.csdn.net/u012842255/article/details/66969501" target="_blank">https://blog.csdn.net/u012842255/article/details/66969501</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/使用shell脚本实现ftp自动上传和下载文件.html</link><guid isPermaLink="false">开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[<strong>简介</strong>]]></title><description><![CDATA[ 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://juejin.cn/post/7221089899280384059" rel="noopener" class="external-link" href="https://juejin.cn/post/7221089899280384059" target="_blank">juejin.cn</a>
-<br><br><a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fwww.cnblogs.com%2Fpoloyy%2Fp%2F15170944.html" rel="noopener" class="external-link" title="https://www.cnblogs.com/poloyy/p/15170944.html" href="https://link.juejin.cn?target=https%3A%2F%2Fwww.cnblogs.com%2Fpoloyy%2Fp%2F15170944.html" target="_blank">brew 常用命令</a><br>Homebrew 是一款自由及开放源代码的软件包管理系统，用以简化 macOS 和 linux 系统上的软件安装过程。它拥有安装、卸载、更新、查看、搜索等很多实用的功能，通过简单的一条指令，就可以实现包管理，十分方便快捷。<br>Homebrew 主要有四个部分组成: brew、homebrew-core 、homebrew-bottles、homebrew-cask。<br><br><br>官网方法：macOS（或 Linux）缺失的软件包的管理器 — Homebrew<br>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-
-复制<br>注：国内安装 homebrew<br>由于众所周知的原因，国内使用官方安装方法有问题，网上搜的帖子，找到方便的安装方法，感谢网友分享：<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fwww.cnblogs.com%2Fliyihua%2Fp%2F12753163.html" rel="noopener" class="external-link" title="https://www.cnblogs.com/liyihua/p/12753163.html" href="https://link.juejin.cn?target=https%3A%2F%2Fwww.cnblogs.com%2Fliyihua%2Fp%2F12753163.html" target="_blank">Mac 安装 brew（最新教程，绝对可行，一行代码搞定，不报错） - LeeHua - 博客园</a><br>感谢脚本大侠：<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F111014448" rel="noopener" class="external-link" title="https://zhuanlan.zhihu.com/p/111014448" href="https://link.juejin.cn?target=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F111014448" target="_blank">金牛肖马</a><br>国内安装 brew(如果已经安装会顺便卸载就得 brew)，直接执行脚本：<br>/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
-
-
-复制<br>需要输入密码授权一下，并且会让你选择镜像源，我选择的中科大的，1。<br><br><br># 替换各个源
-$ git -C "$(brew --repo)" remote set-url origin https://mirrors.ustc.edu.cn/brew.git
-$ git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
-$ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
-
-# zsh 替换 brew bintray 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &gt;&gt; ~/.zshrc
-$ source ~/.zshrc
-
-# bash 替换 brew bintray 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &gt;&gt; ~/.bash_profile
-$ source ~/.bash_profile
-
-# 刷新源
-$ brew update
-
-
-复制<br><br># 替换各个源
-$ git -C "$(brew --repo)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-$ git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
-$ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask.git
-
-# zsh 替换 brew bintray 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' &gt;&gt; ~/.zshrc
-$ source ~/.zshrc
-
-# bash 替换 brew bintray 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles' &gt;&gt; ~/.bash_profile
-$ source ~/.bash_profile
-
-# 刷新源
-$ brew update
-
-
-复制<br><br># 查看 brew.git 当前源
-$ cd "$(brew --repo)" &amp;&amp; git remote -v
-origin    https://github.com/Homebrew/brew.git (fetch)
-origin    https://github.com/Homebrew/brew.git (push)
-
-# 查看 homebrew-core.git 当前源
-$ cd "$(brew --repo homebrew/core)" &amp;&amp; git remote -v
-origin    https://github.com/Homebrew/homebrew-core.git (fetch)
-origin    https://github.com/Homebrew/homebrew-core.git (push)
-
-# 修改 brew.git 为阿里源
-$ git -C "$(brew --repo)" remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
-
-# 修改 homebrew-core.git 为阿里源
-$ git -C "$(brew --repo homebrew/core)" remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
-
-# zsh 替换 brew bintray 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' &gt;&gt; ~/.zshrc
-$ source ~/.zshrc
-
-# bash 替换 brew bintray 镜像
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles' &gt;&gt; ~/.bash_profile
-$ source ~/.bash_profile
-
-# 刷新源
-$ brew update
-
-
-复制<br><br># 重置 brew.git 为官方源
-$ git -C "$(brew --repo)" remote set-url origin https://github.com/Homebrew/brew.git
-
-# 重置 homebrew-core.git 为官方源
-$ git -C "$(brew --repo homebrew/core)" remote set-url origin https://github.com/Homebrew/homebrew-core.git
-
-# 重置 homebrew-cask.git 为官方源
-$ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://github.com/Homebrew/homebrew-cask
-
-# zsh 注释掉 HOMEBREW_BOTTLE_DOMAIN 配置
-$ vi ~/.zshrc
-# export HOMEBREW_BOTTLE_DOMAIN=xxxxxxxxx
-
-# bash 注释掉 HOMEBREW_BOTTLE_DOMAIN 配置
-$ vi ~/.bash_profile
-# export HOMEBREW_BOTTLE_DOMAIN=xxxxxxxxx
-
-# 刷新源
-$ brew update
-
-
-复制<br><br>
-Mac 全自动安装 brew 一键配置国内镜像源：<a data-tooltip-position="top" aria-label="https://link.juejin.cn?target=https%3A%2F%2Fblog.csdn.net%2FCaptainJava%2Farticle%2Fdetails%2F109132783" rel="noopener" class="external-link" title="https://blog.csdn.net/CaptainJava/article/details/109132783" href="https://link.juejin.cn?target=https%3A%2F%2Fblog.csdn.net%2FCaptainJava%2Farticle%2Fdetails%2F109132783" target="_blank">blog.csdn.net/CaptainJava…</a>
-]]></description><link>https://wxkj.asia/mynote/开发笔记/mac/simpread-mac-下-brew-切换为国内源.html</link><guid isPermaLink="false">开发笔记/mac/simpread-Mac 下 brew 切换为国内源.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sun, 10 Mar 2024 05:56:05 GMT</pubDate></item><item><title><![CDATA[AppleScript 隐藏执行shell脚本文件]]></title><description><![CDATA[ 
+&lt;&lt;用法：当shell看到&lt;&lt;的时候，它就会知道下一个词是一个分界符。在该分界符以后的内容都被当作输入，直到shell又看到该分界符(位于单独的一行)。因此分界符可以是定义的任何字符串。<br><br>文章来源: <a rel="noopener" class="external-link" href="https://blog.csdn.net/u012842255/article/details/66969501" target="_blank">https://blog.csdn.net/u012842255/article/details/66969501</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/使用shell脚本实现ftp自动上传和下载文件.html</link><guid isPermaLink="false">开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[AppleScript 隐藏执行shell脚本文件]]></title><description><![CDATA[ 
  <br>-- 假设您的脚本文件名为 "MyScript.scpt" 并且存放在桌面上
 set scriptFile to POSIX path of (path to desktop as string) &amp; "MyScript.scpt"
 
@@ -6678,46 +6297,7 @@ upload_file_tree函数开始运行！FTP远程目录为:/abc\456
  
 进程已结束，退出代码为 0
 复制<br>文章来源：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/netlt/article/details/121281608" rel="noopener" class="external-link" href="https://blog.csdn.net/netlt/article/details/121281608" target="_blank">python3实现将本地文件夹全部内容上传到FTP</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/python/python3实现将本地文件夹全部内容上传到ftp.html</link><guid isPermaLink="false">开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 03 Apr 2024 23:27:35 GMT</pubDate></item><item><title><![CDATA[seo优化工具]]></title><description><![CDATA[ 
- <br><br><a data-tooltip-position="top" aria-label="https://chrome.google.com/webstore/detail/view-rendered-source/ejgngohbdedoabanmclafpkoogegdpob?hl=en" rel="noopener" class="external-link" href="https://chrome.google.com/webstore/detail/view-rendered-source/ejgngohbdedoabanmclafpkoogegdpob?hl=en" target="_blank">View Rendered Source</a>&nbsp;可以看到网页的渲染前和渲染后的 HTML 代码，并给出两者的差异。不光如此，还可支持 PC 和 Msite，可模拟 Googlebot。让我看了不禁感叹：这才是真正的 SEO 产品工具！<br><br><a data-tooltip-position="top" aria-label="https://chrome.google.com/webstore/detail/seo-pro-extension/lajfdngpocmchpihjecojjllfjeehgnl" rel="noopener" class="external-link" href="https://chrome.google.com/webstore/detail/seo-pro-extension/lajfdngpocmchpihjecojjllfjeehgnl" target="_blank">SEO Pro extension</a>&nbsp;是个查看网页 SEO 元素的插件，并且使用的是网页渲染后的 HTML 源码，并不是渲染前的。所以可以手动点击，查看网页元素的加载情况。]]></description><link>https://wxkj.asia/mynote/开发笔记/seo优化/seo优化工具.html</link><guid isPermaLink="false">开发笔记/SEO优化/seo优化工具.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 02 May 2024 01:03:29 GMT</pubDate></item><item><title><![CDATA[simpread-优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心]]></title><description><![CDATA[ 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://mastergo.com/help/common-problem/configure-webgl/" rel="noopener" class="external-link" href="https://mastergo.com/help/common-problem/configure-webgl/" target="_blank">mastergo.com</a>
-<br>
-如何解决在 MasterGo 查看或编辑设计稿时，因 WebGL 被禁用导致的卡顿或无法打开等问题。
-<br>如果你使用 Chrome 浏览器访问 MasterGo，不论查看或是编辑设计稿，强烈建议按照下属指引，优化浏览器的设置项。 这样做，可以确保更加稳定的使用 MasterGo，以及有效改善应用的性能表现：<br>
-<br>解决文件无法打开的问题。
-<br>显著改善在画布操作时的流畅度，减少卡顿感。
-<br>建议始终使用最新版本的 Chrome 浏览器，<a data-tooltip-position="top" aria-label="https://support.google.com/chrome/answer/95414" rel="noopener" class="external-link" href="https://support.google.com/chrome/answer/95414" target="_blank">了解如何更新 Chrome。</a><br><br>如果打开文件时，弹出这个弹窗，表示未启用硬件加速模式。 <img src="https://static.mastergo.com/help-center/d6f5292b/img/webgl01.png" referrerpolicy="no-referrer"><br>
-<br>在浏览器地址栏输入这个地址并按回车：chrome://settings/system。
-<br>在系统设置界面，确保  使用硬件加速模式（如果可用） 的开关被打开。
-
-<br>注意：打开此开关，需要重新启动浏览器才能生效，按浏览器提示操作即可，或者手动重启浏览器。
-
-
-<br><img src="https://static.mastergo.com/help-center/d6f5292b/img/webgl02.png" referrerpolicy="no-referrer"><br>完成上述步骤后，重新试试能否正常打开文件，如果问题依然存在，请往下看。<br>
-<br>在浏览器地址栏输入这个地址并按回车：chrome://flags。
-<br>找到 Override software rendering list 这一项，将其设置为 Enabled。
-<br><img src="https://static.mastergo.com/help-center/d6f5292b/img/webgl03.png" referrerpolicy="no-referrer"><br>
-<br>注意：修改此项设置，需要重新启动浏览器才能生效。
-<br>注意：激活此项设置后，如果发现经常出现花屏现象，影响正常使用，请重新改回 Disabled，同时可以向我们反馈遇到的具体现象。
-<br>完成上述步骤后，重新试试能否正常打开文件。<br><br>如果打开文件时，看到这个提示，表示当前未使用 OpenGL 图形 API。 <img src="https://static.mastergo.com/help-center/d6f5292b/img/webgl04.png" referrerpolicy="no-referrer"><br>
-<br>在浏览器地址栏输入这个地址并按回车：chrome://flags。
-<br>找到 Choose ANGLE graphics backend 这一项，将其设置为 OpenGL。
-<br><img src="https://static.mastergo.com/help-center/d6f5292b/img/webgl05.png" referrerpolicy="no-referrer"><br>
-<br>注意：修改此项设置，需要重新启动浏览器才能生效。
-<br>完成上述步骤后，提示不再出现，且性能会有显著改善。<br>再次提醒，开启硬件加速模式以及修改图形接口，均需要重启浏览器才能生效。<br><br>如果遇到应用界面被异常放大或缩小，导致界面遮挡或者显示模糊，请检查以下设置：<br>
-<br>在浏览器地址栏输入这个地址并按回车：chrome://settings/appearance。
-<br>确保网页缩放比例为 100%，否则可能出现界面遮挡或者模糊等问题
-<br><img src="https://static.mastergo.com/help-center/d6f5292b/img/webgl06.png" referrerpolicy="no-referrer"><br>注意：<br>
-<br>上述设置优化仅适用于 Chrome 浏览器，建议始终使用最新版本的 Chrome 浏览器。
-<br>如果需要使用其他浏览器比如 Edge 或 360，请确保安装使用相应的 Chrome 内核版本。
-<br>使用 Chrome 内核的浏览器，设置方式与 Chrome 浏览器大同小异，具体方法可以在搜索引擎查找，或询问浏览器官方客服。
-<br>如果无法使用任何 Chrome 内核的浏览器，推荐下载使用 <a data-tooltip-position="top" aria-label="https://mastergo.com/resource" rel="noopener" class="external-link" href="https://mastergo.com/resource" target="_blank">MasterGo 客户端</a>。
-<br>👉本篇文章对你是否有帮助？<a data-tooltip-position="top" aria-label="https://wenjuan.feishu.cn/m/cfm?t=sPyetzv9n0Ji-s7r0" rel="noopener" class="external-link" href="https://wenjuan.feishu.cn/m/cfm?t=sPyetzv9n0Ji-s7r0" target="_blank">👍🏻 有帮助 👎🏻 无帮助</a>，我们期待着你的反馈。]]></description><link>https://wxkj.asia/mynote/开发笔记/ui设计/simpread-优化浏览器设置以提升性能和使用体验-mastergo-帮助中心.html</link><guid isPermaLink="false">开发笔记/UI设计/simpread-优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 08 Mar 2024 05:22:57 GMT</pubDate><enclosure url="https://static.mastergo.com/help-center/d6f5292b/img/webgl01.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://static.mastergo.com/help-center/d6f5292b/img/webgl01.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[simpread-色轮_色环_色彩搭配 - Canva 可画]]></title><description><![CDATA[ 
- <br>
-本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://www.canva.cn/colors/color-wheel/" rel="noopener" class="external-link" href="https://www.canva.cn/colors/color-wheel/" target="_blank">www.canva.cn</a>
-<br>
-色轮展示了颜色之间的关系，让色彩搭配变得更轻松。
-<br><br>有没有想过，设计师和艺术家是怎么找到完美配色的？<br>他们使用色彩理论。色彩理论是艺术和科学的结合，用来确定哪些颜色搭配在一起看起来会和谐又美观。1666 年，英国科学家牛顿在三棱镜分光实验中得到一条色带排列成的色彩环。<br>色轮是色彩理论的基础，用于表示每种颜色之间的相互关系。<br>搭配起来非常好看的颜色叫做色彩组合。艺术家和设计师们用这些颜色来创造特定的外观或氛围，你也可以利用色轮和色彩组合的规则来寻找和谐的配色。<br>色轮分为两种，艺术家经常使用 RYB 色轮或者红、黄、蓝色轮来找到颜料的最佳组合。在线设计领域常用 RGB 色轮或者红、绿、蓝色轮，Canva 提供的色轮就是一个 RGB 色轮。设计师可以用这种色轮来找到显示在电子屏幕中效果最好的配色。<br><br>色轮的基础是红、黄和蓝这三种颜色，这些颜色叫做三原色，因为它们是唯一无法混合其他颜色调配出来的颜色。<br>将色轮上相邻的颜色等量地混合，可以得到三间色。例如，黄色加蓝色得到绿色，蓝色加红色得到紫色，红色加黄色得到橙色。<br>将色轮空白两边的颜色按等量混合，可以得到第三色。例如，黄色加橙色可以得到橙黄色，蓝色和绿色可以得到蓝绿色。<br>用第三色填满所有空白，色轮就制作完成了。如果你再往不同的纯色中添加黑色或白色，还可以得到颜色的暗色或亮色版本，这样可以大大丰富色轮。<br><br>有了色轮之后，我们可以根据色轮来创建色彩搭配组合，下面是几种常见的配色组合方式。<br><br>同类色，指的是色轮中相距 45° 的色彩搭配。同类色搭配比同色系搭配显得颜色更丰富一些，同时色相上的变化比较柔和，颜色过渡看起来也很自然细腻。<br><br>对比色，指的是色轮中相距 120° 的色彩搭配。对比色搭配能够突出视觉中心，小面积使用对比色可以增强画面带给人的视觉冲击力。<br><br>互补色，指的是色轮中相距 180° 的色彩搭配。互补色搭配是所有色彩搭配中对比度最高、冲击力最强烈的一种，常见的使用方法是一种作为主色，另一种用于强调。<br><br>色彩不仅是现实存在，还是文化领域中的一种存在，因此从某种意义来说，关于色彩的介绍永无止境。如果你想了解更多色彩背后的秘密，请浏览我们的色彩意义页面，这里为你奉上百种颜色的历史、含义以及搭配。如果你正在寻找能够激发灵感的配色组合，请查看我们的图片调色板生成器，或浏览数以千计的色卡。]]></description><link>https://wxkj.asia/mynote/开发笔记/ui设计/simpread-色轮_色环_色彩搭配-canva-可画.html</link><guid isPermaLink="false">开发笔记/UI设计/simpread-色轮_色环_色彩搭配 - Canva 可画.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 14 Mar 2024 13:39:07 GMT</pubDate></item><item><title><![CDATA[优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心]]></title><description><![CDATA[ 
+ <br><br><a data-tooltip-position="top" aria-label="https://chrome.google.com/webstore/detail/view-rendered-source/ejgngohbdedoabanmclafpkoogegdpob?hl=en" rel="noopener" class="external-link" href="https://chrome.google.com/webstore/detail/view-rendered-source/ejgngohbdedoabanmclafpkoogegdpob?hl=en" target="_blank">View Rendered Source</a>&nbsp;可以看到网页的渲染前和渲染后的 HTML 代码，并给出两者的差异。不光如此，还可支持 PC 和 Msite，可模拟 Googlebot。让我看了不禁感叹：这才是真正的 SEO 产品工具！<br><br><a data-tooltip-position="top" aria-label="https://chrome.google.com/webstore/detail/seo-pro-extension/lajfdngpocmchpihjecojjllfjeehgnl" rel="noopener" class="external-link" href="https://chrome.google.com/webstore/detail/seo-pro-extension/lajfdngpocmchpihjecojjllfjeehgnl" target="_blank">SEO Pro extension</a>&nbsp;是个查看网页 SEO 元素的插件，并且使用的是网页渲染后的 HTML 源码，并不是渲染前的。所以可以手动点击，查看网页元素的加载情况。]]></description><link>https://wxkj.asia/mynote/开发笔记/seo优化/seo优化工具.html</link><guid isPermaLink="false">开发笔记/SEO优化/seo优化工具.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 02 May 2024 01:03:29 GMT</pubDate></item><item><title><![CDATA[优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心]]></title><description><![CDATA[ 
  <br>
 本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://mastergo.com/help/common-problem/configure-webgl/" rel="noopener" class="external-link" href="https://mastergo.com/help/common-problem/configure-webgl/" target="_blank">mastergo.com</a>
 <br>
