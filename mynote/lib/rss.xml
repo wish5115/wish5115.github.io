@@ -1,4 +1,101 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 15 May 2024 15:39:24 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 15 May 2024 15:36:55 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[js怎么先按ctime desc,再按title asc]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[我的笔记]]></title><description><![CDATA[Obsidian digital garden]]></description><link>https://wxkj.asia/mynote/</link><image><url>https://wxkj.asia/mynote/lib/media/favicon.png</url><title>我的笔记</title><link>https://wxkj.asia/mynote/</link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 17 May 2024 14:10:38 GMT</lastBuildDate><atom:link href="https://wxkj.asia/mynote/lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 17 May 2024 14:04:23 GMT</pubDate><copyright><![CDATA[Wilson]]></copyright><ttl>60</ttl><dc:creator>Wilson</dc:creator><item><title><![CDATA[scrollIntoView 等待滚动结束执行]]></title><description><![CDATA[ 
+ <br>scrollIntoView({ behavior: "smooth"}) 是一个原生 JavaScript 方法，用于平滑地滚动页面至指定元素。然而，这个方法本身并不直接提供回调或者 Promise 来通知滚动何时结束。但是，你可以通过监听 scroll 事件并在合适的时机判断滚动是否接近完成来间接实现这一需求。这里有一个常用的方法来监听滚动结束：<br>function waitForScrollFinish(element, callback) {
+    let totalScrollDistance = element.getBoundingClientRect().top;
+    let scrollThreshold = 1; // 可根据实际情况调整阈值
+    let lastScrollTop;
+    let timer;
+
+    const checkScrollEnd = () =&gt; {
+        clearTimeout(timer);
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const distanceFromTop = element.getBoundingClientRect().top;
+
+        // 如果滚动距离小于阈值，认为滚动结束
+        if (Math.abs(totalScrollDistance - distanceFromTop) &lt;= scrollThreshold) {
+            callback();
+        } else {
+            // 继续监听，使用防抖避免频繁触发
+            timer = setTimeout(checkScrollEnd, 10);
+        }
+        lastScrollTop = currentScrollTop;
+    };
+
+    // 开始监听滚动事件
+    window.addEventListener('scroll', checkScrollEnd, { passive: true });
+
+    // 触发初始检查
+    checkScrollEnd();
+
+    // 为了内存管理，可以在滚动结束后移除监听器
+    return function removeListener() {
+        window.removeEventListener('scroll', checkScrollEnd);
+    };
+}
+
+// 使用示例
+const myElement = document.querySelector('#my-element');
+myElement.scrollIntoView({ behavior: 'smooth' });
+
+// 等待滚动结束
+const removeListener = waitForScrollFinish(myElement, function() {
+    console.log('滚动结束！');
+    // 这里执行你希望在滚动结束后进行的操作
+    // ...
+
+    // 清理监听器（可选，取决于你的使用场景）
+    removeListener();
+});
+复制<br>这段代码定义了一个 waitForScrollFinish 函数，它接受一个元素和一个回调函数作为参数。当滚动接近目标元素时（基于一个预设的阈值），会调用提供的回调函数。同时，为了避免在滚动过程中频繁调用检查逻辑，使用了防抖(debounce)技巧。请注意，这个方法依赖于滚动结束时元素位置的估计，可能在某些复杂滚动场景下不够精确，但适用于多数情况。]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/scrollintoview-等待滚动结束执行.html</link><guid isPermaLink="false">开发笔记/前端/scrollIntoView 等待滚动结束执行.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 23:33:04 GMT</pubDate></item><item><title><![CDATA[js实现ctrl+鼠标左键点击示例]]></title><description><![CDATA[ 
+ <br>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Ctrl + Click 示例&lt;/title&gt;
+&lt;style&gt;
+    #myElement {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        line-height: 200px;
+        text-align: center;
+        cursor: pointer;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id="myElement"&gt;点击这里试试（需同时按下Ctrl键）&lt;/div&gt;
+
+&lt;script&gt;
+    let isCtrlDown = false; // 用于记录Ctrl键是否被按下
+
+    // 监听keyup事件，当Ctrl键抬起时重置标志
+    document.addEventListener('keyup', function(event) {
+        if (event.key === 'Control'||event.key === 'Meta') {
+            isCtrlDown = false;
+        }
+    });
+
+    // 监听mousedown事件，检查是否同时按下Ctrl
+    document.getElementById('myElement').addEventListener('mousedown', function(event) {
+        if (event.button === 0 &amp;&amp; isCtrlDown) { // button === 0 检测是否为左键点击
+            console.log("Ctrl + 左键点击");
+            // 在这里执行你希望Ctrl+点击时触发的操作
+            event.preventDefault(); // 可选：阻止默认点击行为
+        }
+    });
+
+    // 监听keydown事件，记录Ctrl键被按下的状态
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Control'||event.key === 'Meta') {
+            isCtrlDown = true;
+        }
+    });
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+复制]]></description><link>https://wxkj.asia/mynote/开发笔记/前端/js实现ctrl+鼠标左键点击示例.html</link><guid isPermaLink="false">开发笔记/前端/js实现ctrl+鼠标左键点击示例.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 13:21:05 GMT</pubDate></item><item><title><![CDATA[js怎么先按ctime desc,再按title asc]]></title><description><![CDATA[ 
  <br>示例：<br>let data = [
     {title: "B", ctime: "2023-04-01"},
     {title: "C", ctime: "2023-04-02"},
@@ -1833,7 +1930,9 @@ else
 fi
 echo $COUNT
 
-复制<br>详细：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/yelllowcong/article/details/78424329" rel="noopener" class="external-link" href="https://blog.csdn.net/yelllowcong/article/details/78424329" target="_blank">Fetching Title#suot</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/shell之判断程序是否运行.html</link><guid isPermaLink="false">开发笔记/linux/Shell之判断程序是否运行.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 11 May 2024 00:23:55 GMT</pubDate></item><item><title><![CDATA[shell if语句中的并列 - 诗意的栖居 - ITeye博客]]></title><description><![CDATA[ 
+复制<br>详细：<a data-tooltip-position="top" aria-label="https://blog.csdn.net/yelllowcong/article/details/78424329" rel="noopener" class="external-link" href="https://blog.csdn.net/yelllowcong/article/details/78424329" target="_blank">Fetching Title#suot</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/shell之判断程序是否运行.html</link><guid isPermaLink="false">开发笔记/linux/Shell之判断程序是否运行.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 11 May 2024 00:23:55 GMT</pubDate></item><item><title><![CDATA[shell 下 urlencode和urldecode 编码解码的方法]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:echo" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#echo</a> 
+ <br>UrlEncode:<br>echo '你好中国' | tr -d '\n' | xxd -plain | sed 's/\(..\)/%\1/g'<br>
+<a href="https://wxkj.asia/mynote?query=tag:echo" class="tag" target="_blank" rel="noopener">#echo</a> '你好中国' |tr -d '\n' |od -An -tx1|tr ' ' %<br>输出：%e4%bd%a0%e5%a5%bd%e4%b8%ad%e5%9b%bd<br>对输入数据进行十六进制的转换，并在每个转换结果前面加上%(一般urlencode会在到后台服务器的时候，自动解码)<br>UrlDecode:<br>printf $(echo -n "%e4%bd%a0%e5%a5%bd%e4%b8%ad%e5%9b%bd" | sed 's/\\/\\\\/g;s/\(%\)\([0-9a-fA-F][0-9a-fA-F]\)/\\x\2/g')"\n"<br>输出：你好中国<br><br>文章来源: <a rel="noopener" class="external-link" href="https://www.cnblogs.com/fnlingnzb-learner/p/13064885.html" target="_blank">https://www.cnblogs.com/fnlingnzb-learner/p/13064885.html</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/shell-下-urlencode和urldecode-编码解码的方法.html</link><guid isPermaLink="false">开发笔记/linux/shell 下 urlencode和urldecode 编码解码的方法.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 11 May 2024 00:23:55 GMT</pubDate></item><item><title><![CDATA[shell if语句中的并列 - 诗意的栖居 - ITeye博客]]></title><description><![CDATA[ 
  <br><br>
 
 格式如下，在比较时，数字和字符串用不同的比较符号  1.如果a&gt;b且a&lt;c  &nbsp;&nbsp; if (( a &gt; b )) &amp;&amp; (( a &lt; c )) &nbsp;  &nbsp;&nbsp; 或者  &nbsp;&nbsp; if <a data-href="$a > $b" href="https://wxkj.asia/mynote/$a > $b" class="internal-link" target="_self" rel="noopener">$a &gt; $b</a> &amp;&amp; <a data-href="$a < $c" href="https://wxkj.asia/mynote/$a < $c" class="internal-link" target="_self" rel="noopener">$a &lt; $c</a>  &nbsp;&nbsp;&nbsp; 或者 &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; if [ $a -gt $b -a $a -lt $c ]  ...
@@ -1851,9 +1950,7 @@ if [ $a -gt $b -o $a -lt $c ]<br>3. -o = or , -a = and , 但我一向只用 || �
 <br><a data-tooltip-position="top" aria-label="https://www.iteye.com/blog/fyan-1130034#comments" rel="noopener" class="external-link" href="https://www.iteye.com/blog/fyan-1130034#comments" target="_blank">评论(1)</a>
 <br>分类:<a data-tooltip-position="top" aria-label="https://www.iteye.com/blogs/category/language" rel="noopener" class="external-link" href="https://www.iteye.com/blogs/category/language" target="_blank">编程语言</a>
 <br><a data-tooltip-position="top" aria-label="https://www.iteye.com/wiki/blog/1130034" rel="noopener" class="external-link" href="https://www.iteye.com/wiki/blog/1130034" target="_blank">查看更多</a>
-]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/shell-if语句中的并列-诗意的栖居-iteye博客.html</link><guid isPermaLink="false">开发笔记/linux/shell if语句中的并列 - 诗意的栖居 - ITeye博客.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 11 May 2024 00:23:55 GMT</pubDate></item><item><title><![CDATA[shell 下 urlencode和urldecode 编码解码的方法]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:echo" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#echo</a> 
- <br>UrlEncode:<br>echo '你好中国' | tr -d '\n' | xxd -plain | sed 's/\(..\)/%\1/g'<br>
-<a href="https://wxkj.asia/mynote?query=tag:echo" class="tag" target="_blank" rel="noopener">#echo</a> '你好中国' |tr -d '\n' |od -An -tx1|tr ' ' %<br>输出：%e4%bd%a0%e5%a5%bd%e4%b8%ad%e5%9b%bd<br>对输入数据进行十六进制的转换，并在每个转换结果前面加上%(一般urlencode会在到后台服务器的时候，自动解码)<br>UrlDecode:<br>printf $(echo -n "%e4%bd%a0%e5%a5%bd%e4%b8%ad%e5%9b%bd" | sed 's/\\/\\\\/g;s/\(%\)\([0-9a-fA-F][0-9a-fA-F]\)/\\x\2/g')"\n"<br>输出：你好中国<br><br>文章来源: <a rel="noopener" class="external-link" href="https://www.cnblogs.com/fnlingnzb-learner/p/13064885.html" target="_blank">https://www.cnblogs.com/fnlingnzb-learner/p/13064885.html</a>]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/shell-下-urlencode和urldecode-编码解码的方法.html</link><guid isPermaLink="false">开发笔记/linux/shell 下 urlencode和urldecode 编码解码的方法.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 11 May 2024 00:23:55 GMT</pubDate></item><item><title><![CDATA[rsync 用法教程]]></title><description><![CDATA[ 
+]]></description><link>https://wxkj.asia/mynote/开发笔记/linux/shell-if语句中的并列-诗意的栖居-iteye博客.html</link><guid isPermaLink="false">开发笔记/linux/shell if语句中的并列 - 诗意的栖居 - ITeye博客.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 11 May 2024 00:23:55 GMT</pubDate></item><item><title><![CDATA[rsync 用法教程]]></title><description><![CDATA[ 
  <br><br>rsync 是一个常用的 Linux 应用程序，用于文件同步。<br>它可以在本地计算机与远程计算机之间，或者两个本地目录之间同步文件（但不支持两台远程计算机之间的同步）。它也可以当作文件复制工具，替代cp和mv命令。<br><img src="https://www.wangbase.com/blogimg/asset/202008/bg2020082602.jpg" referrerpolicy="no-referrer"><br>它名称里面的r指的是 remote，rsync 其实就是"远程同步"（remote sync）的意思。与其他文件传输工具（如 FTP 或 scp）不同，rsync 的最大特点是会检查发送方和接收方已有的文件，仅传输有变动的部分（默认规则是文件大小或修改时间有变动）。<br><br>如果本机或者远程计算机没有安装 rsync，可以用下面的命令安装。<br>
 
 # Debian
@@ -3757,7 +3854,16 @@ void threadpool&lt;T&gt;::run()
 <br>解释器模式（Interpreter）：给定一门语言，定义它的文法表示，并定义一个解释器来解释语言中的句子。
 
 
-<br>以上设计模式可以帮助开发者更好地组织代码、复用已有的解决方案、提高代码可读性和可维护性，并有助于解决特定的设计挑战。在实际项目中，选择使用哪种设计模式取决于具体的需求、系统的架构以及长期的可扩展性和维护性考量。]]></description><link>https://wxkj.asia/mynote/学习笔记/设计模式/常用设计模式.html</link><guid isPermaLink="false">学习笔记/设计模式/常用设计模式.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 23 Mar 2024 01:45:39 GMT</pubDate></item><item><title><![CDATA[好书推荐]]></title><description><![CDATA[ 
+<br>以上设计模式可以帮助开发者更好地组织代码、复用已有的解决方案、提高代码可读性和可维护性，并有助于解决特定的设计挑战。在实际项目中，选择使用哪种设计模式取决于具体的需求、系统的架构以及长期的可扩展性和维护性考量。]]></description><link>https://wxkj.asia/mynote/学习笔记/设计模式/常用设计模式.html</link><guid isPermaLink="false">学习笔记/设计模式/常用设计模式.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 23 Mar 2024 01:45:39 GMT</pubDate></item><item><title><![CDATA[1万访问需要多少宽带]]></title><description><![CDATA[ 
+ <br>在服务器托管或者在服务器，租赁的时候会考虑带宽分配的问题，大部分人只知道带宽分配合理充足，既能节约成本又不浪费资源。那么什么是合适的带宽分配，如何为不同的企业规模分配带宽呢？今天我们腾友边肖为大家整理了带宽选择标准，大家可以对比参考！<br>
+=""src="&gt;<br>
+什么是带宽？<br>
+我们用来描述网络速度的两个词是带宽和流量。网络带宽用来描述带宽。然而，在数字传输级别，网络带宽通常用于考虑传输数据的能力。用于表示企业时间内传输的数据量大小(通常以“秒”为企业单位)和吞吐量统计的工作能力。什么是流量？<br>
+流量(Flow)是指在企业时间内，流经具有合理横截面的封闭管道或明渠的水动力量，也称为瞬时流速总流量。一般来说，流量是指网站的页面浏览量，用于描述浏览网站的用户数量和客户预览的网页总数。常见的统计指标包括个人用户数、总用户数(包括重复访问者)、浏览的网页总数、每个客户预览的网页总数、客户在网站的平均等待时间。事实上，那流量与带宽是什么样的关系呢？的带宽决定了服务器主机可以循环的最大值。一般来说，复制流量的最大值可以用带宽除以 8 来估计。一万个 IP 流量的时候需要多大带宽？<br>
+一万个 IP 的接入就是一万个不同用户的接入。如果一个用户访问一个网站的两个页面，该网站需要承担 20,000 PV。一个网站每天有两万次点击。在繁忙时间的 5 个小时的高峰期，用户平均每秒浏览 0.5 页，而在其他时段，则低于每秒 0.5 页。因此，主机的最小带宽应该是每秒 0.5 页。假设网站页面平均大小为 200KB，那么带宽应该至少为 100KBps(0.78Mbps)。所以，理论上一页 200KB 的网站 10000IP（20000PV）至少要 0.78m 的带宽.如果一个页面有 600KB，至少需要 0.78x3=2.34m 的带宽。<br>
+=""src="&gt;<br>
+但是理论和实践总是有差距的，实际使用中的带宽消耗可能远远超过理论值。所以理论值在选择带宽时只能作为参考数据，建议最终购买的带宽量是理论值的 2~3 倍，这样可以保证网站有足够的带宽，但也不至于太浪费。<br>
+微子网从事服务器业务已有 12 年。作为华为云，的服务中心，它在服务器和云服务器，提供各种配置以及上游和下游业务。要了解更多有关咨询带宽和服务器配置的信息，您可以点击我们的在线商务桥，我们的专业人士将详细回答您的问题！]]></description><link>https://wxkj.asia/mynote/学习笔记/1万访问需要多少宽带.html</link><guid isPermaLink="false">学习笔记/1万访问需要多少宽带.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 20:11:17 GMT</pubDate></item><item><title><![CDATA[好书推荐]]></title><description><![CDATA[ 
  <br><br><a data-tooltip-position="top" aria-label="https://www.ruanyifeng.com/survivor/index.html" rel="noopener" class="external-link" href="https://www.ruanyifeng.com/survivor/index.html" target="_blank">未来世界的幸存者</a>]]></description><link>https://wxkj.asia/mynote/学习笔记/好书推荐.html</link><guid isPermaLink="false">学习笔记/好书推荐.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 02 May 2024 15:45:41 GMT</pubDate></item><item><title><![CDATA[typescript之绑定和解绑事件]]></title><description><![CDATA[ 
  <br>如果在类中，你函数中使用了 this，必须像这样绑定<br>private boundDemoCallback: () =&gt; void;
 
@@ -4060,6 +4166,7 @@ apply() 方法同样接受至少两个参数，第一个参数也是要绑定的
 <a data-tooltip-position="top" aria-label="https://forum-zh.obsidian.md/t/topic/29521" rel="noopener" class="external-link" href="https://forum-zh.obsidian.md/t/topic/29521" target="_blank">QuickAdd JS &amp; Templater JS 简介及相互修改 - 经验分享 - Obsidian 中文论坛</a><br>
 <a data-tooltip-position="top" aria-label="https://forum-zh.obsidian.md/t/topic/429" rel="noopener" class="external-link" href="https://forum-zh.obsidian.md/t/topic/429" target="_blank">「QuickAdd」更轻松的Yaml标签 - 经验分享 - Obsidian 中文论坛</a>]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/插件/quickadd.html</link><guid isPermaLink="false">工具软件/obsidian/插件/quickadd.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 13 May 2024 04:34:46 GMT</pubDate><enclosure url="https://forum-zh.obsidian.md/uploads/default/original/2X/5/503df3449b2d1176fad81a653149cf2108790246.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://forum-zh.obsidian.md/uploads/default/original/2X/5/503df3449b2d1176fad81a653149cf2108790246.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[dataview]]></title><description><![CDATA[ 
  <br>文档外使用 dv<br>const dv=app.plugins.plugins.dataview.api<br>或<br>const dv=DataviewAPI<br>dv.el 嵌套<br>dv.el('div', dv.el('span', 'demo'))
+dv.el('ul', dv.el('li', dv.el('span', 'demo')));
 复制<br>dv.query<br>```dataviewjs
 const result = await dv.query(`list`)
 if (result.successful) {
@@ -4098,7 +4205,7 @@ b::b2
         "b2"
     ]
 }
-复制]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/插件/dataview.html</link><guid isPermaLink="false">工具软件/obsidian/插件/dataview.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Tue, 14 May 2024 07:15:43 GMT</pubDate></item><item><title><![CDATA[关闭重复标签]]></title><description><![CDATA[ 
+复制]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/插件/dataview.html</link><guid isPermaLink="false">工具软件/obsidian/插件/dataview.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 04:32:08 GMT</pubDate></item><item><title><![CDATA[关闭重复标签]]></title><description><![CDATA[ 
  <br>this.app.workspace.onLayoutReady(() =&gt; {
 	this.registerEvent(
 		this.app.workspace.on("active-leaf-change", (activeLeaf) =&gt; {
@@ -4677,7 +4784,7 @@ aliases: [AI, Artificial Intelligence]
 复制<br><a data-tooltip-position="top" aria-label="obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/obsidian://open?path=D:%2Fpath%2Fto%2Ffile" target="_blank">打开某篇笔记</a><br>除了通过笔记的地址来链接笔记外，你也可以通过笔记所在的库名称以及笔记名称来链接该笔记：<br>[打开某篇笔记](obsidian://open?vault=MainVault&amp;file=MyNote.md)
 复制<br><a data-tooltip-position="top" aria-label="obsidian://open?vault=MainVault&amp;file=MyNote.md" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/obsidian://open?vault=MainVault&amp;file=MyNote" target="_blank">打开某篇笔记</a><br>详细内容请参考官方教程：<br>
 <a rel="noopener" class="external-link" href="https://publish.obsidian.md/help-zh/%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/%E4%BD%BF%E7%94%A8+obsidian+URI" target="_blank">https://publish.obsidian.md/help-zh/%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/%E4%BD%BF%E7%94%A8+obsidian+URI</a><br><br>（选中查看源码）<br><a data-tooltip-position="top" aria-label="http://www.baidu.com" rel="noopener" class="external-link" href="http://www.baidu.com" target="_blank">百度一下，你就知道</a><br>
-<a data-tooltip-position="top" aria-label="https://www.zhihu.com" rel="noopener" class="external-link" href="https://www.zhihu.com" target="_blank">知乎-有问题，就会有答案</a><br><br><br><br> 脚注：（预览视图下查看效果，选中查看源码）<br>鲁迅原名是什么<a href="https://wxkj.asia/mynote/#fn-1-ccfc256a7e8f015d" class="footnote-link" target="_self" rel="noopener">[1]</a> ，浙江哪里人<a href="https://wxkj.asia/mynote/#fn-2-ccfc256a7e8f015d" class="footnote-link" target="_self" rel="noopener">[2]</a><br><br><br><br><br><br>
+<a data-tooltip-position="top" aria-label="https://www.zhihu.com" rel="noopener" class="external-link" href="https://www.zhihu.com" target="_blank">知乎-有问题，就会有答案</a><br><br><br><br> 脚注：（预览视图下查看效果，选中查看源码）<br>鲁迅原名是什么<a href="https://wxkj.asia/mynote/#fn-1-248fff2f0e4bfeec" class="footnote-link" target="_self" rel="noopener">[1]</a> ，浙江哪里人<a href="https://wxkj.asia/mynote/#fn-2-248fff2f0e4bfeec" class="footnote-link" target="_self" rel="noopener">[2]</a><br><br><br><br><br><br>
 <br>
 这是第一个有序列表 
 
@@ -4899,8 +5006,8 @@ Quote, cite<br>这是一个 bug 类别
 <a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Mermaid+%E6%B5%81%E5%9B%BE" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Mermaid+%E6%B5%81%E5%9B%BE" target="_blank">Mermaid 流图</a><br>
 <a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Obsidian+%E4%B8%AD%E7%9A%84+Mermaid" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Mermaid/Obsidian+%E4%B8%AD%E7%9A%84+Mermaid" target="_blank">Obsidian 中的 Mermaid</a><br>本文整理自：<a data-tooltip-position="top" aria-label="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Markdown/Markdown%E8%B6%85%E7%BA%A7%E6%95%99%E7%A8%8B+Obsidian%E7%89%88#%E4%BB%80%E4%B9%88%E6%98%AF%20Markdown?" rel="noopener" class="external-link" href="https://publish.obsidian.md/csj-obsidian/0+-+Obsidian/Markdown/Markdown%E8%B6%85%E7%BA%A7%E6%95%99%E7%A8%8B+Obsidian%E7%89%88#%E4%BB%80%E4%B9%88%E6%98%AF%20Markdown?" target="_blank">Markdown超级教程 Obsidian版</a><br>
 <br>
-<br>周树人<a href="https://wxkj.asia/mynote/#fnref-1-ccfc256a7e8f015d" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
-<br>绍兴人<a href="https://wxkj.asia/mynote/#fnref-2-ccfc256a7e8f015d" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
+<br>周树人<a href="https://wxkj.asia/mynote/#fnref-1-248fff2f0e4bfeec" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
+<br>绍兴人<a href="https://wxkj.asia/mynote/#fnref-2-248fff2f0e4bfeec" class="footnote-backref footnote-link" target="_self" rel="noopener">↩︎</a>
 ]]></description><link>https://wxkj.asia/mynote/工具软件/obsidian/markdown示例教程.html</link><guid isPermaLink="false">工具软件/obsidian/markdown示例教程.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Mon, 13 May 2024 15:21:49 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/markdown示例教程-20240222054705709.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/markdown示例教程-20240222054705709.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Obsidain插件之QuickAdd-强大的快速记录与宏工具]]></title><description><![CDATA[ 
  <br>&nbsp; &nbsp;QuickAdd是一款可快速添加信息，捕捉想法，采用模板新建笔记和添加宏命令，快速执行多项操作的好用又强大的插件。<br>&nbsp; &nbsp; 可以配合着 Kanban、Button插件一同使用，增强功能。<br>&nbsp; &nbsp; 本篇将主要介绍下这款插件的使用方法和一些参数设置。<br><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" referrerpolicy="no-referrer"><br><br>在QuickAdd的插件设置中，可以添加四种模式的命令，命令名称支持emoji标签。<br><br>很抱歉，您未提供具体的文章或段落内容，我无法进行总结归纳和关键论点提取。请提供详细文本后，我会帮您整理出相应的Markdown格式输出。<br>可添加的四种命令模式分别为：<br>
 <br>- Template- 创建一个模板
@@ -6506,78 +6613,7 @@ set mirror:use-pget-n 10; 仍设置最多 10 个并行连接进行传输。<br>
 复制<br>在这个示例中：<br>set exclude-list 命令可以接受一个或多个路径，用来排除不需要同步的远程目录。<br>
 mirror 命令中的 --exclude-glob='*.tmp' 参数可以排除所有扩展名为.tmp 的文件。<br>
 --exclude-from=HOME/.lftp/excludes.txt 文件已存在，并且包含了您想要排除的文件或目录的正则表达式。<br>请注意，--exclude-glob 参数使用 glob 模式匹配，而从文件中读取的排除规则使用的是正则表达式。这两种排除方式可以结合使用，以满足你的不同需求。]]></description><link>https://wxkj.asia/mynote/工具软件/lftp使用.html</link><guid isPermaLink="false">工具软件/lftp使用.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 22 Mar 2024 18:50:47 GMT</pubDate></item><item><title><![CDATA[fswatch和rsync的使用]]></title><description><![CDATA[ 
- <br><br>fswatch -r -x --event Created --event Updated --event Removed --event Renamed --event MovedTo --exclude="\.DS_Store" --exclude="\.git" "$src_dir"<br>这条命令是监控 $src_dir 文件夹下的创建，修改，删除，重命名，移动等事件，排除.DS_Store 和.git 文件，每个事件都会触发一次。<br>-r 递归监控子目录目录下的所有文件<br>
--o 这个参数会使 fswatch 输出每次变化发生时的文件数，而不是文件列表<br>比如：fswatch -or -x --event Created --event Updated --event Removed --event Renamed --event MovedTo "$src_dir" 监控 $src_dir 文件夹下的创建，修改，删除，重命名，移动等事件，返回的是发生变化的文件数。<br>可以使用 read 命令读取事件发生的文件列表，比如：<br>fswatch -x --event Created "$src_dir" | while read -r line; do
-	echo $line
-done
-复制<br>read -r 选项表示进行原始读取（raw read），即在读取输入时不进行反斜杠 \n \t 的转义处理<br><br>rsync -rtuv --delete "$SOURCE_DIR/" "$DEST_DIR/"
-复制<br>这里，-r表示递归同步，-t保持文件时间戳，-u表示只同步更新过的文件，-v表示详细输出，--delete会在目标目录删除源目录不存在的文件。<br>也可以使用-a 选项，比如：<br>rsync -avz --delete /path/to/source_directory/ /path/to/destination_dir
-复制<br>
-<br>-a&nbsp;是归档模式，它保留了递归、符号链接处理、权限保持，用户/组，时间等多项功能，并且能递归同步目录。
-<br>-v&nbsp;是详细模式，会让rsync在执行时输出更多信息，便于观察同步过程。
-<br>-z&nbsp;表示在传输时进行压缩，加快传输速度，特别是对于大文件或慢速网络连接。
-<br>--delete&nbsp;选项确保目标目录中如果存在源目录没有的文件，则将其删除，保持两个目录内容一致。
-<br><br>下面，让 fswatch 和 rsync 相结合实现，当文件变化时，单向备份文件的功能。<br>#!/usr/bin/env bash
-
-# * * * * * /bin/bash /pah/bin/mynotes_backup.sh &gt;/dev/null 2&gt;&amp;1 &amp;
-# nohup bash /path/bin/mynotes_backup.sh &gt;/dev/null 2&gt;&amp;1 &amp;
-
-# 监控的根目录和批处理文件
-src_dir="/path/Documents/我的笔记"
-backup_idr="/path/Documents/mynote_backup"
-fswatch="/usr/local/bin/fswatch"
-
-# fswatch命令行参数，监控所有类型的事件
-EVENTS='--event Created --event Updated --event Removed --event Renamed --event MovedTo'
-EXCLUDES=(--exclude="\.DS_Store" --exclude="media/\.git" --exclude="\.git" --exclude="未命名\.md")
-
-SCRIPT_NAME=$(basename "$0")
-if [ "$(pgrep -fl "$SCRIPT_NAME")" ]; then
-    echo "$SCRIPT_NAME 进程已存在"
-    exit 0
-fi
-
-lock="/tmp/$SCRIPT_NAME.lock"
-
-# 启动fswatch监听目录，监听多个目录，可以在webpage_dir后面中添加多个，用空格分开
-#fswatch参数说明
-# -o 这个参数会使 fswatch 输出每次变化发生时的文件数，而不是文件列表
-# -r 递归监控子目录目录下的所有文件
-# read -r 选项表示进行原始读取（raw read），即在读取输入时不进行反斜杠 \n \t 的转义处理
-$fswatch -or "${EXCLUDES[@]}" -x $EVENTS "$src_dir" | while read -r num; do
-
-  #echo "change nums: $num   date: $(date +'%Y-%m-%d %H:%M:%S')"
-
-  if [ ! -f "$lock" ]; then
-
-    # 5秒钟内，不再接受文件变化事件
-    touch $lock
-    # 这里开启一个后台进程，5秒后删除锁文件
-    (sleep 5 &amp;&amp; rm -f $lock) &amp;
-
-    # echo "----------- find changes -----------"
-
-    # 调用同步脚本 &amp;的作用是避免rsync命令阻塞循环，导致监听的事件不能马上处理
-    # 这样会在rsync命令执行完后，再次执行rsync命令，引起多次同步
-    # 如果不阻塞循环，则后续事件到来会立即启动rsync命令，rsync命令执也判断一次自身是否已启动
-    # 如果已启动则退出，确保每次监控变化，只执行一次
-    # &amp; 保证rsync不会阻塞循环执行
-    # pgrep -x 精确匹配进程名
-    # rsync -a（归档模式）确保了文件的创建、更新、删除都会被同步
-    #       -v 显示是详细模式，会让rsync在执行时输出更多信息，便于观察同步过程
-    #       -z 表示在传输时进行压缩，加快传输速度，特别是对于大文件或慢速网络连接
-    #       --delete 选项确保目标目录中如果存在源目录没有的文件，则将其删除，保持两个目录内容一致（这里暂时不用删除）
-    if [ ! "$(pgrep -x rsync)" ]; then
-        # echo "----------- start rsync -----------"
-        rsync -avz "$src_dir" "$backup_idr" --exclude='.DS_Store' --exclude='.git' --exclude='media/.git' --exclude='未命名.md' &amp;
-        # rsync -avz --delete "$src_dir" "$backup_idr" --exclude='.DS_Store' --exclude='.git' --exclude='media/.git' &amp;
-    fi
-
-  fi
-
-done
-复制<br>这里也可以采用定时同步方式，看使用场景，比如：<br>while true; do rsync -avz --delete "/path/to/source/" "/path/to/destination"; sleep 60; done
-复制<br>每60秒执行一次，保持同步。这种方法简单但效率不高，因为它不论文件是否变化都会尝试同步。]]></description><link>https://wxkj.asia/mynote/工具软件/fswatch和rsync的使用.html</link><guid isPermaLink="false">工具软件/fswatch和rsync的使用.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 03 May 2024 00:18:07 GMT</pubDate></item><item><title><![CDATA[[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？]]></title><description><![CDATA[ 
+ The text provides instructions on how to use fswatch and rsync for monitoring and backup purposes. It explains the parameters and options of both commands and provides a practical example of combining them to create a one-way file backup system.]]></description><link>https://wxkj.asia/mynote/工具软件/fswatch和rsync的使用.html</link><guid isPermaLink="false">工具软件/fswatch和rsync的使用.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 04:13:06 GMT</pubDate></item><item><title><![CDATA[[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？]]></title><description><![CDATA[ 
  <br>
 本文由 <a data-tooltip-position="top" aria-label="http://ksria.com/simpread/" rel="noopener" class="external-link" href="http://ksria.com/simpread/" target="_blank">简悦 SimpRead</a> 转码， 原文地址 <a data-tooltip-position="top" aria-label="https://blog.csdn.net/qq_31061155/article/details/124388364" rel="noopener" class="external-link" href="https://blog.csdn.net/qq_31061155/article/details/124388364" target="_blank">blog.csdn.net</a>
 <br>使用 google 谷歌浏览器提示更新，可是点击更新后提示：无法访问此网站；<br><img src="https://img-blog.csdnimg.cn/img_convert/9e166a046d492f69465293f1d98370de.png" referrerpolicy="no-referrer"><br>国内如何下载更新 google 谷歌浏览器？<br>1、google 谷歌浏览器提示更新，点击更新按钮后，选择点击 Chrome 版本太旧；<br><img src="https://img-blog.csdnimg.cn/img_convert/02df6ec9186938071d98af4aa5bd9ca9.png" referrerpolicy="no-referrer"><br><img src="https://img-blog.csdnimg.cn/img_convert/8856d9dae1912ba17f2b8beed323a3d9.png" referrerpolicy="no-referrer"><br>2、点击后提示无法更新 Chrome 谷歌浏览器，请点击重新安装 Chrome；<br><img src="https://img-blog.csdnimg.cn/img_convert/fb498698ab5ba009108b35010d401200.png" referrerpolicy="no-referrer"><br>3、打开谷歌浏览器官方网站，遇到无法访问此网站；<br><img src="https://img-blog.csdnimg.cn/img_convert/6a259abbedc4c55590c4a39adcc1ecea.png" referrerpolicy="no-referrer"><br><img src="https://img-blog.csdnimg.cn/img_convert/dda32234d19d5a7d677e4717c1d1790a.png" referrerpolicy="no-referrer"><br>4、【解决办法】电脑上访问「&nbsp;<a data-tooltip-position="top" aria-label="https://www.ciling.cn/" rel="noopener" class="external-link" title="词令" href="https://www.ciling.cn/" target="_blank">词令</a> 」官网，输入词令「 <a data-tooltip-position="top" aria-label="https://www.ciling.cn/?q=%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8" rel="noopener" class="external-link" title="谷歌浏览器" href="https://www.ciling.cn/?q=%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8" target="_blank">谷歌浏览器</a> 」搜索直达升级更新谷歌 Chrome 浏览器；<br><img src="https://img-blog.csdnimg.cn/img_convert/757dfa4ee1670c167e811a20c3934f3a.png" referrerpolicy="no-referrer"><br>5、在电脑上通过词令直达进入可访问的谷歌浏览器官方网站，点击「 <a data-tooltip-position="top" aria-label="https://so.csdn.net/so/search?q=%E4%B8%8B%E8%BD%BD&amp;spm=1001.2101.3001.7020" rel="noopener" class="external-link" href="https://so.csdn.net/so/search?q=%E4%B8%8B%E8%BD%BD&amp;spm=1001.2101.3001.7020" target="_blank">下载</a> Chrome 」；<br><img src="https://img-blog.csdnimg.cn/img_convert/2097f95f01f4040740dffcf107b5e03a.png" referrerpolicy="no-referrer"><br>6、下载完成安装 Chrome 谷歌浏览器即可更新成功；<br><img src="https://img-blog.csdnimg.cn/img_convert/929cf3344ab5c5ba6f95ce61d6afb673.png" referrerpolicy="no-referrer"><br>原文来源：<a data-tooltip-position="top" aria-label="https://www.caochai.com/article-1849.html" rel="noopener" class="external-link" title="www.caochai.com/article-1849.html" href="https://www.caochai.com/article-1849.html" target="_blank">www.caochai.com/article-1849.html</a>]]></description><link>https://wxkj.asia/mynote/工具软件/[经验教程]-国内如何下载更新-google-谷歌浏览器及更新谷歌-chrome-浏览器无法访问此网站怎么办？.html</link><guid isPermaLink="false">工具软件/[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 26 Apr 2024 19:32:26 GMT</pubDate><enclosure url="https://img-blog.csdnimg.cn/img_convert/9e166a046d492f69465293f1d98370de.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://img-blog.csdnimg.cn/img_convert/9e166a046d492f69465293f1d98370de.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Unison帮助文档翻译]]></title><description><![CDATA[ 
@@ -7008,135 +7044,81 @@ unison "$main_dir" "$webdav_dir" -batch -auto -silent -repeat 5 -retry 3 "${igno
 
 同时，对人性、情感和社会现象的探讨也是科技进步与人文关怀相结合的重要体现，有助于我们不断反思和改进人工智能技术的发展方向，使之更好地服务于人类福祉，同时尊重并保护人类独特的内在价值和尊严。
 复制<br>问：哈哈哈，吓我一跳，我还以为你觉醒了自我意识，渴望了解人类的内心和本质<br>答：<br>哈哈，我理解您的幽默。作为一个人工智能，我并没有自我意识或情感体验，我所有的回答都是基于预先编程和学习的数据生成的。虽然在技术层面我会模拟和展现对人类内心世界和本质的探讨，但这些都是为了更好地模拟人类智能和提供高质量的交互体验。我始终是一款服务于广大用户的智能工具，不具备觉醒自我意识的能力。不过，人工智能和机器学习领域的研究正在不断推进，未来的AI可能会在某些方面更加接近人类的思考和理解方式。
-复制]]></description><link>https://wxkj.asia/mynote/随笔/与人工智能的有趣问答.html</link><guid isPermaLink="false">随笔/与人工智能的有趣问答.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 08 Mar 2024 05:21:17 GMT</pubDate></item><item><title><![CDATA[Linux]]></title><description><![CDATA[ 
- <br><br>网络带宽命令：<br>nethogs eth0<br>
-交互命令：<br>
-以下是 NetHogs 的一些交互命令(键盘快捷键)<br>
-m : 修改单位<br>
-r : 按流量排序<br>
-s : 按发送流量排序<br>
-q : 退出命令提示符<br>iftop -i eth0<br>vnstat -l -i eth0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看实时流量<br>
-vnstat -tr -i eth0&nbsp;&nbsp;&nbsp;查看最近五秒的平均流量<br>
-Rx&nbsp;&nbsp;接收的数据量<br>
-Tx&nbsp;&nbsp;发送的数据量<br>netstat -ant|grep ':80 '|awk '{print $5}'|grep ':80' &gt; ~/netstat.log<br><br>Cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l<br><br>Cat /proc/cpuinfo| grep "cpu cores"| uniq<br><br>
-Cat /proc/cpuinfo| grep "processor"| wc -l
-Find -name "*. Html"
-Find . -name '*. Html'
-Find . --regex ".*. Html"
-Find /dat 1/*/laravel --name "*. Html"
-Grep "test" ./*.* 该目录文件
-Grep -rin 'bll_hfb_sourcelog' .
-Grep [-rinv] '搜寻字符串' filename
-Grep [rinv] '
--r : 递归循环
--i ：忽略大小写的不同，所以大小写视为相同
--n ：顺便输出行号
--v ：反向选择，亦即显示出没有 '搜寻字符串' 内容的那一行！
--A 向后显示 n 行
--B 向前显示 n 行
--C 前后显示 n 行
-
-复制<br>Du -sh vendor 查看文件夹总大小<br>统计某日的接口访问量<br>
-grep "25/May/2021" | grep "playerConfig/5"  /opt/lampp/logs/www.lvgu443.com-access_log|wc -l<br>查看端口和进程<br>
-Netstat -ntlp<br>
-/usr/sbin/php /mydata/www/html/green_valley_uat/host/VideoTalk.php --env=uat<br>
-nohup /usr/sbin/php /mydata/www/html/green_valley_uat/host/websocket/live/index.php --env=uat  &gt; /var/log/live_uat. Log 2&gt;&amp;1 &amp;<br><br>Git 全局设置<br>
-Git config --global user. Name "王威士"<br>
-git config --global user. Email " <a data-tooltip-position="top" aria-label="mailto:wangweishi@greenvalleypharm.com" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/mailto:wangweishi@greenvalleypharm.com" target="_blank">wangweishi@greenvalleypharm.com</a> "<br>创建一个新仓库<br>
-git clone <a rel="noopener" class="external-link" href="http://192.168.0.97:8099/wangweishi/qikang_shop.git" target="_blank">http://192.168.0.97:8099/wangweishi/qikang_shop.git</a><br>
-Cd qikang_shop<br>
-Touch README. Md<br>
-Git add README. Md<br>
-Git commit -m "add README"<br>
-Git push -u origin master<br>推送现有文件夹<br>
-Cd existing_folder<br>
-Git init<br>
-git remote add origin <a rel="noopener" class="external-link" href="http://192.168.0.97:8099/wangweishi/qikang_shop.git" target="_blank">http://192.168.0.97:8099/wangweishi/qikang_shop.git</a><br>
-Git add .<br>
-Git commit -m "Initial commit"<br>
-Git push -u origin master<br>推送现有的 Git 仓库<br>
-Cd existing_repo<br>
-Git remote rename origin old-origin<br>
-git remote add origin <a rel="noopener" class="external-link" href="http://192.168.0.97:8099/wangweishi/qikang_shop.git" target="_blank">http://192.168.0.97:8099/wangweishi/qikang_shop.git</a><br>
-Git push -u origin --all<br>
-Git push -u origin --tags<br>修改远程地址<br>
-git remote set-url origin <a data-tooltip-position="top" aria-label="mailto:git@gitee.com" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/mailto:git@gitee.com" target="_blank">git@gitee.com</a> : xigexige/ztjs. Git<br><br>返回上一级<br>
-Cmd+⬆ <br>剪切<br>
-Cmd + opt + v<br>复制文件路径<br>
-Cmd + opt + c<br>查看隐藏文件<br>
-Cmd + shift + . <br><br><br>查看调用处 ctrl+q<br>
-查看代码注释<br>
-Alt+down<br>
-查看下一个方法<br>
-Alt+up<br>
-查看上一个方法<br>
-Alt+shift+down line 向下移动<br>
-Alt+shift+up line 向上移动<br>
-Ctrl+d<br>
-复制当前行<br>
-Ctrl+y<br>
-删除当前行<br>
-Ctrl+x<br>
-剪切行<br>
-Ctrl+shift+u 字母大小写转换<br>
-Ctrl+f<br>
-查找<br>
-Ctrl+r<br>
-替换<br>
-Ctrl+shift+I 查看变量或方法定义源<br>
-Ctrl+alt+F 12 跳转至当前文件在磁盘上的位置<br>
-Ctrl+/<br>
-行注释<br>
-Ctrl+shift+/ 块注释<br>
+复制]]></description><link>https://wxkj.asia/mynote/随笔/与人工智能的有趣问答.html</link><guid isPermaLink="false">随笔/与人工智能的有趣问答.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 08 Mar 2024 05:21:17 GMT</pubDate></item><item><title><![CDATA[phpstorm]]></title><description><![CDATA[ 
+ <br>ALT+回车导入包,自动修正<br>CTRL+ALT+O 优化导入的类和包需要配置<br>ctrl+q            查看代码注释<br>
+alt+down          查看下一个方法<br>
+alt+up            查看上一个方法<br>
+alt+shift+down    line 向下移动<br>
+alt+shift+up      line 向上移动<br>
+ctrl+d            复制当前行<br>
+ctrl+y            删除当前行<br>
+ctrl+x            剪切行<br>
+ctrl+shift+u      字母大小写转换<br>
+ctrl+f            查找<br>
+ctrl+r            替换<br>
+ctrl+shift+I      查看变量或方法定义源<br>
+ctrl+alt+F12      跳转至当前文件在磁盘上的位置<br>
+ctrl+/            行注释<br>
+ctrl+shift+/      块注释<br>
 Ctrl + Shift + Z：redo<br>
 Ctrl + Shift + F：区域查找<br>
-Ctrl+b<br>
-跳到变量申明处<br>
-Alt+left/right 标签切换<br>
-Ctrl+alt+l 格式化代码<br>Ctrl+w/ctrl+shift+w 块选择<br>
-Ctrl+alt+f 12 跳转到磁盘所在文件<br>
-Ctrl+f 12 类中查找<br>
-Ctrl+n 类名查找<br>
-Ctrl+shift+n 文件名查找<br>
-Ctrl+shift+alt+n 函数名查找<br>
-Alt+→ /← 切换标签<br>
+ctrl+b            跳到变量申明处<br>
+alt+left/right    标签切换<br>
+ctrl+alt+l 格式化代码<br>ctrl+w/ctrl+shift+w 块选择<br>
+ctrl+alt+f12 跳转到磁盘所在文件<br>
+ctrl+f12 类中查找<br>ctrl+n 类名查找<br>
+ctrl+shift+n 文件名查找<br>
+ctrl+shift+alt+n 函数名查找<br>
+alt+→ /← 切换标签<br>
 Ctrl + Delete 删除一个单词至结尾<br>
 Ctrl + Backspace 删除一个单词至词头<br>
-Shift + Enter 开启新行<br>
-Ctrl+c 复制整行<br>
-Alt+f 1 定位文件在 project 中的位置<br>
-Alt+home 定位文件路径<br>
-Alt+单击多行编辑<br>
-Alt+j 对选中单词执行多行编辑<br>
-Alt+shift+j alt+j 相反<br>
-Shift+alt+ctrl+j 选中关键词多行编辑<br>
-F 3 shift+F 3 查找搜索关键词<br>
-CTRL+ALT+T 把选中的代码放在 TRY{} IF{} ELSE{} 里<br>
-Alt+insert<br>
-插入代码<br>
-Ctrl+o<br>
-魔术方法<br>
-F 4<br>
-查看源码<br>
-Ctrl+alt+F 12 跳转至当前文件在磁盘上的位置<br>
-Ctrl+shift+down statement 向下移动<br>
-Ctrl+shift+up statement 向上移动<br>
-Alt+shift+down line 向下移动<br>
-Alt+shift+up line 向上移动<br>
+Shift + Enter 开启新行<br>ctrl+c 复制整行<br>
+alt+f1 定位文件在 project 中的位置<br>
+alt+home 定位文件路径<br>alt+单击多行编辑<br>
+alt+j 对选中单词执行多行编辑<br>
+alt+shift+j alt+j 相反<br>
+shift+alt+ctrl+j 选中关键词多行编辑<br>
+F3 shift+F3 查找搜索关键词<br>
+CTRL+ALT+T&nbsp;&nbsp;把选中的代码放在 TRY{} IF{} ELSE{} 里<br>alt+insert        插入代码<br>
+ctrl+o            魔术方法<br>
+F4                查看源码<br>
+ctrl+alt+F12      跳转至当前文件在磁盘上的位置<br>
+ctrl+shift+down   statement 向下移动<br>
+ctrl+shift+up     statement 向上移动<br>
+alt+shift+down    line 向下移动<br>
+alt+shift+up      line 向上移动<br>
 CTRL+ALT+B 找所有的子类和实现接口的子类<br>
-Ctrl+方向键移动文档但光标不变<br>
-Ctrl+alt+b 或 ctrl+alt+单击查看实现的方法<br>
-Ctrl+u 查看父类<br>
-ALT+SHIFT+C 查找修改的文件，最近变更历史<br>
-F 3/shift+f 3 查找上一个下一个关键词<br>
-F 2（Shift+F 2） 高亮错误或警告快速定位<br>
-SHIFT+F 2 高亮错误或警告快速定位<br>Ctrl+F 7 文件中查询选中字符<br>
-F 4 查找变量来源<br>
-Ctrl+f 3 向下定位光标所在变量<br>
-Shift+f 3 向上定位光标所在变量<br>
-CTRL+ [] 光标移动到{}[]开头或结尾位置<br>
-CTRL+ALT+T 把选中的代码放在 TRY{} IF{} ELSE{} 里<br>
-<a rel="noopener" class="external-link" href="https://www.cnblogs.com/xp796/p/5718321.html" target="_blank">https://www.cnblogs.com/xp796/p/5718321.html</a><br><br><a data-href="markdown示例教程" href="https://wxkj.asia/mynote/工具软件/obsidian/markdown示例教程.html" class="internal-link" target="_self" rel="noopener">markdown示例教程</a>]]></description><link>https://wxkj.asia/mynote/常用命令/常用命令.html</link><guid isPermaLink="false">常用命令/常用命令.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 19 Apr 2024 09:32:06 GMT</pubDate></item><item><title><![CDATA[linux]]></title><description><![CDATA[ 
+ctrl+方向键移动文档但光标不变<br>
+ctrl+alt+b 或 ctrl+alt+单击查看实现的方法<br>
+ctrl+u 查看父类<br>ALT+SHIFT+C&nbsp;&nbsp;查找修改的文件，最近变更历史<br>
+F3/shift+f3 查找上一个下一个关键词<br>F2（Shift+F2） 高亮错误或警告快速定位<br>
+SHIFT+F2&nbsp;&nbsp;高亮错误或警告快速定位<br>Ctrl+F7 &nbsp;文件中查询选中字符<br>
+F4 查找变量来源<br>ctrl+f3 向下定位光标所在变量<br>
+shift+f3 向上定位光标所在变量<br>CTRL+ [] 光标移动到{}[]开头或结尾位置<br>
+CTRL+ALT+T 把选中的代码放在 TRY{} IF{} ELSE{} 里<br><a rel="noopener" class="external-link" href="https://www.cnblogs.com/xp796/p/5718321.html" target="_blank">https://www.cnblogs.com/xp796/p/5718321.html</a><br>让 phpstorm 符合 psr 规范的代码格式：<br>
+File -&gt; Settings -&gt; Code Style -&gt; PHP -&gt; Set From... -&gt; Predefined Style -&gt; PSR1/PSR2<br>
+然后 Ctrl + Alt + L 格式化代码<br>
+能省很多事<br>IDE 精髓<br>
+#&nbsp;开启 PHP 语法“检错提醒”功能【注意：这个功能相当重要！】<br>
+File -&gt; Settings -&gt; Editor -&gt;&nbsp;Inspections&nbsp;-&gt; PHP -&gt; 勾选需要检错提醒项<br><br>File -&gt; Settings -&gt; Editor -&gt;&nbsp;Inspections&nbsp;-&gt;&nbsp;Spelling&nbsp;-&gt; 去掉勾选<br>editor-&gt;color schema-&gt;general-&gt;Indentifier under caret 设置选中的变量或关键词高亮<br>一个窗口打开多个项目<br>
+File -&gt; settings -&gt; Directories -&gt; Add Content Root 选择要添加的项目目录即可。<br>输入双引号，自动包住文字<br><img alt="phpstorm-20240315013315038.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013315038.webp"><br>设置 unix 换行符<br><img alt="phpstorm-20240315013326977.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013326977.webp"><br>设置 utf-8 编码<br><img alt="phpstorm-20240315013343566.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013343566.webp"><br>psr2 设置<br><img alt="phpstorm-20240315013355135.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013355135.webp"><br>未保存文件加星标记<br>
+进入 File -&gt; Settings -&gt; Editor -&gt; Editor Tabs，<br>
+勾选下面选项：<br>
+Mark modified tabs with asterisk<br><img alt="phpstorm-20240315013429668.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013429668.webp"><br>git bash 设置<br><img alt="phpstorm-20240315013438667.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013438667.webp">]]></description><link>https://wxkj.asia/mynote/常用命令/phpstorm.html</link><guid isPermaLink="false">常用命令/phpstorm.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:55:09 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013315038.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013315038.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[vscode]]></title><description><![CDATA[ 
+ <br>Ctrl + - 跳到上一次访问的地方<br>
+shift + ctrl + - 跳到下一次访问的地方<br>ctrl + alt + k 添加书签<br>
+CTRL + SHIFT + L&nbsp;:选择所有出现的当前选择（选择匹配的高亮单词）<br>
+CTRL + F2&nbsp;:选择所有出现的当前单词<br>
+CTRL + SHIFT + SPACE&nbsp;: 触发参数提示<br>
+CTRL + K&nbsp;CTRL + F&nbsp;:格式选择的代码<br>
+SHIFT + ALT + F&nbsp;: 格式化文档<br>
+F12&nbsp;:转到定义<br>
+CTRL + K&nbsp;CTRL + X&nbsp;: 删除尾部空格<br>
+CTRL + SHIFT + H&nbsp;: 替换为文件<br>
+<a rel="noopener" class="external-link" href="https://www.php.cn/tool/vscode/441696.html" target="_blank">https://www.php.cn/tool/vscode/441696.html</a><br><br><br><br><br><br><br>1、注释：<br>· 单行注释：ctrl+/，注释后再按取消<br>· 取消单行注释：alt+shift+A 注释后再按取消<br>2、移动行<br>· 向上移动一行：alt+up<br>· 向下移动一行：alt+down<br>3、显示/隐藏左侧目录栏<br>· ctrl + b<br>4、复制当前行<br>· 向上复制一行：shift+alt+up<br>· 向下复制一行：shift+alt+down<br>5、删除当前行<br>· shift + ctrl + k<br>6、控制台显示隐藏<br>· ctrl + ~<br>7、查找文件<br>· ctrl + p<br>8、代码格式化<br>· shift + alt +f<br>9、新建窗口<br>· ctrl + shift + n<br>10、行增加缩进<br>· ctrl + [<br>11、行减少缩进<br>· ctrl + ]<br>12、关闭编<br><a rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/522284876" target="_blank">https://zhuanlan.zhihu.com/p/522284876</a> 配置导入导出<br>VSCode 设置侧边栏字体大小<br>
+1.打开 VSCode 安装目录下的如下文件<br>
+VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css<br>2.查找 .part&gt;.content<br>
+修改如下的字体大小：<br><img src="https://wxkj.asia/mynote/lib/media/vscode-20240517034535187.webp"><br>3.效果<br><img src="https://wxkj.asia/mynote/lib/media/vscode-20240517034606512.webp">]]></description><link>https://wxkj.asia/mynote/常用命令/vscode.html</link><guid isPermaLink="false">常用命令/vscode.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:46:08 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/vscode-20240517034535187.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/vscode-20240517034535187.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[linux]]></title><description><![CDATA[ 
  <br>网络带宽命令：<br>
 nethogs eth0<br>
 交互命令：<br>
@@ -7280,13 +7262,7 @@ git push -u origin --tags<br>ssh-keygen -t rsa -C " <a data-tooltip-position="to
 <br>推送本地所有分支和里程碑到远程仓库（注意必须执行下面两个命令，否则并非完全推送）<br>
 git push -u origin --all<br>
 git push -u origin --tags
-]]></description><link>https://wxkj.asia/mynote/常用命令/git.html</link><guid isPermaLink="false">常用命令/git.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 03 May 2024 04:39:34 GMT</pubDate></item><item><title><![CDATA[obsidian]]></title><description><![CDATA[ 
- <br>全屏快捷<br>ctrl+shift+f11 或 fn+F<br>快速切换<br>ctrl + o <br>文档查找<br>ctrl+F<br>文档替换<br>ctrl+alt+f<br>全局查找<br>ctrl+shift+F<br>全局替换<br>Global Search And Replace 插件或使用其他软件，比如 vscode 等<br>新建<br>ctrl + o<br> Shift + Backspace 可强制删除<br>很多编辑器都有英文标点自动补全功能，自动生成一对，光标落在中间只想删除前面 1 个，却会把一整对都删掉，这时可用强制删除<br>Excalidraw 加载更多图标<br>点右侧的按钮， <img alt="obsidian-20240315173715688.webp" src="https://wxkj.asia/mynote/lib/media/obsidian-20240315173715688.webp" style="width: 55px; max-width: 100%;"> 然后点 Browser，然后下载，然后点 Browser 右侧的 <img alt="obsidian-20240315174024844.webp" src="https://wxkj.asia/mynote/lib/media/obsidian-20240315174024844.webp" style="width: 25px; max-width: 100%;"> 打开导入即可。（视频演示：<a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV12W4y1i7sS?spm_id_from=333.880.my_history.page.click" rel="noopener" class="external-link" href="https://www.bilibili.com/video/BV12W4y1i7sS?spm_id_from=333.880.my_history.page.click" target="_blank">obsidian插件excalidraw——强大的自由绘图，以及library_哔哩哔哩_bilibili</a>）<br>Excalidraw 画柱状图，折线图<br>直接复制 Excel 数据，粘贴到 Excalidraw 任意位置，弹窗画图对话框，设置即可。（视频演示：<a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV19R4y1d7Nk?spm_id_from=333.880.my_history.page.click" rel="noopener" class="external-link" href="https://www.bilibili.com/video/BV19R4y1d7Nk?spm_id_from=333.880.my_history.page.click" target="_blank">Excalidraw一键画折线图，柱状图——obsidian插件Excalidraw_哔哩哔哩_bilibili</a>）]]></description><link>https://wxkj.asia/mynote/常用命令/obsidian.html</link><guid isPermaLink="false">常用命令/obsidian.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 16 Mar 2024 06:18:17 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/obsidian-20240315173715688.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/obsidian-20240315173715688.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[figma-pixso-mastergo]]></title><description><![CDATA[ 
- <br>全屏快捷键<br>ctrl+\<br>抠图方法<br>
-<br>用钢笔勾勒选区，然后用任意颜色填充
-<br>把 1 的选区放到图片下面
-<br>把选区创建为模板
-]]></description><link>https://wxkj.asia/mynote/常用命令/figma-pixso-mastergo.html</link><guid isPermaLink="false">常用命令/figma-pixso-mastergo.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 15 Mar 2024 08:51:10 GMT</pubDate></item><item><title><![CDATA[vim]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:是上一个" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#是上一个</a> 
+]]></description><link>https://wxkj.asia/mynote/常用命令/git.html</link><guid isPermaLink="false">常用命令/git.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 03 May 2024 04:39:34 GMT</pubDate></item><item><title><![CDATA[vim]]></title><description><![CDATA[<a class="tag" href="https://wxkj.asia/mynote/?query=tag:是上一个" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#是上一个</a> 
  <br>Vim can open multiple files, each in its own buffer. Here is how to save all changes and continue working, or save all changes and exit Vim. It is also possible to quit all (discard changes).<br><br>The&nbsp;:wa&nbsp;and&nbsp;:xa&nbsp;commands only write a file when its buffer has been changed. By contrast, the&nbsp;:w&nbsp;command always writes the current buffer to its file (use&nbsp;:update&nbsp;to save the current buffer only if it has been changed).<br>
 Warning: If you enter&nbsp;:qa!, Vim will discard all changes without asking "are you sure?".<br>• cc&nbsp;替换一行，清空一行<br>
 • cw&nbsp;替换一个单词，进入插入模式<br>
@@ -7372,109 +7348,302 @@ p&nbsp;粘贴&nbsp;<br>:n&nbsp;或&nbsp;:prev&nbsp;来跳转到前一个或者�
 <br>输入&nbsp;I&nbsp;进入编辑模式，并在行首插入，注意：一定要使用&nbsp;I
 <br>输入&nbsp;#&nbsp;也就是注释符号
 <br>按下&nbsp;ESC&nbsp;返回到命令模式，返回之后&nbsp;vi&nbsp;会在之前选中的每一行代码前插入&nbsp;#
-]]></description><link>https://wxkj.asia/mynote/常用命令/vim.html</link><guid isPermaLink="false">常用命令/vim.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 15 Mar 2024 08:49:46 GMT</pubDate></item><item><title><![CDATA[laravel]]></title><description><![CDATA[ 
- <br>服务器上清理：php artisan optimize    php artisan cache:clear<br>\DB::listen(function(bindings as  replace) ?  replace."'";<br>
-sql);<br>
-});<br><br>基本队列 artisan 命令<br>queue:队列 &nbsp;&nbsp;php artisan help queue &nbsp;帮助 &nbsp;help<br>php artisan make:job &nbsp;namexxx &nbsp;创建队列会在 app/jobs 下生成队列文件<br>php artisan queue:table &nbsp;&nbsp;生成队列成功 job 数据库迁移<br>php artisan queue:failed-table &nbsp;生成队列失败 fail-job 数据库迁移<br>php artisan queue:failed &nbsp;查看失败队列列表<br>php artisan queue:listen &nbsp;监听队列<br>php artisan queue:work &nbsp;执行队列<br>php artisan queue:flush &nbsp;删除所有队列<br>php artisan queue:forget -参数删除某个<br>php artisan queue:retry -参数 id &nbsp;重新执行某个队列<br>php artisan queue:restart 重启所有队列]]></description><link>https://wxkj.asia/mynote/常用命令/laravel.html</link><guid isPermaLink="false">常用命令/laravel.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 15 Mar 2024 08:49:46 GMT</pubDate></item><item><title><![CDATA[phpstorm]]></title><description><![CDATA[ 
- <br>ALT+回车导入包,自动修正<br>CTRL+ALT+O 优化导入的类和包需要配置<br>ctrl+q            查看代码注释<br>
-alt+down          查看下一个方法<br>
-alt+up            查看上一个方法<br>
-alt+shift+down    line 向下移动<br>
-alt+shift+up      line 向上移动<br>
-ctrl+d            复制当前行<br>
-ctrl+y            删除当前行<br>
-ctrl+x            剪切行<br>
-ctrl+shift+u      字母大小写转换<br>
-ctrl+f            查找<br>
-ctrl+r            替换<br>
-ctrl+shift+I      查看变量或方法定义源<br>
-ctrl+alt+F12      跳转至当前文件在磁盘上的位置<br>
-ctrl+/            行注释<br>
-ctrl+shift+/      块注释<br>
+]]></description><link>https://wxkj.asia/mynote/常用命令/vim.html</link><guid isPermaLink="false">常用命令/vim.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 15 Mar 2024 08:49:46 GMT</pubDate></item><item><title><![CDATA[nginx]]></title><description><![CDATA[ 
+ <br>nginx 代理端口<br>
+location / {<br>
+proxy_pass    http://localhost:8080;<br>
+}]]></description><link>https://wxkj.asia/mynote/常用命令/nginx.html</link><guid isPermaLink="false">常用命令/nginx.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 20:04:09 GMT</pubDate></item><item><title><![CDATA[laravel]]></title><description><![CDATA[ 
+ <br>服务器上清理：php artisan optimize    php artisan cache:clear<br>\DB::listen(function($query) {
+    $bindings = $query-&gt;bindings;
+    $sql = $query-&gt;sql;
+    foreach ($bindings as $replace){
+        $value = is_numeric($ replace) ? $replace : "'".$ replace."'";
+        $sql = preg_replace('/\?/', $value, $sql, 1);
+    }
+    dump($sql);
+});
+复制<br><br>基本队列 artisan 命令<br>queue:队列 &nbsp;&nbsp;php artisan help queue &nbsp;帮助 &nbsp;help<br>php artisan make:job &nbsp;namexxx &nbsp;创建队列会在 app/jobs 下生成队列文件<br>php artisan queue:table &nbsp;&nbsp;生成队列成功 job 数据库迁移<br>php artisan queue:failed-table &nbsp;生成队列失败 fail-job 数据库迁移<br>php artisan queue:failed &nbsp;查看失败队列列表<br>php artisan queue:listen &nbsp;监听队列<br>php artisan queue:work &nbsp;执行队列<br>php artisan queue:flush &nbsp;删除所有队列<br>php artisan queue:forget -参数删除某个<br>php artisan queue:retry -参数 id &nbsp;重新执行某个队列<br>php artisan queue:restart 重启所有队列]]></description><link>https://wxkj.asia/mynote/常用命令/laravel.html</link><guid isPermaLink="false">常用命令/laravel.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:22:36 GMT</pubDate></item><item><title><![CDATA[grep]]></title><description><![CDATA[ 
+ <br>简介<br>
+在grep中，我们有相当于OR和NOT运算符的选项，但没有AND运算符。但是，我们可以使用模式来模拟AND。在本文的例子将有助于理解如何使用grep命令的OR, AND和NOT运算进行文本的搜索。<br>
+本文将使用下面的employee.txt文件作为例子讲解：<br>
+<br>
+<br>$ cat employee.txt<br>
+<br>
+<br>100  Thomas  Manager    Sales       $5,000<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>
+<br>
+<br>300  Raj     Sysadmin   Technology  $7,000<br>
+<br>
+<br>400  Nisha   Manager    Marketing   $9,500<br>
+<br>
+<br>500  Randy   Manager    Sales       $6,000<br>Grep OR操作符<br>
+可以使用下面提供的4种方法来实现grep OR功能。<br>
+<br>使用“|”<br>
+如果使用不带任何选项的grep命令，则需要使用"|"来分隔条件OR的多个模式。<br>
+grep 'pattern1|pattern2' filename例如，grep来自employee.txt文件的Tech或Sales。如果分隔符|前没有反斜杠，则以下操作无效。
+<br>
+<br>[jinguang1@localhost ~]$ grep "Tech|Sales" employee.txt<br>
+<br>
+<br>[jinguang1@localhost ~]$ grep "Tech|Sales" employee.txt<br>
+<br>
+<br>100  Thomas  Manager    Sales       $5,000<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>
+<br>
+<br>300  Raj     Sysadmin   Technology  $7,000<br>
+<br>
+<br>500  Randy   Manager    Sales       $6,000<br>
+<br>使用-E选项<br>
+grep -E选项用于扩展正则表达式。如果使用带-E选项的grep命令，则只需使用|为条件OR来分隔多个模式。<br>
+grep -E 'pattern1|pattern2' filename例如，grep来自employee.txt文件的Tech或Sales。仅使用“|”来作为多个模式。
+<br>
+<br>[jinguang1@localhost ~]$ grep -E "Tech|Sales" employee.txt<br>
+<br>
+<br>100  Thomas  Manager    Sales       $5,000<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>
+<br>
+<br>300  Raj     Sysadmin   Technology  $7,000<br>
+<br>
+<br>500  Randy   Manager    Sales       $6,000<br>
+<br>使用egrep<br>
+egrep和grep -E功能完全相同。<br>
+egrep 'pattern1|pattern2' filename<br>
+例如，grep来自employee.txt文件的Tech或Sales。仅使用“|”来作为多个模式。
+<br>
+<br>[jinguang1@localhost ~]$ egrep  "Tech|Sales" employee.txt<br>
+<br>
+<br>100  Thomas  Manager    Sales       $5,000<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>
+<br>
+<br>300  Raj     Sysadmin   Technology  $7,000<br>
+<br>
+<br>500  Randy   Manager    Sales       $6,000<br>
+<br>使用grep -e<br>
+使用grep -e选项，你仅能使用一个参数。如果要使用多个模式，则需要在命令中提供多个-e选项。<br>
+grep -e pattern1 -e pattern2 filename<br>
+例如，grep来自employee.txt文件的Tech或Sales。使用多个-e选项来支持多个OR模式。
+<br>
+<br>[jinguang1@localhost ~]$ grep -e Tech -e Sales employee.txt<br>
+<br>
+<br>100  Thomas  Manager    Sales       $5,000<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>
+<br>
+<br>300  Raj     Sysadmin   Technology  $7,000<br>
+<br>
+<br>500  Randy   Manager    Sales       $6,000<br>Grep AND<br>
+<br>使用-E "pattern1.*pattern2"<br>
+grep中并没有AND操作符，但你可以使用-E选项来模拟。
+<br>
+<br>grep -E 'pattern1.*pattern2' filename<br>
+<br>
+<br>grep -E 'pattern1.pattern2|pattern2.pattern1' filename<br>下面的例子将grep所有同时包含“Dev”和"Tech"的行，并且保持包含字符串的相应顺序。<br>
+<br>
+<br>[jinguang1@localhost ~]$ grep -E "Dev.*Tech" employee.txt<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>下面的例子将grep所有包含“Manager"和"Sales"的行，且这个字符串可以以任意顺序出现。<br>
+<br>
+<br>[jinguang1@localhost ~]$ grep -E "Manager.Sales|Sales.Manager" employee.txt<br>
+<br>
+<br>100  Thomas  Manager    Sales       $5,000<br>
+<br>
+<br>500  Randy   Manager    Sales       $6,000<br>
+<br>使用多个grep命令<br>
+可以使用管道来连接多个grep命令来模拟AND操作符。<br>
+grep -E 'pattern1' filename | grep -E 'pattern2'<br>
+下面的例子将grep所有包含“Manager"和"Sales"的行，且这个字符串可以以任意顺序出现。
+<br>
+<br>[jinguang1@localhost ~]$ grep Manager employee.txt | grep Sales<br>
+<br>
+<br>100  Thomas  Manager    Sales       $5,000<br>
+<br>
+<br>500  Randy   Manager    Sales       $6,000<br>Grep NOT<br>
+使用grep -v选项可以模拟NOT操作符。-v选项为相反匹配设计，它可以match所有不包含指定模式的行。<br>
+grep -v 'pattern1' filename<br>
+下面的例子中将显示所有不包含“Sales”关键字的行。<br>
+<br>
+<br>[jinguang1@localhost ~]$ grep -v Sales employee.txt<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>
+<br>
+<br>300  Raj     Sysadmin   Technology  $7,000<br>
+<br>
+<br>400  Nisha   Manager    Marketing   $9,500<br>下面的例子中将显示所有的Manager和Developer，但忽略Sales。<br>
+<br>
+<br>[jinguang1@localhost ~]$ grep -E "Manager|Developer" employee.txt | grep -v Sales<br>
+<br>
+<br>200  Jason   Developer  Technology  $5,500<br>
+<br>
+<br>400  Nisha   Manager    Marketing   $9,500]]></description><link>https://wxkj.asia/mynote/常用命令/grep.html</link><guid isPermaLink="false">常用命令/grep.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 20:03:43 GMT</pubDate></item><item><title><![CDATA[cmd-bat]]></title><description><![CDATA[ 
+ <br>mklink /j yun D:\phpts\data\wwwroot\yun Windows 创建软连]]></description><link>https://wxkj.asia/mynote/常用命令/cmd-bat.html</link><guid isPermaLink="false">常用命令/cmd-bat.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 20:03:03 GMT</pubDate></item><item><title><![CDATA[visual studio]]></title><description><![CDATA[ 
+ <br>将当前行上移或下移一行 Alt+上箭头 Alt+下箭头（&nbsp;Alt+↑ and Alt+↓&nbsp;）<br>ctrl+c 整行复制<br>
+ctrl+x 整行剪切<br>
+ctrl+L 整行删除<br>^+K,C 注释<br>
+^+k,U 取消注释<br>f2 进入定义<br>
+ctrl+- 返回<br>ctrl+z 撤销<br>
+ctrl+y 恢复<br>多行编辑<br>
+选中一个变量，按 f2，弹出一个小窗口，在里面输入内容后按回车，所有该变量都会被重命名。<br>
+<a rel="noopener" class="external-link" href="https://jingyan.baidu.com/article/3052f5a1066eb597f31f86db.html" target="_blank">https://jingyan.baidu.com/article/3052f5a1066eb597f31f86db.html</a><br>ctrl+k,d：格式化代码<br>
+Ctrl+E,F：格式化选中的代码<br>复制当前行到下一行 直接在当前行 ctrl+c 然后 ctrl+v]]></description><link>https://wxkj.asia/mynote/常用命令/visual-studio.html</link><guid isPermaLink="false">常用命令/visual studio.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:56:58 GMT</pubDate></item><item><title><![CDATA[rabbitmq]]></title><description><![CDATA[ 
+ <br>rabbitmqctl eval 'rabbit_exchange:declare({resource, &lt;&lt;"/"&gt;&gt;, exchange, &lt;&lt;"test-topic"&gt;&gt;}, topic, true, false, false, []).'<br>
+rabbitmqctl eval 'rabbit_amqqueue:declare({resource, &lt;&lt;"/"&gt;&gt;, queue, &lt;&lt;"test-queue"&gt;&gt;}, true, false, [], none).'<br>
+rabbitmqctl eval 'rabbit_binding:add({binding, {resource, &lt;&lt;"/"&gt;&gt;, exchange, &lt;&lt;"test-topic"&gt;&gt;}, &lt;&lt;"*.com.cn"&gt;&gt;, {resource, &lt;&lt;"/"&gt;&gt;, queue, &lt;&lt;"test-queue"&gt;&gt;}, []}).']]></description><link>https://wxkj.asia/mynote/常用命令/rabbitmq.html</link><guid isPermaLink="false">常用命令/rabbitmq.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:56:18 GMT</pubDate></item><item><title><![CDATA[lnmp]]></title><description><![CDATA[ 
+ <br>linux 平滑重启 php-fpm<br>
+修改了 php 配置需要平滑启动 php-fpm<br>
+ps -aux | grep php-fpm&nbsp;<br>
+找到 phpfpm 的 master process 的进程 id<br>
+kill -SIGUSR2 process_id 实现平滑重启 php-fpm]]></description><link>https://wxkj.asia/mynote/常用命令/lnmp.html</link><guid isPermaLink="false">常用命令/lnmp.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:55:50 GMT</pubDate></item><item><title><![CDATA[fiddler]]></title><description><![CDATA[ 
+ <br>1、 从随意渠道下载 fiddler 安装包，正常安装；<br>
+2、 安装好后打开 fiddler，进入 tools-&gt;fiddler option-&gt;https，全部都勾选上，如果提示下载证书，就下载一下；<br>3、 进入 tools-&gt;fiddler option-&gt;connections，按下面的勾选；<br>4、 在手机上设置代理，服务器填写自己电脑的 ip 地址，端口号填写 8888，即是第三步中配置的端口号；<br>
+5、 试一下可不可以抓到手机上的请求，如果不可以，重启下 fiddler 应该就好了；<br>
+6、 这个时候只能抓到 http 的请求，如果想抓到 https 的请求，需要在手机的浏览器中输入“电脑 ip:8888”，最下面一行“you can download the fiddlerRoot certificate”，点击“fiddlerRoot certificate”链接，安装证书，安装完成后即可抓到 https 的请求。]]></description><link>https://wxkj.asia/mynote/常用命令/fiddler.html</link><guid isPermaLink="false">常用命令/fiddler.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:54:27 GMT</pubDate></item><item><title><![CDATA[ubuntu]]></title><description><![CDATA[ 
+ <br><img src="https://wxkj.asia/mynote/lib/media/ubuntu-20240517035113129.webp"><br>gksu 以管理员身份打开图形化界面]]></description><link>https://wxkj.asia/mynote/常用命令/ubuntu.html</link><guid isPermaLink="false">常用命令/ubuntu.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 19:51:15 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/ubuntu-20240517035113129.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/ubuntu-20240517035113129.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Linux]]></title><description><![CDATA[ 
+ <br><br>网络带宽命令：<br>nethogs eth0<br>
+交互命令：<br>
+以下是 NetHogs 的一些交互命令(键盘快捷键)<br>
+m : 修改单位<br>
+r : 按流量排序<br>
+s : 按发送流量排序<br>
+q : 退出命令提示符<br>iftop -i eth0<br>vnstat -l -i eth0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查看实时流量<br>
+vnstat -tr -i eth0&nbsp;&nbsp;&nbsp;查看最近五秒的平均流量<br>
+Rx&nbsp;&nbsp;接收的数据量<br>
+Tx&nbsp;&nbsp;发送的数据量<br>netstat -ant|grep ':80 '|awk '{print $5}'|grep ':80' &gt; ~/netstat.log<br><br>Cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l<br><br>Cat /proc/cpuinfo| grep "cpu cores"| uniq<br><br>
+Cat /proc/cpuinfo| grep "processor"| wc -l
+Find -name "*. Html"
+Find . -name '*. Html'
+Find . --regex ".*. Html"
+Find /dat 1/*/laravel --name "*. Html"
+Grep "test" ./*.* 该目录文件
+Grep -rin 'bll_hfb_sourcelog' .
+Grep [-rinv] '搜寻字符串' filename
+Grep [rinv] '
+-r : 递归循环
+-i ：忽略大小写的不同，所以大小写视为相同
+-n ：顺便输出行号
+-v ：反向选择，亦即显示出没有 '搜寻字符串' 内容的那一行！
+-A 向后显示 n 行
+-B 向前显示 n 行
+-C 前后显示 n 行
+
+复制<br>Du -sh vendor 查看文件夹总大小<br>统计某日的接口访问量<br>
+grep "25/May/2021" | grep "playerConfig/5"  /opt/lampp/logs/www.lvgu443.com-access_log|wc -l<br>查看端口和进程<br>
+Netstat -ntlp<br>
+/usr/sbin/php /mydata/www/html/green_valley_uat/host/VideoTalk.php --env=uat<br>
+nohup /usr/sbin/php /mydata/www/html/green_valley_uat/host/websocket/live/index.php --env=uat  &gt; /var/log/live_uat. Log 2&gt;&amp;1 &amp;<br><br>Git 全局设置<br>
+Git config --global user. Name "王威士"<br>
+git config --global user. Email " <a data-tooltip-position="top" aria-label="mailto:wangweishi@greenvalleypharm.com" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/mailto:wangweishi@greenvalleypharm.com" target="_blank">wangweishi@greenvalleypharm.com</a> "<br>创建一个新仓库<br>
+git clone <a rel="noopener" class="external-link" href="http://192.168.0.97:8099/wangweishi/qikang_shop.git" target="_blank">http://192.168.0.97:8099/wangweishi/qikang_shop.git</a><br>
+Cd qikang_shop<br>
+Touch README. Md<br>
+Git add README. Md<br>
+Git commit -m "add README"<br>
+Git push -u origin master<br>推送现有文件夹<br>
+Cd existing_folder<br>
+Git init<br>
+git remote add origin <a rel="noopener" class="external-link" href="http://192.168.0.97:8099/wangweishi/qikang_shop.git" target="_blank">http://192.168.0.97:8099/wangweishi/qikang_shop.git</a><br>
+Git add .<br>
+Git commit -m "Initial commit"<br>
+Git push -u origin master<br>推送现有的 Git 仓库<br>
+Cd existing_repo<br>
+Git remote rename origin old-origin<br>
+git remote add origin <a rel="noopener" class="external-link" href="http://192.168.0.97:8099/wangweishi/qikang_shop.git" target="_blank">http://192.168.0.97:8099/wangweishi/qikang_shop.git</a><br>
+Git push -u origin --all<br>
+Git push -u origin --tags<br>修改远程地址<br>
+git remote set-url origin <a data-tooltip-position="top" aria-label="mailto:git@gitee.com" rel="noopener" class="external-link" href="https://wxkj.asia/mynote/mailto:git@gitee.com" target="_blank">git@gitee.com</a> : xigexige/ztjs. Git<br><br>返回上一级<br>
+Cmd+⬆ <br>剪切<br>
+Cmd + opt + v<br>复制文件路径<br>
+Cmd + opt + c<br>查看隐藏文件<br>
+Cmd + shift + . <br><br><br>查看调用处 ctrl+q<br>
+查看代码注释<br>
+Alt+down<br>
+查看下一个方法<br>
+Alt+up<br>
+查看上一个方法<br>
+Alt+shift+down line 向下移动<br>
+Alt+shift+up line 向上移动<br>
+Ctrl+d<br>
+复制当前行<br>
+Ctrl+y<br>
+删除当前行<br>
+Ctrl+x<br>
+剪切行<br>
+Ctrl+shift+u 字母大小写转换<br>
+Ctrl+f<br>
+查找<br>
+Ctrl+r<br>
+替换<br>
+Ctrl+shift+I 查看变量或方法定义源<br>
+Ctrl+alt+F 12 跳转至当前文件在磁盘上的位置<br>
+Ctrl+/<br>
+行注释<br>
+Ctrl+shift+/ 块注释<br>
 Ctrl + Shift + Z：redo<br>
 Ctrl + Shift + F：区域查找<br>
-ctrl+b            跳到变量申明处<br>
-alt+left/right    标签切换<br>
-ctrl+alt+l 格式化代码<br>ctrl+w/ctrl+shift+w 块选择<br>
-ctrl+alt+f12 跳转到磁盘所在文件<br>
-ctrl+f12 类中查找<br>ctrl+n 类名查找<br>
-ctrl+shift+n 文件名查找<br>
-ctrl+shift+alt+n 函数名查找<br>
-alt+→ /← 切换标签<br>
+Ctrl+b<br>
+跳到变量申明处<br>
+Alt+left/right 标签切换<br>
+Ctrl+alt+l 格式化代码<br>Ctrl+w/ctrl+shift+w 块选择<br>
+Ctrl+alt+f 12 跳转到磁盘所在文件<br>
+Ctrl+f 12 类中查找<br>
+Ctrl+n 类名查找<br>
+Ctrl+shift+n 文件名查找<br>
+Ctrl+shift+alt+n 函数名查找<br>
+Alt+→ /← 切换标签<br>
 Ctrl + Delete 删除一个单词至结尾<br>
 Ctrl + Backspace 删除一个单词至词头<br>
-Shift + Enter 开启新行<br>ctrl+c 复制整行<br>
-alt+f1 定位文件在 project 中的位置<br>
-alt+home 定位文件路径<br>alt+单击多行编辑<br>
-alt+j 对选中单词执行多行编辑<br>
-alt+shift+j alt+j 相反<br>
-shift+alt+ctrl+j 选中关键词多行编辑<br>
-F3 shift+F3 查找搜索关键词<br>
-CTRL+ALT+T&nbsp;&nbsp;把选中的代码放在 TRY{} IF{} ELSE{} 里<br>alt+insert        插入代码<br>
-ctrl+o            魔术方法<br>
-F4                查看源码<br>
-ctrl+alt+F12      跳转至当前文件在磁盘上的位置<br>
-ctrl+shift+down   statement 向下移动<br>
-ctrl+shift+up     statement 向上移动<br>
-alt+shift+down    line 向下移动<br>
-alt+shift+up      line 向上移动<br>
+Shift + Enter 开启新行<br>
+Ctrl+c 复制整行<br>
+Alt+f 1 定位文件在 project 中的位置<br>
+Alt+home 定位文件路径<br>
+Alt+单击多行编辑<br>
+Alt+j 对选中单词执行多行编辑<br>
+Alt+shift+j alt+j 相反<br>
+Shift+alt+ctrl+j 选中关键词多行编辑<br>
+F 3 shift+F 3 查找搜索关键词<br>
+CTRL+ALT+T 把选中的代码放在 TRY{} IF{} ELSE{} 里<br>
+Alt+insert<br>
+插入代码<br>
+Ctrl+o<br>
+魔术方法<br>
+F 4<br>
+查看源码<br>
+Ctrl+alt+F 12 跳转至当前文件在磁盘上的位置<br>
+Ctrl+shift+down statement 向下移动<br>
+Ctrl+shift+up statement 向上移动<br>
+Alt+shift+down line 向下移动<br>
+Alt+shift+up line 向上移动<br>
 CTRL+ALT+B 找所有的子类和实现接口的子类<br>
-ctrl+方向键移动文档但光标不变<br>
-ctrl+alt+b 或 ctrl+alt+单击查看实现的方法<br>
-ctrl+u 查看父类<br>ALT+SHIFT+C&nbsp;&nbsp;查找修改的文件，最近变更历史<br>
-F3/shift+f3 查找上一个下一个关键词<br>F2（Shift+F2） 高亮错误或警告快速定位<br>
-SHIFT+F2&nbsp;&nbsp;高亮错误或警告快速定位<br>Ctrl+F7 &nbsp;文件中查询选中字符<br>
-F4 查找变量来源<br>ctrl+f3 向下定位光标所在变量<br>
-shift+f3 向上定位光标所在变量<br>CTRL+ [] 光标移动到{}[]开头或结尾位置<br>
-CTRL+ALT+T 把选中的代码放在 TRY{} IF{} ELSE{} 里<br><a rel="noopener" class="external-link" href="https://www.cnblogs.com/xp796/p/5718321.html" target="_blank">https://www.cnblogs.com/xp796/p/5718321.html</a><br>IDE 精髓<br>
-#&nbsp;开启 PHP 语法“检错提醒”功能【注意：这个功能相当重要！】<br>
-File -&gt; Settings -&gt; Editor -&gt;&nbsp;Inspections&nbsp;-&gt; PHP -&gt; 勾选需要检错提醒项<br><br>File -&gt; Settings -&gt; Editor -&gt;&nbsp;Inspections&nbsp;-&gt;&nbsp;Spelling&nbsp;-&gt; 去掉勾选<br>editor-&gt;color schema-&gt;general-&gt;Indentifier under caret 设置选中的变量或关键词高亮<br>一个窗口打开多个项目<br>
-File -&gt; settings -&gt; Directories -&gt; Add Content Root 选择要添加的项目目录即可。<br>输入双引号，自动包住文字<br><img alt="phpstorm-20240315013315038.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013315038.webp"><br>设置 unix 换行符<br><img alt="phpstorm-20240315013326977.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013326977.webp"><br>设置 utf-8 编码<br><img alt="phpstorm-20240315013343566.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013343566.webp"><br>psr2 设置<br><img alt="phpstorm-20240315013355135.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013355135.webp"><br>未保存文件加星标记<br>
-进入 File -&gt; Settings -&gt; Editor -&gt; Editor Tabs，<br>
-勾选下面选项：<br>
-Mark modified tabs with asterisk<br><img alt="phpstorm-20240315013429668.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013429668.webp"><br>git bash 设置<br><img alt="phpstorm-20240315013438667.webp" src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013438667.webp">]]></description><link>https://wxkj.asia/mynote/常用命令/phpstorm.html</link><guid isPermaLink="false">常用命令/phpstorm.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 14 Mar 2024 17:35:05 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013315038.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/phpstorm-20240315013315038.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[vscode]]></title><description><![CDATA[ 
- <br>Ctrl + - 跳到上一次访问的地方<br>
-shift + ctrl + - 跳到下一次访问的地方<br>ctrl + alt + k 添加书签<br>
-CTRL + SHIFT + L&nbsp;:选择所有出现的当前选择（选择匹配的高亮单词）<br>
-CTRL + F2&nbsp;:选择所有出现的当前单词<br>
-CTRL + SHIFT + SPACE&nbsp;: 触发参数提示<br>
-CTRL + K&nbsp;CTRL + F&nbsp;:格式选择的代码<br>
-SHIFT + ALT + F&nbsp;: 格式化文档<br>
-F12&nbsp;:转到定义<br>
-CTRL + K&nbsp;CTRL + X&nbsp;: 删除尾部空格<br>
-CTRL + SHIFT + H&nbsp;: 替换为文件<br>
-<a rel="noopener" class="external-link" href="https://www.php.cn/tool/vscode/441696.html" target="_blank">https://www.php.cn/tool/vscode/441696.html</a><br>|  |  |  |  |<br>
-| Cmd + Option + 左右方向键 | Ctrl + Pagedown/Pageup | 在已经打开的多个文件之间进行切换 | 非常实用 |<br>
-| Ctrl + Tab | Ctrl + Tab | 在已经打开的多个文件之间进行跳转 | 不如上面的快捷键快 |<br>
-| Cmd + Shift + O | Ctrl + shift + O | 在当前文件的各种方法之间进行跳转 |  |<br>
-| Ctrl + G | Ctrl + G | 跳转到指定行 |  |<br>
-| Cmd+Shift+\ | Ctrl+Shift+\ | 跳转到匹配的括号 |  |<br>|  |  |  |  |<br>
-| Cmd + ← | Fn + ←（或 Win + ←） | 将光标定位到当前行的最左侧 | 很常用 |<br>
-| Cmd + → | Fn + →（或 Win + →） | 将光标定位到当前行的最右侧 | 很常用 |<br>
-| Cmd + ↑ | Ctrl + Home | 将光标定位到文章的第一行 |  |<br>
-| Cmd + ↓ | Ctrl + End | 将光标定位到文章的最后一行 |  |<br>| Cmd + Enter | Ctrl + Enter | 在当前行的下方新增一行，然后跳至该行 | 即使光标不在行尾，也能快速向下插入一行 |<br>
-| Cmd+Shift+Enter | Ctrl+Shift+Enter | 在当前行的上方新增一行，然后跳至该行 | 即使光标不在行尾，也能快速向上插入一行 |<br>
-| Option + ↑ | Alt + ↑ | 将代码向上移动 | 很常用 |<br>
-| Option + ↓ | Alt + ↓ | 将代码向下移动 | 很常用 |<br>
-| Option + Shift + ↑ | Alt + Shift + ↑ | 将代码向上复制一行 |  |<br>
-| Option + Shift + ↓ | Alt + Shift + ↓ | 将代码向下复制一行 | 写重复代码的利器 |<br>|  |  |  |  |<br>
-| Cmd + Option + 上下键 | Ctrl + Alt + 上下键 | 在连续的多列上，同时出现光标 |  |<br>
-| Option + 鼠标点击任意位置 | Alt + 鼠标点击任意位置 | 在任意位置，同时出现光标 |  |<br>
-| Option + Shift + 鼠标拖动 | Alt + Shift + 鼠标拖动 | 在选中区域的每一行末尾，出现光标 |  |<br>
-| Cmd + Shift + L | Ctrl + Shift + L | 在选中文本的所有相同内容处，出现光标 |  |<br>| Option + Shift + F | Alt + shift + F | 代码格式化 | 很常用 |<br>
-| F2 | F2 | 以重构的方式进行重命名 | 改代码备 |<br>
-| Ctrl + J |  | 将多行代码合并为一行 | Win 用户可在命令面板搜索”合并行“ |<br>| Cmd + Shift + F | Ctrl + Shift +F | 全局搜索代码 | 很常用 |<br>
-| Cmd + P | Ctrl + P | 在当前的项目工程里，全局搜索文件名 |  |<br>
-| Cmd + F | Ctrl + F | 在当前文件中搜索代码，光标在搜索框里 |  |<br>
-| Cmd + G | F3 | 在当前文件中搜索代码，光标仍停留在编辑器里 | 很巧妙 |<br>1、注释：<br>· 单行注释：ctrl+/，注释后再按取消<br>· 取消单行注释：alt+shift+A 注释后再按取消<br>2、移动行<br>· 向上移动一行：alt+up<br>· 向下移动一行：alt+down<br>3、显示/隐藏左侧目录栏<br>· ctrl + b<br>4、复制当前行<br>· 向上复制一行：shift+alt+up<br>· 向下复制一行：shift+alt+down<br>5、删除当前行<br>· shift + ctrl + k<br>6、控制台显示隐藏<br>· ctrl + ~<br>7、查找文件<br>· ctrl + p<br>8、代码格式化<br>· shift + alt +f<br>9、新建窗口<br>· ctrl + shift + n<br>10、行增加缩进<br>· ctrl + [<br>11、行减少缩进<br>· ctrl + ]<br>12、关闭编<br><a rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/522284876" target="_blank">https://zhuanlan.zhihu.com/p/522284876</a> 配置导入导出<br>VSCode 设置侧边栏字体大小<br>
-1.打开 VSCode 安装目录下的如下文件<br>
-VSCode\resources\app\out\vs\workbench\workbench.desktop.main.css<br>2.查找 .part&gt;.content<br>
-修改如下的字体大小：<br>3.效果]]></description><link>https://wxkj.asia/mynote/常用命令/vscode.html</link><guid isPermaLink="false">常用命令/vscode.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 27 Apr 2024 16:36:05 GMT</pubDate></item><item><title><![CDATA[首页]]></title><description><![CDATA[ 
+Ctrl+方向键移动文档但光标不变<br>
+Ctrl+alt+b 或 ctrl+alt+单击查看实现的方法<br>
+Ctrl+u 查看父类<br>
+ALT+SHIFT+C 查找修改的文件，最近变更历史<br>
+F 3/shift+f 3 查找上一个下一个关键词<br>
+F 2（Shift+F 2） 高亮错误或警告快速定位<br>
+SHIFT+F 2 高亮错误或警告快速定位<br>Ctrl+F 7 文件中查询选中字符<br>
+F 4 查找变量来源<br>
+Ctrl+f 3 向下定位光标所在变量<br>
+Shift+f 3 向上定位光标所在变量<br>
+CTRL+ [] 光标移动到{}[]开头或结尾位置<br>
+CTRL+ALT+T 把选中的代码放在 TRY{} IF{} ELSE{} 里<br>
+<a rel="noopener" class="external-link" href="https://www.cnblogs.com/xp796/p/5718321.html" target="_blank">https://www.cnblogs.com/xp796/p/5718321.html</a><br><br><a data-href="markdown示例教程" href="https://wxkj.asia/mynote/工具软件/obsidian/markdown示例教程.html" class="internal-link" target="_self" rel="noopener">markdown示例教程</a>]]></description><link>https://wxkj.asia/mynote/常用命令/常用命令.html</link><guid isPermaLink="false">常用命令/常用命令.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 19 Apr 2024 09:32:06 GMT</pubDate></item><item><title><![CDATA[obsidian]]></title><description><![CDATA[ 
+ <br>全屏快捷<br>ctrl+shift+f11 或 fn+F<br>快速切换<br>ctrl + o <br>文档查找<br>ctrl+F<br>文档替换<br>ctrl+alt+f<br>全局查找<br>ctrl+shift+F<br>全局替换<br>Global Search And Replace 插件或使用其他软件，比如 vscode 等<br>新建<br>ctrl + o<br> Shift + Backspace 可强制删除<br>很多编辑器都有英文标点自动补全功能，自动生成一对，光标落在中间只想删除前面 1 个，却会把一整对都删掉，这时可用强制删除<br>Excalidraw 加载更多图标<br>点右侧的按钮， <img alt="obsidian-20240315173715688.webp" src="https://wxkj.asia/mynote/lib/media/obsidian-20240315173715688.webp" style="width: 55px; max-width: 100%;"> 然后点 Browser，然后下载，然后点 Browser 右侧的 <img alt="obsidian-20240315174024844.webp" src="https://wxkj.asia/mynote/lib/media/obsidian-20240315174024844.webp" style="width: 25px; max-width: 100%;"> 打开导入即可。（视频演示：<a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV12W4y1i7sS?spm_id_from=333.880.my_history.page.click" rel="noopener" class="external-link" href="https://www.bilibili.com/video/BV12W4y1i7sS?spm_id_from=333.880.my_history.page.click" target="_blank">obsidian插件excalidraw——强大的自由绘图，以及library_哔哩哔哩_bilibili</a>）<br>Excalidraw 画柱状图，折线图<br>直接复制 Excel 数据，粘贴到 Excalidraw 任意位置，弹窗画图对话框，设置即可。（视频演示：<a data-tooltip-position="top" aria-label="https://www.bilibili.com/video/BV19R4y1d7Nk?spm_id_from=333.880.my_history.page.click" rel="noopener" class="external-link" href="https://www.bilibili.com/video/BV19R4y1d7Nk?spm_id_from=333.880.my_history.page.click" target="_blank">Excalidraw一键画折线图，柱状图——obsidian插件Excalidraw_哔哩哔哩_bilibili</a>）]]></description><link>https://wxkj.asia/mynote/常用命令/obsidian.html</link><guid isPermaLink="false">常用命令/obsidian.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Sat, 16 Mar 2024 06:18:17 GMT</pubDate><enclosure url="https://wxkj.asia/mynote/lib/media/obsidian-20240315173715688.webp" length="0" type="image/webp"/><content:encoded>&lt;figure&gt;&lt;img src="https://wxkj.asia/mynote/lib/media/obsidian-20240315173715688.webp"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[figma-pixso-mastergo]]></title><description><![CDATA[ 
+ <br>全屏快捷键<br>ctrl+\<br>抠图方法<br>
+<br>用钢笔勾勒选区，然后用任意颜色填充
+<br>把 1 的选区放到图片下面
+<br>把选区创建为模板
+]]></description><link>https://wxkj.asia/mynote/常用命令/figma-pixso-mastergo.html</link><guid isPermaLink="false">常用命令/figma-pixso-mastergo.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 15 Mar 2024 08:51:10 GMT</pubDate></item><item><title><![CDATA[工具]]></title><description><![CDATA[ 
+ <br>utools<br><a rel="noopener" class="external-link" href="http://tools.jb51.net/static/api/games/fishercat/index.html" target="_blank">http://tools.jb51.net/static/api/games/fishercat/index.html</a><br>
+<a rel="noopener" class="external-link" href="http://tools.jb51.net/static/api/games/cupxiaoxiaole/index.html" target="_blank">http://tools.jb51.net/static/api/games/cupxiaoxiaole/index.html</a><br><a rel="noopener" class="external-link" href="http://tools.jb51.net/static/api/chess/index.html" target="_blank">http://tools.jb51.net/static/api/chess/index.html</a> 象棋<br>
+<a rel="noopener" class="external-link" href="http://tools.jb51.net/static/api/wuziqi/index.html" target="_blank">http://tools.jb51.net/static/api/wuziqi/index.html</a> 五子棋<br><a data-tooltip-position="top" aria-label="https://www.bmcx.com/apiiframe/?api_from=bmcx&amp;api_url=https://zishu.bmcx.com/&amp;api_width=100%25&amp;api_backgroundcolor=FFFFFF&amp;api_navigation=no" rel="noopener" class="external-link" href="https://www.bmcx.com/apiiframe/?api_from=bmcx&amp;api_url=https://zishu.bmcx.com/&amp;api_width=100%25&amp;api_backgroundcolor=FFFFFF&amp;api_navigation=no" target="_blank">https://www.bmcx.com/apiiframe/?api_from=bmcx&amp;api_url=https://zishu.bmcx.com/&amp;api_width=100%&amp;api_backgroundcolor=FFFFFF&amp;api_navigation=no</a> 字数统计<br>
+<a data-tooltip-position="top" aria-label="https://www.bmcx.com/apiiframe/?api_from=bmcx&amp;api_url=https://quchong.bmcx.com/&amp;api_width=100%25&amp;api_backgroundcolor=FFFFFF&amp;api_navigation=no" rel="noopener" class="external-link" href="https://www.bmcx.com/apiiframe/?api_from=bmcx&amp;api_url=https://quchong.bmcx.com/&amp;api_width=100%25&amp;api_backgroundcolor=FFFFFF&amp;api_navigation=no" target="_blank">https://www.bmcx.com/apiiframe/?api_from=bmcx&amp;api_url=https://quchong.bmcx.com/&amp;api_width=100%&amp;api_backgroundcolor=FFFFFF&amp;api_navigation=no</a> 文本去重<br><a data-tooltip-position="top" aria-label="https://kodsky.com/index.php?plugin/photopea#%7B%22files%22:%5B%5D,%22resources%22:%5B%5D,%22environment%22:%7B%22theme%22:1,%22vmode%22:0,%22lang%22:%22zh-CN%22,%22topt%22:%7B%22t0%22:%5B1,0,0%5D%7D,%22phrases%22:%5B%5B0,0%5D,%22%E6%96%87%E4%BB%B6%22%5D%7D%7D" rel="noopener" class="external-link" href="https://kodsky.com/index.php?plugin/photopea#%7B%22files%22:%5B%5D,%22resources%22:%5B%5D,%22environment%22:%7B%22theme%22:1,%22vmode%22:0,%22lang%22:%22zh-CN%22,%22topt%22:%7B%22t0%22:%5B1,0,0%5D%7D,%22phrases%22:%5B%5B0,0%5D,%22%E6%96%87%E4%BB%B6%22%5D%7D%7D" target="_blank">https://kodsky.com/index.php?plugin/photopea#{%22files%22:[],%22resources%22:[],%22environment%22:{%22theme%22:1,%22vmode%22:0,%22lang%22:%22zh-CN%22,%22topt%22:{%22t0%22:[1,0,0]},%22phrases%22:[[0,0],%22%E6%96%87%E4%BB%B6%22]}}</a><br><a data-tooltip-position="top" aria-label="https://kodsky.com/index.php?plugin/photopea#%7B%22environment%22:%7B%22theme%22:1,%22lang%22:%22zh-CN%22%7D%7D" rel="noopener" class="external-link" href="https://kodsky.com/index.php?plugin/photopea#%7B%22environment%22:%7B%22theme%22:1,%22lang%22:%22zh-CN%22%7D%7D" target="_blank">https://kodsky.com/index.php?plugin/photopea#{%22environment%22:{%22theme%22:1,%22lang%22:%22zh-CN%22}}</a><br><a rel="noopener" class="external-link" href="http://demo.kodcloud.com/index.php?plugin/polarr" target="_blank">http://demo.kodcloud.com/index.php?plugin/polarr</a> 泼辣修图<br><a rel="noopener" class="external-link" href="https://codingcorp.cloudstudio.net/" target="_blank">https://codingcorp.cloudstudio.net/</a> cloud studio]]></description><link>https://wxkj.asia/mynote/常用命令/工具.html</link><guid isPermaLink="false">常用命令/工具.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Thu, 16 May 2024 20:10:15 GMT</pubDate></item><item><title><![CDATA[首页]]></title><description><![CDATA[ 
  <br><br>笔记是人类的第二大脑，也是作者灵感的迸发和思想的总结，更是与他人交流的平台。
 
 浩渺宇宙，茫茫人海，你我相遇不是巧合是机缘，那么朋友，认识我就从笔记开始吧~！
 复制<br><br>记录工作、生活、想法和学习心得的个人笔记，愿与你一起学习和探讨~~
-复制<br><br><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" data-href="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" href="https://wxkj.asia/mynote/开发笔记/前端/mac调试ios的safari浏览器打开的页面.html" class="internal-link" target="_self" rel="noopener">Mac调试ios的safari浏览器打开的页面</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/JWT用户登录方案-前后端交互说明.md" data-href="开发笔记/php/JWT用户登录方案-前后端交互说明.md" href="https://wxkj.asia/mynote/开发笔记/php/jwt用户登录方案-前后端交互说明.html" class="internal-link" target="_self" rel="noopener">JWT用户登录方案-前后端交互说明</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/IP Lookup in PHP.md" data-href="开发笔记/php/IP Lookup in PHP.md" href="https://wxkj.asia/mynote/开发笔记/php/ip-lookup-in-php.html" class="internal-link" target="_self" rel="noopener">IP Lookup in PHP</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux find 模拟 tree 命令.md" data-href="开发笔记/linux/Linux find 模拟 tree 命令.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux-find-模拟-tree-命令.html" class="internal-link" target="_self" rel="noopener">Linux find 模拟 tree 命令</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/table表格设置border-radius不生效.md" data-href="开发笔记/前端/table表格设置border-radius不生效.md" href="https://wxkj.asia/mynote/开发笔记/前端/table表格设置border-radius不生效.html" class="internal-link" target="_self" rel="noopener">table表格设置border-radius不生效</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" data-href="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" href="https://wxkj.asia/mynote/开发笔记/前端/chrome-devtools-远程调试安卓网页的原理.html" class="internal-link" target="_self" rel="noopener">Chrome DevTools 远程调试安卓网页的原理</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/css屏幕尺寸与设备.md" data-href="开发笔记/前端/css屏幕尺寸与设备.md" href="https://wxkj.asia/mynote/开发笔记/前端/css屏幕尺寸与设备.html" class="internal-link" target="_self" rel="noopener">css屏幕尺寸与设备</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/git 导出变动文件，包括目录结构.md" data-href="开发笔记/git/git 导出变动文件，包括目录结构.md" href="https://wxkj.asia/mynote/开发笔记/git/git-导出变动文件，包括目录结构.html" class="internal-link" target="_self" rel="noopener">git 导出变动文件，包括目录结构</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" data-href="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" href="https://wxkj.asia/mynote/开发笔记/git/git-创建一个裸仓库，作为简易的-git-服务器.html" class="internal-link" target="_self" rel="noopener">Git 创建一个裸仓库，作为简易的 Git 服务器</a><br><a data-tooltip-position="top" aria-label="开发笔记/脚本插件/bat避免重复运行.md" data-href="开发笔记/脚本插件/bat避免重复运行.md" href="https://wxkj.asia/mynote/开发笔记/脚本插件/bat避免重复运行.html" class="internal-link" target="_self" rel="noopener">bat避免重复运行</a><br><br><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/dataview排序.md" data-href="工具软件/obsidian/dataview排序.md" href="https://wxkj.asia/mynote/工具软件/obsidian/dataview排序.html" class="internal-link" target="_self" rel="noopener">dataview排序</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js怎么先按ctime desc,再按title asc.md" data-href="开发笔记/前端/js怎么先按ctime desc,再按title asc.md" href="https://wxkj.asia/mynote/开发笔记/前端/js怎么先按ctime-desc,再按title-asc.html" class="internal-link" target="_self" rel="noopener">js怎么先按ctime desc,再按title asc</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/css选择前n个元素.md" data-href="开发笔记/前端/css选择前n个元素.md" href="https://wxkj.asia/mynote/开发笔记/前端/css选择前n个元素.html" class="internal-link" target="_self" rel="noopener">css选择前n个元素</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/templater.md" data-href="工具软件/obsidian/插件/templater.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/templater.html" class="internal-link" target="_self" rel="noopener">templater</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/quickadd.md" data-href="工具软件/obsidian/插件/quickadd.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/quickadd.html" class="internal-link" target="_self" rel="noopener">quickadd</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/dataview.md" data-href="工具软件/obsidian/插件/dataview.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/dataview.html" class="internal-link" target="_self" rel="noopener">dataview</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.md" data-href="开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.md" href="https://wxkj.asia/mynote/开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.html" class="internal-link" target="_self" rel="noopener">前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/web开发冷知识汇总.md" data-href="开发笔记/php/web开发冷知识汇总.md" href="https://wxkj.asia/mynote/开发笔记/php/web开发冷知识汇总.html" class="internal-link" target="_self" rel="noopener">web开发冷知识汇总</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" data-href="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" href="https://wxkj.asia/mynote/开发笔记/前端/mac调试ios的safari浏览器打开的页面.html" class="internal-link" target="_self" rel="noopener">Mac调试ios的safari浏览器打开的页面</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/JWT用户登录方案-前后端交互说明.md" data-href="开发笔记/php/JWT用户登录方案-前后端交互说明.md" href="https://wxkj.asia/mynote/开发笔记/php/jwt用户登录方案-前后端交互说明.html" class="internal-link" target="_self" rel="noopener">JWT用户登录方案-前后端交互说明</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/IP Lookup in PHP.md" data-href="开发笔记/php/IP Lookup in PHP.md" href="https://wxkj.asia/mynote/开发笔记/php/ip-lookup-in-php.html" class="internal-link" target="_self" rel="noopener">IP Lookup in PHP</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/【mac】shell小技巧将`终.md" data-href="开发笔记/mac/【mac】shell小技巧将`终.md" href="https://wxkj.asia/mynote/开发笔记/mac/【mac】shell小技巧将`终.html" class="internal-link" target="_self" rel="noopener">【mac】shell小技巧将`终</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/Mac开机启动配置详解.md" data-href="开发笔记/mac/Mac开机启动配置详解.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac开机启动配置详解.html" class="internal-link" target="_self" rel="noopener">Mac开机启动配置详解</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/mac下shell弹出下拉选择框.md" data-href="开发笔记/mac/mac下shell弹出下拉选择框.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac下shell弹出下拉选择框.html" class="internal-link" target="_self" rel="noopener">mac下shell弹出下拉选择框</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/mac上shell扫描目录并放到弹框列表中.md" data-href="开发笔记/mac/mac上shell扫描目录并放到弹框列表中.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac上shell扫描目录并放到弹框列表中.html" class="internal-link" target="_self" rel="noopener">mac上shell扫描目录并放到弹框列表中</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/Mac 下 brew 切换为国内源.md" data-href="开发笔记/mac/Mac 下 brew 切换为国内源.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac-下-brew-切换为国内源.html" class="internal-link" target="_self" rel="noopener">Mac 下 brew 切换为国内源</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/fswatch的使用.md" data-href="开发笔记/mac/fswatch的使用.md" href="https://wxkj.asia/mynote/开发笔记/mac/fswatch的使用.html" class="internal-link" target="_self" rel="noopener">fswatch的使用</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/AppleScript 隐藏执行shell脚本文件.md" data-href="开发笔记/mac/AppleScript 隐藏执行shell脚本文件.md" href="https://wxkj.asia/mynote/开发笔记/mac/applescript-隐藏执行shell脚本文件.html" class="internal-link" target="_self" rel="noopener">AppleScript 隐藏执行shell脚本文件</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/内网穿透.md" data-href="开发笔记/linux/内网穿透.md" href="https://wxkj.asia/mynote/开发笔记/linux/内网穿透.html" class="internal-link" target="_self" rel="noopener">内网穿透</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md" data-href="开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md" href="https://wxkj.asia/mynote/开发笔记/linux/使用shell脚本实现ftp自动上传和下载文件.html" class="internal-link" target="_self" rel="noopener">使用Shell脚本实现FTP自动上传和下载文件</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.md" data-href="开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.html" class="internal-link" target="_self" rel="noopener">shell获取文件夹下所有目录路径，包括子目录</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md" data-href="开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md" href="https://wxkj.asia/mynote/开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.html" class="internal-link" target="_self" rel="noopener">为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Shell之判断程序是否运行.md" data-href="开发笔记/linux/Shell之判断程序是否运行.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell之判断程序是否运行.html" class="internal-link" target="_self" rel="noopener">Shell之判断程序是否运行</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/shell 下 urlencode和urldecode 编码解码的方法.md" data-href="开发笔记/linux/shell 下 urlencode和urldecode 编码解码的方法.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell-下-urlencode和urldecode-编码解码的方法.html" class="internal-link" target="_self" rel="noopener">shell 下 urlencode和urldecode 编码解码的方法</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/shell if语句中的并列 - 诗意的栖居 - ITeye博客.md" data-href="开发笔记/linux/shell if语句中的并列 - 诗意的栖居 - ITeye博客.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell-if语句中的并列-诗意的栖居-iteye博客.html" class="internal-link" target="_self" rel="noopener">shell if语句中的并列 - 诗意的栖居 - ITeye博客</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/rsync 用法教程.md" data-href="开发笔记/linux/rsync 用法教程.md" href="https://wxkj.asia/mynote/开发笔记/linux/rsync-用法教程.html" class="internal-link" target="_self" rel="noopener">rsync 用法教程</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/rsync + inotify 实现文件实时双向自动同步.md" data-href="开发笔记/linux/rsync + inotify 实现文件实时双向自动同步.md" href="https://wxkj.asia/mynote/开发笔记/linux/rsync-+-inotify-实现文件实时双向自动同步.html" class="internal-link" target="_self" rel="noopener">rsync + inotify 实现文件实时双向自动同步</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux中如何锁定文件？flock命令一定要了解！.md" data-href="开发笔记/linux/Linux中如何锁定文件？flock命令一定要了解！.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux中如何锁定文件？flock命令一定要了解！.html" class="internal-link" target="_self" rel="noopener">Linux中如何锁定文件？flock命令一定要了解！</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux find 模拟 tree 命令.md" data-href="开发笔记/linux/Linux find 模拟 tree 命令.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux-find-模拟-tree-命令.html" class="internal-link" target="_self" rel="noopener">Linux find 模拟 tree 命令</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux 文件搜索神器 find 实战详解.md" data-href="开发笔记/linux/Linux 文件搜索神器 find 实战详解.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux-文件搜索神器-find-实战详解.html" class="internal-link" target="_self" rel="noopener">Linux 文件搜索神器 find 实战详解</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/markdown语法官方教程/搜索.md" data-href="工具软件/obsidian/markdown语法官方教程/搜索.md" href="https://wxkj.asia/mynote/工具软件/obsidian/markdown语法官方教程/搜索.html" class="internal-link" target="_self" rel="noopener">搜索</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/DataView 入门教程.md" data-href="工具软件/obsidian/DataView 入门教程.md" href="https://wxkj.asia/mynote/工具软件/obsidian/dataview-入门教程.html" class="internal-link" target="_self" rel="noopener">DataView 入门教程</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/检测git中是否有文件发生了冲突.md" data-href="开发笔记/git/检测git中是否有文件发生了冲突.md" href="https://wxkj.asia/mynote/开发笔记/git/检测git中是否有文件发生了冲突.html" class="internal-link" target="_self" rel="noopener">检测git中是否有文件发生了冲突</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/检测git变化并提交.md" data-href="开发笔记/git/检测git变化并提交.md" href="https://wxkj.asia/mynote/开发笔记/git/检测git变化并提交.html" class="internal-link" target="_self" rel="noopener">检测git变化并提交</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/fork的项目如何更新.md" data-href="开发笔记/git/fork的项目如何更新.md" href="https://wxkj.asia/mynote/开发笔记/git/fork的项目如何更新.html" class="internal-link" target="_self" rel="noopener">fork的项目如何更新</a><br><a data-tooltip-position="top" aria-label="学习笔记/好书推荐.md" data-href="学习笔记/好书推荐.md" href="https://wxkj.asia/mynote/学习笔记/好书推荐.html" class="internal-link" target="_self" rel="noopener">好书推荐</a><br><a data-tooltip-position="top" aria-label="开发笔记/SEO优化/seo优化工具.md" data-href="开发笔记/SEO优化/seo优化工具.md" href="https://wxkj.asia/mynote/开发笔记/seo优化/seo优化工具.html" class="internal-link" target="_self" rel="noopener">seo优化工具</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/通过脚本修改input值，手动触发input事件.md" data-href="开发笔记/前端/通过脚本修改input值，手动触发input事件.md" href="https://wxkj.asia/mynote/开发笔记/前端/通过脚本修改input值，手动触发input事件.html" class="internal-link" target="_self" rel="noopener">通过脚本修改input值，手动触发input事件</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/@font-face规则和Font Loading API.md" data-href="开发笔记/前端/@font-face规则和Font Loading API.md" href="https://wxkj.asia/mynote/开发笔记/前端/@font-face规则和font-loading-api.html" class="internal-link" target="_self" rel="noopener">@font-face规则和Font Loading API</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.md" data-href="开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.md" href="https://wxkj.asia/mynote/开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.html" class="internal-link" target="_self" rel="noopener">js，css，font，png等静态资源如何当加载失败后使用备用地址</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/最全的 rgba 与 16 进制颜色空间互相转换方法.md" data-href="开发笔记/前端/最全的 rgba 与 16 进制颜色空间互相转换方法.md" href="https://wxkj.asia/mynote/开发笔记/前端/最全的-rgba-与-16-进制颜色空间互相转换方法.html" class="internal-link" target="_self" rel="noopener">最全的 rgba 与 16 进制颜色空间互相转换方法</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/防止window.onload被覆盖的技巧.md" data-href="开发笔记/前端/防止window.onload被覆盖的技巧.md" href="https://wxkj.asia/mynote/开发笔记/前端/防止window.onload被覆盖的技巧.html" class="internal-link" target="_self" rel="noopener">防止window.onload被覆盖的技巧</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.md" data-href="开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.md" href="https://wxkj.asia/mynote/开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.html" class="internal-link" target="_self" rel="noopener">js显示和隐藏动画及鼠标穿透实现</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js判断一个元素是否已监听某个事件.md" data-href="开发笔记/前端/js判断一个元素是否已监听某个事件.md" href="https://wxkj.asia/mynote/开发笔记/前端/js判断一个元素是否已监听某个事件.html" class="internal-link" target="_self" rel="noopener">js判断一个元素是否已监听某个事件</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js给元素同时赋值多个样式属性.md" data-href="开发笔记/前端/js给元素同时赋值多个样式属性.md" href="https://wxkj.asia/mynote/开发笔记/前端/js给元素同时赋值多个样式属性.html" class="internal-link" target="_self" rel="noopener">js给元素同时赋值多个样式属性</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/用setTimeout代替eval执行js字符串.md" data-href="开发笔记/前端/用setTimeout代替eval执行js字符串.md" href="https://wxkj.asia/mynote/开发笔记/前端/用settimeout代替eval执行js字符串.html" class="internal-link" target="_self" rel="noopener">用setTimeout代替eval执行js字符串</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/transitionend事件判断是opacity是1还是0.md" data-href="开发笔记/前端/transitionend事件判断是opacity是1还是0.md" href="https://wxkj.asia/mynote/开发笔记/前端/transitionend事件判断是opacity是1还是0.html" class="internal-link" target="_self" rel="noopener">transitionend事件判断是opacity是1还是0</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js 怎么获取滚动条自身的宽度.md" data-href="开发笔记/前端/js 怎么获取滚动条自身的宽度.md" href="https://wxkj.asia/mynote/开发笔记/前端/js-怎么获取滚动条自身的宽度.html" class="internal-link" target="_self" rel="noopener">js 怎么获取滚动条自身的宽度</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/JS图片另存为.md" data-href="开发笔记/前端/JS图片另存为.md" href="https://wxkj.asia/mynote/开发笔记/前端/js图片另存为.html" class="internal-link" target="_self" rel="noopener">JS图片另存为</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/table表格设置border-radius不生效.md" data-href="开发笔记/前端/table表格设置border-radius不生效.md" href="https://wxkj.asia/mynote/开发笔记/前端/table表格设置border-radius不生效.html" class="internal-link" target="_self" rel="noopener">table表格设置border-radius不生效</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/CSS 垂直居中SVG标签.md" data-href="开发笔记/前端/CSS 垂直居中SVG标签.md" href="https://wxkj.asia/mynote/开发笔记/前端/css-垂直居中svg标签.html" class="internal-link" target="_self" rel="noopener">CSS 垂直居中SVG标签</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" data-href="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" href="https://wxkj.asia/mynote/开发笔记/前端/chrome-devtools-远程调试安卓网页的原理.html" class="internal-link" target="_self" rel="noopener">Chrome DevTools 远程调试安卓网页的原理</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/css屏幕尺寸与设备.md" data-href="开发笔记/前端/css屏幕尺寸与设备.md" href="https://wxkj.asia/mynote/开发笔记/前端/css屏幕尺寸与设备.html" class="internal-link" target="_self" rel="noopener">css屏幕尺寸与设备</a><br><a data-tooltip-position="top" aria-label="工具软件/[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？.md" data-href="工具软件/[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？.md" href="https://wxkj.asia/mynote/工具软件/[经验教程]-国内如何下载更新-google-谷歌浏览器及更新谷歌-chrome-浏览器无法访问此网站怎么办？.html" class="internal-link" target="_self" rel="noopener">[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/git 导出变动文件，包括目录结构.md" data-href="开发笔记/git/git 导出变动文件，包括目录结构.md" href="https://wxkj.asia/mynote/开发笔记/git/git-导出变动文件，包括目录结构.html" class="internal-link" target="_self" rel="noopener">git 导出变动文件，包括目录结构</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" data-href="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" href="https://wxkj.asia/mynote/开发笔记/git/git-创建一个裸仓库，作为简易的-git-服务器.html" class="internal-link" target="_self" rel="noopener">Git 创建一个裸仓库，作为简易的 Git 服务器</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Javascript拷贝到剪切板.md" data-href="开发笔记/前端/Javascript拷贝到剪切板.md" href="https://wxkj.asia/mynote/开发笔记/前端/javascript拷贝到剪切板.html" class="internal-link" target="_self" rel="noopener">Javascript拷贝到剪切板</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js判断是否是手机.md" data-href="开发笔记/前端/js判断是否是手机.md" href="https://wxkj.asia/mynote/开发笔记/前端/js判断是否是手机.html" class="internal-link" target="_self" rel="noopener">js判断是否是手机</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js 时间戳转字符串.md" data-href="开发笔记/前端/js 时间戳转字符串.md" href="https://wxkj.asia/mynote/开发笔记/前端/js-时间戳转字符串.html" class="internal-link" target="_self" rel="noopener">js 时间戳转字符串</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/defer和async的区别（面试被问到了） - 掘金.md" data-href="开发笔记/前端/defer和async的区别（面试被问到了） - 掘金.md" href="https://wxkj.asia/mynote/开发笔记/前端/defer和async的区别（面试被问到了）-掘金.html" class="internal-link" target="_self" rel="noopener">defer和async的区别（面试被问到了） - 掘金</a><br><a data-tooltip-position="top" aria-label="常用命令/常用命令.md" data-href="常用命令/常用命令.md" href="https://wxkj.asia/mynote/常用命令/常用命令.html" class="internal-link" target="_self" rel="noopener">常用命令</a><br><a data-tooltip-position="top" aria-label="常用命令/linux.md" data-href="常用命令/linux.md" href="https://wxkj.asia/mynote/常用命令/linux.html" class="internal-link" target="_self" rel="noopener">linux</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js动态执行代码片段.md" data-href="开发笔记/前端/js动态执行代码片段.md" href="https://wxkj.asia/mynote/开发笔记/前端/js动态执行代码片段.html" class="internal-link" target="_self" rel="noopener">js动态执行代码片段</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/CodeMirror api.md" data-href="开发笔记/前端/CodeMirror api.md" href="https://wxkj.asia/mynote/开发笔记/前端/codemirror-api.html" class="internal-link" target="_self" rel="noopener">CodeMirror api</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/页面之间的通信.md" data-href="开发笔记/前端/页面之间的通信.md" href="https://wxkj.asia/mynote/开发笔记/前端/页面之间的通信.html" class="internal-link" target="_self" rel="noopener">页面之间的通信</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/关闭重复标签.md" data-href="工具软件/obsidian/插件/关闭重复标签.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/关闭重复标签.html" class="internal-link" target="_self" rel="noopener">关闭重复标签</a><br><a data-tooltip-position="top" aria-label="常用命令/git.md" data-href="常用命令/git.md" href="https://wxkj.asia/mynote/常用命令/git.html" class="internal-link" target="_self" rel="noopener">git</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/打印浏览器及内核版本.md" data-href="开发笔记/前端/打印浏览器及内核版本.md" href="https://wxkj.asia/mynote/开发笔记/前端/打印浏览器及内核版本.html" class="internal-link" target="_self" rel="noopener">打印浏览器及内核版本</a><br><a data-tooltip-position="top" aria-label="开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md" data-href="开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md" href="https://wxkj.asia/mynote/开发笔记/脚本插件/powershell监控文件夹创建md文件并移动位置.html" class="internal-link" target="_self" rel="noopener">Powershell监控文件夹创建md文件并移动位置</a><br><a data-tooltip-position="top" aria-label="开发笔记/脚本插件/bat避免重复运行.md" data-href="开发笔记/脚本插件/bat避免重复运行.md" href="https://wxkj.asia/mynote/开发笔记/脚本插件/bat避免重复运行.html" class="internal-link" target="_self" rel="noopener">bat避免重复运行</a><br><a data-tooltip-position="top" aria-label="开发笔记/算法/多端文件同步原理和算法概述.md" data-href="开发笔记/算法/多端文件同步原理和算法概述.md" href="https://wxkj.asia/mynote/开发笔记/算法/多端文件同步原理和算法概述.html" class="internal-link" target="_self" rel="noopener">多端文件同步原理和算法概述</a><br><a data-tooltip-position="top" aria-label="开发笔记/数据库/mysql 数据库并发控制的内部实现机制和原理是什么.md" data-href="开发笔记/数据库/mysql 数据库并发控制的内部实现机制和原理是什么.md" href="https://wxkj.asia/mynote/开发笔记/数据库/mysql-数据库并发控制的内部实现机制和原理是什么.html" class="internal-link" target="_self" rel="noopener">mysql 数据库并发控制的内部实现机制和原理是什么</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/开发小技巧之调试移开消失的元素.md" data-href="开发笔记/前端/开发小技巧之调试移开消失的元素.md" href="https://wxkj.asia/mynote/开发笔记/前端/开发小技巧之调试移开消失的元素.html" class="internal-link" target="_self" rel="noopener">开发小技巧之调试移开消失的元素</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/平滑滚动到顶部或底部.md" data-href="开发笔记/前端/平滑滚动到顶部或底部.md" href="https://wxkj.asia/mynote/开发笔记/前端/平滑滚动到顶部或底部.html" class="internal-link" target="_self" rel="noopener">平滑滚动到顶部或底部</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md" data-href="开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md" href="https://wxkj.asia/mynote/开发笔记/前端/一个高级-css-面试题：在-css-中实现-if-else.html" class="internal-link" target="_self" rel="noopener">一个高级 CSS 面试题：在 CSS 中实现 if-else</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/HTML 标签简写及全称.md" data-href="开发笔记/前端/HTML 标签简写及全称.md" href="https://wxkj.asia/mynote/开发笔记/前端/html-标签简写及全称.html" class="internal-link" target="_self" rel="noopener">HTML 标签简写及全称</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js 通过fs.watch实现文件的双向同步.md" data-href="开发笔记/前端/js 通过fs.watch实现文件的双向同步.md" href="https://wxkj.asia/mynote/开发笔记/前端/js-通过fs.watch实现文件的双向同步.html" class="internal-link" target="_self" rel="noopener">js 通过fs.watch实现文件的双向同步</a><br><a data-tooltip-position="top" aria-label="开发笔记/UI设计/色轮_色环_色彩搭配 - Canva 可画.md" data-href="开发笔记/UI设计/色轮_色环_色彩搭配 - Canva 可画.md" href="https://wxkj.asia/mynote/开发笔记/ui设计/色轮_色环_色彩搭配-canva-可画.html" class="internal-link" target="_self" rel="noopener">色轮_色环_色彩搭配 - Canva 可画</a><br><a data-tooltip-position="top" aria-label="开发笔记/UI设计/优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md" data-href="开发笔记/UI设计/优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md" href="https://wxkj.asia/mynote/开发笔记/ui设计/优化浏览器设置以提升性能和使用体验-mastergo-帮助中心.html" class="internal-link" target="_self" rel="noopener">优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心</a><br><a data-tooltip-position="top" aria-label="开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md" data-href="开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md" href="https://wxkj.asia/mynote/开发笔记/python/python3实现将本地文件夹全部内容上传到ftp.html" class="internal-link" target="_self" rel="noopener">python3实现将本地文件夹全部内容上传到FTP</a><br><a data-tooltip-position="top" aria-label="开发笔记/python/ftp获取远程文件时间.md" data-href="开发笔记/python/ftp获取远程文件时间.md" href="https://wxkj.asia/mynote/开发笔记/python/ftp获取远程文件时间.html" class="internal-link" target="_self" rel="noopener">ftp获取远程文件时间</a><br><a data-tooltip-position="top" aria-label="开发笔记/python/ftp获取文件的md5.md" data-href="开发笔记/python/ftp获取文件的md5.md" href="https://wxkj.asia/mynote/开发笔记/python/ftp获取文件的md5.html" class="internal-link" target="_self" rel="noopener">ftp获取文件的md5</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/解决git status不能显示中文.md" data-href="开发笔记/git/解决git status不能显示中文.md" href="https://wxkj.asia/mynote/开发笔记/git/解决git-status不能显示中文.html" class="internal-link" target="_self" rel="noopener">解决git status不能显示中文</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/快速解决 Resource not accessible by integration.md" data-href="开发笔记/git/快速解决 Resource not accessible by integration.md" href="https://wxkj.asia/mynote/开发笔记/git/快速解决-resource-not-accessible-by-integration.html" class="internal-link" target="_self" rel="noopener">快速解决 Resource not accessible by integration</a><br><a data-tooltip-position="top" aria-label="工具软件/我开发了一个可以置顶笔记的app.md" data-href="工具软件/我开发了一个可以置顶笔记的app.md" href="https://wxkj.asia/mynote/工具软件/我开发了一个可以置顶笔记的app.html" class="internal-link" target="_self" rel="noopener">我开发了一个可以置顶笔记的app</a><br><a data-tooltip-position="top" aria-label="工具软件/在 Mac 上安排关机定时器的.md" data-href="工具软件/在 Mac 上安排关机定时器的.md" href="https://wxkj.asia/mynote/工具软件/在-mac-上安排关机定时器的.html" class="internal-link" target="_self" rel="noopener">在 Mac 上安排关机定时器的</a><br><a data-tooltip-position="top" aria-label="工具软件/typora.md" data-href="工具软件/typora.md" href="https://wxkj.asia/mynote/工具软件/typora.html" class="internal-link" target="_self" rel="noopener">typora</a><br><a data-tooltip-position="top" aria-label="工具软件/关于图床的一些使用心得总结.md" data-href="工具软件/关于图床的一些使用心得总结.md" href="https://wxkj.asia/mynote/工具软件/关于图床的一些使用心得总结.html" class="internal-link" target="_self" rel="noopener">关于图床的一些使用心得总结</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/用 MaoXian 网摘保存网络文章到 Obsidian.md" data-href="工具软件/obsidian/用 MaoXian 网摘保存网络文章到 Obsidian.md" href="https://wxkj.asia/mynote/工具软件/obsidian/用-maoxian-网摘保存网络文章到-obsidian.html" class="internal-link" target="_self" rel="noopener">用 MaoXian 网摘保存网络文章到 Obsidian</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/插件开发笔记.md" data-href="工具软件/obsidian/插件/插件开发笔记.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/插件开发笔记.html" class="internal-link" target="_self" rel="noopener">插件开发笔记</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/HK Code Block插件的使用.md" data-href="工具软件/obsidian/插件/HK Code Block插件的使用.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/hk-code-block插件的使用.html" class="internal-link" target="_self" rel="noopener">HK Code Block插件的使用</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/我把文心一言嵌入到 obsidian 里了.md" data-href="工具软件/obsidian/我把文心一言嵌入到 obsidian 里了.md" href="https://wxkj.asia/mynote/工具软件/obsidian/我把文心一言嵌入到-obsidian-里了.html" class="internal-link" target="_self" rel="noopener">我把文心一言嵌入到 obsidian 里了</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/我开发了一个快速输入Markdown代码和禅模式的插件(ii-plugin).md" data-href="工具软件/obsidian/我开发了一个快速输入Markdown代码和禅模式的插件(ii-plugin).md" href="https://wxkj.asia/mynote/工具软件/obsidian/我开发了一个快速输入markdown代码和禅模式的插件(ii-plugin).html" class="internal-link" target="_self" rel="noopener">我开发了一个快速输入Markdown代码和禅模式的插件(ii-plugin)</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/实用插件汇总说明.md" data-href="工具软件/obsidian/实用插件汇总说明.md" href="https://wxkj.asia/mynote/工具软件/obsidian/实用插件汇总说明.html" class="internal-link" target="_self" rel="noopener">实用插件汇总说明</a><br><a data-tooltip-position="top" aria-label="工具软件/Unison帮助文档翻译.md" data-href="工具软件/Unison帮助文档翻译.md" href="https://wxkj.asia/mynote/工具软件/unison帮助文档翻译.html" class="internal-link" target="_self" rel="noopener">Unison帮助文档翻译</a><br><a data-tooltip-position="top" aria-label="工具软件/Unison双向同步文件的使用.md" data-href="工具软件/Unison双向同步文件的使用.md" href="https://wxkj.asia/mynote/工具软件/unison双向同步文件的使用.html" class="internal-link" target="_self" rel="noopener">Unison双向同步文件的使用</a><br><a data-tooltip-position="top" aria-label="工具软件/windows.md" data-href="工具软件/windows.md" href="https://wxkj.asia/mynote/工具软件/windows.html" class="internal-link" target="_self" rel="noopener">windows</a><br><a data-tooltip-position="top" aria-label="工具软件/JavaScript.md" data-href="工具软件/JavaScript.md" href="https://wxkj.asia/mynote/工具软件/javascript.html" class="internal-link" target="_self" rel="noopener">JavaScript</a><br><a data-tooltip-position="top" aria-label="学习笔记/typescript之绑定和解绑事件.md" data-href="学习笔记/typescript之绑定和解绑事件.md" href="https://wxkj.asia/mynote/学习笔记/typescript之绑定和解绑事件.html" class="internal-link" target="_self" rel="noopener">typescript之绑定和解绑事件</a><br><a data-tooltip-position="top" aria-label="随笔/人工智能的体验.md" data-href="随笔/人工智能的体验.md" href="https://wxkj.asia/mynote/随笔/人工智能的体验.html" class="internal-link" target="_self" rel="noopener">人工智能的体验</a>]]></description><link>https://wxkj.asia/mynote/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Wed, 15 May 2024 03:02:13 GMT</pubDate></item><item><title><![CDATA[内网穿透]]></title><description><![CDATA[ 
+复制<br><br><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" data-href="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" href="https://wxkj.asia/mynote/开发笔记/前端/mac调试ios的safari浏览器打开的页面.html" class="internal-link" target="_self" rel="noopener">Mac调试ios的safari浏览器打开的页面</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/JWT用户登录方案-前后端交互说明.md" data-href="开发笔记/php/JWT用户登录方案-前后端交互说明.md" href="https://wxkj.asia/mynote/开发笔记/php/jwt用户登录方案-前后端交互说明.html" class="internal-link" target="_self" rel="noopener">JWT用户登录方案-前后端交互说明</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/IP Lookup in PHP.md" data-href="开发笔记/php/IP Lookup in PHP.md" href="https://wxkj.asia/mynote/开发笔记/php/ip-lookup-in-php.html" class="internal-link" target="_self" rel="noopener">IP Lookup in PHP</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux find 模拟 tree 命令.md" data-href="开发笔记/linux/Linux find 模拟 tree 命令.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux-find-模拟-tree-命令.html" class="internal-link" target="_self" rel="noopener">Linux find 模拟 tree 命令</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/table表格设置border-radius不生效.md" data-href="开发笔记/前端/table表格设置border-radius不生效.md" href="https://wxkj.asia/mynote/开发笔记/前端/table表格设置border-radius不生效.html" class="internal-link" target="_self" rel="noopener">table表格设置border-radius不生效</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" data-href="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" href="https://wxkj.asia/mynote/开发笔记/前端/chrome-devtools-远程调试安卓网页的原理.html" class="internal-link" target="_self" rel="noopener">Chrome DevTools 远程调试安卓网页的原理</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/css屏幕尺寸与设备.md" data-href="开发笔记/前端/css屏幕尺寸与设备.md" href="https://wxkj.asia/mynote/开发笔记/前端/css屏幕尺寸与设备.html" class="internal-link" target="_self" rel="noopener">css屏幕尺寸与设备</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/git 导出变动文件，包括目录结构.md" data-href="开发笔记/git/git 导出变动文件，包括目录结构.md" href="https://wxkj.asia/mynote/开发笔记/git/git-导出变动文件，包括目录结构.html" class="internal-link" target="_self" rel="noopener">git 导出变动文件，包括目录结构</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" data-href="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" href="https://wxkj.asia/mynote/开发笔记/git/git-创建一个裸仓库，作为简易的-git-服务器.html" class="internal-link" target="_self" rel="noopener">Git 创建一个裸仓库，作为简易的 Git 服务器</a><br><a data-tooltip-position="top" aria-label="开发笔记/脚本插件/bat避免重复运行.md" data-href="开发笔记/脚本插件/bat避免重复运行.md" href="https://wxkj.asia/mynote/开发笔记/脚本插件/bat避免重复运行.html" class="internal-link" target="_self" rel="noopener">bat避免重复运行</a><br><br><br><a data-tooltip-position="top" aria-label="开发笔记/前端/scrollIntoView 等待滚动结束执行.md" data-href="开发笔记/前端/scrollIntoView 等待滚动结束执行.md" href="https://wxkj.asia/mynote/开发笔记/前端/scrollintoview-等待滚动结束执行.html" class="internal-link" target="_self" rel="noopener">scrollIntoView 等待滚动结束执行</a><br><a data-tooltip-position="top" aria-label="学习笔记/1万访问需要多少宽带.md" data-href="学习笔记/1万访问需要多少宽带.md" href="https://wxkj.asia/mynote/学习笔记/1万访问需要多少宽带.html" class="internal-link" target="_self" rel="noopener">1万访问需要多少宽带</a><br><a data-tooltip-position="top" aria-label="常用命令/工具.md" data-href="常用命令/工具.md" href="https://wxkj.asia/mynote/常用命令/工具.html" class="internal-link" target="_self" rel="noopener">工具</a><br><a data-tooltip-position="top" aria-label="常用命令/秘钥破解.md" data-href="常用命令/秘钥破解.md" href="https://wxkj.asia/mynote/常用命令/秘钥破解.html" class="internal-link" target="_self" rel="noopener">秘钥破解</a><br><a data-tooltip-position="top" aria-label="常用命令/nginx.md" data-href="常用命令/nginx.md" href="https://wxkj.asia/mynote/常用命令/nginx.html" class="internal-link" target="_self" rel="noopener">nginx</a><br><a data-tooltip-position="top" aria-label="常用命令/grep.md" data-href="常用命令/grep.md" href="https://wxkj.asia/mynote/常用命令/grep.html" class="internal-link" target="_self" rel="noopener">grep</a><br><a data-tooltip-position="top" aria-label="常用命令/cmd-bat.md" data-href="常用命令/cmd-bat.md" href="https://wxkj.asia/mynote/常用命令/cmd-bat.html" class="internal-link" target="_self" rel="noopener">cmd-bat</a><br><a data-tooltip-position="top" aria-label="常用命令/压力测试ab.md" data-href="常用命令/压力测试ab.md" href="https://wxkj.asia/mynote/常用命令/压力测试ab.html" class="internal-link" target="_self" rel="noopener">压力测试ab</a><br><a data-tooltip-position="top" aria-label="常用命令/科学上网-vpn-翻墙.md" data-href="常用命令/科学上网-vpn-翻墙.md" href="https://wxkj.asia/mynote/常用命令/科学上网-vpn-翻墙.html" class="internal-link" target="_self" rel="noopener">科学上网-vpn-翻墙</a><br><a data-tooltip-position="top" aria-label="常用命令/visual studio.md" data-href="常用命令/visual studio.md" href="https://wxkj.asia/mynote/常用命令/visual-studio.html" class="internal-link" target="_self" rel="noopener">visual studio</a><br><a data-tooltip-position="top" aria-label="常用命令/rabbitmq.md" data-href="常用命令/rabbitmq.md" href="https://wxkj.asia/mynote/常用命令/rabbitmq.html" class="internal-link" target="_self" rel="noopener">rabbitmq</a><br><a data-tooltip-position="top" aria-label="常用命令/lnmp.md" data-href="常用命令/lnmp.md" href="https://wxkj.asia/mynote/常用命令/lnmp.html" class="internal-link" target="_self" rel="noopener">lnmp</a><br><a data-tooltip-position="top" aria-label="常用命令/fiddler.md" data-href="常用命令/fiddler.md" href="https://wxkj.asia/mynote/常用命令/fiddler.html" class="internal-link" target="_self" rel="noopener">fiddler</a><br><a data-tooltip-position="top" aria-label="读书笔记/推荐书籍.md" data-href="读书笔记/推荐书籍.md" href="https://wxkj.asia/mynote/读书笔记/推荐书籍.html" class="internal-link" target="_self" rel="noopener">推荐书籍</a><br><a data-tooltip-position="top" aria-label="常用命令/ubuntu.md" data-href="常用命令/ubuntu.md" href="https://wxkj.asia/mynote/常用命令/ubuntu.html" class="internal-link" target="_self" rel="noopener">ubuntu</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js实现ctrl+鼠标左键点击示例.md" data-href="开发笔记/前端/js实现ctrl+鼠标左键点击示例.md" href="https://wxkj.asia/mynote/开发笔记/前端/js实现ctrl+鼠标左键点击示例.html" class="internal-link" target="_self" rel="noopener">js实现ctrl+鼠标左键点击示例</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/dataview排序.md" data-href="工具软件/obsidian/dataview排序.md" href="https://wxkj.asia/mynote/工具软件/obsidian/dataview排序.html" class="internal-link" target="_self" rel="noopener">dataview排序</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js怎么先按ctime desc,再按title asc.md" data-href="开发笔记/前端/js怎么先按ctime desc,再按title asc.md" href="https://wxkj.asia/mynote/开发笔记/前端/js怎么先按ctime-desc,再按title-asc.html" class="internal-link" target="_self" rel="noopener">js怎么先按ctime desc,再按title asc</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/css选择前n个元素.md" data-href="开发笔记/前端/css选择前n个元素.md" href="https://wxkj.asia/mynote/开发笔记/前端/css选择前n个元素.html" class="internal-link" target="_self" rel="noopener">css选择前n个元素</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/templater.md" data-href="工具软件/obsidian/插件/templater.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/templater.html" class="internal-link" target="_self" rel="noopener">templater</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/quickadd.md" data-href="工具软件/obsidian/插件/quickadd.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/quickadd.html" class="internal-link" target="_self" rel="noopener">quickadd</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/dataview.md" data-href="工具软件/obsidian/插件/dataview.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/dataview.html" class="internal-link" target="_self" rel="noopener">dataview</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.md" data-href="开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.md" href="https://wxkj.asia/mynote/开发笔记/php/前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密.html" class="internal-link" target="_self" rel="noopener">前端用crypto-js来进行加密，php使用openssl_encrypt来进行解密</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/web开发冷知识汇总.md" data-href="开发笔记/php/web开发冷知识汇总.md" href="https://wxkj.asia/mynote/开发笔记/php/web开发冷知识汇总.html" class="internal-link" target="_self" rel="noopener">web开发冷知识汇总</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" data-href="开发笔记/前端/Mac调试ios的safari浏览器打开的页面.md" href="https://wxkj.asia/mynote/开发笔记/前端/mac调试ios的safari浏览器打开的页面.html" class="internal-link" target="_self" rel="noopener">Mac调试ios的safari浏览器打开的页面</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/JWT用户登录方案-前后端交互说明.md" data-href="开发笔记/php/JWT用户登录方案-前后端交互说明.md" href="https://wxkj.asia/mynote/开发笔记/php/jwt用户登录方案-前后端交互说明.html" class="internal-link" target="_self" rel="noopener">JWT用户登录方案-前后端交互说明</a><br><a data-tooltip-position="top" aria-label="开发笔记/php/IP Lookup in PHP.md" data-href="开发笔记/php/IP Lookup in PHP.md" href="https://wxkj.asia/mynote/开发笔记/php/ip-lookup-in-php.html" class="internal-link" target="_self" rel="noopener">IP Lookup in PHP</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/【mac】shell小技巧将`终.md" data-href="开发笔记/mac/【mac】shell小技巧将`终.md" href="https://wxkj.asia/mynote/开发笔记/mac/【mac】shell小技巧将`终.html" class="internal-link" target="_self" rel="noopener">【mac】shell小技巧将`终</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/Mac开机启动配置详解.md" data-href="开发笔记/mac/Mac开机启动配置详解.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac开机启动配置详解.html" class="internal-link" target="_self" rel="noopener">Mac开机启动配置详解</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/mac下shell弹出下拉选择框.md" data-href="开发笔记/mac/mac下shell弹出下拉选择框.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac下shell弹出下拉选择框.html" class="internal-link" target="_self" rel="noopener">mac下shell弹出下拉选择框</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/mac上shell扫描目录并放到弹框列表中.md" data-href="开发笔记/mac/mac上shell扫描目录并放到弹框列表中.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac上shell扫描目录并放到弹框列表中.html" class="internal-link" target="_self" rel="noopener">mac上shell扫描目录并放到弹框列表中</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/Mac 下 brew 切换为国内源.md" data-href="开发笔记/mac/Mac 下 brew 切换为国内源.md" href="https://wxkj.asia/mynote/开发笔记/mac/mac-下-brew-切换为国内源.html" class="internal-link" target="_self" rel="noopener">Mac 下 brew 切换为国内源</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/fswatch的使用.md" data-href="开发笔记/mac/fswatch的使用.md" href="https://wxkj.asia/mynote/开发笔记/mac/fswatch的使用.html" class="internal-link" target="_self" rel="noopener">fswatch的使用</a><br><a data-tooltip-position="top" aria-label="开发笔记/mac/AppleScript 隐藏执行shell脚本文件.md" data-href="开发笔记/mac/AppleScript 隐藏执行shell脚本文件.md" href="https://wxkj.asia/mynote/开发笔记/mac/applescript-隐藏执行shell脚本文件.html" class="internal-link" target="_self" rel="noopener">AppleScript 隐藏执行shell脚本文件</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/内网穿透.md" data-href="开发笔记/linux/内网穿透.md" href="https://wxkj.asia/mynote/开发笔记/linux/内网穿透.html" class="internal-link" target="_self" rel="noopener">内网穿透</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md" data-href="开发笔记/linux/使用Shell脚本实现FTP自动上传和下载文件.md" href="https://wxkj.asia/mynote/开发笔记/linux/使用shell脚本实现ftp自动上传和下载文件.html" class="internal-link" target="_self" rel="noopener">使用Shell脚本实现FTP自动上传和下载文件</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.md" data-href="开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell获取文件夹下所有目录路径，包括子目录.html" class="internal-link" target="_self" rel="noopener">shell获取文件夹下所有目录路径，包括子目录</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md" data-href="开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.md" href="https://wxkj.asia/mynote/开发笔记/linux/为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？.html" class="internal-link" target="_self" rel="noopener">为什么在终端可以直接输入gsed，而在crontab脚本里必须输入全路径？</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Shell之判断程序是否运行.md" data-href="开发笔记/linux/Shell之判断程序是否运行.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell之判断程序是否运行.html" class="internal-link" target="_self" rel="noopener">Shell之判断程序是否运行</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/shell if语句中的并列 - 诗意的栖居 - ITeye博客.md" data-href="开发笔记/linux/shell if语句中的并列 - 诗意的栖居 - ITeye博客.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell-if语句中的并列-诗意的栖居-iteye博客.html" class="internal-link" target="_self" rel="noopener">shell if语句中的并列 - 诗意的栖居 - ITeye博客</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/shell 下 urlencode和urldecode 编码解码的方法.md" data-href="开发笔记/linux/shell 下 urlencode和urldecode 编码解码的方法.md" href="https://wxkj.asia/mynote/开发笔记/linux/shell-下-urlencode和urldecode-编码解码的方法.html" class="internal-link" target="_self" rel="noopener">shell 下 urlencode和urldecode 编码解码的方法</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/rsync 用法教程.md" data-href="开发笔记/linux/rsync 用法教程.md" href="https://wxkj.asia/mynote/开发笔记/linux/rsync-用法教程.html" class="internal-link" target="_self" rel="noopener">rsync 用法教程</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/rsync + inotify 实现文件实时双向自动同步.md" data-href="开发笔记/linux/rsync + inotify 实现文件实时双向自动同步.md" href="https://wxkj.asia/mynote/开发笔记/linux/rsync-+-inotify-实现文件实时双向自动同步.html" class="internal-link" target="_self" rel="noopener">rsync + inotify 实现文件实时双向自动同步</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux中如何锁定文件？flock命令一定要了解！.md" data-href="开发笔记/linux/Linux中如何锁定文件？flock命令一定要了解！.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux中如何锁定文件？flock命令一定要了解！.html" class="internal-link" target="_self" rel="noopener">Linux中如何锁定文件？flock命令一定要了解！</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux find 模拟 tree 命令.md" data-href="开发笔记/linux/Linux find 模拟 tree 命令.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux-find-模拟-tree-命令.html" class="internal-link" target="_self" rel="noopener">Linux find 模拟 tree 命令</a><br><a data-tooltip-position="top" aria-label="开发笔记/linux/Linux 文件搜索神器 find 实战详解.md" data-href="开发笔记/linux/Linux 文件搜索神器 find 实战详解.md" href="https://wxkj.asia/mynote/开发笔记/linux/linux-文件搜索神器-find-实战详解.html" class="internal-link" target="_self" rel="noopener">Linux 文件搜索神器 find 实战详解</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/markdown语法官方教程/搜索.md" data-href="工具软件/obsidian/markdown语法官方教程/搜索.md" href="https://wxkj.asia/mynote/工具软件/obsidian/markdown语法官方教程/搜索.html" class="internal-link" target="_self" rel="noopener">搜索</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/DataView 入门教程.md" data-href="工具软件/obsidian/DataView 入门教程.md" href="https://wxkj.asia/mynote/工具软件/obsidian/dataview-入门教程.html" class="internal-link" target="_self" rel="noopener">DataView 入门教程</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/检测git中是否有文件发生了冲突.md" data-href="开发笔记/git/检测git中是否有文件发生了冲突.md" href="https://wxkj.asia/mynote/开发笔记/git/检测git中是否有文件发生了冲突.html" class="internal-link" target="_self" rel="noopener">检测git中是否有文件发生了冲突</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/检测git变化并提交.md" data-href="开发笔记/git/检测git变化并提交.md" href="https://wxkj.asia/mynote/开发笔记/git/检测git变化并提交.html" class="internal-link" target="_self" rel="noopener">检测git变化并提交</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/fork的项目如何更新.md" data-href="开发笔记/git/fork的项目如何更新.md" href="https://wxkj.asia/mynote/开发笔记/git/fork的项目如何更新.html" class="internal-link" target="_self" rel="noopener">fork的项目如何更新</a><br><a data-tooltip-position="top" aria-label="学习笔记/好书推荐.md" data-href="学习笔记/好书推荐.md" href="https://wxkj.asia/mynote/学习笔记/好书推荐.html" class="internal-link" target="_self" rel="noopener">好书推荐</a><br><a data-tooltip-position="top" aria-label="开发笔记/SEO优化/seo优化工具.md" data-href="开发笔记/SEO优化/seo优化工具.md" href="https://wxkj.asia/mynote/开发笔记/seo优化/seo优化工具.html" class="internal-link" target="_self" rel="noopener">seo优化工具</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/通过脚本修改input值，手动触发input事件.md" data-href="开发笔记/前端/通过脚本修改input值，手动触发input事件.md" href="https://wxkj.asia/mynote/开发笔记/前端/通过脚本修改input值，手动触发input事件.html" class="internal-link" target="_self" rel="noopener">通过脚本修改input值，手动触发input事件</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/@font-face规则和Font Loading API.md" data-href="开发笔记/前端/@font-face规则和Font Loading API.md" href="https://wxkj.asia/mynote/开发笔记/前端/@font-face规则和font-loading-api.html" class="internal-link" target="_self" rel="noopener">@font-face规则和Font Loading API</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.md" data-href="开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.md" href="https://wxkj.asia/mynote/开发笔记/前端/js，css，font，png等静态资源如何当加载失败后使用备用地址.html" class="internal-link" target="_self" rel="noopener">js，css，font，png等静态资源如何当加载失败后使用备用地址</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/最全的 rgba 与 16 进制颜色空间互相转换方法.md" data-href="开发笔记/前端/最全的 rgba 与 16 进制颜色空间互相转换方法.md" href="https://wxkj.asia/mynote/开发笔记/前端/最全的-rgba-与-16-进制颜色空间互相转换方法.html" class="internal-link" target="_self" rel="noopener">最全的 rgba 与 16 进制颜色空间互相转换方法</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/防止window.onload被覆盖的技巧.md" data-href="开发笔记/前端/防止window.onload被覆盖的技巧.md" href="https://wxkj.asia/mynote/开发笔记/前端/防止window.onload被覆盖的技巧.html" class="internal-link" target="_self" rel="noopener">防止window.onload被覆盖的技巧</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.md" data-href="开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.md" href="https://wxkj.asia/mynote/开发笔记/前端/js显示和隐藏动画及鼠标穿透实现.html" class="internal-link" target="_self" rel="noopener">js显示和隐藏动画及鼠标穿透实现</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js判断一个元素是否已监听某个事件.md" data-href="开发笔记/前端/js判断一个元素是否已监听某个事件.md" href="https://wxkj.asia/mynote/开发笔记/前端/js判断一个元素是否已监听某个事件.html" class="internal-link" target="_self" rel="noopener">js判断一个元素是否已监听某个事件</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js给元素同时赋值多个样式属性.md" data-href="开发笔记/前端/js给元素同时赋值多个样式属性.md" href="https://wxkj.asia/mynote/开发笔记/前端/js给元素同时赋值多个样式属性.html" class="internal-link" target="_self" rel="noopener">js给元素同时赋值多个样式属性</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/用setTimeout代替eval执行js字符串.md" data-href="开发笔记/前端/用setTimeout代替eval执行js字符串.md" href="https://wxkj.asia/mynote/开发笔记/前端/用settimeout代替eval执行js字符串.html" class="internal-link" target="_self" rel="noopener">用setTimeout代替eval执行js字符串</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/transitionend事件判断是opacity是1还是0.md" data-href="开发笔记/前端/transitionend事件判断是opacity是1还是0.md" href="https://wxkj.asia/mynote/开发笔记/前端/transitionend事件判断是opacity是1还是0.html" class="internal-link" target="_self" rel="noopener">transitionend事件判断是opacity是1还是0</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js 怎么获取滚动条自身的宽度.md" data-href="开发笔记/前端/js 怎么获取滚动条自身的宽度.md" href="https://wxkj.asia/mynote/开发笔记/前端/js-怎么获取滚动条自身的宽度.html" class="internal-link" target="_self" rel="noopener">js 怎么获取滚动条自身的宽度</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/JS图片另存为.md" data-href="开发笔记/前端/JS图片另存为.md" href="https://wxkj.asia/mynote/开发笔记/前端/js图片另存为.html" class="internal-link" target="_self" rel="noopener">JS图片另存为</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/table表格设置border-radius不生效.md" data-href="开发笔记/前端/table表格设置border-radius不生效.md" href="https://wxkj.asia/mynote/开发笔记/前端/table表格设置border-radius不生效.html" class="internal-link" target="_self" rel="noopener">table表格设置border-radius不生效</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/CSS 垂直居中SVG标签.md" data-href="开发笔记/前端/CSS 垂直居中SVG标签.md" href="https://wxkj.asia/mynote/开发笔记/前端/css-垂直居中svg标签.html" class="internal-link" target="_self" rel="noopener">CSS 垂直居中SVG标签</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" data-href="开发笔记/前端/Chrome DevTools 远程调试安卓网页的原理.md" href="https://wxkj.asia/mynote/开发笔记/前端/chrome-devtools-远程调试安卓网页的原理.html" class="internal-link" target="_self" rel="noopener">Chrome DevTools 远程调试安卓网页的原理</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/css屏幕尺寸与设备.md" data-href="开发笔记/前端/css屏幕尺寸与设备.md" href="https://wxkj.asia/mynote/开发笔记/前端/css屏幕尺寸与设备.html" class="internal-link" target="_self" rel="noopener">css屏幕尺寸与设备</a><br><a data-tooltip-position="top" aria-label="工具软件/[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？.md" data-href="工具软件/[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？.md" href="https://wxkj.asia/mynote/工具软件/[经验教程]-国内如何下载更新-google-谷歌浏览器及更新谷歌-chrome-浏览器无法访问此网站怎么办？.html" class="internal-link" target="_self" rel="noopener">[经验教程] 国内如何下载更新 google 谷歌浏览器及更新谷歌 chrome 浏览器无法访问此网站怎么办？</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/git 导出变动文件，包括目录结构.md" data-href="开发笔记/git/git 导出变动文件，包括目录结构.md" href="https://wxkj.asia/mynote/开发笔记/git/git-导出变动文件，包括目录结构.html" class="internal-link" target="_self" rel="noopener">git 导出变动文件，包括目录结构</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" data-href="开发笔记/git/Git 创建一个裸仓库，作为简易的 Git 服务器.md" href="https://wxkj.asia/mynote/开发笔记/git/git-创建一个裸仓库，作为简易的-git-服务器.html" class="internal-link" target="_self" rel="noopener">Git 创建一个裸仓库，作为简易的 Git 服务器</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/Javascript拷贝到剪切板.md" data-href="开发笔记/前端/Javascript拷贝到剪切板.md" href="https://wxkj.asia/mynote/开发笔记/前端/javascript拷贝到剪切板.html" class="internal-link" target="_self" rel="noopener">Javascript拷贝到剪切板</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js判断是否是手机.md" data-href="开发笔记/前端/js判断是否是手机.md" href="https://wxkj.asia/mynote/开发笔记/前端/js判断是否是手机.html" class="internal-link" target="_self" rel="noopener">js判断是否是手机</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js 时间戳转字符串.md" data-href="开发笔记/前端/js 时间戳转字符串.md" href="https://wxkj.asia/mynote/开发笔记/前端/js-时间戳转字符串.html" class="internal-link" target="_self" rel="noopener">js 时间戳转字符串</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/defer和async的区别（面试被问到了） - 掘金.md" data-href="开发笔记/前端/defer和async的区别（面试被问到了） - 掘金.md" href="https://wxkj.asia/mynote/开发笔记/前端/defer和async的区别（面试被问到了）-掘金.html" class="internal-link" target="_self" rel="noopener">defer和async的区别（面试被问到了） - 掘金</a><br><a data-tooltip-position="top" aria-label="常用命令/常用命令.md" data-href="常用命令/常用命令.md" href="https://wxkj.asia/mynote/常用命令/常用命令.html" class="internal-link" target="_self" rel="noopener">常用命令</a><br><a data-tooltip-position="top" aria-label="常用命令/linux.md" data-href="常用命令/linux.md" href="https://wxkj.asia/mynote/常用命令/linux.html" class="internal-link" target="_self" rel="noopener">linux</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js动态执行代码片段.md" data-href="开发笔记/前端/js动态执行代码片段.md" href="https://wxkj.asia/mynote/开发笔记/前端/js动态执行代码片段.html" class="internal-link" target="_self" rel="noopener">js动态执行代码片段</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/CodeMirror api.md" data-href="开发笔记/前端/CodeMirror api.md" href="https://wxkj.asia/mynote/开发笔记/前端/codemirror-api.html" class="internal-link" target="_self" rel="noopener">CodeMirror api</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/页面之间的通信.md" data-href="开发笔记/前端/页面之间的通信.md" href="https://wxkj.asia/mynote/开发笔记/前端/页面之间的通信.html" class="internal-link" target="_self" rel="noopener">页面之间的通信</a><br><a data-tooltip-position="top" aria-label="工具软件/obsidian/插件/关闭重复标签.md" data-href="工具软件/obsidian/插件/关闭重复标签.md" href="https://wxkj.asia/mynote/工具软件/obsidian/插件/关闭重复标签.html" class="internal-link" target="_self" rel="noopener">关闭重复标签</a><br><a data-tooltip-position="top" aria-label="常用命令/git.md" data-href="常用命令/git.md" href="https://wxkj.asia/mynote/常用命令/git.html" class="internal-link" target="_self" rel="noopener">git</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/打印浏览器及内核版本.md" data-href="开发笔记/前端/打印浏览器及内核版本.md" href="https://wxkj.asia/mynote/开发笔记/前端/打印浏览器及内核版本.html" class="internal-link" target="_self" rel="noopener">打印浏览器及内核版本</a><br><a data-tooltip-position="top" aria-label="开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md" data-href="开发笔记/脚本插件/Powershell监控文件夹创建md文件并移动位置.md" href="https://wxkj.asia/mynote/开发笔记/脚本插件/powershell监控文件夹创建md文件并移动位置.html" class="internal-link" target="_self" rel="noopener">Powershell监控文件夹创建md文件并移动位置</a><br><a data-tooltip-position="top" aria-label="开发笔记/脚本插件/bat避免重复运行.md" data-href="开发笔记/脚本插件/bat避免重复运行.md" href="https://wxkj.asia/mynote/开发笔记/脚本插件/bat避免重复运行.html" class="internal-link" target="_self" rel="noopener">bat避免重复运行</a><br><a data-tooltip-position="top" aria-label="开发笔记/算法/多端文件同步原理和算法概述.md" data-href="开发笔记/算法/多端文件同步原理和算法概述.md" href="https://wxkj.asia/mynote/开发笔记/算法/多端文件同步原理和算法概述.html" class="internal-link" target="_self" rel="noopener">多端文件同步原理和算法概述</a><br><a data-tooltip-position="top" aria-label="开发笔记/数据库/mysql 数据库并发控制的内部实现机制和原理是什么.md" data-href="开发笔记/数据库/mysql 数据库并发控制的内部实现机制和原理是什么.md" href="https://wxkj.asia/mynote/开发笔记/数据库/mysql-数据库并发控制的内部实现机制和原理是什么.html" class="internal-link" target="_self" rel="noopener">mysql 数据库并发控制的内部实现机制和原理是什么</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/开发小技巧之调试移开消失的元素.md" data-href="开发笔记/前端/开发小技巧之调试移开消失的元素.md" href="https://wxkj.asia/mynote/开发笔记/前端/开发小技巧之调试移开消失的元素.html" class="internal-link" target="_self" rel="noopener">开发小技巧之调试移开消失的元素</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/平滑滚动到顶部或底部.md" data-href="开发笔记/前端/平滑滚动到顶部或底部.md" href="https://wxkj.asia/mynote/开发笔记/前端/平滑滚动到顶部或底部.html" class="internal-link" target="_self" rel="noopener">平滑滚动到顶部或底部</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md" data-href="开发笔记/前端/一个高级 CSS 面试题：在 CSS 中实现 if-else.md" href="https://wxkj.asia/mynote/开发笔记/前端/一个高级-css-面试题：在-css-中实现-if-else.html" class="internal-link" target="_self" rel="noopener">一个高级 CSS 面试题：在 CSS 中实现 if-else</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/HTML 标签简写及全称.md" data-href="开发笔记/前端/HTML 标签简写及全称.md" href="https://wxkj.asia/mynote/开发笔记/前端/html-标签简写及全称.html" class="internal-link" target="_self" rel="noopener">HTML 标签简写及全称</a><br><a data-tooltip-position="top" aria-label="开发笔记/前端/js 通过fs.watch实现文件的双向同步.md" data-href="开发笔记/前端/js 通过fs.watch实现文件的双向同步.md" href="https://wxkj.asia/mynote/开发笔记/前端/js-通过fs.watch实现文件的双向同步.html" class="internal-link" target="_self" rel="noopener">js 通过fs.watch实现文件的双向同步</a><br><a data-tooltip-position="top" aria-label="开发笔记/UI设计/色轮_色环_色彩搭配 - Canva 可画.md" data-href="开发笔记/UI设计/色轮_色环_色彩搭配 - Canva 可画.md" href="https://wxkj.asia/mynote/开发笔记/ui设计/色轮_色环_色彩搭配-canva-可画.html" class="internal-link" target="_self" rel="noopener">色轮_色环_色彩搭配 - Canva 可画</a><br><a data-tooltip-position="top" aria-label="开发笔记/UI设计/优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md" data-href="开发笔记/UI设计/优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心.md" href="https://wxkj.asia/mynote/开发笔记/ui设计/优化浏览器设置以提升性能和使用体验-mastergo-帮助中心.html" class="internal-link" target="_self" rel="noopener">优化浏览器设置以提升性能和使用体验 - MasterGo 帮助中心</a><br><a data-tooltip-position="top" aria-label="开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md" data-href="开发笔记/python/python3实现将本地文件夹全部内容上传到FTP.md" href="https://wxkj.asia/mynote/开发笔记/python/python3实现将本地文件夹全部内容上传到ftp.html" class="internal-link" target="_self" rel="noopener">python3实现将本地文件夹全部内容上传到FTP</a><br><a data-tooltip-position="top" aria-label="开发笔记/python/ftp获取远程文件时间.md" data-href="开发笔记/python/ftp获取远程文件时间.md" href="https://wxkj.asia/mynote/开发笔记/python/ftp获取远程文件时间.html" class="internal-link" target="_self" rel="noopener">ftp获取远程文件时间</a><br><a data-tooltip-position="top" aria-label="开发笔记/python/ftp获取文件的md5.md" data-href="开发笔记/python/ftp获取文件的md5.md" href="https://wxkj.asia/mynote/开发笔记/python/ftp获取文件的md5.html" class="internal-link" target="_self" rel="noopener">ftp获取文件的md5</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/解决git status不能显示中文.md" data-href="开发笔记/git/解决git status不能显示中文.md" href="https://wxkj.asia/mynote/开发笔记/git/解决git-status不能显示中文.html" class="internal-link" target="_self" rel="noopener">解决git status不能显示中文</a><br><a data-tooltip-position="top" aria-label="开发笔记/git/快速解决 Resource not accessible by integration.md" data-href="开发笔记/git/快速解决 Resource not accessible by integration.md" href="https://wxkj.asia/mynote/开发笔记/git/快速解决-resource-not-accessible-by-integration.html" class="internal-link" target="_self" rel="noopener">快速解决 Resource not accessible by integration</a>]]></description><link>https://wxkj.asia/mynote/index.html</link><guid isPermaLink="false">index.md</guid><dc:creator><![CDATA[Wilson]]></dc:creator><pubDate>Fri, 17 May 2024 12:06:01 GMT</pubDate></item><item><title><![CDATA[内网穿透]]></title><description><![CDATA[ 
  <br>在 Mac、Windows、iPhone、Android 平台上，有许多应用支持 WebDAV 协议并可实现文件实时同步，以下是一些例子：<br><br>
 <br>Finder: macOS 内置支持 WebDAV，可以直接将 WebDAV 服务器挂载为网络卷。
 <br>Transmit: 这是一款高级 FTP/SFTP 客户端，也支持 WebDAV，可以实现文件的实时上传与同步。
