@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>思源笔记手机伺服版</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">正在获取ip和端口...</h1>
+    <p id="status">请耐心等待...</p>
+
+    <script>
+        // 你的api URL
+        const ipApiUrl = "https://mock.presstime.cn/mock/66d061225b1fc830407337e8/api/ip";
+
+        // 获取IP和端口
+        async function fetchIPAndPort() {
+            try {
+                const response = await fetch(ipApiUrl);
+                if (!response.ok) {
+                    throw new Error(`获取失败: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const ip = data.data.ip;
+                const port = data.data.port;
+                window.location.href = `http://${ip}:${port}`;
+            } catch (error) {
+                document.getElementById('status').innerText = `获取失败: ${error.message}`;
+            }
+        }
+
+        // 判断是否第一次运行
+        if (localStorage.getItem('__sy_client_is_first') === null) {
+            localStorage.setItem('__sy_client_is_first', 'true');
+            document.getElementById('title').innerText = '请先添加到收藏夹';
+            document.getElementById('status').innerText = '第一次运行时会提示添加到收藏夹，再次运行或刷新后将自动跳转';
+        } else {
+            // 调用函数
+            fetchIPAndPort();
+        }
+    </script>
+</body>
+</html>
