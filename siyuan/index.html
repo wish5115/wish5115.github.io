@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <link rel="apple-touch-icon" href="https://b3log.org/images/brand/siyuan-128.png">
     <link rel="icon" type="image/png" href="https://b3log.org/images/brand/siyuan-128.png">
     <link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/siyuan-128.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>思源笔记手机伺服版</title>
     <style>
         body {
@@ -47,7 +51,7 @@
             document.getElementById('status').innerText = '第一次运行时会提示添加到收藏夹，再次运行或刷新后将自动跳转';
         } else {
             // 调用函数
-            fetchIPAndPort();
+            //fetchIPAndPort();
         }
     </script>
 </body>
