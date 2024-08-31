@@ -44,22 +44,13 @@
         }
 
         // 判断是否第一次运行
-        if (localStorage.getItem('__sy_client_is_first') === null) {
+        if (location.search.indexOf("first=first") !== -1 || localStorage.getItem('__sy_client_is_first') === null) {
             localStorage.setItem('__sy_client_is_first', 'true');
             document.getElementById('title').innerText = '请先添加到收藏夹';
-            let appStatus = '';
-            if(location.protocol.toLocaleLowerCase() === 'https:') {
-                appStatus = `<div style="text-align: left;max-width:800px;margin: 0 auto;">
-                    <div style="margin-top:30px;">你也可以将页面另存为APP应用：</div>
-                    <div style="margin-top:20px;">Mac：</div>
-                    <div><img src="https://b3logfile.com/file/2024/08/image-VB7DQK9.png?imageView2/2/interlace/1/format/webp" /></div>
-                    <div style="margin-top:20px;">Windows：</div>
-                    <div><img src="https://b3logfile.com/file/2024/08/image-yKnqyOO.png?imageView2/2/interlace/1/format/webp" /></div>
-                    <div><img src="https://b3logfile.com/file/2024/08/image-JQhfdvi.png?imageView2/2/interlace/1/format/webp" /></div>
-                    <div>如果有问题可参考 <a href="https://ld246.com/article/1724975916806/comment/1725061553011?r=wilsons#comments" target="_blank">这里</a> 的说明。</div>
-                </div>`;
-            }
-            document.getElementById('status').innerHTML = `<div>第一次运行时会提示添加到收藏夹，再次运行或刷新后将自动跳转</div>${appStatus}`;
+            const appStatus = `<div>第一次运行时会提示添加到收藏夹，再次运行或刷新后将自动跳转</div>
+            <div style="margin-top:20px">你也可以使用APP方式启动，详见 <a href="https://ld246.com/article/1724975916806/comment/1725113978862?r=wilsons#comments" target="_blank">APP方式启动</a></div>
+            <div style="margin-top:20px">或者你也可以将页面另存为APP应用，详见 <a href="https://ld246.com/article/1724975916806/comment/1725061553011?r=wilsons#comments" target="_blank">另存为APP应用</a></div>`;
+            document.getElementById('status').innerHTML = appStatus;
         } else {
             // 调用函数
             fetchIPAndPort();
