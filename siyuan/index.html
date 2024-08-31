@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <link rel="apple-touch-icon" href="https://b3log.org/images/brand/siyuan-128.png">
     <link rel="icon" type="image/png" href="https://b3log.org/images/brand/siyuan-128.png">
     <link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/siyuan-128.png">
@@ -48,7 +47,19 @@
         if (localStorage.getItem('__sy_client_is_first') === null) {
             localStorage.setItem('__sy_client_is_first', 'true');
             document.getElementById('title').innerText = '请先添加到收藏夹';
-            document.getElementById('status').innerText = '第一次运行时会提示添加到收藏夹，再次运行或刷新后将自动跳转';
+            let appStatus = '';
+            if(location.protocol.toLocaleLowerCase() === 'https:') {
+                appStatus = `<div style="text-align: left;max-width:800px;margin: 0 auto;">
+                    <div style="margin-top:30px;">你也可以将页面另存为APP应用：</div>
+                    <div style="margin-top:20px;">Mac：</div>
+                    <div><img src="https://b3logfile.com/file/2024/08/image-VB7DQK9.png?imageView2/2/interlace/1/format/webp" /></div>
+                    <div style="margin-top:20px;">Windows：</div>
+                    <div><img src="https://b3logfile.com/file/2024/08/image-yKnqyOO.png?imageView2/2/interlace/1/format/webp" /></div>
+                    <div><img src="https://b3logfile.com/file/2024/08/image-JQhfdvi.png?imageView2/2/interlace/1/format/webp" /></div>
+                    <div>如果有问题可参考 <a href="https://ld246.com/article/1724975916806/comment/1725061553011?r=wilsons#comments" target="_blank">这里</a> 的说明。</div>
+                </div>`;
+            }
+            document.getElementById('status').innerHTML = `<div>第一次运行时会提示添加到收藏夹，再次运行或刷新后将自动跳转</div>${appStatus}`;
         } else {
             // 调用函数
             fetchIPAndPort();
