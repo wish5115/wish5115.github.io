@@ -37,7 +37,8 @@
                 const data = await response.json();
                 const ip = data.data.ip;
                 const port = data.data.port;
-                window.location.href = `http://${ip}:${port}`;
+                //window.location.href = `http://${ip}:${port}`;
+                window.location.replace(`http://${ip}:${port}`)
             } catch (error) {
                 document.getElementById('status').innerText = `获取失败: ${error.message}`;
             }
