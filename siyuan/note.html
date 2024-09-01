@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="https://b3log.org/images/brand/siyuan-128.png">
+    <link rel="icon" type="image/png" href="https://b3log.org/images/brand/siyuan-128.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://b3log.org/images/brand/siyuan-128.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>思源笔记手机伺服版</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin:0;
+            padding:0;
+        }
+        #iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            display: none;
+        }
+        #title {
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">正在获取ip和端口...</h1>
+    <p id="status">请耐心等待...</p>
+    <!-- 嵌入目标网页 -->
+    <iframe id="iframe" src="about:blank" frameborder="0"></iframe>
+
+    <script>
+        // 你的api URL
+        const ipApiUrl = "https://mock.presstime.cn/mock/66d061225b1fc830407337e8/api/ip";
+
+        // 获取IP和端口
+        async function fetchIPAndPort() {
+            try {
+                const response = await fetch(ipApiUrl);
+                if (!response.ok) {
+                    throw new Error(`获取失败: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const ip = data.data.ip;
+                const port = data.data.port;
+                //window.location.href = `http://${ip}:${port}`;
+                //window.location.replace(`http://${ip}:${port}`);
+                document.querySelector("#iframe").src = `http://${ip}:${port}`;
+                document.querySelector("#title").style.display = 'none';
+                document.querySelector("#status").style.display = 'none';
+                document.querySelector("#iframe").style.display = 'block';
+            } catch (error) {
+                document.getElementById('status').innerText = `获取失败: ${error.message}`;
+            }
+        }
+
+        // 判断是否第一次运行
+        if (location.search.indexOf("first=first") !== -1 || localStorage.getItem('__sy_client_is_first') === null) {
+            localStorage.setItem('__sy_client_is_first', 'true');
+            document.getElementById('title').innerText = '请先添加到收藏夹';
+            const appStatus = `<div>第一次运行时会提示添加到收藏夹，再次运行或刷新后将自动跳转</div>
+            <div style="margin-top:20px">你也可以使用APP方式启动，详见 <a href="https://ld246.com/article/1724975916806/comment/1725113978862?r=wilsons#comments" target="_blank">APP方式启动</a></div>
+            <div style="margin-top:20px">或者你也可以将页面另存为APP应用，详见 <a href="https://ld246.com/article/1724975916806/comment/1725061553011?r=wilsons#comments" target="_blank">另存为APP应用</a></div>`;
+            document.getElementById('status').innerHTML = appStatus;
+        } else {
+            // 调用函数
+            fetchIPAndPort();
+        }
+    </script>
+</body>
+</html>
